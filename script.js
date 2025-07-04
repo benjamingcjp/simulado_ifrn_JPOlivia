@@ -1,5 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const allQuestions = [
+    // ESTE É O NOVO BANCO DE QUESTÕES PARA "QUESTÕES GERADAS POR IA"
+    const allQuestionsIA = [
         // Lei nº 8.112/1990
         { id: '01', question: 'Qual o regime jurídico estabelecido pela Lei nº 8.112/1990?', options: ['a) Emprego público federal.', 'b) Regime estatutário dos servidores públicos da União.', 'c) Regime celetista dos servidores públicos federais.', 'd) Regime misto para servidores federais.'], correct: 'b', explanation: 'A Lei nº 8.112/1990 institui o regime estatutário, que estabelece os direitos, deveres e responsabilidades dos servidores públicos civis da União, autarquias e fundações públicas federais.' },
         { id: '02', question: 'São requisitos básicos para investidura em cargo público federal, EXCETO:', options: ['a) Nacionalidade brasileira.', 'b) Nível de escolaridade compatível com o cargo.', 'c) Idade mínima de 16 anos.', 'd) Quitação com as obrigações militares e eleitorais.'], correct: 'c', explanation: 'A idade mínima para investidura em cargo público federal é de 18 anos, conforme o artigo 5º, inciso III, da Lei nº 8.112/1990.' },
@@ -111,21 +112,123 @@ document.addEventListener('DOMContentLoaded', () => {
         { id: '100', question: 'Qual das normas estudadas trata especificamente das sanções éticas aplicáveis aos servidores públicos federais?', options: ['a) Lei nº 8.112/1990.', 'b) Lei nº 12.772/2012.', 'c) Lei nº 8.027/1990.', 'd) Decreto nº 1.171/1994.'], correct: 'd', explanation: 'O Decreto nº 1.171/1994, que aprova o Código de Ética Profissional do Servidor Público Civil do Poder Executivo Federal, trata especificamente das sanções éticas aplicáveis (Seção V). A Lei nº 8.112/1990 trata das penalidades disciplinares, a Lei nº 12.772/2012 do regime de carreiras do magistério, e a Lei nº 8.027/1990 das normas de conduta e da Comissão de Ética.' }
     ];
 
-    let selectedQuestions = [];
+    // BANCO DE QUESTÕES PARA "QUESTÕES RETIRADAS DE OUTRAS PROVAS"
+    const questoesEstudo = [
+        // Lei 8.112/1990
+        {
+            lei: "Lei 8.112/1990",
+            numero: 1,
+            enunciado: "O servidor responde civil, penal e administrativamente pelos atos praticados no exercício de suas funções?",
+            alternativaCorreta: "Sim, conforme art. 121 da Lei 8.112/1990.",
+            fonte: "QConcursos"
+        },
+        {
+            lei: "Lei 8.112/1990",
+            numero: 2,
+            enunciado: "É permitido ao servidor comissionar pessoa estranha à repartição?",
+            alternativaCorreta: "Não, conforme art. 117, VI.",
+            fonte: "QConcursos"
+        },
+        {
+            lei: "Lei 8.112/1990",
+            numero: 3,
+            enunciado: "As sanções civil, penal e administrativa podem ser aplicadas cumulativamente ao servidor público?",
+            alternativaCorreta: "Sim, conforme art. 121, parágrafo único.",
+            fonte: "EstudeGrátis"
+        },
 
-    function getRandomQuestions(numQuestions) {
-        const shuffled = [...allQuestions].sort(() => 0.5 - Math.random());
-        return shuffled.slice(0, numQuestions);
+        // Lei 12.772/2012
+        {
+            lei: "Lei 12.772/2012",
+            numero: 1,
+            enunciado: "Qual a diferença entre progressão e promoção no plano de carreira do magistério federal?",
+            alternativaCorreta: "Progressão é mudança de nível na mesma classe; promoção é mudança de classe.",
+            fonte: "Questões Estratégicas"
+        },
+        {
+            lei: "Lei 12.772/2012",
+            numero: 2,
+            enunciado: "O regime de 40 horas semanais pode ser exercido com dois turnos sem dedicação exclusiva?",
+            alternativaCorreta: "Sim, conforme a estrutura prevista na Lei 12.772/2012.",
+            fonte: "ConcursosAZ"
+        },
+
+        // Lei 8.027/1990
+        {
+            lei: "Lei 8.027/1990",
+            numero: 1,
+            enunciado: "É dever do servidor público agir com urbanidade, sigilo e lealdade?",
+            alternativaCorreta: "Sim, são princípios fundamentais previstos na Lei 8.027/1990.",
+            fonte: "QConcursos"
+        },
+        {
+            lei: "Lei 8.027/1990",
+            numero: 2,
+            enunciado: "Delegar atribuição indevidamente configura falta administrativa?",
+            alternativaCorreta: "Sim, é infração disciplinar.",
+            fonte: "EstudeGrátis"
+        },
+
+        // Decreto 1.171/1994
+        {
+            lei: "Decreto 1.171/1994",
+            numero: 1,
+            enunciado: "Quais princípios regem o Código de Ética do Servidor Público?",
+            alternativaCorreta: "Legalidade, impessoalidade, moralidade, publicidade e eficiência.",
+            fonte: "EstudeGrátis"
+        },
+        {
+            lei: "Decreto 1.171/1994",
+            numero: 2,
+            enunciado: "A quem compete apurar violação ao Código de Ética?",
+            alternativaCorreta: "À Comissão de Ética instituída nos órgãos e entidades.",
+            fonte: "QConcursos"
+        }
+    ];
+
+
+    let selectedQuestionsIA = []; // Para questões geradas por IA (com opções A, B, C, D)
+    let selectedQuestoesEstudo = []; // Para questões retiradas de outras provas (pergunta e resposta)
+
+    // Elementos da interface
+    const choiceContainer = document.getElementById('choice-container');
+    const iaQuestionsButton = document.getElementById('ia-questions-button');
+    const provaQuestionsButton = document.getElementById('prova-questions-button');
+
+    // Elementos do simulado de IA
+    const iaSimuladoContent = document.getElementById('ia-simulado-content');
+    const questionsContainerIA = document.getElementById('questions-container'); // Renomeado para IA
+    const submitButtonIA = document.getElementById('submit-button'); // Renomeado para IA
+    const restartButtonIA = document.getElementById('restart-button'); // Renomeado para IA
+    const resultsContainerIA = document.getElementById('results-container'); // Renomeado para IA
+    const scoreSpanIA = document.getElementById('score'); // Renomeado para IA
+    const totalQuestionsSpanIA = document.getElementById('total-questions'); // Renomeado para IA
+    const answerKeyListIA = document.getElementById('answer-key'); // Renomeado para IA
+
+    // Elementos do simulado de Prova
+    const provaSimuladoContent = document.getElementById('prova-simulado-content');
+    const provaQuestionsContainer = document.getElementById('prova-questions-container');
+    const submitProvaButton = document.getElementById('submit-prova-button');
+    const restartProvaButton = document.getElementById('restart-prova-button');
+    const resultsProvaContainer = document.getElementById('results-prova-container');
+    const scoreProvaSpan = document.getElementById('score-prova');
+    const totalQuestionsProvaSpan = document.getElementById('total-questions-prova');
+    const answerKeyProvaList = document.getElementById('answer-key-prova');
+
+    // Funções auxiliares
+    function getRandomQuestions(arr, num) {
+        const shuffled = [...arr].sort(() => 0.5 - Math.random());
+        return shuffled.slice(0, num);
     }
 
-    function renderQuestions() {
-        selectedQuestions = getRandomQuestions(10);
-        const questionsContainer = document.getElementById('questions-container');
-        questionsContainer.innerHTML = '';
-        selectedQuestions.forEach((q, index) => {
-            const questionBlock = document.createElement('div');
-            questionBlock.classList.add('question-block');
-            questionBlock.innerHTML = `
+    // --- Funções para o Simulado de IA ---
+    function renderIAQuestions() {
+        selectedQuestionsIA = getRandomQuestions(allQuestionsIA, 10);
+        questionsContainerIA.innerHTML = '';
+        selectedQuestionsIA.forEach((q, index) => {
+            const questionCard = document.createElement('div');
+            questionCard.classList.add('question-card'); // Usa a mesma classe para estilização
+            questionCard.innerHTML = `
                 <p>${index + 1}. ${q.question}</p>
                 <ol type="a">
                     ${q.options.map((option, i) => `
@@ -138,22 +241,22 @@ document.addEventListener('DOMContentLoaded', () => {
                     `).join('')}
                 </ol>
             `;
-            questionsContainer.appendChild(questionBlock);
+            questionsContainerIA.appendChild(questionCard);
         });
-        document.getElementById('submit-button').classList.remove('hidden');
-        document.getElementById('results-container').classList.add('hidden');
-        document.getElementById('restart-button').classList.add('hidden');
+        submitButtonIA.classList.remove('hidden');
+        restartButtonIA.classList.add('hidden');
+        resultsContainerIA.classList.add('hidden');
     }
 
-    function checkAnswers() {
+    function checkIAAnswers() {
         let score = 0;
-        const answerKeyList = document.getElementById('answer-key');
-        answerKeyList.innerHTML = '';
+        answerKeyListIA.innerHTML = '';
 
-        selectedQuestions.forEach((q, index) => {
+        selectedQuestionsIA.forEach((q, index) => {
             const selectedOption = document.querySelector(`input[name="question-${q.id}"]:checked`);
             const listItem = document.createElement('li');
-            
+            listItem.classList.add('answer-key-item');
+
             let userAnswer = '';
             if (selectedOption) {
                 userAnswer = selectedOption.value;
@@ -168,7 +271,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 const userAnswerDisplay = userAnswer ? userAnswer.toUpperCase() : 'Não respondida';
                 listItem.innerHTML = `<strong>Questão ${index + 1}: Incorreta!</strong> (Sua resposta: ${userAnswerDisplay}, Correta: ${q.correct.toUpperCase()}) - ${q.explanation}`;
             }
-            answerKeyList.appendChild(listItem);
+            answerKeyListIA.appendChild(listItem);
 
             // Desabilitar radios após a verificação
             document.querySelectorAll(`input[name="question-${q.id}"]`).forEach(radio => {
@@ -176,15 +279,93 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         });
 
-        document.getElementById('score').textContent = score;
-        document.getElementById('results-container').classList.remove('hidden');
-        document.getElementById('submit-button').classList.add('hidden');
-        document.getElementById('restart-button').classList.remove('hidden');
+        scoreSpanIA.textContent = score;
+        totalQuestionsSpanIA.textContent = selectedQuestionsIA.length;
+        resultsContainerIA.classList.remove('hidden');
+        submitButtonIA.classList.add('hidden');
+        restartButtonIA.classList.remove('hidden');
     }
 
-    document.getElementById('submit-button').addEventListener('click', checkAnswers);
-    document.getElementById('restart-button').addEventListener('click', renderQuestions);
+    // --- Funções para o Simulado de Prova ---
+    function renderProvaQuestions() {
+        selectedQuestoesEstudo = getRandomQuestions(questoesEstudo, 2); // Sorteia 2 questões
+        provaQuestionsContainer.innerHTML = '';
+        selectedQuestoesEstudo.forEach((q, index) => {
+            const questionCard = document.createElement('div');
+            questionCard.classList.add('prova-question-card');
+            questionCard.innerHTML = `
+                <p>${index + 1}. [${q.lei}] ${q.enunciado}</p>
+                <input type="text" name="prova-question${index}" placeholder="Digite sua resposta aqui...">
+                <small>Fonte: ${q.fonte}</small>
+            `;
+            provaQuestionsContainer.appendChild(questionCard);
+        });
+        submitProvaButton.classList.remove('hidden');
+        restartProvaButton.classList.add('hidden');
+        resultsProvaContainer.classList.add('hidden');
+    }
 
-    // Carregar as questões ao iniciar
-    renderQuestions();
+    function checkProvaAnswers() {
+        let score = 0;
+        answerKeyProvaList.innerHTML = '';
+
+        selectedQuestoesEstudo.forEach((q, index) => {
+            const userAnswerInput = document.querySelector(`input[name="prova-question${index}"]`);
+            const userAnswer = userAnswerInput ? userAnswerInput.value.trim() : ''; // Pega o valor e remove espaços
+            const listItem = document.createElement('li');
+            listItem.classList.add('answer-key-item');
+
+            // Comparação case-insensitive e sem acentos para maior flexibilidade
+            const normalizedUserAnswer = userAnswer.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+            const normalizedCorrectAnswer = q.alternativaCorreta.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+
+            if (normalizedUserAnswer === normalizedCorrectAnswer) {
+                score++;
+                listItem.innerHTML = `Questão ${index + 1}: <span class="correct">Correta</span>. Resposta: "${q.alternativaCorreta}"`;
+            } else {
+                listItem.innerHTML = `Questão ${index + 1}: <span class="incorrect">Incorreta</span>. Sua resposta: "${userAnswer}". Resposta correta: "${q.alternativaCorreta}"`;
+            }
+            answerKeyProvaList.appendChild(listItem);
+        });
+
+        scoreProvaSpan.textContent = score;
+        totalQuestionsProvaSpan.textContent = selectedQuestoesEstudo.length;
+        resultsProvaContainer.classList.remove('hidden');
+        submitProvaButton.classList.add('hidden');
+        restartProvaButton.classList.remove('hidden');
+    }
+
+    // --- Event Listeners ---
+    iaQuestionsButton.addEventListener('click', () => {
+        choiceContainer.classList.add('hidden');
+        iaSimuladoContent.classList.remove('hidden');
+        renderIAQuestions();
+    });
+
+    provaQuestionsButton.addEventListener('click', () => {
+        choiceContainer.classList.add('hidden');
+        provaSimuladoContent.classList.remove('hidden');
+        renderProvaQuestions();
+    });
+
+    submitButtonIA.addEventListener('click', checkIAAnswers);
+    restartButtonIA.addEventListener('click', () => {
+        renderIAQuestions();
+        resultsContainerIA.classList.add('hidden');
+        submitButtonIA.classList.remove('hidden');
+        restartButtonIA.classList.add('hidden');
+    });
+
+    submitProvaButton.addEventListener('click', checkProvaAnswers);
+    restartProvaButton.addEventListener('click', () => {
+        renderProvaQuestions();
+        resultsProvaContainer.classList.add('hidden');
+        submitProvaButton.classList.remove('hidden');
+        restartProvaButton.classList.add('hidden');
+    });
+
+    // Inicialização: Esconde os simulados e mostra as opções
+    iaSimuladoContent.classList.add('hidden');
+    provaSimuladoContent.classList.add('hidden');
+    choiceContainer.classList.remove('hidden');
 });
