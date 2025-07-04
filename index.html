@@ -1,24 +1,47 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Simulado de Concurso - IFRN</title>
+    <title>Simulado de Concurso - Professor IFRN</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="container">
         <h1>Simulado de Concurso - Professor IFRN</h1>
-        <div id="questions-container">
-            </div>
-        <button id="submit-button">Ver Gabarito</button>
-        <div id="results-container" class="hidden">
-            <h2>Seu Desempenho</h2>
-            <p>Você acertou <span id="score">0</span> de 10 questões.</p>
-            <h3>Gabarito:</h3>
-            <ul id="answer-key"></ul>
+
+        <div id="choice-container">
+            <p>Escolha o tipo de simulado:</p>
+            <button id="ia-questions-button" class="action-button">1 - Questões geradas por IA com base no conteúdo</button>
+            <button id="prova-questions-button" class="action-button">2 - Questões retiradas de outras provas</button>
         </div>
-        <button id="restart-button" class="hidden">Fazer Novamente</button>
+
+        <div id="ia-simulado-content" class="hidden">
+            <div id="questions-container">
+                </div>
+            <button id="submit-button" class="hidden">Verificar Respostas</button>
+            <button id="restart-button" class="hidden">Reiniciar Simulado</button>
+            <div id="results-container" class="hidden">
+                <h2>Resultados</h2>
+                <p>Você acertou <span id="score">0</span> de <span id="total-questions">10</span> questões.</p>
+                <h3>Gabarito:</h3>
+                <ul id="answer-key"></ul>
+            </div>
+        </div>
+
+        <div id="prova-simulado-content" class="hidden">
+            <div id="prova-questions-container">
+                </div>
+            <button id="submit-prova-button" class="hidden">Verificar Respostas</button>
+            <button id="restart-prova-button" class="hidden">Reiniciar Simulado de Prova</button>
+            <div id="results-prova-container" class="hidden">
+                <h2>Resultados</h2>
+                <p>Você acertou <span id="score-prova">0</span> de <span id="total-questions-prova">2</span> questões.</p>
+                <h3>Gabarito:</h3>
+                <ul id="answer-key-prova"></ul>
+            </div>
+        </div>
+
     </div>
     <script src="script.js"></script>
 </body>
