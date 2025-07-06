@@ -114,293 +114,75 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // BANCO DE QUESTÕES PARA "QUESTÕES RETIRADAS DE OUTRAS PROVAS"
     const questoesEstudo = [
+        // Lei 8.112/1990
         {
-            lei: "Simulado 3",
+            lei: "Lei 8.112/1990",
             numero: 1,
-            enunciado: "A Lei nº 8.112/90, ao dispor sobre o regime jurídico, dos servidores públicos federais, estabelece que se o servidor, quando tomar posse, no cargo efetivo, para o qual foi nomeado, deixar de entrar em exercício, no prazo legal, deverá",
-            opcoes: ["a) ser exonerado do respectivo cargo.", "b) ser demitido por abandono.", "c) ficar em disponibilidade.", "d) ter cancelada a posse e a nomeação.", "e) ter seu ato de nomeação tornado sem efeito."],
-            alternativaCorreta: "a",
+            enunciado: "O servidor responde civil, penal e administrativamente pelos atos praticados no exercício de suas funções?",
+            alternativaCorreta: "Sim, conforme art. 121 da Lei 8.112/1990.",
             fonte: "QConcursos"
         },
         {
-            lei: "Simulado 3",
+            lei: "Lei 8.112/1990",
             numero: 2,
-            enunciado: "A Lei nº 8.112/90, que dispõe sobre o regime jurídico, do servidor público federal, prevê várias formas de provimento e vacância de cargos efetivos, algumas das quais, necessariamente, são comuns e simultâneas a ambas, como é o caso",
-            opcoes: ["a) do aproveitamento.", "b) da readaptação.", "c) da reintegração", "d) da disponibilidade.", "e) da reversão."],
-            alternativaCorreta: "b",
+            enunciado: "É permitido ao servidor comissionar pessoa estranha à repartição?",
+            alternativaCorreta: "Não, conforme art. 117, VI.",
             fonte: "QConcursos"
         },
         {
-            lei: "Simulado 3",
+            lei: "Lei 8.112/1990",
             numero: 3,
-            enunciado: "Ao servidor público federal efetivo, além do vencimento, poderão ser atribuídas, ainda, vantagens classificadas como indenizações, gratificações e adicionais, algumas das quais, porém, se incorporam à sua remuneração mensal, em caráter permanente e definitivo, como é o caso",
-            opcoes: ["a) das diárias.", "b) do adicional por tempo de serviço.", "c) do adicional noturno.", "d) do adicional de insalubridade.", "e) da retribuição pelo exercício de função."],
-            alternativaCorreta: "b",
+            enunciado: "As sanções civil, penal e administrativa podem ser aplicadas cumulativamente ao servidor público?",
+            alternativaCorreta: "Sim, conforme art. 121, parágrafo único.",
             fonte: "EstudeGrátis"
         },
+
+        // Lei 12.772/2012
         {
-            lei: "Simulado 3",
-            numero: 4,
-            enunciado: "Entre as infrações cometidas por servidor público federal, que podem acarretar aplicação da penalidade de demissão, como prevê a Lei nº 8.112/90, pode-se incluir",
-            opcoes: ["a) o fato de manter parente seu sob a sua chefia imediata.", "b) a recusa de fé a documento público e insubordinação.", "c) o aliciamento de colega à filiação em sindicato ou partido político.", "d) o abandono de cargo e a inassiduidade habitual.", "e) o exercício de comércio, na condição de cotista ou comanditário."],
-            alternativaCorreta: "d",
+            lei: "Lei 12.772/2012",
+            numero: 1,
+            enunciado: "Qual a diferença entre progressão e promoção no plano de carreira do magistério federal?",
+            alternativaCorreta: "Progressão é mudança de nível na mesma classe; promoção é mudança de classe.",
+            fonte: "Questões Estratégicas"
+        },
+        {
+            lei: "Lei 12.772/2012",
+            numero: 2,
+            enunciado: "O regime de 40 horas semanais pode ser exercido com dois turnos sem dedicação exclusiva?",
+            alternativaCorreta: "Sim, conforme a estrutura prevista na Lei 12.772/2012.",
+            fonte: "ConcursosAZ"
+        },
+
+        // Lei 8.027/1990
+        {
+            lei: "Lei 8.027/1990",
+            numero: 1,
+            enunciado: "É dever do servidor público agir com urbanidade, sigilo e lealdade?",
+            alternativaCorreta: "Sim, são princípios fundamentais previstos na Lei 8.027/1990.",
             fonte: "QConcursos"
         },
         {
-            lei: "Simulado 3",
-            numero: 5,
-            enunciado: "A ação disciplinar, quanto às infrações puníveis com suspensão, conforme expressa disposição contida na Lei nº 8.112/90, prescreve em:",
-            opcoes: ["a) 2 anos.", "b) 180 dias.", "c) 120 dias.", "d) 3 anos.", "e) 5 anos."],
-            alternativaCorreta: "a",
+            lei: "Lei 8.027/1990",
+            numero: 2,
+            enunciado: "Delegar atribuição indevidamente configura falta administrativa?",
+            alternativaCorreta: "Sim, é infração disciplinar.",
+            fonte: "EstudeGrátis"
+        },
+
+        // Decreto 1.171/1994
+        {
+            lei: "Decreto 1.171/1994",
+            numero: 1,
+            enunciado: "Quais princípios regem o Código de Ética do Servidor Público?",
+            alternativaCorreta: "Legalidade, impessoalidade, moralidade, publicidade e eficiência.",
             fonte: "EstudeGrátis"
         },
         {
-            lei: "Simulado 3",
-            numero: 6,
-            enunciado: "Dentre outras, constituem penas disciplinares aplicáveis aos servidores públicos, a",
-            opcoes: ["a) repreensão e férias obrigatórias sem abono.", "b) cassação de aposentadoria e a exoneração.", "c) advertência verbal e licença para fins militares.", "d) destituição de cargo em comissão e o afastamento para outros órgãos.", "e) destituição de função comissionada e a cassação de disponibilidade."],
-            alternativaCorreta: "e",
+            lei: "Decreto 1.171/1994",
+            numero: 2,
+            enunciado: "A quem compete apurar violação ao Código de Ética?",
+            alternativaCorreta: "À Comissão de Ética instituída nos órgãos e entidades.",
             fonte: "QConcursos"
-        },
-        {
-            lei: "Simulado 3",
-            numero: 7,
-            enunciado: "Em matéria de acumulação de cargo, é certo que",
-            opcoes: ["a) os princípios que regem essa acumulação não se aplicam aos empregos e funções nas empresas paraestatais.", "b) vige a regra da permissividade da acumulação de cargos, empregos e funções públicas, sendo exceção a proibição.", "c) vige a regra da não-acumulação de cargos, empregos e funções públicas, sendo exceção a acumulação.", "d) não será necessário atender à compatibilidade de horários, quando a acumulação for de cargo em comissão ou de caráter temporário.", "e) o aposentado pode, sempre e livremente, acumular provento e remuneração decorrente do exercício de cargo titularizado após a aposentadoria."],
-            alternativaCorreta: "c",
-            fonte: "EstudeGrátis"
-        },
-        {
-            lei: "Simulado 3",
-            numero: 8,
-            enunciado: "Abelardo é titular do cargo de médico em hospital mantido por autarquia estadual, no qual trabalha de segunda a quarta-feira, toda semana. Paralelamente, ocupa cargo semelhante em hospital mantido pela Administração direta municipal, no qual trabalha às quintas e sextas-feiras. A acumulação de cargos, nessa hipótese, é",
-            opcoes: ["a) permitida, por se tratar de dois cargos de profissional da área da saúde.", "b) permitida, por se tratar de hospitais mantidos por diferentes entes federativos.", "c) permitida, pois a proibição de acumulação não se estende a cargos da Administração indireta.", "d) proibida, pois a acumulação somente é permitida para cargos de professor.", "e) proibida, pois não se podem acumular cargos públicos."],
-            alternativaCorreta: "a",
-            fonte: "QConcursos"
-        },
-        {
-            lei: "Simulado 3",
-            numero: 9,
-            enunciado: "NÃO é proibição aplicável ao servidor público:",
-            opcoes: ["a) aceitar emprego ou comissão de Estado estrangeiro.", "b) valer-se do cargo para obter proveito pessoal, em detrimento da dignidade da função pública.", "c) delegar funções a pessoas estranhas à repartição, fora dos casos previstos em lei.", "d) ser membro do Conselho de Administração de sociedade de economia mista federal.", "e) retardar injustificadamente a tramitação de processo administrativo."],
-            alternativaCorreta: "d",
-            fonte: "EstudeGrátis"
-        },
-        {
-            lei: "Simulado 3",
-            numero: 10,
-            enunciado: "Determinado servidor ausenta-se do serviço, sem causa justificada, pelo período de 45 dias alternados, no prazo de 4 meses. Posteriormente, o servidor retoma normalmente suas atividades. Em razão desse fato, é instaurado processo administrativo disciplinar, que poderá culminar com a aplicação da pena de",
-            opcoes: ["a) demissão por inassiduidade habitual.", "b) advertência ou suspensão, por inassiduidade habitual.", "c) demissão por abandono de cargo.", "d) advertência, sem prejuízo da posterior demissão caso o servidor falte mais 15 dias nos próximos 12 meses.", "e) advertência, sem prejuízo da posterior demissão caso o servidor falte mais 15 dias nos próximos 8 meses."],
-            alternativaCorreta: "e",
-            fonte: "QConcursos"
-        },
-        {
-            lei: "Simulado 4",
-            numero: 11,
-            enunciado: "IDECAN - 2019 - AGU – Administrador A Lei 8.112/90 dispõe sobre o regime jurídico dos servidores públicos civis da União, das autarquias e das fundações públicas federais. Nesse contexto normativo, assinale o que não é considerado requisito básico para investidura em cargo público.",
-            opcoes: ["a) Nacionalidade brasileira", "b) Aptidão física e mental", "c) Gozo dos direitos políticos", "d) Idade mínima de dezoito anos", "e) Quitação com as obrigações militares, eleitorais e fiscais."],
-            alternativaCorreta: "e",
-            fonte: "IDECAN - 2019 - AGU"
-        },
-        {
-            lei: "Simulado 4",
-            numero: 12,
-            enunciado: "2019 - IF-MS - Técnico em Tecnologia da Informação. De acordo com a Lei nº 8.112/1990, a remoção é o deslocamento do servidor no âmbito do mesmo quadro, com ou sem mudança de sede. Assinale a alternativa que NÃO descreve uma modalidade de remoção com mudança de sede prevista na Lei nº 8.112/1990.",
-            opcoes: ["a) De ofício, no interesse da Administração.", "b) A pedido, independentemente do interesse da Administração, para acompanhamento de cônjuge, servidor público militar da União, que foi deslocado no interesse da Administração.", "c) A pedido, independentemente do interesse da Administração, em virtude de processo seletivo promovido, na hipótese em que o número de interessados for superior ao número de vagas, de acordo com as normas estabelecidas pelo órgão de lotação.", "d) A pedido, independentemente do interesse da Administração, por motivo de saúde de cônjuge do servidor, condicionada à comprovação por junta médica oficial.", "e) A pedido, independentemente do interesse da Administração, para acompanhamento de cônjuge que irá tomar posse em cargo público em outra localidade."],
-            alternativaCorreta: "e",
-            fonte: "IF-MS - 2019"
-        },
-        {
-            lei: "Simulado 4",
-            numero: 13,
-            enunciado: "2019. IF-MS - Técnico em Tecnologia da Informação Além da nomeação, a Lei nº 8.112/1990 apresenta outras formas de provimento de cargos. Assinale a alternativa que NÃO contém uma forma de provimento prevista nessa lei.",
-            opcoes: ["a) Recondução.", "b) Reversão.", "c) Promoção.", "d) Exoneração", "e) Reintegração."],
-            alternativaCorreta: "d",
-            fonte: "IF-MS - 2019"
-        },
-        {
-            lei: "Simulado 4",
-            numero: 14,
-            enunciado: "2019.IF-MS – Pedagogo. A Lei nº 8.112, de 11 de dezembro de 1990, prevê a concessão de afastamentos e licenças aos servidores públicos. Entretanto, a referida Lei determina quais afastamentos e licenças podem ser concedidos aos servidores em estágio probatório. Assinale a alternativa que apresenta um afastamento ou uma licença permitida a um servidor em estágio probatório.",
-            opcoes: ["a) Licença por motivo de afastamento do cônjuge ou companheiro.", "b) Licença capacitação.", "c) Licença para tratar de interesses particulares.", "d) Licença para desempenho de mandato classista.", "e) Afastamento para participar de curso de formação decorrente de aprovação em concurso para outro cargo em qualquer esfera da Administração Pública."],
-            alternativaCorreta: "e",
-            fonte: "IF-MS - 2019"
-        },
-        {
-            lei: "Simulado 4",
-            numero: 15,
-            enunciado: "FCM - 2018 - IFN-MG - Professor – Administração. Preencha corretamente as lacunas do texto, a seguir, com base nos dispositivos legais do Regime Jurídico dos servidores públicos civis da União, das autarquias e das fundações públicas federais. A _____________ é o deslocamento do servidor, a pedido ou de ofício, no âmbito do mesmo quadro, com ou sem mudança de sede, ao passo que a _____________ é o deslocamento de cargo de provimento efetivo, ocupado ou vago no âmbito do quadro geral de pessoal, para outro órgão ou entidade do mesmo Poder, com prévia apreciação do órgão central do SIPEC. Já a _____________ é o retorno do servidor estável ao cargo anteriormente ocupado. A sequência que preenche corretamente as lacunas do texto é",
-            opcoes: ["a) remoção / redistribuição / recondução", "b) remoção / recondução / redistribuição", "c) redistribuição / remoção / recondução", "d) redistribuição / recondução / remoção", "e) recondução / redistribuição / remoção"],
-            alternativaCorreta: "a",
-            fonte: "IFN-MG - 2018"
-        },
-        {
-            lei: "Simulado 4",
-            numero: 16,
-            enunciado: "CESPE - 2018 - SEFAZ-RS - Assistente Administrativo Fazendário. Helena, servidora pública, requereu aposentadoria após ter cumprido os requisitos legais para tal. A aposentadoria foi concedida, mas Helena, por ter tido ciência do interesse da administração pública em seu retorno, resolveu solicitar, depois de meses, o retorno às atividades do cargo que desempenhara. Nessa situação hipotética, Helena solicitou",
-            opcoes: ["a) readaptação.", "b) reversão.", "c) reintegração.", "d) recondução.", "e) remoção."],
-            alternativaCorreta: "b",
-            fonte: "SEFAZ-RS - 2018"
-        },
-        {
-            lei: "Simulado 4",
-            numero: 17,
-            enunciado: "COMVEST UFAM - 2018 - UFAM - Técnico em Enfermagem. A respeito dos direitos e vantagens assegurados ao servidor público federal na Lei nº. 8.112/90, analise as afirmativas, identificando com “V” as verdadeiras e com “F” as falsas, assinalando a seguir a alternativa que possui a sequência CORRETA de cima para baixo: ( ) Remuneração é o vencimento do cargo efetivo, acrescido das vantagens pecuniárias permanentes estabelecidas em lei. ( ) Mediante autorização do servidor, poderá haver consignação em folha de pagamento em favor de terceiros, a critério da administração e com reposição de custos, na forma definida em lei ordinária. ( ) O vencimento do cargo efetivo, acrescido das vantagens de caráter permanente, é irredutível. ( ) Salvo por imposição legal, ou mandado judicial, nenhum desconto incidirá sobre a remuneração, provento, diárias ou indenizações. ( ) O vencimento, a remuneração e o provento não serão objeto de arresto, sequestro ou penhora, exceto nos casos de prestação de alimentos resultante de decisão judicial.",
-            opcoes: ["a) F – F – F – V – F", "b) F – V – V – F – V", "c) V – V – V – F – V", "d) V – V – F – V – F", "e) V – F – V – F – V"],
-            alternativaCorreta: "e",
-            fonte: "UFAM - 2018"
-        },
-        {
-            lei: "Simulado 4",
-            numero: 18,
-            enunciado: "(CESPE – TCE/PB 2018). A respeito da remuneração dos servidores, assinale a opção correta:",
-            opcoes: ["a) O servidor público tem direito ao recebimento de remuneração pelo trabalho noturno em valor superior ao do diurno.", "b) Em razão do princípio da isonomia, é incabível, no serviço público, a aplicação de incentivos específicos para a proteção do mercado de trabalho da mulher.", "c) O servidor público tem direito ao recebimento do décimo terceiro salário com o acréscimo de um terço à remuneração normal.", "d) Os secretários estaduais e municipais são remunerados por subsídios acrescidos de gratificação pessoal.", "e) Durante todo o tempo em que durar o trabalho no serviço público, o órgão responsável pelos pagamentos deverá efetuar o recolhimento de FGTS do servidor."],
-            alternativaCorreta: "a",
-            fonte: "TCE/PB - 2018"
-        },
-        {
-            lei: "Simulado 4",
-            numero: 19,
-            enunciado: "FCC – TRT 16ª Região – Analista Judiciário – 2014. Poliana, após tomar posse em determinado cargo público, não entrou em exercício no prazo estabelecido. Nos termos da Lei nº 8.112/90, a conduta de Poliana acarretará sua",
-            opcoes: ["a) Demissão.", "b) Exoneração de ofício.", "c) Cassação de disponibilidade.", "d) Suspensão por noventa dias, até que regularize a falta cometida.", "e) Advertência, compelindo-a a regularizar a falta cometida"],
-            alternativaCorreta: "b",
-            fonte: "TRT 16ª Região - 2014"
-        },
-        {
-            lei: "Simulado 4",
-            numero: 20,
-            enunciado: "FCC – TRE AL – Analista Judiciário – 2010. Carlos, titular de cargo efetivo junto ao Tribunal Regional Eleitoral, está sendo responsabilizado por valer-se do exercício de suas funções para lograr proveito pessoal em detrimento da dignidade da função pública. Nesse caso, o servidor estará sujeito à pena de:",
-            opcoes: ["a) Demissão, incompatibilizando-o para nova investidura em cargo público federal, pelo prazo de cinco anos.", "b) Destituição do cargo público, ficando vedado seu retorno ao serviço público federal, mas podendo concorrer a cargo estadual ou municipal.", "c) Destituição de suas funções e declaração de sua inidoneidade para o serviço público.", "d) Suspensão de noventa dias, vedada a conversão da pena em multa pecuniária.", "e) Demissão, ficando vedada sua investidura em cargo público pelo prazo de dois anos."],
-            alternativaCorreta: "a",
-            fonte: "TRE AL - 2010"
-        },
-        {
-            lei: "Simulado 4",
-            numero: 21,
-            enunciado: "FCC – TRE AP – Analista Judiciário – 2011. De acordo com a Lei nº 8.112/90, em regra, João, servidor público civil efetivo, que nunca praticou qualquer infração administrativa, terá a penalidade de advertência escrita aplicada se:",
-            opcoes: ["a) Praticar usura sob qualquer de suas formas.", "b) Utilizar pessoal ou recursos materiais da repartição em serviços ou atividades particulares.", "c) Manter sob sua chefia imediata, em cargo ou função de confiança, cônjuge, companheiro ou parente até o segundo grau civil.", "d) Receber propina, comissão, presente ou vantagem de qualquer espécie, em razão de suas atribuições.", "e) Proceder de forma desidiosa."],
-            alternativaCorreta: "c",
-            fonte: "TRE AP - 2011"
-        },
-        {
-            lei: "Simulado 4",
-            numero: 22,
-            enunciado: "CESPE. 2017. TRT. 7ª Região. Matilde, servidora pública federal do TRT 7.ª Região, será removida, por interesse do serviço, da 1.ª Vara do Trabalho da Região do Cariri para a 1.ª Vara do Trabalho de Sobral. Sendo a mudança de caráter permanente, caberá ao tribunal compensar as despesas de instalação da servidora na nova sede. Nessa situação, de acordo com a Lei n.º 8.112/1990, Matilde terá o direito à percepção da indenização denominada",
-            opcoes: ["a) diárias.", "b) transporte.", "c) auxílio-moradia.", "d) ajuda de custo."],
-            alternativaCorreta: "d",
-            fonte: "TRT 7ª Região - 2017"
-        },
-        {
-            lei: "Simulado 4",
-            numero: 23,
-            enunciado: "CESPE. 2016. TER.PI. Com relação aos direitos e vantagens dos servidores públicos federais regidos pela Lei n.º 8.112/1990, assinale a opção correta.",
-            opcoes: ["a) Ao servidor ocupante de cargo efetivo investido em cargo de provimento em comissão é devido o pagamento de gratificação pelo seu exercício.", "b) O servidor em débito com o erário que for exonerado e não quitar o débito no prazo de sessenta dias terá seu débito inscrito em dívida ativa.", "c) Integram os vencimentos do cargo efetivo as vantagens pecuniárias permanentes estabelecidas em lei.", "d) A ajuda de custo tem a finalidade de compensar as despesas de instalação do servidor que, no interesse do serviço, passar a ter exercício em nova sede, excluídas as despesas com bagagem e bens pessoais.", "e) Na hipótese de o servidor receber diárias sem se afastar da sede, haverá a obrigatoriedade da restituição integral do valor recebido, salvo se apresentar documentação que comprove a impossibilidade do deslocamento."],
-            alternativaCorreta: "b",
-            fonte: "TER.PI - 2016"
-        },
-        {
-            lei: "Simulado 4",
-            numero: 24,
-            enunciado: "UFTM. 2018. De acordo com a Lei n. 8.112/90, assinale a alternativa INCORRETA:",
-            opcoes: ["a) O servidor fará jus a trinta dias de férias, que podem ser acumuladas, até o máximo de dois períodos, no caso de necessidade do serviço, ressalvadas as hipóteses em que haja legislação específica.", "b) Para o primeiro período aquisitivo de férias serão exigidos 12 (doze) meses de exercício.", "c) As férias poderão ser parceladas em até três etapas, desde que assim requeridas pelo servidor, e no interesse da administração pública.", "d) O servidor que opera direta e permanentemente com Raios X ou substâncias radioativas gozará 20 (vinte) dias consecutivos de férias, por semestre de atividade profissional, permitida a acumulação."],
-            alternativaCorreta: "d",
-            fonte: "UFTM - 2018"
-        },
-        {
-            lei: "Simulado 4",
-            numero: 25,
-            enunciado: "COMVEST UFAM - 2018 - UFAM – Psicólogo. Paulo Castilho é servidor da UFAM, investido no cargo de Técnico-Administrativo em Educação. Há uma semana ele recebeu um convite para prestar serviços à Assembleia Geral da OEA, com sede em Washington, DC, EUA. Para que ele possa atender ao pedido, deverá afastar-se de seu cargo na UFAM, mediante autorização da autoridade competente. Considerando que Paulo se encontra em estágio probatório, ele:",
-            opcoes: ["a) não poderá afastar-se de seu cargo até que seja aprovado no estágio probatório.", "b) poderá afastar-se de seu cargo, desde que seja autorizado pela reitoria da UFAM.", "c) não poderá afastar-se de seu cargo por estar situado no estrangeiro o órgão em que vai servir.", "d) poderá afastar-se de seu cargo, desde que seja por período inferior a dois anos.", "e) poderá afastar-se de seu cargo, condicionado à perda total de sua remuneração"],
-            alternativaCorreta: "e",
-            fonte: "UFAM - 2018"
-        },
-        {
-            lei: "Simulado 5",
-            numero: 8,
-            enunciado: "(Cespe – PC/MA 2018) Pela suposta prática de falta funcional, foi instaurado procedimento administrativo disciplinar contra Luiz, servidor público estadual. Luiz respondeu, relativamente aos mesmos fatos, a ação penal ajuizada pelo MP local. À luz da disciplina da responsabilização dos servidores públicos, é correto afirmar que, nessa situação hipotética,",
-            opcoes: ["a) eventual sentença absolutória criminal fundamentada no fato de a conduta do servidor público não constituir infração penal não impede a aplicação de penalidade em âmbito administrativo, com base na chamada falta residual.", "b) em razão da independência entre as instâncias administrativa e penal, eventual sentença absolutória criminal não repercutirá na esfera administrativa.", "c) eventual sentença absolutória criminal fundamentada na falta de provas implicará absolvição na esfera administrativa.", "d) em razão da possível influência da sentença criminal na instância administrativa, o procedimento administrativo disciplinar deverá permanecer suspenso até o término da ação penal.", "e) eventual sentença extintiva da punibilidade do crime, independentemente de seu fundamento, implicará no arquivamento do procedimento administrativo disciplinar."],
-            alternativaCorreta: "a",
-            fonte: "PC/MA - 2018"
-        },
-        {
-            lei: "Simulado 5",
-            numero: 9,
-            enunciado: "(Cespe – PC/MA 2018) De acordo com o Regime Jurídico Único dos Servidores Públicos Civis do Estado do Maranhão — Lei n.º 6.107/1994 —, se um servidor for demitido do serviço público, mas obtiver, pela via judicial, a invalidação de sua demissão, a forma de provimento a que terá de ser submetido esse servidor será a:",
-            opcoes: ["a) reversão.", "b) recondução.", "c) remoção.", "d) readaptação.", "e) reintegração."],
-            alternativaCorreta: "e",
-            fonte: "PC/MA - 2018"
-        },
-        {
-            lei: "Simulado 5",
-            numero: 10,
-            enunciado: "(Cespe – PC/MA 2018) Tiago, investigador da Polícia Civil do Estado do Maranhão, utilizou, durante seis meses, equipamentos de informática da repartição na qual estava lotado para desenvolver serviços e atividades particulares, com o objetivo de ajudar a esposa dele, que estava montando uma empresa. Nessa situação hipotética, de acordo com o regime disciplinar estabelecido na Lei n.º 8.112/1990 e o Estatuto da Polícia Civil do Estado do Maranhão (PCMA), a conduta de Tiago o sujeita à pena de",
-            opcoes: ["a) advertência, a ser aplicada pelo corregedor da PCMA.", "b) demissão, a ser aplicada pelo governador do estado.", "c) suspensão por até cento e oitenta dias, a ser aplicada pelo governador do estado.", "d) suspensão por até noventa dias, a ser aplicada pelo corregedor da PCMA.", "e) suspensão por até noventa dias, a ser aplicada pelo governador do estado."],
-            alternativaCorreta: "b",
-            fonte: "PC/MA - 2018"
-        },
-        {
-            lei: "Simulado 5",
-            numero: 11,
-            enunciado: "(Cespe – PC/MA 2018) Julgue os itens a seguir, a respeito das licenças previstas na Lei n.º 6.107/1994, que dispõe sobre o Regime Jurídico Único dos Servidores do Estado do Maranhão. I – Não há previsão legal de licença para tratar de interesses particulares. II – A licença concedida dentro de sessenta dias a partir do término de outra licença da mesma espécie será considerada como prorrogação, desde que o servidor não tenha retornado a suas atividades. III – O servidor que tirar licença para acompanhar cônjuge ou companheiro(a) poderá permanecer no gozo do benefício por período superior a vinte e quatro meses. Assinale a opção correta.",
-            opcoes: ["a) Apenas o item I está certo.", "b) Apenas o item II está certo.", "c) Apenas os itens I e III estão certos.", "d) Apenas os itens II e III estão certos.", "e) Todos os itens estão certos."],
-            alternativaCorreta: "d",
-            fonte: "PC/MA - 2018"
-        },
-        {
-            lei: "Simulado 5",
-            numero: 12,
-            enunciado: "(Cespe – PC/MA 2018) Considerando a legislação que dispõe sobre o Regime Jurídico Único dos Servidores do Estado do Maranhão, assinale a opção correta acerca das prerrogativas dos servidores quanto a mandatos eletivos.",
-            opcoes: ["a) O servidor investido em mandato de prefeito não será afastado do cargo, sendo-lhe facultado optar entre a remuneração do cargo original e a de prefeito.", "b) Havendo compatibilidade de horário, o servidor investido em mandato estadual ou federal perceberá as vantagens de seu cargo original, não podendo ser deste afastado.", "c) O servidor investido em mandato de vereador não poderá optar pela remuneração do cargo eletivo caso haja incompatibilidade de horários.", "d) O servidor que for investido em mandato eletivo poderá contabilizar o tempo de serviço para todos os efeitos, inclusive para fins de promoção por merecimento ou para avaliação de desempenho.", "e) O servidor terá direito a afastamento, sem remuneração, durante o período entre a escolha dele como candidato a cargo eletivo, por convenção partidária, e a véspera do registro de sua candidatura na justiça eleitoral."],
-            alternativaCorreta: "e",
-            fonte: "PC/MA - 2018"
-        },
-        {
-            lei: "Simulado 5",
-            numero: 13,
-            enunciado: "(Cespe – PC/MA 2018) De acordo com a Lei n.º 6.107/1994, que dispõe sobre o Regime Jurídico Único dos Servidores Públicos Civis do Estado do Maranhão, a reintegração ocorrerá em decorrência",
-            opcoes: ["a) da investidura do servidor estável em cargo de atribuições compatíveis com a limitação que tenha sofrido em sua capacidade física ou mental.", "b) do retorno à atividade de servidor aposentado por invalidez, quando forem declarados insubsistentes os motivos da aposentadoria.", "c) da reinvestidura do servidor estável no cargo anteriormente ocupado, quando invalidada a sua demissão por decisão judicial.", "d) da elevação do servidor de uma classe para outra imediatamente superior, no mesmo cargo, dentro da mesma carreira.", "e) da inabilitação do servidor em estágio probatório relativo a outro cargo."],
-            alternativaCorreta: "c",
-            fonte: "PC/MA - 2018"
-        },
-        {
-            lei: "Simulado 5",
-            numero: 14,
-            enunciado: "(Cespe – PC/MA 2018) Acerca da administração pública, julgue os itens a seguir, com base na CF. I A vedação de acúmulo remunerado de cargos, empregos ou funções públicas não se estende às sociedades de economia mista. II O prazo de validade do concurso público será de até dois anos, podendo-se prorrogá-lo por igual período, enquanto houver cadastro de reserva. III Havendo compatibilidade de horários, é permitida a acumulação remunerada de dois cargos ou empregos privativos de profissionais de saúde, com profissões regulamentadas. IV O servidor público da administração direta que for afastado para o exercício de mandato eletivo não terá esse tempo contado para o fim de promoção por merecimento. Estão certos apenas os itens",
-            opcoes: ["a) I e III.", "b) II e IV.", "c) III e IV.", "d) I, II e III.", "e) I, II e IV"],
-            alternativaCorreta: "c",
-            fonte: "PC/MA - 2018"
-        },
-        {
-            lei: "Simulado 5",
-            numero: 15,
-            enunciado: "(Cespe – PC/MA 2018) De acordo com a Lei n.º 8.112/1990, a perícia médica com finalidade administrativa demandará junta médica oficial quando a licença para tratamento de saúde",
-            opcoes: ["a) exceder o prazo de cento e vinte dias no período de doze meses.", "b) exceder noventa dias consecutivos", "c) decorrer de causa que possa levar à interdição.", "d) ocorrer a pedido da chefia imediata, contra a vontade do servidor.", "e) ocorrer na vigência de processo administrativo disciplinar."],
-            alternativaCorreta: "a",
-            fonte: "PC/MA - 2018"
-        },
-        {
-            lei: "Simulado 5",
-            numero: 33,
-            enunciado: "(Cespe – TRE/MS 2013) João foi demitido do serviço público por ter praticado falta grave. Dois anos depois, conseguiu anular, por meio de ação judicial, a decisão administrativa que o demitiu. Além de anular o ato administrativo, a decisão judicial determinou que João voltasse ao cargo público que ocupava anteriormente. De acordo com essa situação hipotética, assinale a opção que apresenta a forma de investidura utilizada para que João volte a ocupar o cargo público.",
-            opcoes: ["a) recondução", "b) aproveitamento", "c) reversão", "d) readaptação", "e) reintegração"],
-            alternativaCorreta: "e",
-            fonte: "TRE/MS - 2013"
-        },
-        {
-            lei: "Simulado 5",
-            numero: 42,
-            enunciado: "(Cespe – TRE/MS 2013) Acerca dos requisitos para a investidura em cargo público, assinale a opção correta.",
-            opcoes: ["a) Vinte por cento das vagas de todos os concursos públicos devem ser reservadas aos portadores de deficiência, vedada qualquer alegação de incompatibilidade entre a deficiência e o cargo.", "b) Para ser investido em cargo público, o candidato deve ter, ao menos, o ensino fundamental completo.", "c) As universidades podem prover seus cargos com professores estrangeiros.", "d) A idade mínima para a investidura em cargo público é dezesseis anos.", "e) A investidura em o cargo público é concretizada com a publicação da nomeação no Diário Oficial."],
-            alternativaCorreta: "c",
-            fonte: "TRE/MS - 2013"
-        },
-        {
-            lei: "Simulado 5",
-            numero: 43,
-            enunciado: "(Cespe – MPE/AC 2014) Acerca do entendimento do STJ sobre o processo administrativo disciplinar, assinale a opção correta.",
-            opcoes: ["a) Não é obrigatória a intimação do interessado para apresentar alegações finais após o relatório final de processo administrativo disciplinar.", "b) Não é possível a utilização, em processo administrativo disciplinar, de prova emprestada produzida validamente em processo criminal, enquanto não houver o trânsito em julgado da sentença penal condenatória.", "c) No processo administrativo disciplinar, quando o relatório da comissão processante for contrário às provas dos autos, não se admite que a autoridade julgadora decida em sentido diverso do indicado nas conclusões da referida comissão, mesmo que o faça motivadamente.", "d) Considere que se constate que servidor não ocupante de cargo efetivo tenha-se valido do cargo comissionado para indicar o irmão para contratação por empresa recebedora de verbas públicas. Nessa situação, a penalidade de destituição do servidor do cargo em comissão só será cabível caso se comprove dano ao erário ou proveito pecuniário."],
-            alternativaCorreta: "a",
-            fonte: "MPE/AC - 2014"
         }
     ];
 
@@ -433,7 +215,23 @@ document.addEventListener('DOMContentLoaded', () => {
     const totalQuestionsProvaSpan = document.getElementById('total-questions-prova');
     const answerKeyProvaList = document.getElementById('answer-key-prova');
 
-    // Funções auxiliares
+    // Elemento do contador de acessos
+    const accessCounterSpan = document.getElementById('access-counter');
+
+    // --- Lógica do Contador de Acessos ---
+    let accessCount = localStorage.getItem('accessCount'); // Tenta obter o valor do armazenamento local
+
+    if (accessCount === null) { // Se for a primeira vez que o usuário acessa
+        accessCount = 0;
+    } else {
+        accessCount = parseInt(accessCount); // Converte para número
+    }
+
+    accessCount++; // Incrementa o contador
+    localStorage.setItem('accessCount', accessCount); // Salva o novo valor no armazenamento local
+    accessCounterSpan.textContent = accessCount; // Atualiza o display no HTML
+
+    // --- Funções auxiliares ---
     function getRandomQuestions(arr, num) {
         const shuffled = [...arr].sort(() => 0.5 - Math.random());
         return shuffled.slice(0, num);
@@ -506,23 +304,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // --- Funções para o Simulado de Prova ---
     function renderProvaQuestions() {
-        selectedQuestoesEstudo = getRandomQuestions(questoesEstudo, 10); // Sorteia 10 questões
+        selectedQuestoesEstudo = getRandomQuestions(questoesEstudo, 2); // Sorteia 2 questões
         provaQuestionsContainer.innerHTML = '';
         selectedQuestoesEstudo.forEach((q, index) => {
             const questionCard = document.createElement('div');
             questionCard.classList.add('prova-question-card');
             questionCard.innerHTML = `
                 <p>${index + 1}. [${q.lei}] ${q.enunciado}</p>
-                <ol type="a">
-                    ${q.opcoes.map((option, i) => `
-                        <li>
-                            <label>
-                                <input type="radio" name="prova-question-${index}" value="${String.fromCharCode(97 + i)}">
-                                ${option}
-                            </label>
-                        </li>
-                    `).join('')}
-                </ol>
+                <input type="text" name="prova-question${index}" placeholder="Digite sua resposta aqui...">
                 <small>Fonte: ${q.fonte}</small>
             `;
             provaQuestionsContainer.appendChild(questionCard);
@@ -537,30 +326,22 @@ document.addEventListener('DOMContentLoaded', () => {
         answerKeyProvaList.innerHTML = '';
 
         selectedQuestoesEstudo.forEach((q, index) => {
-            const selectedOption = document.querySelector(`input[name="prova-question-${index}"]:checked`);
+            const userAnswerInput = document.querySelector(`input[name="prova-question${index}"]`);
+            const userAnswer = userAnswerInput ? userAnswerInput.value.trim() : ''; // Pega o valor e remove espaços
             const listItem = document.createElement('li');
             listItem.classList.add('answer-key-item');
 
-            let userAnswer = '';
-            if (selectedOption) {
-                userAnswer = selectedOption.value;
-            }
+            // Comparação case-insensitive e sem acentos para maior flexibilidade
+            const normalizedUserAnswer = userAnswer.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+            const normalizedCorrectAnswer = q.alternativaCorreta.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "");
 
-            if (userAnswer === q.alternativaCorreta) {
+            if (normalizedUserAnswer === normalizedCorrectAnswer) {
                 score++;
-                listItem.classList.add('correct');
-                listItem.innerHTML = `<strong>Questão ${index + 1}: Correta!</strong> (Sua resposta: ${userAnswer.toUpperCase()}) - ${q.opcoes.find(opt => opt.startsWith(q.alternativaCorreta)).substring(3)}`;
+                listItem.innerHTML = `Questão ${index + 1}: <span class="correct">Correta</span>. Resposta: "${q.alternativaCorreta}"`;
             } else {
-                listItem.classList.add('incorrect');
-                const userAnswerDisplay = userAnswer ? userAnswer.toUpperCase() : 'Não respondida';
-                listItem.innerHTML = `<strong>Questão ${index + 1}: Incorreta!</strong> (Sua resposta: ${userAnswerDisplay}, Correta: ${q.alternativaCorreta.toUpperCase()}) - ${q.opcoes.find(opt => opt.startsWith(q.alternativaCorreta)).substring(3)}`;
+                listItem.innerHTML = `Questão ${index + 1}: <span class="incorrect">Incorreta</span>. Sua resposta: "${userAnswer}". Resposta correta: "${q.alternativaCorreta}"`;
             }
             answerKeyProvaList.appendChild(listItem);
-
-            // Desabilitar radios após a verificação
-            document.querySelectorAll(`input[name="prova-question-${index}"]`).forEach(radio => {
-                radio.disabled = true;
-            });
         });
 
         scoreProvaSpan.textContent = score;
