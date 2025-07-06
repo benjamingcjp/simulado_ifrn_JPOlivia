@@ -1,48 +1,57 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Simulado de Concurso - Professor IFRN</title>
+    <title>Simulado Preparatório</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="container">
-        <h1>Simulado de Concurso - Professor IFRN</h1>
+        <h1>Simulado Preparatório</h1>
 
-        <div id="choice-container">
-            <p>Escolha o tipo de simulado:</p>
-            <button id="ia-questions-button" class="action-button">1 - Questões geradas por IA com base no conteúdo</button>
-            <button id="prova-questions-button" class="action-button">2 - Questões retiradas de outras provas</button>
+        <div id="choice-container" class="section-card">
+            <h2>Escolha o tipo de Simulado:</h2>
+            <button id="ia-questions-button" class="action-button">Questões Geradas por IA</button>
+            <button id="prova-questions-button" class="action-button">Questões Retiradas de Outras Provas</button>
         </div>
 
         <div id="ia-simulado-content" class="hidden">
+            <h2 class="quiz-title">Simulado: Questões Geradas por IA</h2>
             <div id="questions-container">
                 </div>
-            <button id="submit-button" class="hidden">Verificar Respostas</button>
-            <button id="restart-button" class="hidden">Reiniciar Simulado</button>
-            <div id="results-container" class="hidden">
-                <h2>Resultados</h2>
+            <button id="submit-button" class="action-button hidden">Verificar Respostas</button>
+            <button id="restart-button" class="action-button hidden">Reiniciar Simulado</button>
+            <div id="results-container" class="results-card hidden">
+                <h3>Resultados:</h3>
                 <p>Você acertou <span id="score">0</span> de <span id="total-questions">10</span> questões.</p>
-                <h3>Gabarito:</h3>
-                <ul id="answer-key"></ul>
+                <h4>Gabarito e Explicações:</h4>
+                <ol id="answer-key" class="answer-list">
+                    </ol>
             </div>
         </div>
 
         <div id="prova-simulado-content" class="hidden">
+            <h2 class="quiz-title">Simulado: Questões de Prova</h2>
             <div id="prova-questions-container">
                 </div>
-            <button id="submit-prova-button" class="hidden">Verificar Respostas</button>
-            <button id="restart-prova-button" class="hidden">Reiniciar Simulado de Prova</button>
-            <div id="results-prova-container" class="hidden">
-                <h2>Resultados</h2>
-                <p>Você acertou <span id="score-prova">0</span> de <span id="total-questions-prova">2</span> questões.</p>
-                <h3>Gabarito:</h3>
-                <ul id="answer-key-prova"></ul>
+            <button id="submit-prova-button" class="action-button hidden">Verificar Respostas</button>
+            <button id="restart-prova-button" class="action-button hidden">Reiniciar Simulado</button>
+            <div id="results-prova-container" class="results-card hidden">
+                <h3>Resultados:</h3>
+                <p>Você acertou <span id="score-prova">0</span> de <span id="total-questions-prova">0</span> questões.</p>
+                <h4>Gabarito:</h4>
+                <ol id="answer-key-prova" class="answer-list">
+                    </ol>
             </div>
         </div>
-
     </div>
+
+    <div class="footer">
+        <p>Desenvolvido por Gemini para fins educacionais.</p>
+        <p>Acessos (neste navegador): <span id="access-counter">0</span></p>
+    </div>
+
     <script src="script.js"></script>
 </body>
 </html>
