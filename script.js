@@ -330,16 +330,163 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     ];
 
+    // NOVO BANCO DE QUESTÕES PARA "Leis 8027 e 1171"
+    const leis8027e1171Questions = [
+        {
+            id: 'lei8027_01',
+            question: 'De acordo com a Lei nº 8.027/1990, qual das seguintes condutas é considerada falta administrativa punível com advertência por escrito?',
+            options: ['a) Utilizar pessoal ou recursos materiais da repartição em serviços particulares.', 'b) Ausentar-se do serviço durante o expediente, sem prévia autorização do superior imediato.', 'c) Abandonar o cargo por mais de trinta dias consecutivos.', 'd) Aceitar propinas ou presentes em razão de suas atribuições.', 'e) Participar da gerência ou administração de empresa privada e transacionar com o Estado.'],
+            answer: 'b',
+            explanation: 'A conduta de ausentar-se do serviço sem prévia autorização é punível com advertência.'
+        },
+        {
+            id: 'lei8027_02',
+            question: 'Conforme a Lei nº 8.027/1990, a penalidade de demissão a bem do serviço público pode ser aplicada nos seguintes casos, EXCETO:',
+            options: ['a) Valer-se de informação obtida em função do cargo para proveito pessoal.', 'b) Exercer comércio, exceto como acionista, cotista ou comanditário.', 'c) Apresentar inassiduidade habitual, com falta ao serviço por vinte dias interpoladamente em seis meses.', 'd) Ofensa física, em serviço, a servidor público ou a particular, salvo em legítima defesa.', 'e) Recusar fé a documentos públicos.'],
+            answer: 'e',
+            explanation: 'Recusar fé a documentos públicos não está diretamente listado como causa de demissão a bem do serviço público na Lei nº 8.027/1990.'
+        },
+        {
+            id: 'lei8027_03',
+            question: 'Segundo a Lei nº 8.027/1990, qual é a definição de servidor público para os efeitos desta lei?',
+            options: ['a) A pessoa que presta serviços temporários ao Estado.', 'b) A pessoa legalmente investida em cargo ou emprego público na administração direta, autarquias ou fundações públicas.', 'c) Aquele que exerce função de confiança em qualquer esfera do poder.', 'd) O empregado de empresa pública ou sociedade de economia mista.', 'e) Qualquer cidadão que preste serviço voluntário ao Estado.'],
+            answer: 'b',
+            explanation: 'A Lei nº 8.027/1990 define servidor público como a pessoa legalmente investida em cargo ou emprego público na administração direta, autarquias ou fundações públicas.'
+        },
+        {
+            id: 'lei8027_04',
+            question: 'A Lei nº 8.027/1990 estabelece que são deveres dos servidores públicos civis, EXCETO:',
+            options: ['a) Ser leal às instituições a que servir.', 'b) Guardar sigilo sobre assuntos da repartição, desde que envolvam questões relativas à segurança pública e da sociedade.', 'c) Manter conduta compatível com a moralidade pública.', 'd) Delegar a pessoa estranha à repartição atribuição de sua competência.', 'e) Representar contra ilegalidade, omissão ou abuso de poder.'],
+            answer: 'd',
+            explanation: 'Delegar atribuição a pessoa estranha à repartição é uma vedação ou proibição, não um dever do servidor público.'
+        },
+        {
+            id: 'lei8027_05',
+            question: 'De acordo com a Lei nº 8.027/1990, a penalidade de suspensão por até 90 (noventa) dias pode ser aplicada em qual das seguintes situações?',
+            options: ['a) Improbidade administrativa.', 'b) Acumulação remunerada de cargos públicos.', 'c) Retirar, sem prévia autorização por escrito, qualquer documento ou objeto da repartição.', 'd) Revelação de segredo de que teve conhecimento em função do cargo.', 'e) Abandono de cargo.'],
+            answer: 'c',
+            explanation: 'Retirar, sem prévia autorização, documento ou objeto da repartição é passível de suspensão.'
+        },
+        {
+            id: 'lei8027_06',
+            question: 'Conforme a Lei nº 8.027/1990, a penalidade de advertência converte-se automaticamente em suspensão por trinta dias em caso de:',
+            options: ['a) Improbidade administrativa.', 'b) Reincidência.', 'c) Insubordinação grave em serviço.', 'd) Ofensa física.', 'e) Procedimento desidioso.'],
+            answer: 'b',
+            explanation: 'A reincidência em infração punível com advertência pode levar à conversão em suspensão.'
+        },
+        {
+            id: 'lei8027_07',
+            question: 'Segundo a Lei nº 8.027/1990, qual das seguintes infrações é considerada grave e passível de aplicação da pena de demissão?',
+            options: ['a) Recusar fé a documentos públicos.', 'b) Manter sob sua chefia imediata cônjuge, companheiro ou parente até o segundo grau civil.', 'c) Acumulação remunerada de cargos, empregos e funções públicas vedada pela Constituição Federal.', 'd) Praticar comércio de compra e venda de bens ou serviços no recinto da repartição.', 'e) Atuar como procurador ou intermediário junto a repartições públicas.'],
+            answer: 'c',
+            explanation: 'A acumulação remunerada de cargos, empregos e funções públicas vedada pela Constituição Federal é uma infração grave passível de demissão.'
+        },
+        {
+            id: 'lei8027_08',
+            question: 'A Lei nº 8.027/1990 dispõe que o servidor público civil responde civil, penal e administrativamente pelo exercício irregular de suas atribuições. As cominações civis, penais e disciplinares podem:',
+            options: ['a) Apenas cumular-se, sendo dependentes entre si.', 'b) Apenas cumular-se, sendo independentes entre si.', 'c) Não cumular-se, sendo dependentes entre si.', 'd) Não cumular-se, sendo independentes entre si.', 'e) Apenas cumular-se, se houver conveniência para o serviço.'],
+            answer: 'b',
+            explanation: 'As responsabilidades civil, penal e administrativa são independentes e podem cumular-se.'
+        },
+        {
+            id: 'lei8027_09',
+            question: 'De acordo com a Lei nº 8.027/1990, qual o prazo para o servidor público apresentar a declaração de cargos públicos, empregos e funções que exerce, no ato de investidura?',
+            options: ['a) Trinta dias após a investidura.', 'b) Sessenta dias após a investidura.', 'c) No ato de investidura.', 'd) Noventa dias após a investidura.', 'e) A qualquer tempo, desde que antes da posse.'],
+            answer: 'c',
+            explanation: 'A declaração deve ser apresentada no ato de investidura no cargo.'
+        },
+        {
+            id: 'lei8027_10',
+            question: 'Conforme a Lei nº 8.027/1990, a aplicação da penalidade de suspensão acarreta:',
+            options: ['a) A conversão em multa, na base de cinquenta por cento da remuneração do servidor.', 'b) O cancelamento automático do valor da remuneração do servidor, durante o período de vigência da suspensão.', 'c) A destituição do cargo em comissão.', 'd) A instauração de processo administrativo disciplinar.', 'e) A exoneração do cargo.'],
+            answer: 'b',
+            explanation: 'A suspensão acarreta o cancelamento automático da remuneração durante o período de sua vigência.'
+        },
+        {
+            id: 'decreto1171_11',
+            question: 'De acordo com o Código de Ética Profissional do Servidor Público Civil do Poder Executivo Federal (Decreto nº 1.171/1994), qual dos seguintes princípios NÃO deve nortear o servidor público?',
+            options: ['a) Dignidade.', 'b) Decoro.', 'c) Zelo.', 'd) Eficácia.', 'e) Conveniência.'],
+            answer: 'e',
+            explanation: 'A conveniência não é um princípio ético fundamental para a conduta do servidor público, ao contrário dos demais listados.'
+        },
+        {
+            id: 'decreto1171_12',
+            question: 'Segundo o Decreto nº 1.171/1994, o servidor público não terá que decidir somente entre o legal e o ilegal, o justo e o injusto, o conveniente e o inconveniente, o oportuno e o inoportuno, mas principalmente entre:',
+            options: ['a) O certo e o errado.', 'b) O honesto e o desonesto.', 'c) O público e o privado.', 'd) O ético e o antiético.', 'e) O moral e o imoral.'],
+            answer: 'b',
+            explanation: 'A decisão fundamental é entre o honesto e o desonesto, conforme o Código de Ética.'
+        },
+        {
+            id: 'decreto1171_13',
+            question: 'Conforme o Código de Ética (Decreto nº 1.171/1994), a moralidade da Administração Pública deve ser acrescida da ideia de que o fim é sempre:',
+            options: ['a) O lucro.', 'b) O bem comum.', 'c) A eficiência.', 'd) A legalidade.', 'e) A impessoalidade.'],
+            answer: 'b',
+            explanation: 'O fim último da moralidade administrativa é sempre o bem comum.'
+        },
+        {
+            id: 'decreto1171_14',
+            question: 'O Decreto nº 1.171/1994 estabelece que a publicidade de qualquer ato administrativo constitui requisito de eficácia e moralidade, salvo em casos de:',
+            options: ['a) Interesse particular do servidor.', 'b) Segurança nacional, investigações policiais ou interesse superior do Estado e da Administração Pública.', 'c) Conveniência da Administração Pública.', 'd) Decisão unilateral do servidor.', 'e) Acordo entre as partes envolvidas.'],
+            answer: 'b',
+            explanation: 'A publicidade é regra, mas há exceções para segurança nacional, investigações policiais ou interesse superior do Estado e da Administração Pública.'
+        },
+        {
+            id: 'decreto1171_15',
+            question: 'De acordo com o Código de Ética (Decreto nº 1.171/1994), qual das seguintes condutas é considerada vedada ao servidor público?',
+            options: ['a) Desempenhar a tempo as atribuições do cargo.', 'b) Ser probo, reto, leal e justo.', 'c) Pleitear, solicitar, provocar, sugerir ou receber qualquer tipo de ajuda financeira para si ou terceiros.', 'd) Manter-se atualizado com as instruções e normas de serviço.', 'e) Apresentar-se ao trabalho com vestimentas adequadas.'],
+            answer: 'c',
+            explanation: 'Pleitear ou receber qualquer tipo de ajuda financeira para si ou terceiros é uma conduta vedada pelo Código de Ética.'
+        },
+        {
+            id: 'decreto1171_16',
+            question: 'Segundo o Decreto nº 1.171/1994, a pena aplicável ao servidor público pela Comissão de Ética é a de:',
+            options: ['a) Advertência.', 'b) Suspensão.', 'c) Demissão.', 'd) Censura.', 'e) Multa.'],
+            answer: 'd',
+            explanation: 'A única penalidade que uma Comissão de Ética pode aplicar é a censura.'
+        },
+        {
+            id: 'decreto1171_17',
+            question: 'Conforme o Código de Ética (Decreto nº 1.171/1994), a Comissão de Ética é encarregada de orientar e aconselhar sobre a ética profissional do servidor, e também de:',
+            options: ['a) Aplicar penas de demissão.', 'b) Conhecer de consultas, denúncias ou representações formuladas contra servidor por suposto descumprimento às normas.', 'c) Julgar processos administrativos disciplinares.', 'd) Realizar investigações criminais.', 'e) Definir a remuneração dos servidores.'],
+            answer: 'b',
+            explanation: 'A Comissão de Ética também é responsável por conhecer de consultas, denúncias ou representações sobre o descumprimento das normas éticas.'
+        },
+        {
+            id: 'decreto1171_18',
+            question: 'O Decreto nº 1.171/1994 dispõe que a infração das normas deste Código de Ética importará em censura e, conforme a gravidade, em:',
+            options: ['a) Apenas censura.', 'b) Exoneração ou destituição de cargo em comissão, ou função de confiança, ou, ainda, em outras sanções previstas em lei.', 'c) Suspensão por até 90 dias.', 'd) Advertência por escrito.', 'e) Multa.'],
+            answer: 'b',
+            explanation: 'Além da censura, a infração pode resultar em exoneração, destituição de cargo em comissão/função de confiança, ou outras sanções previstas em lei.'
+        },
+        {
+            id: 'decreto1171_19',
+            question: 'Para os fins do Código de Ética (Decreto nº 1.171/1994), servidor público é todo aquele que, por força de lei, contrato ou qualquer ato jurídico, preste serviços de natureza:',
+            options: ['a) Apenas permanente.', 'b) Apenas temporária.', 'c) Permanente, temporária ou excepcional, ainda que sem retribuição financeira.', 'd) Apenas com retribuição financeira.', 'e) Exclusivamente em órgãos da administração direta.'],
+            answer: 'c',
+            explanation: 'O Código abrange serviços de natureza permanente, temporária ou excepcional, mesmo sem retribuição financeira.'
+        },
+        {
+            id: 'decreto1171_20',
+            question: 'De acordo com o Decreto nº 1.171/1994, o servidor público que tiver conhecimento de qualquer ato ou fato que possa configurar desvio ético, deverá comunicá-lo:',
+            options: ['a) À autoridade superior.', 'b) Ao Ministério Público.', 'c) À Comissão de Ética do seu órgão ou entidade.', 'd) À Polícia Federal.', 'e) À imprensa.'],
+            answer: 'c',
+            explanation: 'O servidor deve comunicar à Comissão de Ética do seu órgão ou entidade qualquer desvio ético.'
+        }
+    ];
+
 
     let selectedQuestionsIA = []; // Para questões geradas por IA (com opções A, B, C, D)
     let selectedQuestoesEstudo = []; // Para questões retiradas de outras provas (pergunta e resposta)
     let selectedEptQuestions = []; // Para questões de EPT no Brasil
+    let selectedLeis8027e1171Questions = []; // NOVO: Para questões de Leis 8027 e 1171
+
 
     // Elementos da interface
     const choiceContainer = document.getElementById('choice-container');
     const iaQuestionsButton = document.getElementById('ia-questions-button');
     const provaQuestionsButton = document.getElementById('prova-questions-button');
     const eptBrasilButton = document.getElementById('ept-brasil-button'); // Novo botão
+    const leis8027e1171Button = document.getElementById('leis-8027-1171-button'); // NOVO: Botão Leis 8027 e 1171
 
     // Elementos do simulado de IA
     const iaSimuladoContent = document.getElementById('ia-simulado-content');
@@ -370,6 +517,16 @@ document.addEventListener('DOMContentLoaded', () => {
     const scoreEptSpan = document.getElementById('score-ept');
     const totalQuestionsEptSpan = document.getElementById('total-questions-ept');
     const answerKeyEptList = document.getElementById('answer-key-ept');
+
+    // NOVO: Elementos do simulado Leis 8027 e 1171
+    const leis8027e1171SimuladoContent = document.getElementById('leis-8027-1171-simulado-content');
+    const leis8027e1171QuestionsContainer = document.getElementById('leis-8027-1171-questions-container');
+    const submitLeis8027e1171Button = document.getElementById('submit-leis-8027-1171-button');
+    const restartLeis8027e1171Button = document.getElementById('restart-leis-8027-1171-button');
+    const resultsLeis8027e1171Container = document.getElementById('results-leis-8027-1171-container');
+    const scoreLeis8027e1171Span = document.getElementById('score-leis-8027-1171');
+    const totalQuestionsLeis8027e1171Span = document.getElementById('total-questions-leis-8027-1171');
+    const answerKeyLeis8027e1171List = document.getElementById('answer-key-leis-8027-1171');
 
     // Elemento do contador de acessos
     const accessCounterSpan = document.getElementById('access-counter');
@@ -598,6 +755,82 @@ document.addEventListener('DOMContentLoaded', () => {
         restartEptButton.classList.remove('hidden');
     }
 
+    // NOVO: Funções para o Simulado Leis 8027 e 1171
+    function renderLeis8027e1171Questions() {
+        selectedLeis8027e1171Questions = getRandomQuestions(leis8027e1171Questions, 5); // Sorteia 5 questões
+        leis8027e1171QuestionsContainer.innerHTML = '';
+        selectedLeis8027e1171Questions.forEach((q, index) => {
+            const questionCard = document.createElement('div');
+            questionCard.classList.add('question-card');
+            questionCard.innerHTML = `
+                <p>${index + 1}. ${q.question}</p>
+                <ol type="a" class="options-container" data-question-id="${q.id}">
+                    ${q.options.map((option, i) => `
+                        <li>
+                            <label>
+                                <input type="radio" name="question-${q.id}" value="${String.fromCharCode(97 + i)}">
+                                ${option}
+                            </label>
+                        </li>
+                    `).join('')}
+                </ol>
+            `;
+            leis8027e1171QuestionsContainer.appendChild(questionCard);
+        });
+        submitLeis8027e1171Button.classList.remove('hidden');
+        restartLeis8027e1171Button.classList.add('hidden');
+        resultsLeis8027e1171Container.classList.add('hidden');
+    }
+
+    function checkLeis8027e1171Answers() {
+        let score = 0;
+        answerKeyLeis8027e1171List.innerHTML = '';
+
+        selectedLeis8027e1171Questions.forEach((q, index) => {
+            const selectedOption = document.querySelector(`input[name="question-${q.id}"]:checked`);
+            const listItem = document.createElement('li');
+            listItem.classList.add('answer-key-item');
+            const questionOptionsContainer = document.querySelector(`.options-container[data-question-id="${q.id}"]`);
+            const labels = questionOptionsContainer.querySelectorAll('label');
+
+            let userAnswer = '';
+            if (selectedOption) {
+                userAnswer = selectedOption.value;
+            }
+
+            labels.forEach(label => {
+                const input = label.querySelector('input');
+                if (input.value === q.answer) {
+                    label.classList.add('correct');
+                }
+                if (selectedOption && input.value === selectedOption.value && selectedOption.value !== q.answer) {
+                    label.classList.add('incorrect');
+                }
+            });
+
+            if (userAnswer === q.answer) {
+                score++;
+                listItem.innerHTML = `<strong>Questão ${index + 1}: Correta!</strong> (Sua resposta: ${userAnswer.toUpperCase()}) - ${q.explanation}`;
+            } else {
+                const userAnswerDisplay = userAnswer ? userAnswer.toUpperCase() : 'Não respondida';
+                listItem.innerHTML = `<strong>Questão ${index + 1}: Incorreta!</strong> (Sua resposta: ${userAnswerDisplay}, Correta: ${q.answer.toUpperCase()}) - ${q.explanation}`;
+            }
+            answerKeyLeis8027e1171List.appendChild(listItem);
+
+            // Desabilitar radios após a verificação
+            document.querySelectorAll(`input[name="question-${q.id}"]`).forEach(radio => {
+                radio.disabled = true;
+            });
+        });
+
+        scoreLeis8027e1171Span.textContent = score;
+        totalQuestionsLeis8027e1171Span.textContent = selectedLeis8027e1171Questions.length;
+        resultsLeis8027e1171Container.classList.remove('hidden');
+        submitLeis8027e1171Button.classList.add('hidden');
+        restartLeis8027e1171Button.classList.remove('hidden');
+    }
+
+
     // --- Event Listeners ---
     iaQuestionsButton.addEventListener('click', () => {
         choiceContainer.classList.add('hidden');
@@ -616,6 +849,13 @@ document.addEventListener('DOMContentLoaded', () => {
         choiceContainer.classList.add('hidden');
         eptBrasilSimuladoContent.classList.remove('hidden');
         renderEptQuestions(); // Renderiza as questões de EPT
+    });
+
+    // NOVO: Event Listener para o botão "Leis 8027 e 1171"
+    leis8027e1171Button.addEventListener('click', () => {
+        choiceContainer.classList.add('hidden');
+        leis8027e1171SimuladoContent.classList.remove('hidden');
+        renderLeis8027e1171Questions(); // Renderiza as questões das Leis 8027 e 1171
     });
 
     submitButtonIA.addEventListener('click', checkIAAnswers);
@@ -640,10 +880,20 @@ document.addEventListener('DOMContentLoaded', () => {
         // O renderEptQuestions será chamado novamente se o usuário escolher EPT
     });
 
+    // NOVO: Event Listeners para o Simulado Leis 8027 e 1171
+    submitLeis8027e1171Button.addEventListener('click', checkLeis8027e1171Answers);
+    restartLeis8027e1171Button.addEventListener('click', () => {
+        leis8027e1171SimuladoContent.classList.add('hidden'); // Esconde o conteúdo das Leis 8027 e 1171
+        choiceContainer.classList.remove('hidden'); // Volta para a tela de escolha
+        // O renderLeis8027e1171Questions será chamado novamente se o usuário escolher Leis 8027 e 1171
+    });
+
 
     // Inicialização: Esconde todos os simulados e mostra as opções
     iaSimuladoContent.classList.add('hidden');
     provaSimuladoContent.classList.add('hidden');
     eptBrasilSimuladoContent.classList.add('hidden'); // Certifica que EPT está oculto no início
+    leis8027e1171SimuladoContent.classList.add('hidden'); // NOVO: Certifica que Leis 8027 e 1171 está oculto no início
+
     choiceContainer.classList.remove('hidden'); // Garante que a escolha inicial é visível
 });
