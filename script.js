@@ -327,6 +327,357 @@ document.addEventListener('DOMContentLoaded', () => {
             options: ["a) A aprendizagem ocorre apenas através da memorização de fatos e conceitos desvinculados de problemas reais.", "b) A aprendizagem ocorre a partir da análise de problemas reais, exigindo a mobilização de diferentes conhecimentos e a busca por soluções.", "c) Os problemas são apresentados de forma simplificada, sem conexão com o mundo do trabalho.", "d) Apenas o professor é responsável por apresentar as soluções para os problemas."],
             answer: "b",
             explanation: "A problematização da realidade coloca o aluno diante de desafios reais, que demandam a aplicação e integração de conhecimentos para encontrar soluções."
+        },
+        // Novas questões de EPT no Brasil
+        {
+            id: 'ept21',
+            question: "A Educação Profissional e Tecnológica (EPT) no Brasil está regulamentada principalmente por qual Lei?",
+            options: ["a) LDB (Lei 9.394/1996)", "b) Lei 11.741/2008", "c) Lei 13.415/2017 (Reforma do Ensino Médio)", "d) Todas as anteriores"],
+            answer: "d",
+            explanation: "A EPT no Brasil é regulamentada por um conjunto de leis, sendo a LDB a base, complementada por outras como a Lei 11.741/2008 e a Lei 13.415/2017."
+        },
+        {
+            id: 'ept22',
+            question: "Qual documento estabelece as Diretrizes Curriculares Nacionais para a Educação Profissional?",
+            options: ["a) Parecer CNE/CEB 11/2012", "b) Decreto 5.154/2004", "c) Portaria MEC 1.045/2021", "d) Resolução CNE/CP 01/2020"],
+            answer: "a",
+            explanation: "O Parecer CNE/CEB 11/2012 estabelece as Diretrizes Curriculares Nacionais para a Educação Profissional Técnica de Nível Médio."
+        },
+        {
+            id: 'ept23',
+            question: "A EPT no Brasil é organizada em três níveis. Quais são eles?",
+            options: ["a) Básico, Técnico e Tecnológico", "b) Formação Inicial, Técnico e Superior", "c) Básico, Intermediário e Avançado", "d) Fundamental, Médio e Superior"],
+            answer: "b",
+            explanation: "Os três níveis da EPT são Formação Inicial e Continuada (FIC), Educação Profissional Técnica de Nível Médio e Educação Superior (Tecnológica)."
+        },
+        {
+            id: 'ept24',
+            question: "O que caracteriza a **articulação entre educação e trabalho** na EPT?",
+            options: ["a) Priorizar apenas o ensino teórico", "b) Integrar conhecimentos científicos e tecnológicos com a prática profissional", "c) Eliminar disciplinas gerais do currículo", "d) Focar apenas em estágios obrigatórios"],
+            answer: "b",
+            explanation: "A articulação entre educação e trabalho na EPT visa a integração entre a base científica, tecnológica e a aplicação prática no mundo do trabalho."
+        },
+        {
+            id: 'ept25',
+            question: "Qual órgão é responsável pela oferta da EPT em nível federal no Brasil?",
+            options: ["a) Secretarias Estaduais de Educação", "b) Institutos Federais (IFs) e Rede Federal", "c) Universidades Privadas", "d) SENAI e SENAC"],
+            answer: "b",
+            explanation: "Os Institutos Federais e toda a Rede Federal de Educação Profissional, Científica e Tecnológica são os principais responsáveis pela oferta da EPT em nível federal."
+        },
+        {
+            id: 'ept26',
+            question: "O PPP do IFRN tem como principal objetivo:",
+            options: ["a) Definir apenas a estrutura física da instituição", "b) Orientar as práticas pedagógicas e administrativas com base em princípios democráticos", "c) Estabelecer apenas o calendário acadêmico", "d) Limitar-se aos aspectos burocráticos da gestão"],
+            answer: "b",
+            explanation: "O Projeto Político-Pedagógico (PPP) é um documento que norteia todas as ações da instituição, com base em princípios democráticos e educacionais."
+        },
+        {
+            id: 'ept27',
+            question: "Qual princípio **NÃO** faz parte do PPP do IFRN?",
+            options: ["a) Indissociabilidade entre ensino, pesquisa e extensão", "b) Educação elitista e excludente", "c) Formação cidadã e profissional", "d) Integração com o mundo do trabalho"],
+            answer: "b",
+            explanation: "O IFRN, como instituição pública federal, preza pela inclusão e por uma educação de qualidade para todos, combatendo a elitização."
+        },
+        {
+            id: 'ept28',
+            question: "O PPP do IFRN deve ser construído com a participação de:",
+            options: ["a) Apenas dos professores", "b) Apenas da direção da instituição", "c) Toda a comunidade escolar (docentes, discentes, técnicos e sociedade)", "d) Exclusivamente do MEC"],
+            answer: "c",
+            explanation: "A gestão democrática do IFRN implica na participação de todos os segmentos da comunidade escolar na construção do PPP."
+        },
+        {
+            id: 'ept29',
+            question: "A concepção de educação do IFRN está alinhada com:",
+            options: ["a) Apenas o mercado de trabalho", "b) Uma perspectiva crítica e emancipatória", "c) O ensino tecnicista sem reflexão", "d) A formação exclusivamente acadêmica"],
+            answer: "b",
+            explanation: "A educação no IFRN busca formar cidadãos críticos, capazes de intervir na realidade, e profissionais qualificados com uma visão ampla."
+        },
+        {
+            id: 'ept30',
+            question: "O PPP do IFRN prevê a integração entre:",
+            options: ["a) Apenas teoria e prática", "b) Ensino, pesquisa e extensão", "c) Apenas atividades técnicas", "d) Disciplinas isoladas sem conexão"],
+            answer: "b",
+            explanation: "A indissociabilidade entre ensino, pesquisa e extensão é um dos pilares da identidade dos Institutos Federais, e deve estar presente no PPP."
+        },
+        {
+            id: 'ept31',
+            question: "Os Institutos Federais, como o IFRN, têm como missão principal:",
+            options: ["a) Oferecer apenas cursos técnicos", "b) Promover educação profissional, científica e tecnológica com excelência", "c) Atender apenas demandas locais", "d) Ser uma instituição exclusivamente de pesquisa"],
+            answer: "b",
+            explanation: "A missão dos IFs é a oferta de educação profissional e tecnológica em todos os seus níveis e modalidades, com base na ciência e tecnologia."
+        },
+        {
+            id: 'ept32',
+            question: "Qual valor **NÃO** está presente na identidade do IFRN?",
+            options: ["a) Inclusão social", "b) Meritocracia excludente", "c) Sustentabilidade", "d) Compromisso com a sociedade"],
+            answer: "b",
+            explanation: "A identidade do IFRN é pautada pela inclusão, buscando oferecer oportunidades a todos, não por uma meritocracia excludente."
+        },
+        {
+            id: 'ept33',
+            question: "A Rede Federal de Educação Profissional inclui:",
+            options: ["a) Apenas os Institutos Federais", "b) IFs, CEFETs e Escolas Técnicas Vinculadas a Universidades", "c) Apenas o SENAI e SENAC", "d) Universidades particulares"],
+            answer: "b",
+            explanation: "A Rede Federal é composta pelos Institutos Federais, CEFETs e as escolas técnicas vinculadas a universidades federais."
+        },
+        {
+            id: 'ept34',
+            question: "O IFRN se destaca por:",
+            options: ["a) Oferecer apenas cursos superiores", "b) Integrar diferentes níveis de ensino (básico, técnico e superior)", "c) Ignorar a formação humana", "d) Não possuir vinculação com o MEC"],
+            answer: "b",
+            explanation: "Uma das características distintivas dos IFs é a oferta de cursos em todos os níveis da educação profissional e tecnológica, da FIC ao ensino superior."
+        },
+        {
+            id: 'ept35',
+            question: "A identidade dos IFs está ligada à:",
+            options: ["a) Formação tecnicista sem reflexão crítica", "b) Articulação entre educação, ciência, tecnologia e inovação", "c) Exclusão social", "d) Manutenção de privilégios de classe"],
+            answer: "b",
+            explanation: "Os Institutos Federais se caracterizam pela integração entre ensino, pesquisa, extensão e inovação, contribuindo para o desenvolvimento científico e tecnológico."
+        },
+        {
+            id: 'ept36',
+            question: "Qual princípio **NÃO** orienta a prática pedagógica na EPT?",
+            options: ["a) Flexibilidade curricular", "b) Fragmentação do conhecimento", "c) Interdisciplinaridade", "d) Contextualização do ensino"],
+            answer: "b",
+            explanation: "A EPT busca a integração e a contextualização do conhecimento, combatendo a fragmentação disciplinar."
+        },
+        {
+            id: 'ept37',
+            question: "A indissociabilidade entre ensino, pesquisa e extensão significa:",
+            options: ["a) Que essas dimensões devem ser trabalhadas de forma isolada", "b) Que devem ser integradas para uma formação completa", "c) Que apenas o ensino é importante", "d) Que a extensão é opcional"],
+            answer: "b",
+            explanation: "A indissociabilidade é a premissa de que ensino, pesquisa e extensão são interdependentes e se complementam para uma formação integral."
+        },
+        {
+            id: 'ept38',
+            question: "A avaliação na EPT deve ser:",
+            options: ["a) Somente classificatória", "b) Processual, formativa e diagnóstica", "c) Restrita a provas escritas", "d) Desvinculada do projeto pedagógico"],
+            answer: "b",
+            explanation: "A avaliação na EPT deve ser um processo contínuo que acompanha o desenvolvimento do estudante, com foco na melhoria da aprendizagem."
+        },
+        {
+            id: 'ept39',
+            question: "A interdisciplinaridade no ensino técnico busca:",
+            options: ["a) Fragmentar os saberes", "b) Integrar conhecimentos de diferentes áreas", "c) Priorizar apenas o conteúdo técnico", "d) Ignorar a base comum nacional"],
+            answer: "b",
+            explanation: "A interdisciplinaridade visa conectar e articular os conhecimentos de diferentes disciplinas para uma compreensão mais completa da realidade."
+        },
+        {
+            id: 'ept40',
+            question: "A prática pedagógica na EPT deve considerar:",
+            options: ["a) Apenas as demandas do mercado", "b) A realidade dos estudantes e do território", "c) Exclusivamente o livro didático", "d) Aulas expositivas sem participação ativa"],
+            answer: "b",
+            explanation: "A EPT deve ser contextualizada e relevante para a realidade local e para os interesses dos estudantes."
+        },
+        {
+            id: 'ept41',
+            question: "O currículo integrado na EPT propõe:",
+            options: ["a) Separar formação geral e técnica", "b) Articular conhecimentos científicos, tecnológicos e humanísticos", "c) Eliminar disciplinas de base comum", "d) Priorizar apenas habilidades práticas"],
+            answer: "b",
+            explanation: "O currículo integrado busca superar a dicotomia entre a formação geral e a formação profissional, integrando-as de forma orgânica."
+        },
+        {
+            id: 'ept42',
+            question: "Qual documento reforça a importância do currículo integrado?",
+            options: ["a) Parecer CNE/CEB 11/2012", "b) Decreto 9.235/2017", "c) Portaria MEC 1.000/2020", "d) Lei 13.415/2017"],
+            answer: "a",
+            explanation: "O Parecer CNE/CEB 11/2012, que estabelece as DCNs da EPT de Nível Médio, reforça a concepção de currículo integrado."
+        },
+        {
+            id: 'ept43',
+            question: "A integração entre formação geral e técnica visa:",
+            options: ["a) Reduzir a carga horária", "b) Promover uma visão fragmentada do saber", "c) Formar cidadãos críticos e profissionais qualificados", "d) Priorizar apenas o ensino teórico"],
+            answer: "c",
+            explanation: "O objetivo é formar indivíduos completos, com conhecimentos técnicos e humanísticos, capazes de atuar no mundo e na sociedade."
+        },
+        {
+            id: 'ept44',
+            question: "O currículo integrado no IFRN pressupõe:",
+            options: ["a) Disciplinas estanques sem diálogo", "b) Projetos que unam diferentes áreas do conhecimento", "c) Abandono da formação humanística", "d) Foco exclusivo em estágios"],
+            answer: "b",
+            explanation: "A abordagem por projetos é uma estratégia eficaz para promover a integração e a interdisciplinaridade no currículo."
+        },
+        {
+            id: 'ept45',
+            question: "Qual desafio **NÃO** está associado à implementação do currículo integrado?",
+            options: ["a) Resistência à mudança de paradigma", "b) Falta de formação docente", "c) Facilidade em fragmentar conhecimentos", "d) Excessiva valorização da interdisciplinaridade"],
+            answer: "d",
+            explanation: "A excessiva valorização da interdisciplinaridade não é um desafio, mas sim um objetivo da implementação do currículo integrado."
+        },
+        {
+            id: 'ept46',
+            question: "A EPT no Brasil tem como um de seus objetivos:",
+            options: ["a) Restringir o acesso às classes populares", "b) Promover inclusão social e desenvolvimento regional", "c) Manter o ensino elitizado", "d) Ignorar as demandas do mundo do trabalho"],
+            answer: "b",
+            explanation: "A EPT é um instrumento de inclusão social e de desenvolvimento econômico e social das regiões."
+        },
+        {
+            id: 'ept47',
+            question: "O IFRN segue qual modelo educacional?",
+            options: ["a) Tecnicista e conservador", "b) Crítico, integrado e emancipatório", "c) Exclusivamente profissionalizante", "d) Desvinculado da pesquisa"],
+            answer: "b",
+            explanation: "O modelo educacional dos IFs é pautado pela formação integral, crítica, com a indissociabilidade entre ensino, pesquisa e extensão."
+        },
+        {
+            id: 'ept48',
+            question: "A articulação entre teoria e prática na EPT é fundamental porque:",
+            options: ["a) Desvaloriza o conhecimento científico", "b) Permite a aplicação do saber em situações reais", "c) Prioriza apenas o ensino teórico", "d) Ignora a formação técnica"],
+            answer: "b",
+            explanation: "A articulação entre teoria e prática é crucial para que o estudante compreenda e aplique os conhecimentos em contextos reais."
+        },
+        {
+            id: 'ept49',
+            question: "A pesquisa na EPT deve:",
+            options: ["a) Ser restrita a pós-graduação", "b) Integrar-se ao ensino e extensão desde a formação básica", "c) Ser opcional para os alunos", "d) Não ter vinculação com o currículo"],
+            answer: "b",
+            explanation: "A pesquisa nos IFs não se restringe à pós-graduação, mas perpassa todos os níveis e modalidades de ensino."
+        },
+        {
+            id: 'ept50',
+            question: "A extensão no IFRN tem como propósito:",
+            options: ["a) Isolar a instituição da comunidade", "b) Promover diálogo entre escola e sociedade", "c) Restringir-se a eventos internos", "d) Ser atividade complementar sem avaliação"],
+            answer: "b",
+            explanation: "A extensão é um processo educativo, cultural e científico que articula a instituição com a sociedade, promovendo a troca de saberes."
+        },
+        {
+            id: 'ept51',
+            question: "Qual decreto regulamentou a Educação Profissional Técnica de Nível Médio após a LDB?",
+            options: ["a) Decreto 2.208/1997", "b) Decreto 5.154/2004", "c) Decreto 6.302/2007", "d) Decreto 9.057/2017"],
+            answer: "b",
+            explanation: "O Decreto nº 5.154/2004 regulamentou a Educação Profissional Técnica de Nível Médio, estabelecendo as formas de oferta integrada e subsequente."
+        },
+        {
+            id: 'ept52',
+            question: "A Lei 11.741/2008 alterou a LDB para:",
+            options: ["a) Extinguir a EPT", "b) Flexibilizar a articulação entre ensino médio e profissional", "c) Priorizar apenas o ensino superior", "d) Eliminar a formação técnica integrada"],
+            answer: "b",
+            explanation: "A Lei nº 11.741/2008 alterou a LDB, tornando a Educação Profissional e Tecnológica parte integrante da educação nacional."
+        },
+        {
+            id: 'ept53',
+            question: "O Programa Nacional de Acesso ao Ensino Técnico e Emprego (PRONATEC) foi criado pela:",
+            options: ["a) Lei 12.513/2011", "b) Medida Provisória 746/2016", "c) Portaria MEC 1.144/2016", "d) Lei 13.415/2017"],
+            answer: "a",
+            explanation: "O PRONATEC foi instituído pela Lei nº 12.513/2011 com o objetivo de expandir, interiorizar e democratizar a oferta de cursos de EPT."
+        },
+        {
+            id: 'ept54',
+            question: "A Reforma do Ensino Médio (Lei 13.415/2017) impactou a EPT ao:",
+            options: ["a) Ampliar a oferta de itinerários formativos técnicos", "b) Extinguir os cursos técnicos integrados", "c) Proibir a integração com o ensino regular", "d) Reduzir a carga horária prática"],
+            answer: "a",
+            explanation: "A Reforma do Ensino Médio, ao introduzir os itinerários formativos, ampliou as possibilidades de oferta de cursos técnicos."
+        },
+        {
+            id: 'ept55',
+            question: "Qual documento define as Diretrizes Curriculares Nacionais para a Formação Inicial e Continuada (FIC)?",
+            options: ["a) Resolução CNE/CEB 01/2021", "b) Parecer CNE/CEB 11/2012", "c) Portaria MEC 1.045/2021", "d) Decreto 9.057/2017"],
+            answer: "b",
+            explanation: "O Parecer CNE/CEB 11/2012 também traz as diretrizes para a Formação Inicial e Continuada (FIC)."
+        },
+        {
+            id: 'ept56',
+            question: "A **contextualização** no ensino profissional significa:",
+            options: ["a) Ignorar a realidade local", "b) Relacionar conteúdos com situações do mundo do trabalho", "c) Priorizar apenas aulas expositivas", "d) Fragmentar teoria e prática"],
+            answer: "b",
+            explanation: "Contextualizar significa trazer a realidade e as demandas do mundo do trabalho para o processo de ensino-aprendizagem."
+        },
+        {
+            id: 'ept57',
+            question: "A **flexibilidade curricular** na EPT permite:",
+            options: ["a) Adaptar o currículo às demandas regionais e dos estudantes", "b) Eliminar disciplinas básicas", "c) Padronizar rigidamente os cursos", "d) Ignorar a Base Nacional Comum Curricular (BNCC)"],
+            answer: "a",
+            explanation: "A flexibilidade permite que o currículo seja ajustado às necessidades específicas de cada local e público-alvo."
+        },
+        {
+            id: 'ept58',
+            question: "A **interdisciplinaridade** é essencial na EPT porque:",
+            options: ["a) Isola saberes técnicos e gerais", "b) Promove a integração de conhecimentos para resolver problemas complexos", "c) Desvaloriza a formação humana", "d) Restringe-se a projetos opcionais"],
+            answer: "b",
+            explanation: "A interdisciplinaridade permite que os alunos utilizem conhecimentos de diversas áreas para abordar e solucionar problemas reais."
+        },
+        {
+            id: 'ept59',
+            question: "A **avaliação formativa** prioriza:",
+            options: ["a) Classificar alunos por notas", "b) Identificar dificuldades e redirecionar o processo de ensino-aprendizagem", "c) Aplicar apenas provas escritas", "d) Excluir estudantes com baixo rendimento"],
+            answer: "b",
+            explanation: "A avaliação formativa tem como foco principal o acompanhamento do aprendizado e a identificação de pontos que precisam ser aprimorados."
+        },
+        {
+            id: 'ept60',
+            question: "A **indissociabilidade entre ensino, pesquisa e extensão** no IFRN busca:",
+            options: ["a) Formar técnicos sem visão crítica", "b) Integrar conhecimentos acadêmicos e sociais", "c) Restringir pesquisas a pós-graduação", "d) Ignorar a comunidade externa"],
+            answer: "b",
+            explanation: "A indissociabilidade garante que o conhecimento produzido na instituição seja aplicado e que a comunidade se beneficie desse conhecimento."
+        },
+        {
+            id: 'ept61',
+            question: "Um exemplo de currículo integrado é:",
+            options: ["a) Oferecer Português e Matemática separadamente da formação técnica", "b) Desenvolver projetos que articulam Matemática e conhecimentos de Enfermagem", "c) Eliminar disciplinas de ciências humanas", "d) Priorizar apenas estágios supervisionados"],
+            answer: "b",
+            explanation: "Projetos que conectam diferentes áreas do saber são uma forma de promover a integração curricular."
+        },
+        {
+            id: 'ept62',
+            question: "Qual desafio **NÃO** é comum na implementação do currículo integrado?",
+            options: ["a) Resistência docente à interdisciplinaridade", "b) Falta de infraestrutura para aulas práticas", "c) Excessiva valorização da integração teoria-prática", "d) Dificuldade em planejar coletivamente"],
+            answer: "c",
+            explanation: "A integração teoria-prática é um objetivo do currículo integrado, e sua valorização excessiva não é um desafio."
+        },
+        {
+            id: 'ept63',
+            question: "A Base Nacional Comum Curricular (BNCC) para o Ensino Médio:",
+            options: ["a) Ignora a EPT", "b) Oferece diretrizes para integrar formação geral e técnica", "c) Restringe-se a cursos acadêmicos", "d) Elimina componentes técnicos"],
+            answer: "b",
+            explanation: "A BNCC para o Ensino Médio, com a oferta de itinerários formativos, busca integrar a formação geral básica com a EPT."
+        },
+        {
+            id: 'ept64',
+            question: "O eixo **\"Trabalho, Ciência, Tecnologia e Cultura\"** no currículo integrado reforça:",
+            options: ["a) A separação entre conhecimentos científicos e profissionais", "b) A integração crítica dessas dimensões na formação", "c) O foco exclusivo em habilidades manuais", "d) A desvalorização da pesquisa"],
+            answer: "b",
+            explanation: "Esse eixo demonstra a preocupação em formar o estudante de maneira completa, relacionando o trabalho com a produção científica, tecnológica e cultural."
+        },
+        {
+            id: 'ept65',
+            question: "A carga horária dos cursos técnicos integrados deve incluir:",
+            options: ["a) Apenas disciplinas técnicas", "b) Equilíbrio entre formação geral e específica", "c) Exclusão de componentes artísticos", "d) Redução da prática profissional"],
+            answer: "b",
+            explanation: "Os cursos integrados visam a uma formação equilibrada entre os conhecimentos da base comum nacional e os da formação técnica."
+        },
+        {
+            id: 'ept66',
+            question: "Além do ensino, qual pilar **NÃO** faz parte da missão dos IFs?",
+            options: ["a) Pesquisa aplicada", "b) Extensão comunitária", "c) Formação exclusivamente teórica", "d) Inovação tecnológica"],
+            answer: "c",
+            explanation: "A missão dos IFs abrange ensino, pesquisa, extensão e inovação, com uma abordagem que vai além da formação meramente teórica."
+        },
+        {
+            id: 'ept67',
+            question: "O IFRN tem como um de seus valores institucionais:",
+            options: ["a) Meritocracia excludente", "b) Sustentabilidade socioambiental", "c) Centralização decisória", "d) Desvinculação do território"],
+            answer: "b",
+            explanation: "A sustentabilidade socioambiental é um valor crescente e importante para as instituições de ensino, incluindo o IFRN."
+        },
+        {
+            id: 'ept68',
+            question: "A Rede Federal de EPT inclui:",
+            options: ["a) Apenas os 38 Institutos Federais", "b) IFs, CEFETs e escolas técnicas vinculadas a universidades", "c) Apenas o SENAI e SENAC", "d) Instituições privadas"],
+            answer: "b",
+            explanation: "A Rede Federal é um conjunto de instituições públicas, incluindo IFs, CEFETs e escolas técnicas ligadas a universidades."
+        },
+        {
+            id: 'ept69',
+            question: "A autonomia dos IFs permite:",
+            options: ["a) Criar cursos sem regulamentação", "b) Adaptar-se às demandas locais dentro da legislação", "c) Ignorar diretrizes nacionais", "d) Excluir disciplinas obrigatórias"],
+            answer: "b",
+            explanation: "A autonomia é fundamental para que os IFs possam responder às especificidades de suas regiões, sempre em conformidade com a legislação educacional."
+        },
+        {
+            id: 'ept70',
+            question: "O IFRN destaca-se por:",
+            options: ["a) Oferecer apenas cursos superiores", "b) Integrar ensino médio, técnico e superior", "c) Não realizar pesquisas", "d) Ter atuação restrita a Natal"],
+            answer: "b",
+            explanation: "A integração dos diferentes níveis e modalidades de ensino é uma característica marcante dos Institutos Federais, incluindo o IFRN, que possui múltiplos campi."
         }
     ];
 
