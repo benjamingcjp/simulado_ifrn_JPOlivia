@@ -1,63 +1,12 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Simulado Preparatório</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-    <div class="container">
-        <h1>Simulado Preparatório</h1>
-
-        <div id="choice-container" class="section-card">
-            <h2>Escolha o tipo de Simulado:</h2>
-            <button id="ia-questions-button" class="action-button">Questões Geradas por IA</button>
-            <button id="prova-questions-button" class="action-button">Questões Retiradas de Outras Provas</button>
-            <button id="ept-brasil-button" class="action-button">EPT no Brasil</button> </div>
-
-        <div id="ia-simulado-content" class="hidden">
-            <h2 class="quiz-title">Simulado: Questões Geradas por IA</h2>
-            <div id="questions-container">
-                </div>
-            <button id="submit-button" class="action-button hidden">Verificar Respostas</button>
-            <button id="restart-button" class="action-button hidden">Reiniciar Simulado</button>
-            <div id="results-container" class="results-card hidden">
-                <h3>Resultados:</h3>
-                <p>Você acertou <span id="score">0</span> de <span id="total-questions">10</span> questões.</p>
-                <h4>Gabarito e Explicações:</h4>
-                <ol id="answer-key" class="answer-list">
-                    </ol>
-            </div>
-        </div>
-
-        <div id="prova-simulado-content" class="hidden">
-            <h2 class="quiz-title">Simulado: Questões de Prova</h2>
-            <div id="prova-questions-container">
-                </div>
-            <button id="submit-prova-button" class="action-button hidden">Verificar Respostas</button>
-            <button id="restart-prova-button" class="action-button hidden">Reiniciar Simulado</button>
-            <div id="results-prova-container" class="results-card hidden">
-                <h3>Resultados:</h3>
-                <p>Você acertou <span id="score-prova">0</span> de <span id="total-questions-prova">0</span> questões.</p>
-                <h4>Gabarito:</h4>
-                <ol id="answer-key-prova" class="answer-list">
-                    </ol>
-            </div>
-        </div>
-
-        <div id="ept-brasil-content" class="hidden">
-            <h2 class="quiz-title">Conteúdo EPT no Brasil</h2>
-            <p>Este é o conteúdo para a seção "EPT no Brasil". Você pode adicionar informações, links ou um novo simulado aqui.</p>
-            <button id="back-from-ept-button" class="action-button">Voltar para Escolha</button>
-        </div>
-        </div>
-
-    <div class="footer">
-        <p>Desenvolvido por Gemini para fins educacionais.</p>
-        <p>Acessos (neste navegador): <span id="access-counter">0</span></p>
+<div id="ept-brasil-simulado-content" class="hidden">
+    <h2 class="quiz-title">Simulado: EPT no Brasil</h2>
+    <div id="ept-questions-container"></div>
+    <button id="submit-ept-button" class="action-button hidden">Verificar Respostas</button>
+    <button id="restart-ept-button" class="action-button hidden">Reiniciar Simulado</button>
+    <div id="results-ept-container" class="results-card hidden">
+        <h3>Resultados:</h3>
+        <p>Você acertou <span id="score-ept">0</span> de <span id="total-questions-ept">0</span> questões.</p>
+        <h4>Gabarito e Explicações:</h4>
+        <ol id="answer-key-ept" class="answer-list"></ol>
     </div>
-
-    <script src="script.js"></script>
-</body>
-</html>
+</div>
