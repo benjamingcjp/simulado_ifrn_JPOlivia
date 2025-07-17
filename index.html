@@ -15,7 +15,7 @@
             <button class="action-button" id="ia-questions-button">Questões Geradas por IA</button>
             <button class="action-button" id="prova-questions-button">Questões de Outras Provas</button>
             <button class="action-button" id="ept-brasil-button">EPT no Brasil</button>
-        </div>
+            <button class="action-button" id="leis-8027-1171-button">Leis 8027 e 1171</button> </div>
 
         <div id="ia-simulado-content" class="hidden">
             <h2 class="quiz-title">Questões Geradas por IA</h2>
@@ -59,6 +59,21 @@
                 <p>Você acertou <span id="score-ept">0</span> de <span id="total-questions-ept">0</span> questões.</p>
                 <h4>Gabarito e Explicações:</h4>
                 <ol class="answer-list" id="answer-key-ept"></ol>
+            </div>
+        </div>
+
+        <div id="leis-8027-1171-simulado-content" class="hidden">
+            <h2 class="quiz-title">Questões: Leis 8027 e 1171</h2>
+            <div id="leis-8027-1171-questions-container">
+                </div>
+            <button class="action-button" id="submit-leis-8027-1171-button">Verificar Respostas</button>
+            <button class="action-button hidden" id="restart-leis-8027-1171-button">Novo Simulado (Leis 8027 e 1171)</button>
+
+            <div id="results-leis-8027-1171-container" class="results-card hidden">
+                <h3>Resultados do Simulado:</h3>
+                <p>Você acertou <span id="score-leis-8027-1171">0</span> de <span id="total-questions-leis-8027-1171">0</span> questões.</p>
+                <h4>Gabarito e Explicações:</h4>
+                <ol class="answer-list" id="answer-key-leis-8027-1171"></ol>
             </div>
         </div>
 
