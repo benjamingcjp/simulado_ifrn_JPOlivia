@@ -729,5 +729,3 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     ];
 });
-
-Espero que este script atualizado atenda às suas necessidades! Se precisar de mais alguma modificação ou tiver outras perguntas, é só me dizer.
