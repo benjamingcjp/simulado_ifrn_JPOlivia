@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
         { id: '04', question: 'A exoneração de um servidor público pode ocorrer:', options: ['a) Apenas a pedido do servidor.', 'b) Apenas de ofício pela administração.', 'c) A pedido do servidor ou de ofício.', 'd) Somente por decisão judicial.'], correct: 'c', explanation: 'A exoneração pode ocorrer a pedido do servidor (interesse particular) ou de ofício pela administração (ex: insatisfatório no estágio probatório).' },
         { id: '05', question: 'O deslocamento do servidor, a pedido ou de ofício, no âmbito do mesmo quadro, com ou sem mudança de sede, denomina-se:', options: ['a) Redistribuição.', 'b) Remoção.', 'c) Recondução.', 'd) Aproveitamento.'], correct: 'b', explanation: 'A definição de remoção corresponde ao deslocamento do servidor dentro do mesmo quadro.' },
         { id: '06', question: 'Qual das seguintes situações NÃO caracteriza vacância de cargo público?', options: ['a) Demissão.', 'b) Licença para tratamento de saúde.', 'c) Aposentadoria.', 'd) Posse em outro cargo inacumulável.'], correct: 'b', explanation: 'A licença para tratamento de saúde é um afastamento temporário, não uma causa de vacância do cargo.' },
-        { id: '07', question: 'O adicional noturno, conforme a Lei nº 8.112/1990, é devido pelo trabalho prestado no período compreendido entre:', options: ['a) 20h e 5h do dia seguinte.', 'b) 22h e 6h do dia seguinte.', 'c) 21h e 4h do dia seguinte.', 'd) 23h e 7h do dia seguinte.'], correct: 'a', explanation: 'O artigo 75 da Lei nº 8.112/1990 define o adicional noturno para o trabalho prestado entre 22h e 5h. Correção: A alternativa correta é a) 22h e 5h do dia seguinte.' },
+        { id: '07', question: 'O adicional noturno, conforme a Lei nº 8.112/1990, é devido pelo trabalho prestado no período compreendido entre:', options: ['a) 20h e 5h do dia seguinte.', 'b) 22h e 6h do dia seguinte.', 'c) 21h e 4h do dia seguinte.', 'd) 23h e 7h do dia seguinte.'], correct: 'b', explanation: 'O artigo 75 da Lei nº 8.112/1990 define o adicional noturno para o trabalho prestado entre 22h e 5h. Correção: A alternativa correta é b) 22h e 5h do dia seguinte.' }, // Correção da alternativa correta para b)
         { id: '08', question: 'Quantos dias de férias anuais o servidor público federal tem direito, conforme a Lei nº 8.112/1990?', options: ['a) 25 dias úteis.', 'b) 30 dias corridos.', 'c) 20 dias úteis.', 'd) 35 dias corridos.'], correct: 'b', explanation: 'O servidor tem direito a 30 dias de férias por ano, conforme o artigo 77 da Lei nº 8.112/1990.' },
         { id: '09', question: 'Qual das licenças abaixo NÃO depende de avaliação por junta médica oficial?', options: ['a) Licença por motivo de doença em pessoa da família.', 'b) Licença para tratamento da própria saúde por período superior a 15 dias.', 'c) Licença para atividade política.', 'd) Licença à gestante.'], correct: 'c', explanation: 'A licença para atividade política não depende de avaliação por junta médica oficial.' },
         { id: '10', question: 'O servidor que retorna ao serviço público após ter sido considerado inválido em junta médica oficial e recuperado a capacidade laboral é:', options: ['a) Reintegrado.', 'b) Reconduzido.', 'c) Readaptado.', 'd) Aproveitado.'], correct: 'd', explanation: 'O aproveitamento é o retorno ao serviço ativo do servidor em disponibilidade.' },
@@ -21,7 +21,7 @@ document.addEventListener('DOMContentLoaded', () => {
         { id: '17', question: 'A acumulação de cargos públicos é vedada, EXCETO quando houver compatibilidade de horários e se tratar de:', options: ['a) Dois cargos de professor.', 'b) Um cargo de professor com outro técnico ou científico.', 'c) Dois cargos ou empregos privativos de profissionais de saúde, com profissões regulamentadas.', 'd) Todas as alternativas anteriores.'], correct: 'd', explanation: 'A acumulação é permitida nas hipóteses constitucionais de dois cargos de professor, um de professor com outro técnico ou científico, e dois cargos ou empregos privativos de profissionais de saúde, com profissões regulamentadas, havendo compatibilidade de horários.' },
         { id: '18', question: 'O estágio probatório é o período de:', options: ['a) 12 meses de efetivo exercício.', 'b) 24 meses de efetivo exercício.', 'c) 36 meses de efetivo exercício.', 'd) Não há período definido.'], correct: 'c', explanation: 'O artigo 20 da Lei nº 8.112/1990 define o estágio probatório como o período de 36 meses de efetivo exercício.' },
         { id: '19', question: 'A avaliação especial de desempenho durante o estágio probatório visa apurar, entre outros aspectos:', options: ['a) Apenas a assiduidade e a disciplina.', 'b) Aptidão e capacidade para o desempenho eficiente das atribuições do cargo.', 'c) O nível de produtividade e a qualidade do trabalho desenvolvido pelo servidorcontinuidade nos estudos.', 'd) Apenas a pontualidade e a produtividade.'], correct: 'b', explanation: 'A avaliação no estágio probatório visa verificar a aptidão e capacidade do servidor para o desempenho eficiente das atribuições do cargo (artigo 20, § 1º).' },
-        { id: '20', question: 'A recondução é o retorno do servidor estável ao cargo anteriormente ocupado, em decorrência de:', options: ['a) Inabilitação em estágio probatório relativo a outro cargo.', 'b) Reintegração de outro servidor.', 'c) Aproveitamento do servidor em disponibilidade.', 'd) Todas as alternativas anteriores.'], correct: 'd', explanation: 'A recondução ocorre nas três situações mencionadas (artigo 29).' },
+        { id: '20', question: 'A recondução é o retorno do servidor estável ao cargo anteriormente ocupado, em decorrência de:', options: ['a) Inabilitação em estágio probatório relativo a outro cargo.', 'b) Reintegração de outro servidor.', 'c) Aproveitamento do servidor em disponibilidade.', 'd) Todas as alternativas anteriores.'], correct: 'a', explanation: 'A recondução ocorre nas três situações mencionadas (artigo 29).' }, // Correção da alternativa correta para a)
 
         // Lei nº 12.772/2012
         { id: '21', question: 'A Lei nº 12.772/2012 dispõe sobre a estruturação de qual plano de carreiras?', options: ['a) Plano de Carreiras e Cargos da Administração Pública Federal.', 'b) Plano de Carreiras e Cargos do Magistério Federal.', 'c) Plano Único de Carreiras e Cargos dos Servidores Federais.', 'd) Plano Nacional de Educação.'], correct: 'b', explanation: 'A Lei nº 12.772/2012 estrutura o Plano de Carreiras e Cargos de Magistério Federal.' },
@@ -186,407 +186,548 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     ];
 
-    // BANCO DE QUESTÕES PARA O "SIMULADO EXTRA"
-    const allQuestionsExtra = [
-        { id: 'E01', question: 'Qual a capital do Brasil?', options: ['a) Rio de Janeiro', 'b) São Paulo', 'c) Brasília', 'd) Belo Horizonte'], correct: 'c', explanation: 'A capital do Brasil é Brasília, localizada no Distrito Federal.' },
-        { id: 'E02', question: 'Qual o maior planeta do sistema solar?', options: ['a) Terra', 'b) Marte', 'c) Júpiter', 'd) Saturno'], correct: 'c', explanation: 'Júpiter é o maior planeta do nosso sistema solar.' },
-        { id: 'E03', question: 'Quem pintou a Monalisa?', options: ['a) Vincent van Gogh', 'b) Pablo Picasso', 'c) Leonardo da Vinci', 'd) Claude Monet'], correct: 'c', explanation: 'A obra-prima Monalisa foi pintada por Leonardo da Vinci.' },
-        { id: 'E04', question: 'Qual o elemento químico com o símbolo O?', options: ['a) Ouro', 'b) Oxigênio', 'c) Ósmio', 'd) Oganessônio'], correct: 'b', explanation: 'O símbolo químico O representa o Oxigênio.' },
-        { id: 'E05', question: 'Em que ano o homem pisou na Lua pela primeira vez?', options: ['a) 1959', 'b) 1969', 'c) 1979', 'd) 1989'], correct: 'b', explanation: 'O homem pisou na Lua pela primeira vez em 1969, com a missão Apollo 11.' }
+    // Banco de questões para o questionário "EPT No Brasil 1.1"
+    const allQuestionsEPT = [
+        // 1. Educação profissional e tecnológica no Brasil: organização e bases conceituais
+        { id: 'EPT41', question: 'A Educação Profissional e Tecnológica (EPT) no Brasil tem sua trajetória marcada por diversas transformações. Qual das opções abaixo MELHOR descreve a principal característica da EPT na atualidade, considerando sua organização e bases conceituais?', options: ['a) Foco exclusivo na formação técnica para o mercado de trabalho, desvinculada da educação básica.', 'b) Ênfase na formação humanística, com pouca articulação com as demandas tecnológicas e produtivas.', 'c) Integração entre trabalho, ciência, tecnologia e cultura, visando à formação integral do indivíduo e ao desenvolvimento socioeconômico.', 'd) Predominância de cursos de curta duração, sem aprofundamento teórico ou científico.', 'e) Caráter assistencialista, voltado apenas para a qualificação de mão de obra de baixa escolaridade.'], correct: 'c', explanation: 'A EPT moderna busca a integração para uma formação completa.' },
+        { id: 'EPT42', question: 'Sobre a organização da Educação Profissional e Tecnológica (EPT) no Brasil, assinale a alternativa CORRETA:', options: ['a) A EPT é oferecida apenas em nível médio, com foco na formação técnica.', 'b) Os Institutos Federais são as únicas instituições autorizadas a ofertar cursos de EPT no país.', 'c) A EPT abrange diferentes níveis e modalidades de ensino, como Formação Inicial e Continuada (FIC), cursos técnicos, tecnólogos e pós-graduação.', 'd) A legislação brasileira não prevê a articulação entre a EPT e a educação básica, sendo modalidades de ensino independentes.', 'e) A oferta de cursos de EPT é centralizada no Ministério da Educação, sem autonomia para as instituições de ensino.'], correct: 'c', explanation: 'A EPT é bastante abrangente em níveis e modalidades.' },
+        { id: 'EPT43', question: 'As bases conceituais da Educação Profissional e Tecnológica (EPT) no Brasil são fundamentais para compreender sua finalidade. Nesse contexto, qual o papel da relação entre trabalho, ciência, tecnologia e cultura na formação do indivíduo?', options: ['a) O trabalho é o único elemento relevante, sendo a ciência, tecnologia e cultura meros acessórios.', 'b) A ciência e a tecnologia são priorizadas, enquanto o trabalho e a cultura são secundários.', 'c) A cultura é o elemento central, e os demais são utilizados para fins de entretenimento.', 'd) A articulação desses quatro elementos visa a uma formação integral, crítica e cidadã, que prepare o indivíduo para atuar no mundo do trabalho e na sociedade de forma consciente.', 'e) A EPT foca apenas na aquisição de habilidades técnicas, sem considerar a dimensão cultural ou científica.'], correct: 'd', explanation: 'A articulação desses elementos promove uma formação integral e crítica.' },
+        { id: 'EPT44', question: 'A importância da Educação Profissional e Tecnológica (EPT) para o desenvolvimento socioeconômico do Brasil é inegável. Qual das afirmações abaixo MELHOR justifica o investimento nessa modalidade de ensino?', options: ['a) A EPT é responsável por formar mão de obra barata para atender às demandas imediatas da indústria.', 'b) A EPT contribui para a redução do desemprego, mas não impacta significativamente o desenvolvimento tecnológico do país.', 'c) A EPT promove a qualificação profissional, o desenvolvimento de novas tecnologias, a inovação e a inclusão social, impulsionando o crescimento econômico e a melhoria da qualidade de vida.', 'd) A EPT é um gasto desnecessário, pois o mercado de trabalho se adapta rapidamente às necessidades sem a intervenção educacional.', 'e) A EPT tem como principal objetivo a formação de pesquisadores, sem foco na aplicação prática do conhecimento.'], correct: 'c', explanation: 'A EPT tem um papel multifacetado no desenvolvimento socioeconômico.' },
+        { id: 'EPT45', question: 'Sobre os desafios e perspectivas futuras da Educação Profissional e Tecnológica (EPT) no contexto brasileiro, assinale a alternativa INCORRETA:', options: ['a) A necessidade de atualização constante dos currículos para acompanhar as rápidas transformações tecnológicas é um desafio.', 'b) A garantia de acesso e permanência de estudantes em cursos de EPT, especialmente em regiões mais remotas, é uma perspectiva importante.', 'c) A articulação entre a EPT e o setor produtivo, visando à empregabilidade e à inovação, é um desafio a ser superado.', 'd) A EPT deve se desvincular das políticas públicas educacionais para ter maior autonomia e flexibilidade.', 'e) A promoção da pesquisa aplicada e da extensão tecnológica é uma perspectiva para o fortalecimento da EPT.'], correct: 'd', explanation: 'A EPT deve estar vinculada às políticas públicas para seu fortalecimento.' },
+        { id: 'EPT46', question: 'Em relação às abordagens teóricas que influenciam a Educação Profissional e Tecnológica (EPT) no Brasil, qual das opções abaixo apresenta uma característica da formação integral?', options: ['a) Foco exclusivo no desenvolvimento de competências técnicas específicas para o mercado de trabalho.', 'b) Priorização da memorização de conteúdos teóricos em detrimento da prática.', 'c) Visão fragmentada do conhecimento, sem conexão entre as diferentes áreas do saber.', 'd) Busca pela formação do indivíduo em suas múltiplas dimensões (intelectual, social, cultural, ética), articulando teoria e prática, trabalho e educação.', 'e) Ênfase na reprodução de modelos preexistentes, sem estímulo à criatividade ou inovação.'], correct: 'd', explanation: 'A formação integral abrange todas as dimensões do indivíduo.' },
+        { id: 'EPT47', question: 'O papel dos Institutos Federais na organização da Educação Profissional e Tecnológica (EPT) no Brasil é de extrema relevância. Qual das alternativas MELHOR descreve a autonomia e as responsabilidades dessas instituições?', options: ['a) Os Institutos Federais atuam como meros executores de diretrizes do Ministério da Educação, sem autonomia pedagógica.', 'b) Possuem autonomia administrativa, patrimonial, financeira, didático-pedagógica e disciplinar, sendo responsáveis pela oferta de educação profissional e tecnológica em diferentes níveis e modalidades.', 'c) Sua principal responsabilidade é a formação de mão de obra para grandes empresas, sem preocupação com o desenvolvimento regional.', 'd) A autonomia dos Institutos Federais é limitada à gestão financeira, não abrangendo aspectos pedagógicos.', 'e) São instituições de ensino superior, sem atuação na educação básica ou na formação inicial e continuada.'], correct: 'b', explanation: 'Os Institutos Federais possuem ampla autonomia.' },
+        { id: 'EPT48', question: 'A integração entre a Educação Profissional e Tecnológica (EPT) e a educação básica é um tema relevante. Qual o principal benefício dessa articulação para a formação dos estudantes?', options: ['a) A EPT substitui a educação básica, tornando-a desnecessária para a formação profissional.', 'b) A integração permite que os estudantes concluam o ensino médio e, ao mesmo tempo, obtenham uma qualificação profissional, ampliando suas oportunidades no mercado de trabalho e na vida acadêmica.', 'c) A educação básica é responsável apenas pela formação teórica, enquanto a EPT cuida da formação prática.', 'd) A integração visa apenas a reduzir o tempo de estudo dos alunos, sem preocupar-se com a qualidade da formação.', 'e) A articulação entre EPT e educação básica é inviável devido às diferenças curriculares e metodológicas.'], correct: 'b', explanation: 'A integração enriquece a formação e amplia oportunidades.' },
+        { id: 'EPT49', question: 'A pesquisa e a inovação desempenham um papel crucial na Educação Profissional e Tecnológica (EPT). Qual das opções abaixo apresenta um exemplo de como essas atividades podem impulsionar o desenvolvimento tecnológico e social?', options: ['a) A pesquisa na EPT se restringe à análise de dados estatísticos sobre o mercado de trabalho.', 'b) A inovação na EPT se limita à aquisição de novos equipamentos e tecnologias, sem a produção de conhecimento próprio.', 'c) O desenvolvimento de projetos de pesquisa aplicada que resultem em soluções tecnológicas para problemas reais da sociedade, gerando patentes e impulsionando a economia local.', 'd) A EPT foca apenas na reprodução de conhecimentos existentes, sem incentivo à criação ou descoberta.', 'e) A pesquisa e a inovação são atividades exclusivas das universidades, não sendo relevantes para a EPT.'], correct: 'c', explanation: 'A pesquisa aplicada na EPT gera soluções e impulsiona a economia.' },
+        { id: 'EPT50', question: 'A Educação Profissional e Tecnológica (EPT) pode contribuir significativamente para a inclusão social e a redução das desigualdades. Qual das alternativas MELHOR explica essa contribuição?', options: ['a) A EPT oferece cursos apenas para pessoas com alto nível de escolaridade, perpetuando as desigualdades.', 'b) A EPT promove a inclusão social ao oferecer oportunidades de qualificação profissional para jovens e adultos de diferentes contextos sociais, facilitando seu acesso ao mercado de trabalho e à ascensão social.', 'c) A EPT se preocupa apenas com a formação técnica, sem considerar as questões sociais ou econômicas dos estudantes.', 'd) A inclusão social na EPT se restringe à oferta de cotas para minorias, sem ações efetivas de acompanhamento e apoio.', 'e) A EPT não tem impacto na redução das desigualdades, pois o mercado de trabalho é o único fator determinante para a inclusão social.'], correct: 'b', explanation: 'A EPT é um vetor de inclusão social e ascensão.' },
+
+        // 2. Projeto Político-Pedagógico do IFRN
+        { id: 'EPT51', question: 'O Projeto Político-Pedagógico (PPP) é um documento essencial para o IFRN. Qual das opções abaixo MELHOR descreve a importância do PPP como instrumento de gestão democrática?', options: ['a) O PPP é um documento meramente burocrático, sem impacto nas decisões pedagógicas da instituição.', 'b) O PPP centraliza as decisões na direção da instituição, sem a participação da comunidade acadêmica.', 'c) O PPP é um instrumento que sistematiza as concepções, princípios e diretrizes da instituição, construído coletivamente e que orienta as ações pedagógicas, administrativas e financeiras, promovendo a participação e a reflexão crítica.', 'd) O PPP é um documento estático, que não permite revisões ou atualizações ao longo do tempo.', 'e) O PPP serve apenas para cumprir exigências legais, sem refletir a realidade da instituição.'], correct: 'c', explanation: 'O PPP é um documento vivo e participativo.' },
+        { id: 'EPT52', question: 'Sobre o processo de construção do PPP do IFRN, assinale a alternativa CORRETA:', options: ['a) O PPP do IFRN foi elaborado por uma equipe restrita de especialistas, sem a participação da comunidade acadêmica.', 'b) A construção do PPP do IFRN foi um processo participativo, envolvendo servidores (docentes e técnicos administrativos) e alunos em diversos espaços de trabalhos coletivos, como reuniões e seminários.', 'c) O PPP do IFRN foi imposto pelo Ministério da Educação, sem considerar as especificidades da instituição.', 'd) A elaboração do PPP do IFRN ocorreu de forma isolada, sem relação com as políticas educacionais vigentes.', 'e) O PPP do IFRN é um documento provisório, que ainda não foi consolidado.'], correct: 'b', explanation: 'A construção do PPP é um processo coletivo e democrático.' },
+        { id: 'EPT53', question: 'Os principais eixos norteadores do PPP do IFRN se relacionam diretamente com a missão e a visão da instituição. Qual das opções abaixo apresenta um desses eixos?', options: ['a) Foco exclusivo na formação para o mercado de trabalho.', 'b) Ênfase na pesquisa teórica, desvinculada da aplicação prática.', 'c) Articulação entre ciência, trabalho, cultura e tecnologia, visando à formação integral e ao desenvolvimento social.', 'd) Priorização de atividades administrativas em detrimento das pedagógicas.', 'e) Restrição da atuação da instituição ao ensino técnico, sem abrangência em outros níveis.'], correct: 'c', explanation: 'O PPP do IFRN busca a integração desses eixos para uma formação completa.' },
+        { id: 'EPT54', question: 'O PPP do IFRN se consolida como um documento de caráter identitário. O que isso significa?', options: ['a) Que o PPP é um documento genérico, que pode ser aplicado a qualquer instituição de ensino.', 'b) Que o PPP reflete a cultura e os valores específicos do IFRN, delineando seus direcionamentos pedagógicos, administrativos e financeiros de forma única.', 'c) Que o PPP é um documento secreto, acessível apenas a um grupo seleto de pessoas.', 'd) Que o PPP é um documento temporário, que perde sua validade após um determinado período.', 'e) Que o PPP se limita a descrever a estrutura física da instituição.'], correct: 'b', explanation: 'O caráter identitário do PPP reflete a singularidade do IFRN.' },
+        { id: 'EPT55', question: 'A perspectiva emancipatória é um dos pilares do PPP do IFRN. Como ela se manifesta na prática da instituição?', options: ['a) Através da imposição de um modelo educacional único, sem considerar as individualidades dos estudantes.', 'b) Pela busca em promover mudanças nas concepções e práticas cotidianas, visando à formação de cidadãos críticos, autônomos e capazes de transformar a realidade.', 'c) Pela priorização do ensino tradicional, com foco na transmissão de conteúdos.', 'd) Pela desconsideração das demandas sociais e culturais da comunidade.', 'e) Pela restrição da participação dos estudantes nas decisões da instituição.'], correct: 'b', explanation: 'A perspectiva emancipatória visa à formação de cidadãos transformadores.' },
+        { id: 'EPT56', question: 'A relação entre o PPP do IFRN e as políticas educacionais de cunho neoliberal é um ponto de destaque. Como o IFRN se posiciona em relação a uma lógica de planejamento meramente burocrático?', options: ['a) O IFRN adota integralmente a lógica do planejamento burocrático, visando à eficiência administrativa.', 'b) O IFRN se opõe a essa lógica, buscando um planejamento educacional participativo, humano e libertador, que valorize a reflexão crítica e a construção coletiva.', 'c) O IFRN ignora as políticas educacionais, desenvolvendo seu PPP de forma isolada.', 'd) O IFRN se adapta às políticas neoliberais, priorizando a formação para o mercado de trabalho em detrimento da formação integral.', 'e) O IFRN não possui um posicionamento claro em relação a essa questão.'], correct: 'b', explanation: 'O IFRN busca um planejamento educacional humanizado e participativo.' },
+        { id: 'EPT57', question: 'A estrutura do PPP do IFRN é composta por diferentes volumes. Qual a finalidade do Volume 1 – Documento-Base?', options: ['a) Detalhar os projetos pedagógicos de cada curso oferecido pelo IFRN.', 'b) Sistematizar as concepções, princípios e diretrizes norteadores das práticas e políticas educativas da instituição.', 'c) Apresentar as propostas de trabalho para as disciplinas do ensino médio.', 'd) Descrever o processo de construção do PPP do IFRN.', 'e) Fornecer os cadernos temáticos para cada área do conhecimento.'], correct: 'b', explanation: 'O Documento-Base sistematiza os fundamentos educacionais do IFRN.' },
+        { id: 'EPT58', question: 'Como o PPP do IFRN orienta as ações político-pedagógicas da instituição, considerando sua natureza multicampi e pluricurricular?', options: ['a) Através de um modelo pedagógico único e inflexível para todos os campi e cursos.', 'b) Por meio de diretrizes gerais que permitem a adaptação e a contextualização das práticas pedagógicas em cada campus e curso, respeitando as especificidades locais e as diferentes modalidades de ensino.', 'c) Limitando a oferta de cursos a poucas áreas do conhecimento para facilitar a gestão.', 'd) Centralizando todas as decisões pedagógicas na reitoria, sem autonomia para os campi.', 'e) Focando apenas na formação técnica, sem considerar a diversidade de perfis dos estudantes.'], correct: 'b', explanation: 'O PPP permite flexibilidade para se adaptar às realidades de cada campus.' },
+        { id: 'EPT59', question: 'A revisão e reconstrução do PPP do IFRN são importantes devido a novos desafios. Qual a principal razão para essa necessidade de atualização?', options: ['a) Apenas para cumprir exigências legais e burocráticas.', 'b) A necessidade de adaptar o PPP às mudanças administrativas e pedagógicas decorrentes da transformação em Instituto Federal e das novas demandas educacionais.', 'c) A falta de participação da comunidade acadêmica na elaboração inicial do PPP.', 'd) A obsolescência dos princípios pedagógicos adotados anteriormente.', 'e) A busca por um modelo educacional mais tradicional e menos inovador.'], correct: 'b', explanation: 'O PPP é revisado para se adequar às transformações e novas demandas.' },
+        { id: 'EPT60', question: 'O PPP do IFRN contribui para a formação humana integral dos estudantes. Qual das opções abaixo MELHOR descreve essa contribuição?', options: ['a) Foca apenas na aquisição de conhecimentos técnicos para o mercado de trabalho.', 'b) Prepara o estudante para o exercício da cidadania, a produção e socialização do conhecimento, e a atuação consciente no mundo do trabalho e na sociedade, articulando diferentes dimensões da formação humana.', 'c) Limita a formação do estudante ao desenvolvimento de habilidades específicas para uma única profissão.', 'd) Desconsidera a dimensão cultural e social da formação, priorizando apenas o aspecto intelectual.', 'e) Incentiva a competição entre os estudantes, sem preocupação com a colaboração ou o desenvolvimento de valores éticos.'], correct: 'b', explanation: 'A formação humana integral abrange múltiplos aspectos da vida do estudante.' },
+
+        // 3. Identidade e concepções institucionais
+        { id: 'EPT61', question: 'A construção da identidade do IFRN é marcada por sua atuação na expansão, democratização e interiorização da educação profissional de qualidade. Qual o impacto dessa atuação na sociedade?', options: ['a) Apenas o aumento do número de vagas em cursos técnicos.', 'b) A formação de uma elite técnica, sem impacto na inclusão social.', 'c) A promoção da inclusão social, o desenvolvimento regional e a melhoria da qualidade de vida da população, através do acesso à educação e à qualificação profissional em diversas localidades.', 'd) A padronização do ensino em todo o estado, sem considerar as especificidades locais.', 'e) A desvalorização da educação básica em detrimento da educação profissional.'], correct: 'c', explanation: 'A atuação do IFRN gera impactos sociais e regionais amplos.' },
+        { id: 'EPT62', question: 'O IFRN busca incorporar outras dimensões da constituição humana e da vida em sociedade, ultrapassando a formação estritamente profissional e técnica. Qual o significado dessa abordagem?', options: ['a) Que o IFRN oferece cursos em áreas não relacionadas ao trabalho.', 'b) Que a formação no IFRN visa a desenvolver no estudante não apenas habilidades técnicas, mas também valores éticos, pensamento crítico, responsabilidade social e cultural, preparando-o para uma atuação cidadã e consciente.', 'c) Que o IFRN prioriza a formação teórica em detrimento da prática.', 'd) Que o IFRN se distancia das demandas do mercado de trabalho.', 'e) Que o IFRN foca apenas na formação acadêmica, sem preocupação com a empregabilidade.'], correct: 'b', explanation: 'O IFRN busca uma formação que vai além do técnico, abrangendo a cidadania.' },
+        { id: 'EPT63', question: 'Os Institutos Federais são caracterizados como instituições de educação superior, básica e profissional, pluricurriculares e multicampi. O que essa caracterização implica?', options: ['a) Que os Institutos Federais oferecem apenas cursos de graduação e pós-graduação.', 'b) Que os Institutos Federais atuam em diferentes níveis e modalidades de ensino, com uma ampla variedade de cursos e presença em diversas localidades, integrando o ensino, a pesquisa e a extensão.', 'c) Que os Institutos Federais são instituições de ensino técnico, sem autonomia para ofertar outros níveis de ensino.', 'd) Que os Institutos Federais possuem um currículo restrito a poucas áreas do conhecimento.', 'e) Que os Institutos Federais são instituições privadas, sem vínculo com o setor público.'], correct: 'b', explanation: 'Essa caracterização destaca a abrangência e diversidade dos Institutos Federais.' },
+        { id: 'EPT64', question: 'A Lei nº 11.892/2008 confere aos Institutos Federais autonomia administrativa, patrimonial, financeira, didático-pedagógica e disciplinar. Qual a relevância dessa autonomia para a atuação do IFRN?', options: ['a) Permite que o IFRN atue de forma independente do Ministério da Educação, sem seguir diretrizes nacionais.', 'b) Garante ao IFRN a capacidade de gerir seus próprios recursos, definir seus currículos, métodos de ensino e normas internas, adaptando-se às necessidades regionais e promovendo a inovação educacional.', 'c) Limita a atuação do IFRN a aspectos burocráticos, sem impacto na qualidade do ensino.', 'd) Torna o IFRN uma instituição isolada, sem interação com outras instituições de ensino.', 'e) Impede que o IFRN receba recursos do governo federal.'], correct: 'b', explanation: 'A autonomia é essencial para a flexibilidade e inovação do IFRN.' },
+        { id: 'EPT65', question: 'A função social do IFRN é um dos pilares de sua identidade. Qual o principal objetivo dessa função social?', options: ['a) Apenas formar profissionais para o mercado de trabalho.', 'b) Promover a transformação da realidade na perspectiva da igualdade e da justiça sociais, através de uma educação de qualidade que articula ciência, cultura, trabalho e tecnologia.', 'c) Gerar lucro para a instituição e seus colaboradores.', 'd) Atender exclusivamente às demandas das grandes empresas.', 'e) Manter o status quo social, sem promover mudanças significativas.'], correct: 'b', explanation: 'A função social do IFRN visa à transformação social e à justiça.' },
+        { id: 'EPT66', question: 'A missão e a visão do IFRN se relacionam com o desenvolvimento social do Rio Grande do Norte. Qual a essência dessa relação?', options: ['a) A missão e a visão do IFRN são genéricas e não se aplicam especificamente ao contexto do Rio Grande do Norte.', 'b) A missão do IFRN é prover formação humana, científica e profissional para o desenvolvimento social do estado, e sua visão é consolidar-se como referência nacional em formação humana e profissional, gerando desenvolvimento científico e tecnológico para a região.', 'c) A missão e a visão do IFRN focam apenas no desenvolvimento econômico, sem considerar o aspecto social.', 'd) O IFRN não tem responsabilidade com o desenvolvimento social do estado.', 'e) A missão e a visão do IFRN são definidas por órgãos externos, sem a participação da comunidade acadêmica.'], correct: 'b', explanation: 'A missão e visão do IFRN estão alinhadas ao desenvolvimento social e regional.' },
+        { id: 'EPT67', question: 'Os valores organizacionais norteiam o IFRN. Qual dos valores abaixo NÃO está diretamente relacionado à promoção da inclusão e do respeito às diferenças?', options: ['a) Comprometimento.', 'b) Cooperação.', 'c) Diversidade.', 'd) Equidade.', 'e) Ética.'], correct: 'a', explanation: 'Comprometimento é um valor geral, enquanto os demais estão mais diretamente ligados à inclusão e diversidade.' },
+        { id: 'EPT68', question: 'Os objetivos do IFRN incluem a oferta de cursos em sintonia com sua função social e a organização curricular a partir dos eixos ciência, trabalho, cultura e tecnologia. Qual o propósito dessa organização curricular?', options: ['a) Fragmentar o conhecimento em disciplinas isoladas.', 'b) Promover uma formação integral e contextualizada, que prepare o estudante para atuar de forma crítica e consciente no mundo do trabalho e na sociedade, compreendendo as inter-relações entre esses eixos.', 'c) Priorizar apenas a dimensão técnica do conhecimento.', 'd) Desconsiderar as demandas do mercado de trabalho.', 'e) Limitar a atuação do IFRN a poucas áreas do conhecimento.'], correct: 'b', explanation: 'Essa organização curricular busca uma formação integrada e crítica.' },
+        { id: 'EPT69', question: 'O IFRN estimula e apoia a produção cultural, o empreendedorismo, o desenvolvimento científico e tecnológico e o pensamento reflexivo. Qual o impacto dessas ações na formação dos estudantes?', options: ['a) Apenas o desenvolvimento de habilidades técnicas específicas.', 'b) A formação de profissionais mais criativos, inovadores, críticos e capazes de gerar soluções para os desafios da sociedade, além de promover o desenvolvimento regional.', 'c) A desvalorização do ensino formal em detrimento de atividades extracurriculares.', 'd) O foco exclusivo na pesquisa acadêmica, sem aplicação prática.', 'e) A reprodução de modelos preexistentes, sem estímulo à originalidade.'], correct: 'b', explanation: 'As ações do IFRN contribuem para formar profissionais completos e inovadores.' },
+        { id: 'EPT70', question: 'O IFRN busca desenvolver atividades de Extensão e Pesquisa. Qual o principal benefício dessas atividades para a comunidade?', options: ['a) Apenas a publicação de artigos científicos.', 'b) A geração de conhecimento e soluções para problemas reais da comunidade, a promoção da inclusão social, a melhoria da qualidade de vida e o desenvolvimento regional, através da interação entre a instituição e a sociedade.', 'c) A captação de recursos financeiros para a instituição.', 'd) O aumento do número de matrículas em cursos de graduação.', 'e) A formação de pesquisadores, sem impacto direto na sociedade.'], correct: 'b', explanation: 'Extensão e Pesquisa no IFRN beneficiam a comunidade com soluções e desenvolvimento.' },
+
+        // 4. Princípios e diretrizes orientadores da prática pedagógica
+        { id: 'EPT71', question: 'Os princípios e diretrizes orientadores da prática pedagógica na EPT são cruciais. Qual a sua principal função?', options: ['a) Padronizar o ensino em todas as instituições de EPT, sem considerar as especificidades regionais.', 'b) Guiar a implementação de políticas públicas, a elaboração de currículos e a ação docente, assegurando uma formação de qualidade, contextualizada e alinhada aos objetivos da EPT.', 'c) Limitar a autonomia dos professores em sala de aula.', 'd) Focar apenas na avaliação do desempenho dos estudantes.', 'e) Reduzir a complexidade do processo de ensino-aprendizagem.'], correct: 'b', explanation: 'Os princípios e diretrizes servem como um guia essencial para a prática pedagógica na EPT.' },
+        { id: 'EPT72', question: 'A prática pedagógica na EPT e a formação humana integral estão intrinsecamente relacionadas. Como o trabalho, a ciência, a tecnologia e a cultura se articulam nesse processo?', options: ['a) São elementos independentes, sem conexão entre si.', 'b) O trabalho é o elemento central, e os demais são secundários.', 'c) A articulação desses elementos visa a uma formação que integre o saber fazer com o saber ser e o saber conviver, preparando o indivíduo para atuar de forma plena na sociedade e no mundo do trabalho.', 'd) A ciência e a tecnologia são priorizadas, e o trabalho e a cultura são desconsiderados.', 'e) A cultura é o único elemento relevante para a formação humana integral.'], correct: 'c', explanation: 'A articulação desses elementos é fundamental para a formação integral na EPT.' },
+        { id: 'EPT73', question: 'A interdisciplinaridade é um conceito fundamental na prática pedagógica da EPT. Como ela se manifesta na necessidade de diálogo entre os diferentes saberes?', options: ['a) Através da separação rígida das disciplinas, sem comunicação entre elas.', 'b) Pela integração de conhecimentos de diferentes áreas do saber para a compreensão e resolução de problemas complexos, promovendo uma visão mais abrangente e contextualizada da realidade.', 'c) Pela priorização de uma única área do conhecimento em detrimento das demais.', 'd) Pela reprodução de conteúdos de forma isolada, sem conexão com outras disciplinas.', 'e) Pela desvalorização do conhecimento técnico em relação ao conhecimento teórico.'], correct: 'b', explanation: 'A interdisciplinaridade promove uma visão holística e contextualizada do conhecimento.' },
+        { id: 'EPT74', question: 'O professor na EPT desempenha um papel crucial. Qual a sua principal função, considerando as especificidades dessa modalidade de ensino?', options: ['a) Apenas transmitir conteúdos de forma expositiva.', 'b) Atuar como mediador do conhecimento, facilitador da aprendizagem, incentivando a autonomia, a pesquisa e a problematização, e articulando a teoria com a prática e as demandas do mundo do trabalho.', 'c) Focar apenas na avaliação do desempenho dos estudantes.', 'd) Limitar a participação dos estudantes em sala de aula.', 'e) Seguir um currículo rígido, sem espaço para a criatividade ou a inovação.'], correct: 'b', explanation: 'O professor na EPT é um mediador e facilitador da aprendizagem, conectando teoria e prática.' },
+        { id: 'EPT75', question: 'A contextualização e a problematização são importantes na prática pedagógica da EPT. Como elas tornam o ensino mais significativo para os estudantes?', options: ['a) Ao apresentar os conteúdos de forma abstrata, sem relação com a realidade dos estudantes.', 'b) Ao relacionar os conteúdos com situações reais e problemas do cotidiano, tornando o aprendizado mais relevante, engajador e aplicável, e estimulando o pensamento crítico e a busca por soluções.', 'c) Ao focar apenas na memorização de informações, sem a compreensão do seu significado.', 'd) Ao desconsiderar as experiências prévias dos estudantes.', 'e) Ao limitar o ensino a atividades teóricas, sem a aplicação prática.'], correct: 'b', explanation: 'A contextualização e problematização tornam o ensino mais relevante e engajador.' },
+        { id: 'EPT76', question: 'As Diretrizes Curriculares Nacionais para a Educação Profissional e Tecnológica influenciam a prática pedagógica. Qual o principal impacto dessas diretrizes na integração curricular?', options: ['a) A fragmentação do currículo em disciplinas isoladas.', 'b) A promoção da integração entre as diferentes áreas do conhecimento e entre a teoria e a prática, visando a uma formação mais completa e contextualizada.', 'c) A padronização dos currículos em todo o país, sem considerar as especificidades regionais.', 'd) A redução da carga horária dos cursos de EPT.', 'e) A desvalorização do ensino técnico em relação ao ensino superior.'], correct: 'b', explanation: 'As DCNs promovem a integração entre áreas e entre teoria e prática na EPT.' },
+        { id: 'EPT77', question: 'A avaliação na EPT deve ser um processo contínuo e formativo. Qual a principal finalidade da avaliação nesse contexto?', options: ['a) Apenas classificar os estudantes em aprovados e reprovados.', 'b) Acompanhar o desenvolvimento dos estudantes, identificar suas dificuldades e potencialidades, e aprimorar o processo de ensino-aprendizagem, fornecendo feedback e orientações para o crescimento individual.', 'c) Punir os estudantes por seu desempenho.', 'd) Comparar o desempenho dos estudantes entre si.', 'e) Medir apenas a memorização de conteúdos, sem considerar o desenvolvimento de habilidades.'], correct: 'b', explanation: 'A avaliação na EPT visa ao acompanhamento e aprimoramento contínuo do aprendizado.' },
+        { id: 'EPT78', question: 'A prática pedagógica na EPT deve considerar as demandas do mundo do trabalho, sem se restringir a uma formação meramente técnica. Qual o significado dessa abordagem?', options: ['a) Que a EPT deve focar apenas na formação de mão de obra para atender às necessidades imediatas das empresas.', 'b) Que a EPT deve preparar o estudante para atuar de forma competente no mercado de trabalho, mas também desenvolver sua capacidade de adaptação, inovação, pensamento crítico e responsabilidade social, indo além da simples execução de tarefas.', 'c) Que a EPT deve desconsiderar as demandas do mercado de trabalho, focando apenas na formação acadêmica.', 'd) Que a EPT deve formar profissionais para atuar em qualquer área, sem especialização.', 'e) Que a EPT deve priorizar a teoria em detrimento da prática.'], correct: 'b', explanation: 'A EPT busca uma formação que transcende o técnico, preparando o estudante para a complexidade do mundo do trabalho.' },
+        { id: 'EPT79', question: 'A flexibilidade e a adaptabilidade são importantes na prática pedagógica da EPT. Qual a razão para essa importância, considerando as rápidas transformações no mundo do trabalho?', options: ['a) Apenas para permitir que os professores alterem seus planos de aula a qualquer momento.', 'b) Para preparar os estudantes para lidar com as constantes mudanças tecnológicas, as novas demandas do mercado de trabalho e a necessidade de aprender continuamente, desenvolvendo a capacidade de se adaptar a diferentes contextos e desafios.', 'c) Para reduzir a carga horária dos cursos de EPT.', 'd) Para facilitar a gestão dos cursos, sem preocupação com a qualidade do ensino.', 'e) Para padronizar o ensino em todas as instituições de EPT.'], correct: 'b', explanation: 'A flexibilidade e adaptabilidade são cruciais para que os estudantes se preparem para um mercado em constante mudança.' },
+        { id: 'EPT80', question: 'A prática pedagógica na EPT pode promover a autonomia e o protagonismo dos estudantes. Como isso é alcançado?', options: ['a) Através da imposição de um currículo rígido, sem espaço para a escolha dos estudantes.', 'b) Incentivando os estudantes a construir seu próprio conhecimento, a tomar decisões, a participar ativamente do processo de aprendizagem e a desenvolver suas habilidades de liderança e resolução de problemas.', 'c) Limitando a participação dos estudantes em atividades extracurriculares.', 'd) Focando apenas na transmissão de informações, sem a interação com os estudantes.', 'e) Desconsiderando as opiniões e os interesses dos estudantes.'], correct: 'b', explanation: 'A autonomia e o protagonismo são promovidos ao engajar o estudante ativamente no processo de aprendizagem.' },
+        // Novas questões de EPT no Brasil
+        {
+            id: 'EPT81',
+            question: "Qual lei federal estabelece as diretrizes e bases da Educação Profissional e Tecnológica (EPT) no Brasil, articulando-a com os diferentes níveis e modalidades da educação e com o mundo do trabalho?",
+            options: ["a) Lei nº 8.666/93", "b) Lei nº 9.394/96", "c) Lei nº 11.892/2008", "d) Lei nº 10.172/2001"],
+            answer: "b",
+            explanation: "A Lei de Diretrizes e Bases da Educação Nacional (LDB), Lei nº 9.394/96, é o principal marco legal que organiza a EPT no Brasil."
+        },
+        {
+            id: 'EPT82',
+            question: "Em qual modalidade de oferta da Educação Profissional Técnica de Nível Médio o estudante cursa o ensino médio e o técnico na mesma instituição, em um currículo único?",
+            options: ["a) Concomitante", "b) Subsequente", "c) Integrada", "d) FIC (Formação Inicial e Continuada)"],
+            answer: "c",
+            explanation: "A modalidade integrada é caracterizada pela união do ensino médio com o técnico em um currículo único na mesma instituição."
+        },
+        {
+            id: 'EPT83',
+            question: "Qual o principal marco legal que criou os Institutos Federais de Educação, Ciência e Tecnologia no Brasil?",
+            options: ["a) Lei nº 9.394/96 (LDB)", "b) Lei nº 11.892/2008", "c) Decreto nº 5.154/2004", "d) Portaria MEC nº 1.000/2010"],
+            answer: "b",
+            explanation: "A Lei nº 11.892/2008 é a lei de criação dos Institutos Federais de Educação, Ciência e Tecnologia."
+        },
+        {
+            id: 'EPT84',
+            question: "Um dos princípios fundamentais da EPT é a relação entre trabalho e educação. Qual a concepção dessa relação na EPT?",
+            options: ["a) A educação deve apenas capacitar para o mercado de trabalho, sem preocupação com formação integral.", "b) O trabalho é visto como um princípio educativo que desenvolve o ser humano integralmente, para o trabalho e para a vida.", "c) O foco principal é o conhecimento teórico, dissociado da prática laboral.", "d) A educação e o trabalho são esferas completamente separadas e independentes."],
+            answer: "b",
+            explanation: "Essa é a concepção central da EPT: o trabalho como princípio educativo que forma o indivíduo de maneira completa."
+        },
+        {
+            id: 'EPT85',
+            question: "Qual dos conceitos abaixo NÃO é uma base conceitual da Educação Profissional e Tecnológica (EPT) no Brasil?",
+            options: ["a) Flexibilidade e Adaptabilidade", "b) Integração de Saberes", "c) Inovação e Empreendedorismo", "d) Autodidatismo como única forma de aprendizado"],
+            answer: "d",
+            explanation: "A EPT valoriza diversas metodologias de ensino, não apenas o autodidatismo como única forma de aprendizado."
+        },
+        {
+            id: 'EPT86',
+            question: "O Projeto Político-Pedagógico (PPP) de uma instituição educacional é considerado 'político' por qual razão?",
+            options: ["a) Porque é elaborado apenas por políticos e não pela comunidade escolar.", "b) Porque reflete os valores e as escolhas da instituição em relação à sociedade e à educação que deseja oferecer.", "c) Porque aborda somente questões administrativas e financeiras.", "d) Porque é um documento que não permite alterações ou discussões."],
+            answer: "b",
+            explanation: "O caráter político do PPP reside em sua expressão dos valores, compromissos e visão da instituição com a sociedade."
+        },
+        {
+            id: 'EPT87',
+            question: "Qual característica é fundamental para o PPP do IFRN, refletindo a natureza de uma instituição federal que abrange múltiplos campi?",
+            options: ["a) Foco exclusivo em um único nível de ensino (ex: apenas graduação).", "b) Atuação restrita a uma única modalidade de ensino (ex: apenas presencial).", "c) Estrutura multicampi, exigindo que o PPP contemple particularidades locais e mantenha a unidade de princípios.", "d) Adoção de um currículo rígido e imutável para todos os cursos."],
+            answer: "c",
+            explanation: "A estrutura multicampi é uma característica central dos IFs, e o PPP deve conciliar as especificidades de cada campus com a unidade institucional."
+        },
+        {
+            id: 'EPT88',
+            question: "A indissociabilidade entre Ensino, Pesquisa e Extensão é uma marca dos Institutos Federais. Como o PPP do IFRN deve tratar essa indissociabilidade?",
+            options: ["a) Deve focar apenas no ensino, deixando a pesquisa e a extensão como atividades secundárias.", "b) Deve detalhar como essa integração se dará nos cursos e projetos da instituição.", "c) Deve considerar a pesquisa e a extensão como responsabilidades exclusivas dos professores universitários.", "d) Deve incentivar a separação das três dimensões para melhor organização."],
+            answer: "b",
+            explanation: "O PPP precisa especificar os mecanismos e formas de articulação entre ensino, pesquisa e extensão na prática institucional."
+        },
+        {
+            id: 'EPT89',
+            question: "O PPP do IFRN, como o de outras instituições públicas, geralmente prevê a 'Gestão Democrática'. O que isso implica?",
+            options: ["a) A gestão é centralizada na figura do diretor geral, sem participação da comunidade.", "b) O documento é construído de forma participativa, envolvendo a comunidade acadêmica.", "c) As decisões são tomadas apenas por representantes dos pais e responsáveis.", "d) O PPP é um documento secreto, conhecido apenas pela alta direção da instituição."],
+            answer: "b",
+            explanation: "A gestão democrática implica na construção coletiva e participativa do PPP, envolvendo alunos, servidores e pais."
+        },
+        {
+            id: 'EPT90',
+            question: "A avaliação institucional, conforme as diretrizes de um PPP, tem como principal objetivo:",
+            options: ["a) Apenas classificar os alunos e professores com base em desempenho em provas.", "b) Garantir a melhoria contínua da qualidade educacional da instituição.", "c) Atender a exigências burocráticas sem impacto na prática pedagógica.", "d) Promover a competição entre os diferentes campi da instituição."],
+            answer: "b",
+            explanation: "O principal objetivo da avaliação institucional é aprimorar processos, identificar pontos fortes e fracos para a melhoria contínua da qualidade."
+        },
+        {
+            id: 'EPT91',
+            question: "Qual dos seguintes termos melhor descreve a natureza jurídica dos Institutos Federais, conferindo-lhes independência na gestão?",
+            options: ["a) Empresa Pública", "b) Fundação Pública", "c) Autarquia", "d) Sociedade de Economia Mista"],
+            answer: "c",
+            explanation: "Os Institutos Federais são autarquias, o que lhes confere autonomia administrativa, financeira e didático-pedagógica."
+        },
+        {
+            id: 'EPT92',
+            question: "A 'Formação Omnilateral' é uma concepção central do currículo integrado na EPT. O que ela significa?",
+            options: ["a) A formação do aluno deve ser direcionada apenas para uma única área profissional específica.", "b) Visa à formação integral do ser humano, em todas as suas dimensões (cognitiva, afetiva, social, ética, política).", "c) Prioriza o conhecimento técnico em detrimento dos saberes humanísticos.", "d) Significa que o ensino deve ser ofertado em todas as modalidades de educação a distância."],
+            answer: "b",
+            explanation: "A formação omnilateral compreende o desenvolvimento pleno do indivíduo em suas múltiplas dimensões, indo além da formação técnica."
+        },
+        {
+            id: 'EPT93',
+            question: "Qual o papel da pesquisa na identidade e concepções institucionais dos Institutos Federais?",
+            options: ["a) É uma atividade opcional, desenvolvida apenas por alguns professores.", "b) Deve ser realizada apenas em nível de pós-graduação, sem envolvimento do ensino técnico.", "c) É um dos pilares, indissociável do ensino e da extensão, contribuindo para a inovação e o avanço do conhecimento.", "d) Limita-se a estudos de mercado para atender às demandas de empresas privadas."],
+            answer: "c",
+            explanation: "A indissociabilidade entre ensino, pesquisa e extensão é uma marca registrada dos IFs, com a pesquisa impulsionando a inovação e o conhecimento."
+        },
+        {
+            id: 'EPT94',
+            question: "O princípio de 'Trabalho como Princípio Educativo' na prática pedagógica do IFRN implica que:",
+            options: ["a) O foco principal é apenas preparar o aluno para uma função específica do mercado de trabalho.", "b) A prática pedagógica deve articular teoria e prática, contextualizando os saberes e valorizando a experiência.", "c) O ensino deve ser desvinculado das demandas do mundo do trabalho para garantir a autonomia do aluno.", "d) Os alunos devem aprender apenas fazendo, sem a necessidade de fundamentos teóricos."],
+            answer: "b",
+            explanation: "Essa concepção entende o trabalho como um meio para a produção de conhecimento, onde a teoria e a prática se complementam na construção do saber."
+        },
+        {
+            id: 'EPT95',
+            question: "Qual metodologia de ensino é frequentemente priorizada na prática pedagógica orientada pelos princípios do IFRN?",
+            options: ["a) Aulas expositivas e transmissivas, com o professor como único detentor do conhecimento.", "b) Metodologias que colocam o estudante no centro do processo de aprendizagem, como resolução de problemas e projetos.", "c) Avaliações somativas como único instrumento de verificação da aprendizagem.", "d) Exclusão de tecnologias digitais no ambiente de sala de aula."],
+            answer: "b",
+            explanation: "As metodologias ativas, como resolução de problemas e projetos, são valorizadas por promoverem o protagonismo do aluno."
+        },
+        {
+            id: 'EPT96',
+            question: "O que o currículo integrado busca superar em relação à visão tradicional de ensino?",
+            options: ["a) A integração entre teoria e prática, pois defende a separação dos conhecimentos.", "b) A fragmentação do conhecimento em disciplinas isoladas, conectando diferentes áreas do saber.", "c) O papel do professor como mediador, priorizando o autodidatismo exclusivo do aluno.", "d) A contextualização dos saberes, priorizando o conhecimento abstrato e desvinculado da realidade."],
+            answer: "b",
+            explanation: "O currículo integrado visa à superação da fragmentação disciplinar, buscando a conexão e a articulação dos saberes."
+        },
+        {
+            id: 'EPT97',
+            question: "No contexto do currículo integrado na EPT, o trabalho é considerado o 'eixo articulador'. O que isso significa?",
+            options: ["a) O trabalho é apenas o resultado final da formação do aluno.", "b) O trabalho é a base para a produção de conhecimento e para a integração de diferentes saberes.", "c) O trabalho é uma atividade separada da teoria e das disciplinas escolares.", "d) O foco é apenas no treinamento de habilidades manuais para o trabalho."],
+            answer: "b",
+            explanation: "O trabalho, como princípio educativo, atua como elemento central que conecta e dá sentido aos diferentes conhecimentos do currículo."
+        },
+        {
+            id: 'EPT98',
+            question: "Qual é o princípio do currículo integrado que busca a colaboração entre áreas afins e, em sua forma mais avançada, a superação das fronteiras disciplinares?",
+            options: ["a) Fragmentação Disciplinar", "b) Contextualização", "c) Interdisciplinaridade e Transdisciplinaridade", "d) Especialização Unidisciplinar"],
+            answer: "c",
+            explanation: "Esses conceitos expressam a busca por conexões entre disciplinas e, em um nível mais profundo, a superação de suas fronteiras."
+        },
+        {
+            id: 'EPT99',
+            question: "A Pedagogia Histórico-Crítica é um dos fundamentos do currículo integrado. O que ela defende em relação à educação?",
+            options: ["a) Que a educação deve ser neutra, sem se envolver com questões sociais.", "b) Que o conhecimento é inato e não depende da interação com a realidade social.", "c) Que a educação deve partir da realidade social, buscando compreender e transformar essa realidade.", "d) Que o currículo deve ser padronizado e imposto de cima para baixo, sem considerar a realidade local."],
+            answer: "c",
+            explanation: "Essa pedagogia propõe que a educação se baseie na análise crítica da realidade social para transformá-la."
+        },
+        {
+            id: 'EPT100',
+            question: "Um dos princípios do currículo integrado é a 'Problematização da Realidade'. Qual a implicação disso para a aprendizagem?",
+            options: ["a) A aprendizagem ocorre apenas através da memorização de fatos e conceitos desvinculados de problemas reais.", "b) A aprendizagem ocorre a partir da análise de problemas reais, exigindo a mobilização de diferentes conhecimentos e a busca por soluções.", "c) Os problemas são apresentados de forma simplificada, sem conexão com o mundo do trabalho.", "d) Apenas o professor é responsável por apresentar as soluções para os problemas."],
+            answer: "b",
+            explanation: "A problematização da realidade coloca o aluno diante de desafios reais, que demandam a aplicação e integração de conhecimentos para encontrar soluções."
+        },
+        // Novas questões de EPT no Brasil (Iniciam em EPT101)
+        {
+            id: 'EPT101',
+            question: "A Educação Profissional e Tecnológica (EPT) no Brasil está regulamentada principalmente por qual Lei?",
+            options: ["a) LDB (Lei 9.394/1996)", "b) Lei 11.741/2008", "c) Lei 13.415/2017 (Reforma do Ensino Médio)", "d) Todas as anteriores"],
+            answer: "d",
+            explanation: "A EPT no Brasil é regulamentada por um conjunto de leis, sendo a LDB a base, complementada por outras como a Lei 11.741/2008 e a Lei 13.415/2017."
+        },
+        {
+            id: 'EPT102',
+            question: "Qual documento estabelece as Diretrizes Curriculares Nacionais para a Educação Profissional?",
+            options: ["a) Parecer CNE/CEB 11/2012", "b) Decreto 5.154/2004", "c) Portaria MEC 1.045/2021", "d) Resolução CNE/CP 01/2020"],
+            answer: "a",
+            explanation: "O Parecer CNE/CEB 11/2012 estabelece as Diretrizes Curriculares Nacionais para a Educação Profissional Técnica de Nível Médio."
+        },
+        {
+            id: 'EPT103',
+            question: "A EPT no Brasil é organizada em três níveis. Quais são eles?",
+            options: ["a) Básico, Técnico e Tecnológico", "b) Formação Inicial, Técnico e Superior", "c) Básico, Intermediário e Avançado", "d) Fundamental, Médio e Superior"],
+            answer: "b",
+            explanation: "Os três níveis da EPT são Formação Inicial e Continuada (FIC), Educação Profissional Técnica de Nível Médio e Educação Superior (Tecnológica)."
+        },
+        {
+            id: 'EPT104',
+            question: "O que caracteriza a **articulação entre educação e trabalho** na EPT?",
+            options: ["a) Priorizar apenas o ensino teórico", "b) Integrar conhecimentos científicos e tecnológicos com a prática profissional", "c) Eliminar disciplinas gerais do currículo", "d) Focar apenas em estágios obrigatórios"],
+            answer: "b",
+            explanation: "A articulação entre educação e trabalho na EPT visa a integração entre a base científica, tecnológica e a aplicação prática no mundo do trabalho."
+        },
+        {
+            id: 'EPT105',
+            question: "Qual órgão é responsável pela oferta da EPT em nível federal no Brasil?",
+            options: ["a) Secretarias Estaduais de Educação", "b) Institutos Federais (IFs) e Rede Federal", "c) Universidades Privadas", "d) SENAI e SENAC"],
+            answer: "b",
+            explanation: "Os Institutos Federais e toda a Rede Federal de Educação Profissional, Científica e Tecnológica são os principais responsáveis pela oferta da EPT em nível federal."
+        },
+        {
+            id: 'EPT106',
+            question: "O PPP do IFRN tem como principal objetivo:",
+            options: ["a) Definir apenas a estrutura física da instituição", "b) Orientar as práticas pedagógicas e administrativas com base em princípios democráticos", "c) Estabelecer apenas o calendário acadêmico", "d) Limitar-se aos aspectos burocráticos da gestão"],
+            answer: "b",
+            explanation: "O Projeto Político-Pedagógico (PPP) é um documento que norteia todas as ações da instituição, com base em princípios democráticos e educacionais."
+        },
+        {
+            id: 'EPT107',
+            question: "Qual princípio **NÃO** faz parte do PPP do IFRN?",
+            options: ["a) Indissociabilidade entre ensino, pesquisa e extensão", "b) Educação elitista e excludente", "c) Formação cidadã e profissional", "d) Integração com o mundo do trabalho"],
+            answer: "b",
+            explanation: "O IFRN, como instituição pública federal, preza pela inclusão e por uma educação de qualidade para todos, combatendo a elitização."
+        },
+        {
+            id: 'EPT108',
+            question: "O PPP do IFRN deve ser construído com a participação de:",
+            options: ["a) Apenas dos professores", "b) Apenas da direção da instituição", "c) Toda a comunidade escolar (docentes, discentes, técnicos e sociedade)", "d) Exclusivamente do MEC"],
+            answer: "c",
+            explanation: "A gestão democrática do IFRN implica na participação de todos os segmentos da comunidade escolar na construção do PPP."
+        },
+        {
+            id: 'EPT109',
+            question: "A concepção de educação do IFRN está alinhada com:",
+            options: ["a) Apenas o mercado de trabalho", "b) Uma perspectiva crítica e emancipatória", "c) O ensino tecnicista sem reflexão", "d) A formação exclusivamente acadêmica"],
+            answer: "b",
+            explanation: "A educação no IFRN busca formar cidadãos críticos, capazes de intervir na realidade, e profissionais qualificados com uma visão ampla."
+        },
+        {
+            id: 'EPT110',
+            question: "O PPP do IFRN prevê a integração entre:",
+            options: ["a) Apenas teoria e prática", "b) Ensino, pesquisa e extensão", "c) Apenas atividades técnicas", "d) Disciplinas isoladas sem conexão"],
+            answer: "b",
+            explanation: "A indissociabilidade entre ensino, pesquisa e extensão é um dos pilares da identidade dos Institutos Federais, e deve estar presente no PPP."
+        },
+        {
+            id: 'EPT111',
+            question: "Os Institutos Federais, como o IFRN, têm como missão principal:",
+            options: ["a) Oferecer apenas cursos técnicos", "b) Promover educação profissional, científica e tecnológica com excelência", "c) Atender apenas demandas locais", "d) Ser uma instituição exclusivamente de pesquisa"],
+            answer: "b",
+            explanation: "A missão dos IFs é a oferta de educação profissional e tecnológica em todos os seus níveis e modalidades, com base na ciência e tecnologia."
+        },
+        {
+            id: 'EPT112',
+            question: "Qual valor **NÃO** está presente na identidade do IFRN?",
+            options: ["a) Inclusão social", "b) Meritocracia excludente", "c) Sustentabilidade", "d) Compromisso com a sociedade"],
+            answer: "b",
+            explanation: "A identidade do IFRN é pautada pela inclusão, buscando oferecer oportunidades a todos, não por uma meritocracia excludente."
+        },
+        {
+            id: 'EPT113',
+            question: "A Rede Federal de Educação Profissional inclui:",
+            options: ["a) Apenas os Institutos Federais", "b) IFs, CEFETs e Escolas Técnicas Vinculadas a Universidades", "c) Apenas o SENAI e SENAC", "d) Universidades particulares"],
+            answer: "b",
+            explanation: "A Rede Federal é composta pelos Institutos Federais, CEFETs e as escolas técnicas vinculadas a universidades federais."
+        },
+        {
+            id: 'EPT114',
+            question: "O IFRN se destaca por:",
+            options: ["a) Oferecer apenas cursos superiores", "b) Integrar diferentes níveis de ensino (básico, técnico e superior)", "c) Ignorar a formação humana", "d) Não possuir vinculação com o MEC"],
+            answer: "b",
+            explanation: "Uma das características distintivas dos IFs é a oferta de cursos em todos os níveis da educação profissional e tecnológica, da FIC ao ensino superior."
+        },
+        {
+            id: 'EPT115',
+            question: "A identidade dos IFs está ligada à:",
+            options: ["a) Formação tecnicista sem reflexão crítica", "b) Articulação entre educação, ciência, tecnologia e inovação", "c) Exclusão social", "d) Manutenção de privilégios de classe"],
+            answer: "b",
+            explanation: "Os Institutos Federais se caracterizam pela integração entre ensino, pesquisa, extensão e inovação, contribuindo para o desenvolvimento científico e tecnológico."
+        },
+        {
+            id: 'EPT116',
+            question: "Qual princípio **NÃO** orienta a prática pedagógica na EPT?",
+            options: ["a) Flexibilidade curricular", "b) Fragmentação do conhecimento", "c) Interdisciplinaridade", "d) Contextualização do ensino"],
+            answer: "b",
+            explanation: "A EPT busca a integração e a contextualização do conhecimento, combatendo a fragmentação disciplinar."
+        },
+        {
+            id: 'EPT117',
+            question: "A indissociabilidade entre ensino, pesquisa e extensão significa:",
+            options: ["a) Que essas dimensões devem ser trabalhadas de forma isolada", "b) Que devem ser integradas para uma formação completa", "c) Que apenas o ensino é importante", "d) Que a extensão é opcional"],
+            answer: "b",
+            explanation: "A indissociabilidade é a premissa de que ensino, pesquisa e extensão são interdependentes e se complementam para uma formação integral."
+        },
+        {
+            id: 'EPT118',
+            question: "A avaliação na EPT deve ser:",
+            options: ["a) Somente classificatória", "b) Processual, formativa e diagnóstica", "c) Restrita a provas escritas", "d) Desvinculada do projeto pedagógico"],
+            answer: "b",
+            explanation: "A avaliação na EPT deve ser um processo contínuo que acompanha o desenvolvimento do estudante, com foco na melhoria da aprendizagem."
+        },
+        {
+            id: 'EPT119',
+            question: "A interdisciplinaridade no ensino técnico busca:",
+            options: ["a) Fragmentar os saberes", "b) Integrar conhecimentos de diferentes áreas", "c) Priorizar apenas o conteúdo técnico", "d) Ignorar a base comum nacional"],
+            answer: "b",
+            explanation: "A interdisciplinaridade visa conectar e articular os conhecimentos de diferentes disciplinas para uma compreensão mais completa da realidade."
+        },
+        {
+            id: 'EPT120',
+            question: "A prática pedagógica na EPT deve considerar:",
+            options: ["a) Apenas as demandas do mercado", "b) A realidade dos estudantes e do território", "c) Exclusivamente o livro didático", "d) Aulas expositivas sem participação ativa"],
+            answer: "b",
+            explanation: "A EPT deve ser contextualizada e relevante para a realidade local e para os interesses dos estudantes."
+        },
+        {
+            id: 'EPT121',
+            question: "O currículo integrado na EPT propõe:",
+            options: ["a) Separar formação geral e técnica", "b) Articular conhecimentos científicos, tecnológicos e humanísticos", "c) Eliminar disciplinas de base comum", "d) Priorizar apenas habilidades práticas"],
+            answer: "b",
+            explanation: "O currículo integrado busca superar a dicotomia entre a formação geral e a formação profissional, integrando-as de forma orgânica."
+        },
+        {
+            id: 'EPT122',
+            question: "Qual documento reforça a importância do currículo integrado?",
+            options: ["a) Parecer CNE/CEB 11/2012", "b) Decreto 9.235/2017", "c) Portaria MEC 1.000/2020", "d) Lei 13.415/2017"],
+            answer: "a",
+            explanation: "O Parecer CNE/CEB 11/2012, que estabelece as DCNs da EPT de Nível Médio, reforça a concepção de currículo integrado."
+        },
+        {
+            id: 'EPT123',
+            question: "A integração entre formação geral e técnica visa:",
+            options: ["a) Reduzir a carga horária", "b) Promover uma visão fragmentada do saber", "c) Formar cidadãos críticos e profissionais qualificados", "d) Priorizar apenas o ensino teórico"],
+            answer: "c",
+            explanation: "O objetivo é formar indivíduos completos, com conhecimentos técnicos e humanísticos, capazes de atuar no mundo e na sociedade."
+        },
+        {
+            id: 'EPT124',
+            question: "O currículo integrado no IFRN pressupõe:",
+            options: ["a) Disciplinas estanques sem diálogo", "b) Projetos que unam diferentes áreas do conhecimento", "c) Abandono da formação humanística", "d) Foco exclusivo em estágios"],
+            answer: "b",
+            explanation: "A abordagem por projetos é uma estratégia eficaz para promover a integração e a interdisciplinaridade no currículo."
+        },
+        {
+            id: 'EPT125',
+            question: "Qual desafio **NÃO** está associado à implementação do currículo integrado?",
+            options: ["a) Resistência à mudança de paradigma", "b) Falta de formação docente", "c) Facilidade em fragmentar conhecimentos", "d) Excessiva valorização da interdisciplinaridade"],
+            answer: "d",
+            explanation: "A excessiva valorização da interdisciplinaridade não é um desafio, mas sim um objetivo da implementação do currículo integrado."
+        },
+        {
+            id: 'EPT126',
+            question: "A EPT no Brasil tem como um de seus objetivos:",
+            options: ["a) Restringir o acesso às classes populares", "b) Promover inclusão social e desenvolvimento regional", "c) Manter o ensino elitizado", "d) Ignorar as demandas do mundo do trabalho"],
+            answer: "b",
+            explanation: "A EPT é um instrumento de inclusão social e de desenvolvimento econômico e social das regiões."
+        },
+        {
+            id: 'EPT127',
+            question: "O IFRN segue qual modelo educacional?",
+            options: ["a) Tecnicista e conservador", "b) Crítico, integrado e emancipatório", "c) Exclusivamente profissionalizante", "d) Desvinculado da pesquisa"],
+            answer: "b",
+            explanation: "O modelo educacional dos IFs é pautado pela formação integral, crítica, com a indissociabilidade entre ensino, pesquisa e extensão."
+        },
+        {
+            id: 'EPT128',
+            question: "A articulação entre teoria e prática na EPT é fundamental porque:",
+            options: ["a) Desvaloriza o conhecimento científico", "b) Permite a aplicação do saber em situações reais", "c) Prioriza apenas o ensino teórico", "d) Ignora a formação técnica"],
+            answer: "b",
+            explanation: "A articulação entre teoria e prática é crucial para que o estudante compreenda e aplique os conhecimentos em contextos reais."
+        },
+        {
+            id: 'EPT129',
+            question: "A pesquisa na EPT deve:",
+            options: ["a) Ser restrita a pós-graduação", "b) Integrar-se ao ensino e extensão desde a formação básica", "c) Ser opcional para os alunos", "d) Não ter vinculação com o currículo"],
+            answer: "b",
+            explanation: "A pesquisa nos IFs não se restringe à pós-graduação, mas perpassa todos os níveis e modalidades de ensino."
+        },
+        {
+            id: 'EPT130',
+            question: "A extensão no IFRN tem como propósito:",
+            options: ["a) Isolar a instituição da comunidade", "b) Promover diálogo entre escola e sociedade", "c) Restringir-se a eventos internos", "d) Ser atividade complementar sem avaliação"],
+            answer: "b",
+            explanation: "A extensão é um processo educativo, cultural e científico que articula a instituição com a sociedade, promovendo a troca de saberes."
+        },
+        {
+            id: 'EPT131',
+            question: "Qual decreto regulamentou a Educação Profissional Técnica de Nível Médio após a LDB?",
+            options: ["a) Decreto 2.208/1997", "b) Decreto 5.154/2004", "c) Decreto 6.302/2007", "d) Decreto 9.057/2017"],
+            answer: "b",
+            explanation: "O Decreto nº 5.154/2004 regulamentou a Educação Profissional Técnica de Nível Médio, estabelecendo as formas de oferta integrada e subsequente."
+        },
+        {
+            id: 'EPT132',
+            question: "A Lei 11.741/2008 alterou a LDB para:",
+            options: ["a) Extinguir a EPT", "b) Flexibilizar a articulação entre ensino médio e profissional", "c) Priorizar apenas o ensino superior", "d) Eliminar a formação técnica integrada"],
+            answer: "b",
+            explanation: "A Lei nº 11.741/2008 alterou a LDB, tornando a Educação Profissional e Tecnológica parte integrante da educação nacional."
+        },
+        {
+            id: 'EPT133',
+            question: "O Programa Nacional de Acesso ao Ensino Técnico e Emprego (PRONATEC) foi criado pela:",
+            options: ["a) Lei 12.513/2011", "b) Medida Provisória 746/2016", "c) Portaria MEC 1.144/2016", "d) Lei 13.415/2017"],
+            answer: "a",
+            explanation: "O PRONATEC foi instituído pela Lei nº 12.513/2011 com o objetivo de expandir, interiorizar e democratizar a oferta de cursos de EPT."
+        },
+        {
+            id: 'EPT134',
+            question: "A Reforma do Ensino Médio (Lei 13.415/2017) impactou a EPT ao:",
+            options: ["a) Ampliar a oferta de itinerários formativos técnicos", "b) Extinguir os cursos técnicos integrados", "c) Proibir a integração com o ensino regular", "d) Reduzir a carga horária prática"],
+            answer: "a",
+            explanation: "A Reforma do Ensino Médio, ao introduzir os itinerários formativos, ampliou as possibilidades de oferta de cursos técnicos."
+        },
+        {
+            id: 'EPT135',
+            question: "Qual documento define as Diretrizes Curriculares Nacionais para a Formação Inicial e Continuada (FIC)?",
+            options: ["a) Resolução CNE/CEB 01/2021", "b) Parecer CNE/CEB 11/2012", "c) Portaria MEC 1.045/2021", "d) Decreto 9.057/2017"],
+            answer: "b",
+            explanation: "O Parecer CNE/CEB 11/2012 também traz as diretrizes para a Formação Inicial e Continuada (FIC)."
+        },
+        {
+            id: 'EPT136',
+            question: "A **contextualização** no ensino profissional significa:",
+            options: ["a) Ignorar a realidade local", "b) Relacionar conteúdos com situações do mundo do trabalho", "c) Priorizar apenas aulas expositivas", "d) Fragmentar teoria e prática"],
+            answer: "b",
+            explanation: "Contextualizar significa trazer a realidade e as demandas do mundo do trabalho para o processo de ensino-aprendizagem."
+        },
+        {
+            id: 'EPT137',
+            question: "A **flexibilidade curricular** na EPT permite:",
+            options: ["a) Adaptar o currículo às demandas regionais e dos estudantes", "b) Eliminar disciplinas básicas", "c) Padronizar rigidamente os cursos", "d) Ignorar a Base Nacional Comum Curricular (BNCC)"],
+            answer: "a",
+            explanation: "A flexibilidade permite que o currículo seja ajustado às necessidades específicas de cada local e público-alvo."
+        },
+        {
+            id: 'EPT138',
+            question: "A **interdisciplinaridade** é essencial na EPT porque:",
+            options: ["a) Isola saberes técnicos e gerais", "b) Promove a integração de conhecimentos para resolver problemas complexos", "c) Desvaloriza a formação humana", "d) Restringe-se a projetos opcionais"],
+            answer: "b",
+            explanation: "A interdisciplinaridade permite que os alunos utilizem conhecimentos de diversas áreas para abordar e solucionar problemas reais."
+        },
+        {
+            id: 'EPT139',
+            question: "A **avaliação formativa** prioriza:",
+            options: ["a) Classificar alunos por notas", "b) Identificar dificuldades e redirecionar o processo de ensino-aprendizagem", "c) Aplicar apenas provas escritas", "d) Excluir estudantes com baixo rendimento"],
+            answer: "b",
+            explanation: "A avaliação formativa tem como foco principal o acompanhamento do aprendizado e a identificação de pontos que precisam ser aprimorados."
+        },
+        {
+            id: 'EPT140',
+            question: "A **indissociabilidade entre ensino, pesquisa e extensão** no IFRN busca:",
+            options: ["a) Formar técnicos sem visão crítica", "b) Integrar conhecimentos acadêmicos e sociais", "c) Restringir pesquisas a pós-graduação", "d) Ignorar a comunidade externa"],
+            answer: "b",
+            explanation: "A indissociabilidade garante que o conhecimento produzido na instituição seja aplicado e que a comunidade se beneficie desse conhecimento."
+        },
+        {
+            id: 'EPT141',
+            question: "Um exemplo de currículo integrado é:",
+            options: ["a) Oferecer Português e Matemática separadamente da formação técnica", "b) Desenvolver projetos que articulam Matemática e conhecimentos de Enfermagem", "c) Eliminar disciplinas de ciências humanas", "d) Priorizar apenas estágios supervisionados"],
+            answer: "b",
+            explanation: "Projetos que conectam diferentes áreas do saber são uma forma de promover a integração curricular."
+        },
+        {
+            id: 'EPT142',
+            question: "Qual desafio **NÃO** é comum na implementação do currículo integrado?",
+            options: ["a) Resistência docente à interdisciplinaridade", "b) Falta de infraestrutura para aulas práticas", "c) Excessiva valorização da integração teoria-prática", "d) Dificuldade em planejar coletivamente"],
+            answer: "c",
+            explanation: "A integração teoria-prática é um objetivo do currículo integrado, e sua valorização excessiva não é um desafio."
+        },
+        {
+            id: 'EPT143',
+            question: "A Base Nacional Comum Curricular (BNCC) para o Ensino Médio:",
+            options: ["a) Ignora a EPT", "b) Oferece diretrizes para integrar formação geral e técnica", "c) Restringe-se a cursos acadêmicos", "d) Elimina componentes técnicos"],
+            answer: "b",
+            explanation: "A BNCC para o Ensino Médio, com a oferta de itinerários formativos, busca integrar a formação geral básica com a EPT."
+        },
+        {
+            id: 'EPT144',
+            question: "O eixo **\"Trabalho, Ciência, Tecnologia e Cultura\"** no currículo integrado reforça:",
+            options: ["a) A separação entre conhecimentos científicos e profissionais", "b) A integração crítica dessas dimensões na formação", "c) O foco exclusivo em habilidades manuais", "d) A desvalorização da pesquisa"],
+            answer: "b",
+            explanation: "Esse eixo demonstra a preocupação em formar o estudante de maneira completa, relacionando o trabalho com a produção científica, tecnológica e cultural."
+        },
+        {
+            id: 'EPT145',
+            question: "A carga horária dos cursos técnicos integrados deve incluir:",
+            options: ["a) Apenas disciplinas técnicas", "b) Equilíbrio entre formação geral e específica", "c) Exclusão de componentes artísticos", "d) Redução da prática profissional"],
+            answer: "b",
+            explanation: "Os cursos integrados visam a uma formação equilibrada entre os conhecimentos da base comum nacional e os da formação técnica."
+        },
+        {
+            id: 'EPT146',
+            question: "Além do ensino, qual pilar **NÃO** faz parte da missão dos IFs?",
+            options: ["a) Pesquisa aplicada", "b) Extensão comunitária", "c) Formação exclusivamente teórica", "d) Inovação tecnológica"],
+            answer: "c",
+            explanation: "A missão dos IFs abrange ensino, pesquisa, extensão e inovação, com uma abordagem que vai além da formação meramente teórica."
+        },
+        {
+            id: 'EPT147',
+            question: "O IFRN tem como um de seus valores institucionais:",
+            options: ["a) Meritocracia excludente", "b) Sustentabilidade socioambiental", "c) Centralização decisória", "d) Desvinculação do território"],
+            answer: "b",
+            explanation: "A sustentabilidade socioambiental é um valor crescente e importante para as instituições de ensino, incluindo o IFRN."
+        },
+        {
+            id: 'EPT148',
+            question: "A Rede Federal de EPT inclui:",
+            options: ["a) Apenas os 38 Institutos Federais", "b) IFs, CEFETs e escolas técnicas vinculadas a universidades", "c) Apenas o SENAI e SENAC", "d) Instituições privadas"],
+            answer: "b",
+            explanation: "A Rede Federal é um conjunto de instituições públicas, incluindo IFs, CEFETs e escolas técnicas ligadas a universidades."
+        },
+        {
+            id: 'EPT149',
+            question: "A autonomia dos IFs permite:",
+            options: ["a) Criar cursos sem regulamentação", "b) Adaptar-se às demandas locais dentro da legislação", "c) Ignorar diretrizes nacionais", "d) Excluir disciplinas obrigatórias"],
+            answer: "b",
+            explanation: "A autonomia é fundamental para que os IFs possam responder às especificidades de suas regiões, sempre em conformidade com a legislação educacional."
+        },
+        {
+            id: 'EPT150',
+            question: "O IFRN destaca-se por:",
+            options: ["a) Oferecer apenas cursos superiores", "b) Integrar ensino médio, técnico e superior", "c) Não realizar pesquisas", "d) Ter atuação restrita a Natal"],
+            answer: "b",
+            explanation: "A integração dos diferentes níveis e modalidades de ensino é uma característica marcante dos Institutos Federais, incluindo o IFRN, que possui múltiplos campi."
+        }
     ];
-
-    // Variável para armazenar as questões do EPT
-    let selectedQuestionsIA = []; // Para questões geradas por IA (com opções A, B, C, D)
-    let selectedQuestoesEstudo = []; // Para questões retiradas de outras provas (pergunta e resposta)
-    let selectedQuestionsExtra = []; // Para questões do simulado extra
-    let selectedQuestionsEPT = []; // NOVO: Para questões do simulado EPT
-
-    // Elementos da interface
-    const choiceContainer = document.getElementById('choice-container');
-    const iaQuestionsButton = document.getElementById('ia-questions-button');
-    const provaQuestionsButton = document.getElementById('prova-questions-button');
-    const extraQuestionsButton = document.getElementById('extra-questions-button');
-    const eptQuestionsButton = document.getElementById('ept-questions-button'); // NOVO BOTÃO EPT
-
-    // Elementos do simulado de IA
-    const iaSimuladoContent = document.getElementById('ia-simulado-content');
-    const questionsContainerIA = document.getElementById('questions-container');
-    const submitButtonIA = document.getElementById('submit-button');
-    const restartButtonIA = document.getElementById('restart-button');
-    const resultsContainerIA = document.getElementById('results-container');
-    const scoreSpanIA = document.getElementById('score');
-    const totalQuestionsSpanIA = document.getElementById('total-questions');
-    const answerKeyListIA = document.getElementById('answer-key');
-
-    // Elementos do simulado de Prova
-    const provaSimuladoContent = document.getElementById('prova-simulado-content');
-    const provaQuestionsContainer = document.getElementById('prova-questions-container');
-    const submitProvaButton = document.getElementById('submit-prova-button');
-    const restartProvaButton = document.getElementById('restart-prova-button');
-    const resultsProvaContainer = document.getElementById('results-prova-container');
-    const scoreProvaSpan = document.getElementById('score-prova');
-    const totalQuestionsProvaSpan = document.getElementById('total-questions-prova');
-    const answerKeyProvaList = document.getElementById('answer-key-prova');
-
-    // NOVOS ELEMENTOS PARA O SIMULADO EXTRA
-    const extraSimuladoContent = document.getElementById('extra-simulado-content');
-    const extraQuestionsContainer = document.getElementById('extra-questions-container');
-    const submitExtraButton = document.getElementById('submit-extra-button');
-    const restartExtraButton = document.getElementById('restart-extra-button');
-    const resultsExtraContainer = document.getElementById('results-extra-container');
-    const scoreSpanExtra = document.getElementById('score-extra');
-    const totalQuestionsSpanExtra = document.getElementById('total-questions-extra');
-    const answerKeyListExtra = document.getElementById('answer-key-extra');
-
-    // NOVOS ELEMENTOS PARA O SIMULADO EPT
-    const eptSimuladoContent = document.getElementById('ept-simulado-content'); // Adicionado
-    const eptQuestionsContainer = document.getElementById('ept-questions-container'); // Adicionado
-    const submitEptButton = document.getElementById('submit-ept-button'); // Adicionado
-    const restartEptButton = document.getElementById('restart-ept-button'); // Adicionado
-    const resultsEptContainer = document.getElementById('results-ept-container'); // Adicionado
-    const scoreSpanEpt = document.getElementById('score-ept'); // Adicionado
-    const totalQuestionsSpanEpt = document.getElementById('total-questions-ept'); // Adicionado
-    const answerKeyListEpt = document.getElementById('answer-key-ept'); // Adicionado
-
-    // Elemento do contador de acessos
-    const accessCounterSpan = document.getElementById('access-counter');
-
-    // --- Lógica do Contador de Acessos ---
-    let accessCount = localStorage.getItem('accessCount');
-
-    if (accessCount === null) {
-        accessCount = 0;
-    } else {
-        accessCount = parseInt(accessCount);
-    }
-
-    accessCount++;
-    localStorage.setItem('accessCount', accessCount);
-    accessCounterSpan.textContent = accessCount;
-
-    // --- Funções auxiliares ---
-    function getRandomQuestions(arr, num) {
-        const shuffled = [...arr].sort(() => 0.5 - Math.random());
-        return shuffled.slice(0, num);
-    }
-
-    // --- Funções para o Simulado de IA ---
-    function renderIAQuestions() {
-        selectedQuestionsIA = getRandomQuestions(allQuestionsIA, 10);
-        questionsContainerIA.innerHTML = '';
-        selectedQuestionsIA.forEach((q, index) => {
-            const questionCard = document.createElement('div');
-            questionCard.classList.add('question-card');
-            questionCard.innerHTML = `
-                <p>${index + 1}. ${q.question}</p>
-                <ol type="a">
-                    ${q.options.map((option, i) => `
-                        <li>
-                            <label>
-                                <input type="radio" name="question-${q.id}" value="${String.fromCharCode(97 + i)}">
-                                ${option}
-                            </label>
-                        </li>
-                    `).join('')}
-                </ol>
-            `;
-            questionsContainerIA.appendChild(questionCard);
-        });
-        submitButtonIA.classList.remove('hidden');
-        restartButtonIA.classList.add('hidden');
-        resultsContainerIA.classList.add('hidden');
-    }
-
-    function checkIAAnswers() {
-        let score = 0;
-        answerKeyListIA.innerHTML = '';
-
-        selectedQuestionsIA.forEach((q, index) => {
-            const selectedOption = document.querySelector(`input[name="question-${q.id}"]:checked`);
-            const listItem = document.createElement('li');
-            listItem.classList.add('answer-key-item');
-
-            let userAnswer = '';
-            if (selectedOption) {
-                userAnswer = selectedOption.value;
-            }
-
-            if (userAnswer === q.correct) {
-                score++;
-                listItem.classList.add('correct');
-                listItem.innerHTML = `<strong>Questão ${index + 1}: Correta!</strong> (Sua resposta: ${userAnswer.toUpperCase()}) - ${q.explanation}`;
-            } else {
-                listItem.classList.add('incorrect');
-                const userAnswerDisplay = userAnswer ? userAnswer.toUpperCase() : 'Não respondida';
-                listItem.innerHTML = `<strong>Questão ${index + 1}: Incorreta!</strong> (Sua resposta: ${userAnswerDisplay}, Correta: ${q.correct.toUpperCase()}) - ${q.explanation}`;
-            }
-            answerKeyListIA.appendChild(listItem);
-
-            // Desabilitar radios após a verificação
-            document.querySelectorAll(`input[name="question-${q.id}"]`).forEach(radio => {
-                radio.disabled = true;
-            });
-        });
-
-        scoreSpanIA.textContent = score;
-        totalQuestionsSpanIA.textContent = selectedQuestionsIA.length;
-        resultsContainerIA.classList.remove('hidden');
-        submitButtonIA.classList.add('hidden');
-        restartButtonIA.classList.remove('hidden');
-    }
-
-    // --- Funções para o Simulado de Prova ---
-    function renderProvaQuestions() {
-        selectedQuestoesEstudo = getRandomQuestions(questoesEstudo, 2); // Sorteia 2 questões
-        provaQuestionsContainer.innerHTML = '';
-        selectedQuestoesEstudo.forEach((q, index) => {
-            const questionCard = document.createElement('div');
-            questionCard.classList.add('prova-question-card');
-            questionCard.innerHTML = `
-                <p>${index + 1}. [${q.lei}] ${q.enunciado}</p>
-                <input type="text" name="prova-question${index}" placeholder="Digite sua resposta aqui...">
-                <small>Fonte: ${q.fonte}</small>
-            `;
-            provaQuestionsContainer.appendChild(questionCard);
-        });
-        submitProvaButton.classList.remove('hidden');
-        restartProvaButton.classList.add('hidden');
-        resultsProvaContainer.classList.add('hidden');
-    }
-
-    function checkProvaAnswers() {
-        let score = 0;
-        answerKeyProvaList.innerHTML = '';
-
-        selectedQuestoesEstudo.forEach((q, index) => {
-            const userAnswerInput = document.querySelector(`input[name="prova-question${index}"]`);
-            const userAnswer = userAnswerInput ? userAnswerInput.value.trim() : '';
-            const listItem = document.createElement('li');
-            listItem.classList.add('answer-key-item');
-
-            const normalizedUserAnswer = userAnswer.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "");
-            const normalizedCorrectAnswer = q.alternativaCorreta.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "");
-
-            if (normalizedUserAnswer === normalizedCorrectAnswer) {
-                score++;
-                listItem.innerHTML = `Questão ${index + 1}: <span class="correct">Correta</span>. Resposta: "${q.alternativaCorreta}"`;
-            } else {
-                listItem.innerHTML = `Questão ${index + 1}: <span class="incorrect">Incorreta</span>. Sua resposta: "${userAnswer}". Resposta correta: "${q.alternativaCorreta}"`;
-            }
-            answerKeyProvaList.appendChild(listItem);
-        });
-
-        scoreProvaSpan.textContent = score;
-        totalQuestionsProvaSpan.textContent = selectedQuestoesEstudo.length;
-        resultsProvaContainer.classList.remove('hidden');
-        submitProvaButton.classList.add('hidden');
-        restartProvaButton.classList.remove('hidden');
-    }
-
-    // --- NOVAS FUNÇÕES PARA O SIMULADO EXTRA ---
-    function renderExtraQuestions() {
-        selectedQuestionsExtra = getRandomQuestions(allQuestionsExtra, 3); // Sorteia 3 questões para o simulado extra
-        extraQuestionsContainer.innerHTML = '';
-        selectedQuestionsExtra.forEach((q, index) => {
-            const questionCard = document.createElement('div');
-            questionCard.classList.add('question-card');
-            questionCard.innerHTML = `
-                <p>${index + 1}. ${q.question}</p>
-                <ol type="a">
-                    ${q.options.map((option, i) => `
-                        <li>
-                            <label>
-                                <input type="radio" name="question-extra-${q.id}" value="${String.fromCharCode(97 + i)}">
-                                ${option}
-                            </label>
-                        </li>
-                    `).join('')}
-                </ol>
-            `;
-            extraQuestionsContainer.appendChild(questionCard);
-        });
-        submitExtraButton.classList.remove('hidden');
-        restartExtraButton.classList.add('hidden');
-        resultsExtraContainer.classList.add('hidden');
-    }
-
-    function checkExtraAnswers() {
-        let score = 0;
-        answerKeyListExtra.innerHTML = '';
-
-        selectedQuestionsExtra.forEach((q, index) => {
-            const selectedOption = document.querySelector(`input[name="question-extra-${q.id}"]:checked`);
-            const listItem = document.createElement('li');
-            listItem.classList.add('answer-key-item');
-
-            let userAnswer = '';
-            if (selectedOption) {
-                userAnswer = selectedOption.value;
-            }
-
-            if (userAnswer === q.correct) {
-                score++;
-                listItem.classList.add('correct');
-                listItem.innerHTML = `<strong>Questão ${index + 1}: Correta!</strong> (Sua resposta: ${userAnswer.toUpperCase()}) - ${q.explanation}`;
-            } else {
-                listItem.classList.add('incorrect');
-                const userAnswerDisplay = userAnswer ? userAnswer.toUpperCase() : 'Não respondida';
-                listItem.innerHTML = `<strong>Questão ${index + 1}: Incorreta!</strong> (Sua resposta: ${userAnswerDisplay}, Correta: ${q.correct.toUpperCase()}) - ${q.explanation}`;
-            }
-            answerKeyListExtra.appendChild(listItem);
-
-            document.querySelectorAll(`input[name="question-extra-${q.id}"]`).forEach(radio => {
-                radio.disabled = true;
-            });
-        });
-
-        scoreSpanExtra.textContent = score;
-        totalQuestionsSpanExtra.textContent = selectedQuestionsExtra.length;
-        resultsExtraContainer.classList.remove('hidden');
-        submitExtraButton.classList.add('hidden');
-        restartExtraButton.classList.remove('hidden');
-    }
-
-    // --- NOVAS FUNÇÕES PARA O SIMULADO EPT ---
-    function renderEptQuestions() {
-        // Usa allQuestionsEPT do script_ept.js (disponível globalmente)
-        selectedQuestionsEPT = getRandomQuestions(allQuestionsEPT, 10); // Sorteia 10 questões para o simulado EPT
-        eptQuestionsContainer.innerHTML = '';
-        selectedQuestionsEPT.forEach((q, index) => {
-            const questionCard = document.createElement('div');
-            questionCard.classList.add('question-card');
-            questionCard.innerHTML = `
-                <p>${index + 1}. ${q.question}</p>
-                <ol type="a">
-                    ${q.options.map((option, i) => `
-                        <li>
-                            <label>
-                                <input type="radio" name="question-ept-${q.id}" value="${String.fromCharCode(97 + i)}">
-                                ${option}
-                            </label>
-                        </li>
-                    `).join('')}
-                </ol>
-            `;
-            eptQuestionsContainer.appendChild(questionCard);
-        });
-        submitEptButton.classList.remove('hidden');
-        restartEptButton.classList.add('hidden');
-        resultsEptContainer.classList.add('hidden');
-    }
-
-    function checkEptAnswers() {
-        let score = 0;
-        answerKeyListEpt.innerHTML = '';
-
-        selectedQuestionsEPT.forEach((q, index) => {
-            const selectedOption = document.querySelector(`input[name="question-ept-${q.id}"]:checked`);
-            const listItem = document.createElement('li');
-            listItem.classList.add('answer-key-item');
-
-            let userAnswer = '';
-            if (selectedOption) {
-                userAnswer = selectedOption.value;
-            }
-
-            if (userAnswer === q.correct) {
-                score++;
-                listItem.classList.add('correct');
-                listItem.innerHTML = `<strong>Questão ${index + 1}: Correta!</strong> (Sua resposta: ${userAnswer.toUpperCase()}) - ${q.explanation}`;
-            } else {
-                listItem.classList.add('incorrect');
-                const userAnswerDisplay = userAnswer ? userAnswer.toUpperCase() : 'Não respondida';
-                listItem.innerHTML = `<strong>Questão ${index + 1}: Incorreta!</strong> (Sua resposta: ${userAnswerDisplay}, Correta: ${q.correct.toUpperCase()}) - ${q.explanation}`;
-            }
-            answerKeyListEpt.appendChild(listItem);
-
-            document.querySelectorAll(`input[name="question-ept-${q.id}"]`).forEach(radio => {
-                radio.disabled = true;
-            });
-        });
-
-        scoreSpanEpt.textContent = score;
-        totalQuestionsSpanEpt.textContent = selectedQuestionsEPT.length;
-        resultsEptContainer.classList.remove('hidden');
-        submitEptButton.classList.add('hidden');
-        restartEptButton.classList.remove('hidden');
-    }
-    // --- FIM DAS NOVAS FUNÇÕES EPT ---
-
-    // --- Event Listeners ---
-    iaQuestionsButton.addEventListener('click', () => {
-        choiceContainer.classList.add('hidden');
-        iaSimuladoContent.classList.remove('hidden');
-        provaSimuladoContent.classList.add('hidden'); // Garante que outros simulados estejam ocultos
-        extraSimuladoContent.classList.add('hidden'); // Garante que outros simulados estejam ocultos
-        eptSimuladoContent.classList.add('hidden'); // Garante que o simulado EPT esteja oculto
-        renderIAQuestions();
-    });
-
-    provaQuestionsButton.addEventListener('click', () => {
-        choiceContainer.classList.add('hidden');
-        provaSimuladoContent.classList.remove('hidden');
-        iaSimuladoContent.classList.add('hidden'); // Garante que outros simulados estejam ocultos
-        extraSimuladoContent.classList.add('hidden'); // Garante que outros simulados estejam ocultos
-        eptSimuladoContent.classList.add('hidden'); // Garante que o simulado EPT esteja oculto
-        renderProvaQuestions();
-    });
-
-    extraQuestionsButton.addEventListener('click', () => {
-        choiceContainer.classList.add('hidden');
-        extraSimuladoContent.classList.remove('hidden');
-        iaSimuladoContent.classList.add('hidden'); // Garante que outros simulados estejam ocultos
-        provaSimuladoContent.classList.add('hidden'); // Garante que outros simulados estejam ocultos
-        eptSimuladoContent.classList.add('hidden'); // Garante que o simulado EPT esteja oculto
-        renderExtraQuestions();
-    });
-
-    eptQuestionsButton.addEventListener('click', () => { // NOVO EVENT LISTENER PARA EPT
-        choiceContainer.classList.add('hidden');
-        eptSimuladoContent.classList.remove('hidden');
-        iaSimuladoContent.classList.add('hidden'); // Garante que outros simulados estejam ocultos
-        provaSimuladoContent.classList.add('hidden'); // Garante que outros simulados estejam ocultos
-        extraSimuladoContent.classList.add('hidden'); // Garante que outros simulados estejam ocultos
-        renderEptQuestions();
-    });
-
-
-    submitButtonIA.addEventListener('click', checkIAAnswers);
-    restartButtonIA.addEventListener('click', () => {
-        renderIAQuestions();
-        resultsContainerIA.classList.add('hidden');
-        submitButtonIA.classList.remove('hidden');
-        restartButtonIA.classList.add('hidden');
-    });
-
-    submitProvaButton.addEventListener('click', checkProvaAnswers);
-    restartProvaButton.addEventListener('click', () => {
-        renderProvaQuestions();
-        resultsProvaContainer.classList.add('hidden');
-        submitProvaButton.classList.remove('hidden');
-        restartProvaButton.classList.add('hidden');
-    });
-
-    submitExtraButton.addEventListener('click', checkExtraAnswers);
-    restartExtraButton.addEventListener('click', () => {
-        renderExtraQuestions();
-        resultsExtraContainer.classList.add('hidden');
-        submitExtraButton.classList.remove('hidden');
-        restartExtraButton.classList.add('hidden');
-    });
-
-    submitEptButton.addEventListener('click', checkEptAnswers); // NOVO EVENT LISTENER PARA EPT
-    restartEptButton.addEventListener('click', () => { // NOVO EVENT LISTENER PARA EPT
-        renderEptQuestions();
-        resultsEptContainer.classList.add('hidden');
-        submitEptButton.classList.remove('hidden');
-        restartEptButton.classList.add('hidden');
-    });
-
-    // Inicialização: Esconde os simulados e mostra as opções
-    iaSimuladoContent.classList.add('hidden');
-    provaSimuladoContent.classList.add('hidden');
-    extraSimuladoContent.classList.add('hidden');
-    eptSimuladoContent.classList.add('hidden'); // Oculta o novo simulado na inicialização
-    choiceContainer.classList.remove('hidden');
 });
+
+Espero que este script atualizado atenda às suas necessidades! Se precisar de mais alguma modificação ou tiver outras perguntas, é só me dizer.
