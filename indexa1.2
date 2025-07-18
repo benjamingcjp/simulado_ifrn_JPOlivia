@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simulador de Questões</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Simulador de Questões</h1>
+
+        <div class="section-card" id="choice-container">
+            <h2>Escolha o Tipo de Simulado:</h2>
+            <button class="action-button" id="ia-questions-button">Questões Geradas por IA</button>
+            <button class="action-button" id="prova-questions-button">Questões de Outras Provas</button>
+            <button class="action-button" id="ept-brasil-button">EPT no Brasil</button>
+            <button class="action-button" id="leis-8027-1171-button">Leis 8027 e 1171</button> </div>
+
+        <div id="ia-simulado-content" class="hidden">
+            <h2 class="quiz-title">Questões Geradas por IA</h2>
+            <div id="questions-container">
+                </div>
+            <button class="action-button" id="submit-button">Verificar Respostas</button>
+            <button class="action-button hidden" id="restart-button">Novo Simulado (IA)</button>
+
+            <div id="results-container" class="results-card hidden">
+                <h3>Resultados do Simulado:</h3>
+                <p>Você acertou <span id="score">0</span> de <span id="total-questions">0</span> questões.</p>
+                <h4>Gabarito e Explicações:</h4>
+                <ol class="answer-list" id="answer-key"></ol>
+            </div>
+        </div>
+
+        <div id="prova-simulado-content" class="hidden">
+            <h2 class="quiz-title">Questões Retiradas de Outras Provas</h2>
+            <div id="prova-questions-container">
+                </div>
+            <button class="action-button" id="submit-prova-button">Verificar Respostas</button>
+            <button class="action-button hidden" id="restart-prova-button">Novo Simulado (Prova)</button>
+
+            <div id="results-prova-container" class="results-card hidden">
+                <h3>Resultados do Simulado:</h3>
+                <p>Você acertou <span id="score-prova">0</span> de <span id="total-questions-prova">0</span> questões.</p>
+                <h4>Gabarito:</h4>
+                <ol class="answer-list" id="answer-key-prova"></ol>
+            </div>
+        </div>
+
+        <div id="ept-brasil-simulado-content" class="hidden">
+            <h2 class="quiz-title">Questões sobre EPT no Brasil</h2>
+            <div id="ept-questions-container">
+                </div>
+            <button class="action-button" id="submit-ept-button">Verificar Respostas</button>
+            <button class="action-button hidden" id="restart-ept-button">Novo Simulado (EPT)</button>
+
+            <div id="results-ept-container" class="results-card hidden">
+                <h3>Resultados do Simulado:</h3>
+                <p>Você acertou <span id="score-ept">0</span> de <span id="total-questions-ept">0</span> questões.</p>
+                <h4>Gabarito e Explicações:</h4>
+                <ol class="answer-list" id="answer-key-ept"></ol>
+            </div>
+        </div>
+
+        <div id="leis-8027-1171-simulado-content" class="hidden">
+            <h2 class="quiz-title">Questões: Leis 8027 e 1171</h2>
+            <div id="leis-8027-1171-questions-container">
+                </div>
+            <button class="action-button" id="submit-leis-8027-1171-button">Verificar Respostas</button>
+            <button class="action-button hidden" id="restart-leis-8027-1171-button">Novo Simulado (Leis 8027 e 1171)</button>
+
+            <div id="results-leis-8027-1171-container" class="results-card hidden">
+                <h3>Resultados do Simulado:</h3>
+                <p>Você acertou <span id="score-leis-8027-1171">0</span> de <span id="total-questions-leis-8027-1171">0</span> questões.</p>
+                <h4>Gabarito e Explicações:</h4>
+                <ol class="answer-list" id="answer-key-leis-8027-1171"></ol>
+            </div>
+        </div>
+
+    </div>
+
+    <footer class="footer">
+        <p>Acessos ao site: <span id="access-counter">0</span></p>
+        <p>&copy; 2025 Seu Nome/Instituição. Todos os direitos reservados.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
