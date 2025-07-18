@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
         { id: '04', question: 'A exoneração de um servidor público pode ocorrer:', options: ['a) Apenas a pedido do servidor.', 'b) Apenas de ofício pela administração.', 'c) A pedido do servidor ou de ofício.', 'd) Somente por decisão judicial.'], correct: 'c', explanation: 'A exoneração pode ocorrer a pedido do servidor (interesse particular) ou de ofício pela administração (ex: insatisfatório no estágio probatório).' },
         { id: '05', question: 'O deslocamento do servidor, a pedido ou de ofício, no âmbito do mesmo quadro, com ou sem mudança de sede, denomina-se:', options: ['a) Redistribuição.', 'b) Remoção.', 'c) Recondução.', 'd) Aproveitamento.'], correct: 'b', explanation: 'A definição de remoção corresponde ao deslocamento do servidor dentro do mesmo quadro.' },
         { id: '06', question: 'Qual das seguintes situações NÃO caracteriza vacância de cargo público?', options: ['a) Demissão.', 'b) Licença para tratamento de saúde.', 'c) Aposentadoria.', 'd) Posse em outro cargo inacumulável.'], correct: 'b', explanation: 'A licença para tratamento de saúde é um afastamento temporário, não uma causa de vacância do cargo.' },
-        { id: '07', question: 'O adicional noturno, conforme a Lei nº 8.112/1990, é devido pelo trabalho prestado no período compreendido entre:', options: ['a) 20h e 5h do dia seguinte.', 'b) 22h e 6h do dia seguinte.', 'c) 21h e 4h do dia seguinte.', 'd) 23h e 7h do dia seguinte.'], correct: 'b', explanation: 'O artigo 75 da Lei nº 8.112/1990 define o adicional noturno para o trabalho prestado entre 22h e 5h. Correção: A alternativa correta é b) 22h e 5h do dia seguinte.' }, // Correção da alternativa correta para b)
+        { id: '07', question: 'O adicional noturno, conforme a Lei nº 8.112/1990, é devido pelo trabalho prestado no período compreendido entre:', options: ['a) 20h e 5h do dia seguinte.', 'b) 22h e 6h do dia seguinte.', 'c) 21h e 4h do dia seguinte.', 'd) 23h e 7h do dia seguinte.'], correct: 'a', explanation: 'O artigo 75 da Lei nº 8.112/1990 define o adicional noturno para o trabalho prestado entre 22h e 5h. Correção: A alternativa correta é a) 22h e 5h do dia seguinte.' },
         { id: '08', question: 'Quantos dias de férias anuais o servidor público federal tem direito, conforme a Lei nº 8.112/1990?', options: ['a) 25 dias úteis.', 'b) 30 dias corridos.', 'c) 20 dias úteis.', 'd) 35 dias corridos.'], correct: 'b', explanation: 'O servidor tem direito a 30 dias de férias por ano, conforme o artigo 77 da Lei nº 8.112/1990.' },
         { id: '09', question: 'Qual das licenças abaixo NÃO depende de avaliação por junta médica oficial?', options: ['a) Licença por motivo de doença em pessoa da família.', 'b) Licença para tratamento da própria saúde por período superior a 15 dias.', 'c) Licença para atividade política.', 'd) Licença à gestante.'], correct: 'c', explanation: 'A licença para atividade política não depende de avaliação por junta médica oficial.' },
         { id: '10', question: 'O servidor que retorna ao serviço público após ter sido considerado inválido em junta médica oficial e recuperado a capacidade laboral é:', options: ['a) Reintegrado.', 'b) Reconduzido.', 'c) Readaptado.', 'd) Aproveitado.'], correct: 'd', explanation: 'O aproveitamento é o retorno ao serviço ativo do servidor em disponibilidade.' },
@@ -21,7 +21,7 @@ document.addEventListener('DOMContentLoaded', () => {
         { id: '17', question: 'A acumulação de cargos públicos é vedada, EXCETO quando houver compatibilidade de horários e se tratar de:', options: ['a) Dois cargos de professor.', 'b) Um cargo de professor com outro técnico ou científico.', 'c) Dois cargos ou empregos privativos de profissionais de saúde, com profissões regulamentadas.', 'd) Todas as alternativas anteriores.'], correct: 'd', explanation: 'A acumulação é permitida nas hipóteses constitucionais de dois cargos de professor, um de professor com outro técnico ou científico, e dois cargos ou empregos privativos de profissionais de saúde, com profissões regulamentadas, havendo compatibilidade de horários.' },
         { id: '18', question: 'O estágio probatório é o período de:', options: ['a) 12 meses de efetivo exercício.', 'b) 24 meses de efetivo exercício.', 'c) 36 meses de efetivo exercício.', 'd) Não há período definido.'], correct: 'c', explanation: 'O artigo 20 da Lei nº 8.112/1990 define o estágio probatório como o período de 36 meses de efetivo exercício.' },
         { id: '19', question: 'A avaliação especial de desempenho durante o estágio probatório visa apurar, entre outros aspectos:', options: ['a) Apenas a assiduidade e a disciplina.', 'b) Aptidão e capacidade para o desempenho eficiente das atribuições do cargo.', 'c) O nível de produtividade e a qualidade do trabalho desenvolvido pelo servidorcontinuidade nos estudos.', 'd) Apenas a pontualidade e a produtividade.'], correct: 'b', explanation: 'A avaliação no estágio probatório visa verificar a aptidão e capacidade do servidor para o desempenho eficiente das atribuições do cargo (artigo 20, § 1º).' },
-        { id: '20', question: 'A recondução é o retorno do servidor estável ao cargo anteriormente ocupado, em decorrência de:', options: ['a) Inabilitação em estágio probatório relativo a outro cargo.', 'b) Reintegração de outro servidor.', 'c) Aproveitamento do servidor em disponibilidade.', 'd) Todas as alternativas anteriores.'], correct: 'a', explanation: 'A recondução ocorre nas três situações mencionadas (artigo 29).' }, // Correção da alternativa correta para a)
+        { id: '20', question: 'A recondução é o retorno do servidor estável ao cargo anteriormente ocupado, em decorrência de:', options: ['a) Inabilitação em estágio probatório relativo a outro cargo.', 'b) Reintegração de outro servidor.', 'c) Aproveitamento do servidor em disponibilidade.', 'd) Todas as alternativas anteriores.'], correct: 'd', explanation: 'A recondução ocorre nas três situações mencionadas (artigo 29).' },
 
         // Lei nº 12.772/2012
         { id: '21', question: 'A Lei nº 12.772/2012 dispõe sobre a estruturação de qual plano de carreiras?', options: ['a) Plano de Carreiras e Cargos da Administração Pública Federal.', 'b) Plano de Carreiras e Cargos do Magistério Federal.', 'c) Plano Único de Carreiras e Cargos dos Servidores Federais.', 'd) Plano Nacional de Educação.'], correct: 'b', explanation: 'A Lei nº 12.772/2012 estrutura o Plano de Carreiras e Cargos de Magistério Federal.' },
@@ -186,658 +186,27 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     ];
 
-    // NOVO BANCO DE QUESTÕES PARA "EPT no Brasil"
-    const eptQuestions = [
-        {
-            id: 'ept01',
-            question: "Qual lei federal estabelece as diretrizes e bases da Educação Profissional e Tecnológica (EPT) no Brasil, articulando-a com os diferentes níveis e modalidades da educação e com o mundo do trabalho?",
-            options: ["a) Lei nº 8.666/93", "b) Lei nº 9.394/96", "c) Lei nº 11.892/2008", "d) Lei nº 10.172/2001"],
-            answer: "b",
-            explanation: "A Lei de Diretrizes e Bases da Educação Nacional (LDB), Lei nº 9.394/96, é o principal marco legal que organiza a EPT no Brasil."
-        },
-        {
-            id: 'ept02',
-            question: "Em qual modalidade de oferta da Educação Profissional Técnica de Nível Médio o estudante cursa o ensino médio e o técnico na mesma instituição, em um currículo único?",
-            options: ["a) Concomitante", "b) Subsequente", "c) Integrada", "d) FIC (Formação Inicial e Continuada)"],
-            answer: "c",
-            explanation: "A modalidade integrada é caracterizada pela união do ensino médio com o técnico em um currículo único na mesma instituição."
-        },
-        {
-            id: 'ept03',
-            question: "Qual o principal marco legal que criou os Institutos Federais de Educação, Ciência e Tecnologia no Brasil?",
-            options: ["a) Lei nº 9.394/96 (LDB)", "b) Lei nº 11.892/2008", "c) Decreto nº 5.154/2004", "d) Portaria MEC nº 1.000/2010"],
-            answer: "b",
-            explanation: "A Lei nº 11.892/2008 é a lei de criação dos Institutos Federais de Educação, Ciência e Tecnologia."
-        },
-        {
-            id: 'ept04',
-            question: "Um dos princípios fundamentais da EPT é a relação entre trabalho e educação. Qual a concepção dessa relação na EPT?",
-            options: ["a) A educação deve apenas capacitar para o mercado de trabalho, sem preocupação com formação integral.", "b) O trabalho é visto como um princípio educativo que desenvolve o ser humano integralmente, para o trabalho e para a vida.", "c) O foco principal é o conhecimento teórico, dissociado da prática laboral.", "d) A educação e o trabalho são esferas completamente separadas e independentes."],
-            answer: "b",
-            explanation: "Essa é a concepção central da EPT: o trabalho como princípio educativo que forma o indivíduo de maneira completa."
-        },
-        {
-            id: 'ept05',
-            question: "Qual dos conceitos abaixo NÃO é uma base conceitual da Educação Profissional e Tecnológica (EPT) no Brasil?",
-            options: ["a) Flexibilidade e Adaptabilidade", "b) Integração de Saberes", "c) Inovação e Empreendedorismo", "d) Autodidatismo como única forma de aprendizado"],
-            answer: "d",
-            explanation: "A EPT valoriza diversas metodologias de ensino, não apenas o autodidatismo como única forma de aprendizado."
-        },
-        {
-            id: 'ept06',
-            question: "O Projeto Político-Pedagógico (PPP) de uma instituição educacional é considerado 'político' por qual razão?",
-            options: ["a) Porque é elaborado apenas por políticos e não pela comunidade escolar.", "b) Porque reflete os valores e as escolhas da instituição em relação à sociedade e à educação que deseja oferecer.", "c) Porque aborda somente questões administrativas e financeiras.", "d) Porque é um documento que não permite alterações ou discussões."],
-            answer: "b",
-            explanation: "O caráter político do PPP reside em sua expressão dos valores, compromissos e visão da instituição com a sociedade."
-        },
-        {
-            id: 'ept07',
-            question: "Qual característica é fundamental para o PPP do IFRN, refletindo a natureza de uma instituição federal que abrange múltiplos campi?",
-            options: ["a) Foco exclusivo em um único nível de ensino (ex: apenas graduação).", "b) Atuação restrita a uma única modalidade de ensino (ex: apenas presencial).", "c) Estrutura multicampi, exigindo que o PPP contemple particularidades locais e mantenha a unidade de princípios.", "d) Adoção de um currículo rígido e imutável para todos os cursos."],
-            answer: "c",
-            explanation: "A estrutura multicampi é uma característica central dos IFs, e o PPP deve conciliar as especificidades de cada campus com a unidade institucional."
-        },
-        {
-            id: 'ept08',
-            question: "A indissociabilidade entre Ensino, Pesquisa e Extensão é uma marca dos Institutos Federais. Como o PPP do IFRN deve tratar essa indissociabilidade?",
-            options: ["a) Deve focar apenas no ensino, deixando a pesquisa e a extensão como atividades secundárias.", "b) Deve detalhar como essa integração se dará nos cursos e projetos da instituição.", "c) Deve considerar a pesquisa e a extensão como responsabilidades exclusivas dos professores universitários.", "d) Deve incentivar a separação das três dimensões para melhor organização."],
-            answer: "b",
-            explanation: "O PPP precisa especificar os mecanismos e formas de articulação entre ensino, pesquisa e extensão na prática institucional."
-        },
-        {
-            id: 'ept09',
-            question: "O PPP do IFRN, como o de outras instituições públicas, geralmente prevê a 'Gestão Democrática'. O que isso implica?",
-            options: ["a) A gestão é centralizada na figura do diretor geral, sem participação da comunidade.", "b) O documento é construído de forma participativa, envolvendo a comunidade acadêmica.", "c) As decisões são tomadas apenas por representantes dos pais e responsáveis.", "d) O PPP é um documento secreto, conhecido apenas pela alta direção da instituição."],
-            answer: "b",
-            explanation: "A gestão democrática implica na construção coletiva e participativa do PPP, envolvendo alunos, servidores e pais."
-        },
-        {
-            id: 'ept10',
-            question: "A avaliação institucional, conforme as diretrizes de um PPP, tem como principal objetivo:",
-            options: ["a) Apenas classificar os alunos e professores com base em desempenho em provas.", "b) Garantir a melhoria contínua da qualidade educacional da instituição.", "c) Atender a exigências burocráticas sem impacto na prática pedagógica.", "d) Promover a competição entre os diferentes campi da instituição."],
-            answer: "b",
-            explanation: "O principal objetivo da avaliação institucional é aprimorar processos, identificar pontos fortes e fracos para a melhoria contínua da qualidade."
-        },
-        {
-            id: 'ept11',
-            question: "Qual dos seguintes termos melhor descreve a natureza jurídica dos Institutos Federais, conferindo-lhes independência na gestão?",
-            options: ["a) Empresa Pública", "b) Fundação Pública", "c) Autarquia", "d) Sociedade de Economia Mista"],
-            answer: "c",
-            explanation: "Os Institutos Federais são autarquias, o que lhes confere autonomia administrativa, financeira e didático-pedagógica."
-        },
-        {
-            id: 'ept12',
-            question: "A 'Formação Omnilateral' é uma concepção central do currículo integrado na EPT. O que ela significa?",
-            options: ["a) A formação do aluno deve ser direcionada apenas para uma única área profissional específica.", "b) Visa à formação integral do ser humano, em todas as suas dimensões (cognitiva, afetiva, social, ética, política).", "c) Prioriza o conhecimento técnico em detrimento dos saberes humanísticos.", "d) Significa que o ensino deve ser ofertado em todas as modalidades de educação a distância."],
-            answer: "b",
-            explanation: "A formação omnilateral compreende o desenvolvimento pleno do indivíduo em suas múltiplas dimensões, indo além da formação técnica."
-        },
-        {
-            id: 'ept13',
-            question: "Qual o papel da pesquisa na identidade e concepções institucionais dos Institutos Federais?",
-            options: ["a) É uma atividade opcional, desenvolvida apenas por alguns professores.", "b) Deve ser realizada apenas em nível de pós-graduação, sem envolvimento do ensino técnico.", "c) É um dos pilares, indissociável do ensino e da extensão, contribuindo para a inovação e o avanço do conhecimento.", "d) Limita-se a estudos de mercado para atender às demandas de empresas privadas."],
-            answer: "c",
-            explanation: "A indissociabilidade entre ensino, pesquisa e extensão é uma marca registrada dos IFs, com a pesquisa impulsionando a inovação e o conhecimento."
-        },
-        {
-            id: 'ept14',
-            question: "O princípio de 'Trabalho como Princípio Educativo' na prática pedagógica do IFRN implica que:",
-            options: ["a) O foco principal é apenas preparar o aluno para uma função específica do mercado de trabalho.", "b) A prática pedagógica deve articular teoria e prática, contextualizando os saberes e valorizando a experiência.", "c) O ensino deve ser desvinculado das demandas do mundo do trabalho para garantir a autonomia do aluno.", "d) Os alunos devem aprender apenas fazendo, sem a necessidade de fundamentos teóricos."],
-            answer: "b",
-            explanation: "Essa concepção entende o trabalho como um meio para a produção de conhecimento, onde a teoria e a prática se complementam na construção do saber."
-        },
-        {
-            id: 'ept15',
-            question: "Qual metodologia de ensino é frequentemente priorizada na prática pedagógica orientada pelos princípios do IFRN?",
-            options: ["a) Aulas expositivas e transmissivas, com o professor como único detentor do conhecimento.", "b) Metodologias que colocam o estudante no centro do processo de aprendizagem, como resolução de problemas e projetos.", "c) Avaliações somativas como único instrumento de verificação da aprendizagem.", "d) Exclusão de tecnologias digitais no ambiente de sala de aula."],
-            answer: "b",
-            explanation: "As metodologias ativas, como resolução de problemas e projetos, são valorizadas por promoverem o protagonismo do aluno."
-        },
-        {
-            id: 'ept16',
-            question: "O que o currículo integrado busca superar em relação à visão tradicional de ensino?",
-            options: ["a) A integração entre teoria e prática, pois defende a separação dos conhecimentos.", "b) A fragmentação do conhecimento em disciplinas isoladas, conectando diferentes áreas do saber.", "c) O papel do professor como mediador, priorizando o autodidatismo exclusivo do aluno.", "d) A contextualização dos saberes, priorizando o conhecimento abstrato e desvinculado da realidade."],
-            answer: "b",
-            explanation: "O currículo integrado visa à superação da fragmentação disciplinar, buscando a conexão e a articulação dos saberes."
-        },
-        {
-            id: 'ept17',
-            question: "No contexto do currículo integrado na EPT, o trabalho é considerado o 'eixo articulador'. O que isso significa?",
-            options: ["a) O trabalho é apenas o resultado final da formação do aluno.", "b) O trabalho é a base para a produção de conhecimento e para a integração de diferentes saberes.", "c) O trabalho é uma atividade separada da teoria e das disciplinas escolares.", "d) O foco é apenas no treinamento de habilidades manuais para o trabalho."],
-            answer: "b",
-            explanation: "O trabalho, como princípio educativo, atua como elemento central que conecta e dá sentido aos diferentes conhecimentos do currículo."
-        },
-        {
-            id: 'ept18',
-            question: "Qual é o princípio do currículo integrado que busca a colaboração entre áreas afins e, em sua forma mais avançada, a superação das fronteiras disciplinares?",
-            options: ["a) Fragmentação Disciplinar", "b) Contextualização", "c) Interdisciplinaridade e Transdisciplinaridade", "d) Especialização Unidisciplinar"],
-            answer: "c",
-            explanation: "Esses conceitos expressam a busca por conexões entre disciplinas e, em um nível mais profundo, a superação de suas fronteiras."
-        },
-        {
-            id: 'ept19',
-            question: "A Pedagogia Histórico-Crítica é um dos fundamentos do currículo integrado. O que ela defende em relação à educação?",
-            options: ["a) Que a educação deve ser neutra, sem se envolver com questões sociais.", "b) Que o conhecimento é inato e não depende da interação com a realidade social.", "c) Que a educação deve partir da realidade social, buscando compreender e transformar essa realidade.", "d) Que o currículo deve ser padronizado e imposto de cima para baixo, sem considerar a realidade local."],
-            answer: "c",
-            explanation: "Essa pedagogia propõe que a educação se baseie na análise crítica da realidade social para transformá-la."
-        },
-        {
-            id: 'ept20',
-            question: "Um dos princípios do currículo integrado é a 'Problematização da Realidade'. Qual a implicação disso para a aprendizagem?",
-            options: ["a) A aprendizagem ocorre apenas através da memorização de fatos e conceitos desvinculados de problemas reais.", "b) A aprendizagem ocorre a partir da análise de problemas reais, exigindo a mobilização de diferentes conhecimentos e a busca por soluções.", "c) Os problemas são apresentados de forma simplificada, sem conexão com o mundo do trabalho.", "d) Apenas o professor é responsável por apresentar as soluções para os problemas."],
-            answer: "b",
-            explanation: "A problematização da realidade coloca o aluno diante de desafios reais, que demandam a aplicação e integração de conhecimentos para encontrar soluções."
-        },
-        // Novas questões de EPT no Brasil
-        {
-            id: 'ept21',
-            question: "A Educação Profissional e Tecnológica (EPT) no Brasil está regulamentada principalmente por qual Lei?",
-            options: ["a) LDB (Lei 9.394/1996)", "b) Lei 11.741/2008", "c) Lei 13.415/2017 (Reforma do Ensino Médio)", "d) Todas as anteriores"],
-            answer: "d",
-            explanation: "A EPT no Brasil é regulamentada por um conjunto de leis, sendo a LDB a base, complementada por outras como a Lei 11.741/2008 e a Lei 13.415/2017."
-        },
-        {
-            id: 'ept22',
-            question: "Qual documento estabelece as Diretrizes Curriculares Nacionais para a Educação Profissional?",
-            options: ["a) Parecer CNE/CEB 11/2012", "b) Decreto 5.154/2004", "c) Portaria MEC 1.045/2021", "d) Resolução CNE/CP 01/2020"],
-            answer: "a",
-            explanation: "O Parecer CNE/CEB 11/2012 estabelece as Diretrizes Curriculares Nacionais para a Educação Profissional Técnica de Nível Médio."
-        },
-        {
-            id: 'ept23',
-            question: "A EPT no Brasil é organizada em três níveis. Quais são eles?",
-            options: ["a) Básico, Técnico e Tecnológico", "b) Formação Inicial, Técnico e Superior", "c) Básico, Intermediário e Avançado", "d) Fundamental, Médio e Superior"],
-            answer: "b",
-            explanation: "Os três níveis da EPT são Formação Inicial e Continuada (FIC), Educação Profissional Técnica de Nível Médio e Educação Superior (Tecnológica)."
-        },
-        {
-            id: 'ept24',
-            question: "O que caracteriza a **articulação entre educação e trabalho** na EPT?",
-            options: ["a) Priorizar apenas o ensino teórico", "b) Integrar conhecimentos científicos e tecnológicos com a prática profissional", "c) Eliminar disciplinas gerais do currículo", "d) Focar apenas em estágios obrigatórios"],
-            answer: "b",
-            explanation: "A articulação entre educação e trabalho na EPT visa a integração entre a base científica, tecnológica e a aplicação prática no mundo do trabalho."
-        },
-        {
-            id: 'ept25',
-            question: "Qual órgão é responsável pela oferta da EPT em nível federal no Brasil?",
-            options: ["a) Secretarias Estaduais de Educação", "b) Institutos Federais (IFs) e Rede Federal", "c) Universidades Privadas", "d) SENAI e SENAC"],
-            answer: "b",
-            explanation: "Os Institutos Federais e toda a Rede Federal de Educação Profissional, Científica e Tecnológica são os principais responsáveis pela oferta da EPT em nível federal."
-        },
-        {
-            id: 'ept26',
-            question: "O PPP do IFRN tem como principal objetivo:",
-            options: ["a) Definir apenas a estrutura física da instituição", "b) Orientar as práticas pedagógicas e administrativas com base em princípios democráticos", "c) Estabelecer apenas o calendário acadêmico", "d) Limitar-se aos aspectos burocráticos da gestão"],
-            answer: "b",
-            explanation: "O Projeto Político-Pedagógico (PPP) é um documento que norteia todas as ações da instituição, com base em princípios democráticos e educacionais."
-        },
-        {
-            id: 'ept27',
-            question: "Qual princípio **NÃO** faz parte do PPP do IFRN?",
-            options: ["a) Indissociabilidade entre ensino, pesquisa e extensão", "b) Educação elitista e excludente", "c) Formação cidadã e profissional", "d) Integração com o mundo do trabalho"],
-            answer: "b",
-            explanation: "O IFRN, como instituição pública federal, preza pela inclusão e por uma educação de qualidade para todos, combatendo a elitização."
-        },
-        {
-            id: 'ept28',
-            question: "O PPP do IFRN deve ser construído com a participação de:",
-            options: ["a) Apenas dos professores", "b) Apenas da direção da instituição", "c) Toda a comunidade escolar (docentes, discentes, técnicos e sociedade)", "d) Exclusivamente do MEC"],
-            answer: "c",
-            explanation: "A gestão democrática do IFRN implica na participação de todos os segmentos da comunidade escolar na construção do PPP."
-        },
-        {
-            id: 'ept29',
-            question: "A concepção de educação do IFRN está alinhada com:",
-            options: ["a) Apenas o mercado de trabalho", "b) Uma perspectiva crítica e emancipatória", "c) O ensino tecnicista sem reflexão", "d) A formação exclusivamente acadêmica"],
-            answer: "b",
-            explanation: "A educação no IFRN busca formar cidadãos críticos, capazes de intervir na realidade, e profissionais qualificados com uma visão ampla."
-        },
-        {
-            id: 'ept30',
-            question: "O PPP do IFRN prevê a integração entre:",
-            options: ["a) Apenas teoria e prática", "b) Ensino, pesquisa e extensão", "c) Apenas atividades técnicas", "d) Disciplinas isoladas sem conexão"],
-            answer: "b",
-            explanation: "A indissociabilidade entre ensino, pesquisa e extensão é um dos pilares da identidade dos Institutos Federais, e deve estar presente no PPP."
-        },
-        {
-            id: 'ept31',
-            question: "Os Institutos Federais, como o IFRN, têm como missão principal:",
-            options: ["a) Oferecer apenas cursos técnicos", "b) Promover educação profissional, científica e tecnológica com excelência", "c) Atender apenas demandas locais", "d) Ser uma instituição exclusivamente de pesquisa"],
-            answer: "b",
-            explanation: "A missão dos IFs é a oferta de educação profissional e tecnológica em todos os seus níveis e modalidades, com base na ciência e tecnologia."
-        },
-        {
-            id: 'ept32',
-            question: "Qual valor **NÃO** está presente na identidade do IFRN?",
-            options: ["a) Inclusão social", "b) Meritocracia excludente", "c) Sustentabilidade", "d) Compromisso com a sociedade"],
-            answer: "b",
-            explanation: "A identidade do IFRN é pautada pela inclusão, buscando oferecer oportunidades a todos, não por uma meritocracia excludente."
-        },
-        {
-            id: 'ept33',
-            question: "A Rede Federal de Educação Profissional inclui:",
-            options: ["a) Apenas os Institutos Federais", "b) IFs, CEFETs e Escolas Técnicas Vinculadas a Universidades", "c) Apenas o SENAI e SENAC", "d) Universidades particulares"],
-            answer: "b",
-            explanation: "A Rede Federal é composta pelos Institutos Federais, CEFETs e as escolas técnicas vinculadas a universidades federais."
-        },
-        {
-            id: 'ept34',
-            question: "O IFRN se destaca por:",
-            options: ["a) Oferecer apenas cursos superiores", "b) Integrar diferentes níveis de ensino (básico, técnico e superior)", "c) Ignorar a formação humana", "d) Não possuir vinculação com o MEC"],
-            answer: "b",
-            explanation: "Uma das características distintivas dos IFs é a oferta de cursos em todos os níveis da educação profissional e tecnológica, da FIC ao ensino superior."
-        },
-        {
-            id: 'ept35',
-            question: "A identidade dos IFs está ligada à:",
-            options: ["a) Formação tecnicista sem reflexão crítica", "b) Articulação entre educação, ciência, tecnologia e inovação", "c) Exclusão social", "d) Manutenção de privilégios de classe"],
-            answer: "b",
-            explanation: "Os Institutos Federais se caracterizam pela integração entre ensino, pesquisa, extensão e inovação, contribuindo para o desenvolvimento científico e tecnológico."
-        },
-        {
-            id: 'ept36',
-            question: "Qual princípio **NÃO** orienta a prática pedagógica na EPT?",
-            options: ["a) Flexibilidade curricular", "b) Fragmentação do conhecimento", "c) Interdisciplinaridade", "d) Contextualização do ensino"],
-            answer: "b",
-            explanation: "A EPT busca a integração e a contextualização do conhecimento, combatendo a fragmentação disciplinar."
-        },
-        {
-            id: 'ept37',
-            question: "A indissociabilidade entre ensino, pesquisa e extensão significa:",
-            options: ["a) Que essas dimensões devem ser trabalhadas de forma isolada", "b) Que devem ser integradas para uma formação completa", "c) Que apenas o ensino é importante", "d) Que a extensão é opcional"],
-            answer: "b",
-            explanation: "A indissociabilidade é a premissa de que ensino, pesquisa e extensão são interdependentes e se complementam para uma formação integral."
-        },
-        {
-            id: 'ept38',
-            question: "A avaliação na EPT deve ser:",
-            options: ["a) Somente classificatória", "b) Processual, formativa e diagnóstica", "c) Restrita a provas escritas", "d) Desvinculada do projeto pedagógico"],
-            answer: "b",
-            explanation: "A avaliação na EPT deve ser um processo contínuo que acompanha o desenvolvimento do estudante, com foco na melhoria da aprendizagem."
-        },
-        {
-            id: 'ept39',
-            question: "A interdisciplinaridade no ensino técnico busca:",
-            options: ["a) Fragmentar os saberes", "b) Integrar conhecimentos de diferentes áreas", "c) Priorizar apenas o conteúdo técnico", "d) Ignorar a base comum nacional"],
-            answer: "b",
-            explanation: "A interdisciplinaridade visa conectar e articular os conhecimentos de diferentes disciplinas para uma compreensão mais completa da realidade."
-        },
-        {
-            id: 'ept40',
-            question: "A prática pedagógica na EPT deve considerar:",
-            options: ["a) Apenas as demandas do mercado", "b) A realidade dos estudantes e do território", "c) Exclusivamente o livro didático", "d) Aulas expositivas sem participação ativa"],
-            answer: "b",
-            explanation: "A EPT deve ser contextualizada e relevante para a realidade local e para os interesses dos estudantes."
-        },
-        {
-            id: 'ept41',
-            question: "O currículo integrado na EPT propõe:",
-            options: ["a) Separar formação geral e técnica", "b) Articular conhecimentos científicos, tecnológicos e humanísticos", "c) Eliminar disciplinas de base comum", "d) Priorizar apenas habilidades práticas"],
-            answer: "b",
-            explanation: "O currículo integrado busca superar a dicotomia entre a formação geral e a formação profissional, integrando-as de forma orgânica."
-        },
-        {
-            id: 'ept42',
-            question: "Qual documento reforça a importância do currículo integrado?",
-            options: ["a) Parecer CNE/CEB 11/2012", "b) Decreto 9.235/2017", "c) Portaria MEC 1.000/2020", "d) Lei 13.415/2017"],
-            answer: "a",
-            explanation: "O Parecer CNE/CEB 11/2012, que estabelece as DCNs da EPT de Nível Médio, reforça a concepção de currículo integrado."
-        },
-        {
-            id: 'ept43',
-            question: "A integração entre formação geral e técnica visa:",
-            options: ["a) Reduzir a carga horária", "b) Promover uma visão fragmentada do saber", "c) Formar cidadãos críticos e profissionais qualificados", "d) Priorizar apenas o ensino teórico"],
-            answer: "c",
-            explanation: "O objetivo é formar indivíduos completos, com conhecimentos técnicos e humanísticos, capazes de atuar no mundo e na sociedade."
-        },
-        {
-            id: 'ept44',
-            question: "O currículo integrado no IFRN pressupõe:",
-            options: ["a) Disciplinas estanques sem diálogo", "b) Projetos que unam diferentes áreas do conhecimento", "c) Abandono da formação humanística", "d) Foco exclusivo em estágios"],
-            answer: "b",
-            explanation: "A abordagem por projetos é uma estratégia eficaz para promover a integração e a interdisciplinaridade no currículo."
-        },
-        {
-            id: 'ept45',
-            question: "Qual desafio **NÃO** está associado à implementação do currículo integrado?",
-            options: ["a) Resistência à mudança de paradigma", "b) Falta de formação docente", "c) Facilidade em fragmentar conhecimentos", "d) Excessiva valorização da interdisciplinaridade"],
-            answer: "d",
-            explanation: "A excessiva valorização da interdisciplinaridade não é um desafio, mas sim um objetivo da implementação do currículo integrado."
-        },
-        {
-            id: 'ept46',
-            question: "A EPT no Brasil tem como um de seus objetivos:",
-            options: ["a) Restringir o acesso às classes populares", "b) Promover inclusão social e desenvolvimento regional", "c) Manter o ensino elitizado", "d) Ignorar as demandas do mundo do trabalho"],
-            answer: "b",
-            explanation: "A EPT é um instrumento de inclusão social e de desenvolvimento econômico e social das regiões."
-        },
-        {
-            id: 'ept47',
-            question: "O IFRN segue qual modelo educacional?",
-            options: ["a) Tecnicista e conservador", "b) Crítico, integrado e emancipatório", "c) Exclusivamente profissionalizante", "d) Desvinculado da pesquisa"],
-            answer: "b",
-            explanation: "O modelo educacional dos IFs é pautado pela formação integral, crítica, com a indissociabilidade entre ensino, pesquisa e extensão."
-        },
-        {
-            id: 'ept48',
-            question: "A articulação entre teoria e prática na EPT é fundamental porque:",
-            options: ["a) Desvaloriza o conhecimento científico", "b) Permite a aplicação do saber em situações reais", "c) Prioriza apenas o ensino teórico", "d) Ignora a formação técnica"],
-            answer: "b",
-            explanation: "A articulação entre teoria e prática é crucial para que o estudante compreenda e aplique os conhecimentos em contextos reais."
-        },
-        {
-            id: 'ept49',
-            question: "A pesquisa na EPT deve:",
-            options: ["a) Ser restrita a pós-graduação", "b) Integrar-se ao ensino e extensão desde a formação básica", "c) Ser opcional para os alunos", "d) Não ter vinculação com o currículo"],
-            answer: "b",
-            explanation: "A pesquisa nos IFs não se restringe à pós-graduação, mas perpassa todos os níveis e modalidades de ensino."
-        },
-        {
-            id: 'ept50',
-            question: "A extensão no IFRN tem como propósito:",
-            options: ["a) Isolar a instituição da comunidade", "b) Promover diálogo entre escola e sociedade", "c) Restringir-se a eventos internos", "d) Ser atividade complementar sem avaliação"],
-            answer: "b",
-            explanation: "A extensão é um processo educativo, cultural e científico que articula a instituição com a sociedade, promovendo a troca de saberes."
-        },
-        {
-            id: 'ept51',
-            question: "Qual decreto regulamentou a Educação Profissional Técnica de Nível Médio após a LDB?",
-            options: ["a) Decreto 2.208/1997", "b) Decreto 5.154/2004", "c) Decreto 6.302/2007", "d) Decreto 9.057/2017"],
-            answer: "b",
-            explanation: "O Decreto nº 5.154/2004 regulamentou a Educação Profissional Técnica de Nível Médio, estabelecendo as formas de oferta integrada e subsequente."
-        },
-        {
-            id: 'ept52',
-            question: "A Lei 11.741/2008 alterou a LDB para:",
-            options: ["a) Extinguir a EPT", "b) Flexibilizar a articulação entre ensino médio e profissional", "c) Priorizar apenas o ensino superior", "d) Eliminar a formação técnica integrada"],
-            answer: "b",
-            explanation: "A Lei nº 11.741/2008 alterou a LDB, tornando a Educação Profissional e Tecnológica parte integrante da educação nacional."
-        },
-        {
-            id: 'ept53',
-            question: "O Programa Nacional de Acesso ao Ensino Técnico e Emprego (PRONATEC) foi criado pela:",
-            options: ["a) Lei 12.513/2011", "b) Medida Provisória 746/2016", "c) Portaria MEC 1.144/2016", "d) Lei 13.415/2017"],
-            answer: "a",
-            explanation: "O PRONATEC foi instituído pela Lei nº 12.513/2011 com o objetivo de expandir, interiorizar e democratizar a oferta de cursos de EPT."
-        },
-        {
-            id: 'ept54',
-            question: "A Reforma do Ensino Médio (Lei 13.415/2017) impactou a EPT ao:",
-            options: ["a) Ampliar a oferta de itinerários formativos técnicos", "b) Extinguir os cursos técnicos integrados", "c) Proibir a integração com o ensino regular", "d) Reduzir a carga horária prática"],
-            answer: "a",
-            explanation: "A Reforma do Ensino Médio, ao introduzir os itinerários formativos, ampliou as possibilidades de oferta de cursos técnicos."
-        },
-        {
-            id: 'ept55',
-            question: "Qual documento define as Diretrizes Curriculares Nacionais para a Formação Inicial e Continuada (FIC)?",
-            options: ["a) Resolução CNE/CEB 01/2021", "b) Parecer CNE/CEB 11/2012", "c) Portaria MEC 1.045/2021", "d) Decreto 9.057/2017"],
-            answer: "b",
-            explanation: "O Parecer CNE/CEB 11/2012 também traz as diretrizes para a Formação Inicial e Continuada (FIC)."
-        },
-        {
-            id: 'ept56',
-            question: "A **contextualização** no ensino profissional significa:",
-            options: ["a) Ignorar a realidade local", "b) Relacionar conteúdos com situações do mundo do trabalho", "c) Priorizar apenas aulas expositivas", "d) Fragmentar teoria e prática"],
-            answer: "b",
-            explanation: "Contextualizar significa trazer a realidade e as demandas do mundo do trabalho para o processo de ensino-aprendizagem."
-        },
-        {
-            id: 'ept57',
-            question: "A **flexibilidade curricular** na EPT permite:",
-            options: ["a) Adaptar o currículo às demandas regionais e dos estudantes", "b) Eliminar disciplinas básicas", "c) Padronizar rigidamente os cursos", "d) Ignorar a Base Nacional Comum Curricular (BNCC)"],
-            answer: "a",
-            explanation: "A flexibilidade permite que o currículo seja ajustado às necessidades específicas de cada local e público-alvo."
-        },
-        {
-            id: 'ept58',
-            question: "A **interdisciplinaridade** é essencial na EPT porque:",
-            options: ["a) Isola saberes técnicos e gerais", "b) Promove a integração de conhecimentos para resolver problemas complexos", "c) Desvaloriza a formação humana", "d) Restringe-se a projetos opcionais"],
-            answer: "b",
-            explanation: "A interdisciplinaridade permite que os alunos utilizem conhecimentos de diversas áreas para abordar e solucionar problemas reais."
-        },
-        {
-            id: 'ept59',
-            question: "A **avaliação formativa** prioriza:",
-            options: ["a) Classificar alunos por notas", "b) Identificar dificuldades e redirecionar o processo de ensino-aprendizagem", "c) Aplicar apenas provas escritas", "d) Excluir estudantes com baixo rendimento"],
-            answer: "b",
-            explanation: "A avaliação formativa tem como foco principal o acompanhamento do aprendizado e a identificação de pontos que precisam ser aprimorados."
-        },
-        {
-            id: 'ept60',
-            question: "A **indissociabilidade entre ensino, pesquisa e extensão** no IFRN busca:",
-            options: ["a) Formar técnicos sem visão crítica", "b) Integrar conhecimentos acadêmicos e sociais", "c) Restringir pesquisas a pós-graduação", "d) Ignorar a comunidade externa"],
-            answer: "b",
-            explanation: "A indissociabilidade garante que o conhecimento produzido na instituição seja aplicado e que a comunidade se beneficie desse conhecimento."
-        },
-        {
-            id: 'ept61',
-            question: "Um exemplo de currículo integrado é:",
-            options: ["a) Oferecer Português e Matemática separadamente da formação técnica", "b) Desenvolver projetos que articulam Matemática e conhecimentos de Enfermagem", "c) Eliminar disciplinas de ciências humanas", "d) Priorizar apenas estágios supervisionados"],
-            answer: "b",
-            explanation: "Projetos que conectam diferentes áreas do saber são uma forma de promover a integração curricular."
-        },
-        {
-            id: 'ept62',
-            question: "Qual desafio **NÃO** é comum na implementação do currículo integrado?",
-            options: ["a) Resistência docente à interdisciplinaridade", "b) Falta de infraestrutura para aulas práticas", "c) Excessiva valorização da integração teoria-prática", "d) Dificuldade em planejar coletivamente"],
-            answer: "c",
-            explanation: "A integração teoria-prática é um objetivo do currículo integrado, e sua valorização excessiva não é um desafio."
-        },
-        {
-            id: 'ept63',
-            question: "A Base Nacional Comum Curricular (BNCC) para o Ensino Médio:",
-            options: ["a) Ignora a EPT", "b) Oferece diretrizes para integrar formação geral e técnica", "c) Restringe-se a cursos acadêmicos", "d) Elimina componentes técnicos"],
-            answer: "b",
-            explanation: "A BNCC para o Ensino Médio, com a oferta de itinerários formativos, busca integrar a formação geral básica com a EPT."
-        },
-        {
-            id: 'ept64',
-            question: "O eixo **\"Trabalho, Ciência, Tecnologia e Cultura\"** no currículo integrado reforça:",
-            options: ["a) A separação entre conhecimentos científicos e profissionais", "b) A integração crítica dessas dimensões na formação", "c) O foco exclusivo em habilidades manuais", "d) A desvalorização da pesquisa"],
-            answer: "b",
-            explanation: "Esse eixo demonstra a preocupação em formar o estudante de maneira completa, relacionando o trabalho com a produção científica, tecnológica e cultural."
-        },
-        {
-            id: 'ept65',
-            question: "A carga horária dos cursos técnicos integrados deve incluir:",
-            options: ["a) Apenas disciplinas técnicas", "b) Equilíbrio entre formação geral e específica", "c) Exclusão de componentes artísticos", "d) Redução da prática profissional"],
-            answer: "b",
-            explanation: "Os cursos integrados visam a uma formação equilibrada entre os conhecimentos da base comum nacional e os da formação técnica."
-        },
-        {
-            id: 'ept66',
-            question: "Além do ensino, qual pilar **NÃO** faz parte da missão dos IFs?",
-            options: ["a) Pesquisa aplicada", "b) Extensão comunitária", "c) Formação exclusivamente teórica", "d) Inovação tecnológica"],
-            answer: "c",
-            explanation: "A missão dos IFs abrange ensino, pesquisa, extensão e inovação, com uma abordagem que vai além da formação meramente teórica."
-        },
-        {
-            id: 'ept67',
-            question: "O IFRN tem como um de seus valores institucionais:",
-            options: ["a) Meritocracia excludente", "b) Sustentabilidade socioambiental", "c) Centralização decisória", "d) Desvinculação do território"],
-            answer: "b",
-            explanation: "A sustentabilidade socioambiental é um valor crescente e importante para as instituições de ensino, incluindo o IFRN."
-        },
-        {
-            id: 'ept68',
-            question: "A Rede Federal de EPT inclui:",
-            options: ["a) Apenas os 38 Institutos Federais", "b) IFs, CEFETs e escolas técnicas vinculadas a universidades", "c) Apenas o SENAI e SENAC", "d) Instituições privadas"],
-            answer: "b",
-            explanation: "A Rede Federal é um conjunto de instituições públicas, incluindo IFs, CEFETs e escolas técnicas ligadas a universidades."
-        },
-        {
-            id: 'ept69',
-            question: "A autonomia dos IFs permite:",
-            options: ["a) Criar cursos sem regulamentação", "b) Adaptar-se às demandas locais dentro da legislação", "c) Ignorar diretrizes nacionais", "d) Excluir disciplinas obrigatórias"],
-            answer: "b",
-            explanation: "A autonomia é fundamental para que os IFs possam responder às especificidades de suas regiões, sempre em conformidade com a legislação educacional."
-        },
-        {
-            id: 'ept70',
-            question: "O IFRN destaca-se por:",
-            options: ["a) Oferecer apenas cursos superiores", "b) Integrar ensino médio, técnico e superior", "c) Não realizar pesquisas", "d) Ter atuação restrita a Natal"],
-            answer: "b",
-            explanation: "A integração dos diferentes níveis e modalidades de ensino é uma característica marcante dos Institutos Federais, incluindo o IFRN, que possui múltiplos campi."
-        }
+    // BANCO DE QUESTÕES PARA O "SIMULADO EXTRA"
+    const allQuestionsExtra = [
+        { id: 'E01', question: 'Qual a capital do Brasil?', options: ['a) Rio de Janeiro', 'b) São Paulo', 'c) Brasília', 'd) Belo Horizonte'], correct: 'c', explanation: 'A capital do Brasil é Brasília, localizada no Distrito Federal.' },
+        { id: 'E02', question: 'Qual o maior planeta do sistema solar?', options: ['a) Terra', 'b) Marte', 'c) Júpiter', 'd) Saturno'], correct: 'c', explanation: 'Júpiter é o maior planeta do nosso sistema solar.' },
+        { id: 'E03', question: 'Quem pintou a Monalisa?', options: ['a) Vincent van Gogh', 'b) Pablo Picasso', 'c) Leonardo da Vinci', 'd) Claude Monet'], correct: 'c', explanation: 'A obra-prima Monalisa foi pintada por Leonardo da Vinci.' },
+        { id: 'E04', question: 'Qual o elemento químico com o símbolo O?', options: ['a) Ouro', 'b) Oxigênio', 'c) Ósmio', 'd) Oganessônio'], correct: 'b', explanation: 'O símbolo químico O representa o Oxigênio.' },
+        { id: 'E05', question: 'Em que ano o homem pisou na Lua pela primeira vez?', options: ['a) 1959', 'b) 1969', 'c) 1979', 'd) 1989'], correct: 'b', explanation: 'O homem pisou na Lua pela primeira vez em 1969, com a missão Apollo 11.' }
     ];
 
-    // NOVO BANCO DE QUESTÕES PARA "Leis 8027 e 1171"
-    const leis8027e1171Questions = [
-        {
-            id: 'lei8027_01',
-            question: 'De acordo com a Lei nº 8.027/1990, qual das seguintes condutas é considerada falta administrativa punível com advertência por escrito?',
-            options: ['a) Utilizar pessoal ou recursos materiais da repartição em serviços particulares.', 'b) Ausentar-se do serviço durante o expediente, sem prévia autorização do superior imediato.', 'c) Abandonar o cargo por mais de trinta dias consecutivos.', 'd) Aceitar propinas ou presentes em razão de suas atribuições.', 'e) Participar da gerência ou administração de empresa privada e transacionar com o Estado.'],
-            answer: 'b',
-            explanation: 'A conduta de ausentar-se do serviço sem prévia autorização é punível com advertência.'
-        },
-        {
-            id: 'lei8027_02',
-            question: 'Conforme a Lei nº 8.027/1990, a penalidade de demissão a bem do serviço público pode ser aplicada nos seguintes casos, EXCETO:',
-            options: ['a) Valer-se de informação obtida em função do cargo para proveito pessoal.', 'b) Exercer comércio, exceto como acionista, cotista ou comanditário.', 'c) Apresentar inassiduidade habitual, com falta ao serviço por vinte dias interpoladamente em seis meses.', 'd) Ofensa física, em serviço, a servidor público ou a particular, salvo em legítima defesa.', 'e) Recusar fé a documentos públicos.'],
-            answer: 'e',
-            explanation: 'Recusar fé a documentos públicos não está diretamente listado como causa de demissão a bem do serviço público na Lei nº 8.027/1990.'
-        },
-        {
-            id: 'lei8027_03',
-            question: 'Segundo a Lei nº 8.027/1990, qual é a definição de servidor público para os efeitos desta lei?',
-            options: ['a) A pessoa que presta serviços temporários ao Estado.', 'b) A pessoa legalmente investida em cargo ou emprego público na administração direta, autarquias ou fundações públicas.', 'c) Aquele que exerce função de confiança em qualquer esfera do poder.', 'd) O empregado de empresa pública ou sociedade de economia mista.', 'e) Qualquer cidadão que preste serviço voluntário ao Estado.'],
-            answer: 'b',
-            explanation: 'A Lei nº 8.027/1990 define servidor público como a pessoa legalmente investida em cargo ou emprego público na administração direta, autarquias ou fundações públicas.'
-        },
-        {
-            id: 'lei8027_04',
-            question: 'A Lei nº 8.027/1990 estabelece que são deveres dos servidores públicos civis, EXCETO:',
-            options: ['a) Ser leal às instituições a que servir.', 'b) Guardar sigilo sobre assuntos da repartição, desde que envolvam questões relativas à segurança pública e da sociedade.', 'c) Manter conduta compatível com a moralidade pública.', 'd) Delegar a pessoa estranha à repartição atribuição de sua competência.', 'e) Representar contra ilegalidade, omissão ou abuso de poder.'],
-            answer: 'd',
-            explanation: 'Delegar atribuição a pessoa estranha à repartição é uma vedação ou proibição, não um dever do servidor público.'
-        },
-        {
-            id: 'lei8027_05',
-            question: 'De acordo com a Lei nº 8.027/1990, a penalidade de suspensão por até 90 (noventa) dias pode ser aplicada em qual das seguintes situações?',
-            options: ['a) Improbidade administrativa.', 'b) Acumulação remunerada de cargos públicos.', 'c) Retirar, sem prévia autorização por escrito, qualquer documento ou objeto da repartição.', 'd) Revelação de segredo de que teve conhecimento em função do cargo.', 'e) Abandono de cargo.'],
-            answer: 'c',
-            explanation: 'Retirar, sem prévia autorização, documento ou objeto da repartição é passível de suspensão.'
-        },
-        {
-            id: 'lei8027_06',
-            question: 'Conforme a Lei nº 8.027/1990, a penalidade de advertência converte-se automaticamente em suspensão por trinta dias em caso de:',
-            options: ['a) Improbidade administrativa.', 'b) Reincidência.', 'c) Insubordinação grave em serviço.', 'd) Ofensa física.', 'e) Procedimento desidioso.'],
-            answer: 'b',
-            explanation: 'A reincidência em infração punível com advertência pode levar à conversão em suspensão.'
-        },
-        {
-            id: 'lei8027_07',
-            question: 'Segundo a Lei nº 8.027/1990, qual das seguintes infrações é considerada grave e passível de aplicação da pena de demissão?',
-            options: ['a) Recusar fé a documentos públicos.', 'b) Manter sob sua chefia imediata cônjuge, companheiro ou parente até o segundo grau civil.', 'c) Acumulação remunerada de cargos, empregos e funções públicas vedada pela Constituição Federal.', 'd) Praticar comércio de compra e venda de bens ou serviços no recinto da repartição.', 'e) Atuar como procurador ou intermediário junto a repartições públicas.'],
-            answer: 'c',
-            explanation: 'A acumulação remunerada de cargos, empregos e funções públicas vedada pela Constituição Federal é uma infração grave passível de demissão.'
-        },
-        {
-            id: 'lei8027_08',
-            question: 'A Lei nº 8.027/1990 dispõe que o servidor público civil responde civil, penal e administrativamente pelo exercício irregular de suas atribuições. As cominações civis, penais e disciplinares podem:',
-            options: ['a) Apenas cumular-se, sendo dependentes entre si.', 'b) Apenas cumular-se, sendo independentes entre si.', 'c) Não cumular-se, sendo dependentes entre si.', 'd) Não cumular-se, sendo independentes entre si.', 'e) Apenas cumular-se, se houver conveniência para o serviço.'],
-            answer: 'b',
-            explanation: 'As responsabilidades civil, penal e administrativa são independentes e podem cumular-se.'
-        },
-        {
-            id: 'lei8027_09',
-            question: 'De acordo com a Lei nº 8.027/1990, qual o prazo para o servidor público apresentar a declaração de cargos públicos, empregos e funções que exerce, no ato de investidura?',
-            options: ['a) Trinta dias após a investidura.', 'b) Sessenta dias após a investidura.', 'c) No ato de investidura.', 'd) Noventa dias após a investidura.', 'e) A qualquer tempo, desde que antes da posse.'],
-            answer: 'c',
-            explanation: 'A declaração deve ser apresentada no ato de investidura no cargo.'
-        },
-        {
-            id: 'lei8027_10',
-            question: 'Conforme a Lei nº 8.027/1990, a aplicação da penalidade de suspensão acarreta:',
-            options: ['a) A conversão em multa, na base de cinquenta por cento da remuneração do servidor.', 'b) O cancelamento automático do valor da remuneração do servidor, durante o período de vigência da suspensão.', 'c) A destituição do cargo em comissão.', 'd) A instauração de processo administrativo disciplinar.', 'e) A exoneração do cargo.'],
-            answer: 'b',
-            explanation: 'A suspensão acarreta o cancelamento automático da remuneração durante o período de sua vigência.'
-        },
-        {
-            id: 'decreto1171_11',
-            question: 'De acordo com o Código de Ética Profissional do Servidor Público Civil do Poder Executivo Federal (Decreto nº 1.171/1994), qual dos seguintes princípios NÃO deve nortear o servidor público?',
-            options: ['a) Dignidade.', 'b) Decoro.', 'c) Zelo.', 'd) Eficácia.', 'e) Conveniência.'],
-            answer: 'e',
-            explanation: 'A conveniência não é um princípio ético fundamental para a conduta do servidor público, ao contrário dos demais listados.'
-        },
-        {
-            id: 'decreto1171_12',
-            question: 'Segundo o Decreto nº 1.171/1994, o servidor público não terá que decidir somente entre o legal e o ilegal, o justo e o injusto, o conveniente e o inconveniente, o oportuno e o inoportuno, mas principalmente entre:',
-            options: ['a) O certo e o errado.', 'b) O honesto e o desonesto.', 'c) O público e o privado.', 'd) O ético e o antiético.', 'e) O moral e o imoral.'],
-            answer: 'b',
-            explanation: 'A decisão fundamental é entre o honesto e o desonesto, conforme o Código de Ética.'
-        },
-        {
-            id: 'decreto1171_13',
-            question: 'Conforme o Código de Ética (Decreto nº 1.171/1994), a moralidade da Administração Pública deve ser acrescida da ideia de que o fim é sempre:',
-            options: ['a) O lucro.', 'b) O bem comum.', 'c) A eficiência.', 'd) A legalidade.', 'e) A impessoalidade.'],
-            answer: 'b',
-            explanation: 'O fim último da moralidade administrativa é sempre o bem comum.'
-        },
-        {
-            id: 'decreto1171_14',
-            question: 'O Decreto nº 1.171/1994 estabelece que a publicidade de qualquer ato administrativo constitui requisito de eficácia e moralidade, salvo em casos de:',
-            options: ['a) Interesse particular do servidor.', 'b) Segurança nacional, investigações policiais ou interesse superior do Estado e da Administração Pública.', 'c) Conveniência da Administração Pública.', 'd) Decisão unilateral do servidor.', 'e) Acordo entre as partes envolvidas.'],
-            answer: 'b',
-            explanation: 'A publicidade é regra, mas há exceções para segurança nacional, investigações policiais ou interesse superior do Estado e da Administração Pública.'
-        },
-        {
-            id: 'decreto1171_15',
-            question: 'De acordo com o Código de Ética (Decreto nº 1.171/1994), qual das seguintes condutas é considerada vedada ao servidor público?',
-            options: ['a) Desempenhar a tempo as atribuições do cargo.', 'b) Ser probo, reto, leal e justo.', 'c) Pleitear, solicitar, provocar, sugerir ou receber qualquer tipo de ajuda financeira para si ou terceiros.', 'd) Manter-se atualizado com as instruções e normas de serviço.', 'e) Apresentar-se ao trabalho com vestimentas adequadas.'],
-            answer: 'c',
-            explanation: 'Pleitear ou receber qualquer tipo de ajuda financeira para si ou terceiros é uma conduta vedada pelo Código de Ética.'
-        },
-        {
-            id: 'decreto1171_16',
-            question: 'Segundo o Decreto nº 1.171/1994, a pena aplicável ao servidor público pela Comissão de Ética é a de:',
-            options: ['a) Advertência.', 'b) Suspensão.', 'c) Demissão.', 'd) Censura.', 'e) Multa.'],
-            answer: 'd',
-            explanation: 'A única penalidade que uma Comissão de Ética pode aplicar é a censura.'
-        },
-        {
-            id: 'decreto1171_17',
-            question: 'Conforme o Código de Ética (Decreto nº 1.171/1994), a Comissão de Ética é encarregada de orientar e aconselhar sobre a ética profissional do servidor, e também de:',
-            options: ['a) Aplicar penas de demissão.', 'b) Conhecer de consultas, denúncias ou representações formuladas contra servidor por suposto descumprimento às normas.', 'c) Julgar processos administrativos disciplinares.', 'd) Realizar investigações criminais.', 'e) Definir a remuneração dos servidores.'],
-            answer: 'b',
-            explanation: 'A Comissão de Ética também é responsável por conhecer de consultas, denúncias ou representações sobre o descumprimento das normas éticas.'
-        },
-        {
-            id: 'decreto1171_18',
-            question: 'O Decreto nº 1.171/1994 dispõe que a infração das normas deste Código de Ética importará em censura e, conforme a gravidade, em:',
-            options: ['a) Apenas censura.', 'b) Exoneração ou destituição de cargo em comissão, ou função de confiança, ou, ainda, em outras sanções previstas em lei.', 'c) Suspensão por até 90 dias.', 'd) Advertência por escrito.', 'e) Multa.'],
-            answer: 'b',
-            explanation: 'Além da censura, a infração pode resultar em exoneração, destituição de cargo em comissão/função de confiança, ou outras sanções previstas em lei.'
-        },
-        {
-            id: 'decreto1171_19',
-            question: 'Para os fins do Código de Ética (Decreto nº 1.171/1994), servidor público é todo aquele que, por força de lei, contrato ou qualquer ato jurídico, preste serviços de natureza:',
-            options: ['a) Apenas permanente.', 'b) Apenas temporária.', 'c) Permanente, temporária ou excepcional, ainda que sem retribuição financeira.', 'd) Apenas com retribuição financeira.', 'e) Exclusivamente em órgãos da administração direta.'],
-            answer: 'c',
-            explanation: 'O Código abrange serviços de natureza permanente, temporária ou excepcional, mesmo sem retribuição financeira.'
-        },
-        {
-            id: 'decreto1171_20',
-            question: 'De acordo com o Decreto nº 1.171/1994, o servidor público que tiver conhecimento de qualquer ato ou fato que possa configurar desvio ético, deverá comunicá-lo:',
-            options: ['a) À autoridade superior.', 'b) Ao Ministério Público.', 'c) À Comissão de Ética do seu órgão ou entidade.', 'd) À Polícia Federal.', 'e) À imprensa.'],
-            answer: 'c',
-            explanation: 'O servidor deve comunicar à Comissão de Ética do seu órgão ou entidade qualquer desvio ético.'
-        }
-    ];
-
-
+    // Variável para armazenar as questões do EPT
     let selectedQuestionsIA = []; // Para questões geradas por IA (com opções A, B, C, D)
     let selectedQuestoesEstudo = []; // Para questões retiradas de outras provas (pergunta e resposta)
-    let selectedEptQuestions = []; // Para questões de EPT no Brasil
-    let selectedLeis8027e1171Questions = []; // NOVO: Para questões de Leis 8027 e 1171
-
+    let selectedQuestionsExtra = []; // Para questões do simulado extra
+    let selectedQuestionsEPT = []; // NOVO: Para questões do simulado EPT
 
     // Elementos da interface
     const choiceContainer = document.getElementById('choice-container');
     const iaQuestionsButton = document.getElementById('ia-questions-button');
     const provaQuestionsButton = document.getElementById('prova-questions-button');
-    const eptBrasilButton = document.getElementById('ept-brasil-button'); // Novo botão
-    const leis8027e1171Button = document.getElementById('leis-8027-1171-button'); // NOVO: Botão Leis 8027 e 1171
+    const extraQuestionsButton = document.getElementById('extra-questions-button');
+    const eptQuestionsButton = document.getElementById('ept-questions-button'); // NOVO BOTÃO EPT
 
     // Elementos do simulado de IA
     const iaSimuladoContent = document.getElementById('ia-simulado-content');
@@ -859,25 +228,25 @@ document.addEventListener('DOMContentLoaded', () => {
     const totalQuestionsProvaSpan = document.getElementById('total-questions-prova');
     const answerKeyProvaList = document.getElementById('answer-key-prova');
 
-    // Elementos do simulado EPT no Brasil
-    const eptBrasilSimuladoContent = document.getElementById('ept-brasil-simulado-content');
-    const eptQuestionsContainer = document.getElementById('ept-questions-container');
-    const submitEptButton = document.getElementById('submit-ept-button');
-    const restartEptButton = document.getElementById('restart-ept-button');
-    const resultsEptContainer = document.getElementById('results-ept-container');
-    const scoreEptSpan = document.getElementById('score-ept');
-    const totalQuestionsEptSpan = document.getElementById('total-questions-ept');
-    const answerKeyEptList = document.getElementById('answer-key-ept');
+    // NOVOS ELEMENTOS PARA O SIMULADO EXTRA
+    const extraSimuladoContent = document.getElementById('extra-simulado-content');
+    const extraQuestionsContainer = document.getElementById('extra-questions-container');
+    const submitExtraButton = document.getElementById('submit-extra-button');
+    const restartExtraButton = document.getElementById('restart-extra-button');
+    const resultsExtraContainer = document.getElementById('results-extra-container');
+    const scoreSpanExtra = document.getElementById('score-extra');
+    const totalQuestionsSpanExtra = document.getElementById('total-questions-extra');
+    const answerKeyListExtra = document.getElementById('answer-key-extra');
 
-    // NOVO: Elementos do simulado Leis 8027 e 1171
-    const leis8027e1171SimuladoContent = document.getElementById('leis-8027-1171-simulado-content');
-    const leis8027e1171QuestionsContainer = document.getElementById('leis-8027-1171-questions-container');
-    const submitLeis8027e1171Button = document.getElementById('submit-leis-8027-1171-button');
-    const restartLeis8027e1171Button = document.getElementById('restart-leis-8027-1171-button');
-    const resultsLeis8027e1171Container = document.getElementById('results-leis-8027-1171-container');
-    const scoreLeis8027e1171Span = document.getElementById('score-leis-8027-1171');
-    const totalQuestionsLeis8027e1171Span = document.getElementById('total-questions-leis-8027-1171');
-    const answerKeyLeis8027e1171List = document.getElementById('answer-key-leis-8027-1171');
+    // NOVOS ELEMENTOS PARA O SIMULADO EPT
+    const eptSimuladoContent = document.getElementById('ept-simulado-content'); // Adicionado
+    const eptQuestionsContainer = document.getElementById('ept-questions-container'); // Adicionado
+    const submitEptButton = document.getElementById('submit-ept-button'); // Adicionado
+    const restartEptButton = document.getElementById('restart-ept-button'); // Adicionado
+    const resultsEptContainer = document.getElementById('results-ept-container'); // Adicionado
+    const scoreSpanEpt = document.getElementById('score-ept'); // Adicionado
+    const totalQuestionsSpanEpt = document.getElementById('total-questions-ept'); // Adicionado
+    const answerKeyListEpt = document.getElementById('answer-key-ept'); // Adicionado
 
     // Elemento do contador de acessos
     const accessCounterSpan = document.getElementById('access-counter');
@@ -910,7 +279,7 @@ document.addEventListener('DOMContentLoaded', () => {
             questionCard.classList.add('question-card');
             questionCard.innerHTML = `
                 <p>${index + 1}. ${q.question}</p>
-                <ol type="a" class="options-container" data-question-id="${q.id}">
+                <ol type="a">
                     ${q.options.map((option, i) => `
                         <li>
                             <label>
@@ -936,28 +305,18 @@ document.addEventListener('DOMContentLoaded', () => {
             const selectedOption = document.querySelector(`input[name="question-${q.id}"]:checked`);
             const listItem = document.createElement('li');
             listItem.classList.add('answer-key-item');
-            const questionOptionsContainer = document.querySelector(`.options-container[data-question-id="${q.id}"]`);
-            const labels = questionOptionsContainer.querySelectorAll('label');
 
             let userAnswer = '';
             if (selectedOption) {
                 userAnswer = selectedOption.value;
             }
 
-            labels.forEach(label => {
-                const input = label.querySelector('input');
-                if (input.value === q.correct) {
-                    label.classList.add('correct');
-                }
-                if (selectedOption && input.value === selectedOption.value && selectedOption.value !== q.correct) {
-                    label.classList.add('incorrect');
-                }
-            });
-
             if (userAnswer === q.correct) {
                 score++;
+                listItem.classList.add('correct');
                 listItem.innerHTML = `<strong>Questão ${index + 1}: Correta!</strong> (Sua resposta: ${userAnswer.toUpperCase()}) - ${q.explanation}`;
             } else {
+                listItem.classList.add('incorrect');
                 const userAnswerDisplay = userAnswer ? userAnswer.toUpperCase() : 'Não respondida';
                 listItem.innerHTML = `<strong>Questão ${index + 1}: Incorreta!</strong> (Sua resposta: ${userAnswerDisplay}, Correta: ${q.correct.toUpperCase()}) - ${q.explanation}`;
             }
@@ -982,10 +341,10 @@ document.addEventListener('DOMContentLoaded', () => {
         provaQuestionsContainer.innerHTML = '';
         selectedQuestoesEstudo.forEach((q, index) => {
             const questionCard = document.createElement('div');
-            questionCard.classList.add('question-card'); // Usando a mesma classe de estilo
+            questionCard.classList.add('prova-question-card');
             questionCard.innerHTML = `
-                <p class="question-text">${index + 1}. [${q.lei}] ${q.enunciado}</p>
-                <input type="text" id="prova-answer-${index}" class="text-answer-input" placeholder="Digite sua resposta aqui...">
+                <p>${index + 1}. [${q.lei}] ${q.enunciado}</p>
+                <input type="text" name="prova-question${index}" placeholder="Digite sua resposta aqui...">
                 <small>Fonte: ${q.fonte}</small>
             `;
             provaQuestionsContainer.appendChild(questionCard);
@@ -1000,28 +359,21 @@ document.addEventListener('DOMContentLoaded', () => {
         answerKeyProvaList.innerHTML = '';
 
         selectedQuestoesEstudo.forEach((q, index) => {
-            const userAnswerInput = document.getElementById(`prova-answer-${index}`);
+            const userAnswerInput = document.querySelector(`input[name="prova-question${index}"]`);
             const userAnswer = userAnswerInput ? userAnswerInput.value.trim() : '';
             const listItem = document.createElement('li');
             listItem.classList.add('answer-key-item');
 
-            // Comparação case-insensitive e sem acentos para maior flexibilidade
             const normalizedUserAnswer = userAnswer.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "");
             const normalizedCorrectAnswer = q.alternativaCorreta.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "");
 
             if (normalizedUserAnswer === normalizedCorrectAnswer) {
                 score++;
-                listItem.innerHTML = `<strong>Questão ${index + 1}: Correta!</strong> Resposta: "${q.alternativaCorreta}"`;
-                listItem.classList.add('correct');
+                listItem.innerHTML = `Questão ${index + 1}: <span class="correct">Correta</span>. Resposta: "${q.alternativaCorreta}"`;
             } else {
-                listItem.innerHTML = `<strong>Questão ${index + 1}: Incorreta!</strong> Sua resposta: "${userAnswer}". Correta: "${q.alternativaCorreta}"`;
-                listItem.classList.add('incorrect');
+                listItem.innerHTML = `Questão ${index + 1}: <span class="incorrect">Incorreta</span>. Sua resposta: "${userAnswer}". Resposta correta: "${q.alternativaCorreta}"`;
             }
             answerKeyProvaList.appendChild(listItem);
-
-            if (userAnswerInput) {
-                userAnswerInput.disabled = true; // Desabilita o campo de texto
-            }
         });
 
         scoreProvaSpan.textContent = score;
@@ -1031,20 +383,85 @@ document.addEventListener('DOMContentLoaded', () => {
         restartProvaButton.classList.remove('hidden');
     }
 
-    // --- Funções para o Simulado EPT no Brasil ---
-    function renderEptQuestions() {
-        selectedEptQuestions = getRandomQuestions(eptQuestions, 5); // Sorteia 5 questões de EPT
-        eptQuestionsContainer.innerHTML = '';
-        selectedEptQuestions.forEach((q, index) => {
+    // --- NOVAS FUNÇÕES PARA O SIMULADO EXTRA ---
+    function renderExtraQuestions() {
+        selectedQuestionsExtra = getRandomQuestions(allQuestionsExtra, 3); // Sorteia 3 questões para o simulado extra
+        extraQuestionsContainer.innerHTML = '';
+        selectedQuestionsExtra.forEach((q, index) => {
             const questionCard = document.createElement('div');
             questionCard.classList.add('question-card');
             questionCard.innerHTML = `
                 <p>${index + 1}. ${q.question}</p>
-                <ol type="a" class="options-container" data-question-id="${q.id}">
+                <ol type="a">
                     ${q.options.map((option, i) => `
                         <li>
                             <label>
-                                <input type="radio" name="question-${q.id}" value="${String.fromCharCode(97 + i)}">
+                                <input type="radio" name="question-extra-${q.id}" value="${String.fromCharCode(97 + i)}">
+                                ${option}
+                            </label>
+                        </li>
+                    `).join('')}
+                </ol>
+            `;
+            extraQuestionsContainer.appendChild(questionCard);
+        });
+        submitExtraButton.classList.remove('hidden');
+        restartExtraButton.classList.add('hidden');
+        resultsExtraContainer.classList.add('hidden');
+    }
+
+    function checkExtraAnswers() {
+        let score = 0;
+        answerKeyListExtra.innerHTML = '';
+
+        selectedQuestionsExtra.forEach((q, index) => {
+            const selectedOption = document.querySelector(`input[name="question-extra-${q.id}"]:checked`);
+            const listItem = document.createElement('li');
+            listItem.classList.add('answer-key-item');
+
+            let userAnswer = '';
+            if (selectedOption) {
+                userAnswer = selectedOption.value;
+            }
+
+            if (userAnswer === q.correct) {
+                score++;
+                listItem.classList.add('correct');
+                listItem.innerHTML = `<strong>Questão ${index + 1}: Correta!</strong> (Sua resposta: ${userAnswer.toUpperCase()}) - ${q.explanation}`;
+            } else {
+                listItem.classList.add('incorrect');
+                const userAnswerDisplay = userAnswer ? userAnswer.toUpperCase() : 'Não respondida';
+                listItem.innerHTML = `<strong>Questão ${index + 1}: Incorreta!</strong> (Sua resposta: ${userAnswerDisplay}, Correta: ${q.correct.toUpperCase()}) - ${q.explanation}`;
+            }
+            answerKeyListExtra.appendChild(listItem);
+
+            document.querySelectorAll(`input[name="question-extra-${q.id}"]`).forEach(radio => {
+                radio.disabled = true;
+            });
+        });
+
+        scoreSpanExtra.textContent = score;
+        totalQuestionsSpanExtra.textContent = selectedQuestionsExtra.length;
+        resultsExtraContainer.classList.remove('hidden');
+        submitExtraButton.classList.add('hidden');
+        restartExtraButton.classList.remove('hidden');
+    }
+
+    // --- NOVAS FUNÇÕES PARA O SIMULADO EPT ---
+    function renderEptQuestions() {
+        // Usa allQuestionsEPT do script_ept.js (disponível globalmente)
+        selectedQuestionsEPT = getRandomQuestions(allQuestionsEPT, 10); // Sorteia 10 questões para o simulado EPT
+        eptQuestionsContainer.innerHTML = '';
+        selectedQuestionsEPT.forEach((q, index) => {
+            const questionCard = document.createElement('div');
+            questionCard.classList.add('question-card');
+            questionCard.innerHTML = `
+                <p>${index + 1}. ${q.question}</p>
+                <ol type="a">
+                    ${q.options.map((option, i) => `
+                        <li>
+                            <label>
+                                <input type="radio" name="question-ept-${q.id}" value="${String.fromCharCode(97 + i)}">
                                 ${option}
                             </label>
                         </li>
@@ -1060,191 +477,116 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function checkEptAnswers() {
         let score = 0;
-        answerKeyEptList.innerHTML = '';
+        answerKeyListEpt.innerHTML = '';
 
-        selectedEptQuestions.forEach((q, index) => {
-            const selectedOption = document.querySelector(`input[name="question-${q.id}"]:checked`);
+        selectedQuestionsEPT.forEach((q, index) => {
+            const selectedOption = document.querySelector(`input[name="question-ept-${q.id}"]:checked`);
             const listItem = document.createElement('li');
             listItem.classList.add('answer-key-item');
-            const questionOptionsContainer = document.querySelector(`.options-container[data-question-id="${q.id}"]`);
-            const labels = questionOptionsContainer.querySelectorAll('label');
 
             let userAnswer = '';
             if (selectedOption) {
                 userAnswer = selectedOption.value;
             }
 
-            labels.forEach(label => {
-                const input = label.querySelector('input');
-                if (input.value === q.answer) { // Use q.answer para EPT
-                    label.classList.add('correct');
-                }
-                if (selectedOption && input.value === selectedOption.value && selectedOption.value !== q.answer) {
-                    label.classList.add('incorrect');
-                }
-            });
-
-            if (userAnswer === q.answer) {
+            if (userAnswer === q.correct) {
                 score++;
+                listItem.classList.add('correct');
                 listItem.innerHTML = `<strong>Questão ${index + 1}: Correta!</strong> (Sua resposta: ${userAnswer.toUpperCase()}) - ${q.explanation}`;
             } else {
+                listItem.classList.add('incorrect');
                 const userAnswerDisplay = userAnswer ? userAnswer.toUpperCase() : 'Não respondida';
-                listItem.innerHTML = `<strong>Questão ${index + 1}: Incorreta!</strong> (Sua resposta: ${userAnswerDisplay}, Correta: ${q.answer.toUpperCase()}) - ${q.explanation}`;
+                listItem.innerHTML = `<strong>Questão ${index + 1}: Incorreta!</strong> (Sua resposta: ${userAnswerDisplay}, Correta: ${q.correct.toUpperCase()}) - ${q.explanation}`;
             }
-            answerKeyEptList.appendChild(listItem);
+            answerKeyListEpt.appendChild(listItem);
 
-            // Desabilitar radios após a verificação
-            document.querySelectorAll(`input[name="question-${q.id}"]`).forEach(radio => {
+            document.querySelectorAll(`input[name="question-ept-${q.id}"]`).forEach(radio => {
                 radio.disabled = true;
             });
         });
 
-        scoreEptSpan.textContent = score;
-        totalQuestionsEptSpan.textContent = selectedEptQuestions.length;
+        scoreSpanEpt.textContent = score;
+        totalQuestionsSpanEpt.textContent = selectedQuestionsEPT.length;
         resultsEptContainer.classList.remove('hidden');
         submitEptButton.classList.add('hidden');
         restartEptButton.classList.remove('hidden');
     }
-
-    // NOVO: Funções para o Simulado Leis 8027 e 1171
-    function renderLeis8027e1171Questions() {
-        selectedLeis8027e1171Questions = getRandomQuestions(leis8027e1171Questions, 5); // Sorteia 5 questões
-        leis8027e1171QuestionsContainer.innerHTML = '';
-        selectedLeis8027e1171Questions.forEach((q, index) => {
-            const questionCard = document.createElement('div');
-            questionCard.classList.add('question-card');
-            questionCard.innerHTML = `
-                <p>${index + 1}. ${q.question}</p>
-                <ol type="a" class="options-container" data-question-id="${q.id}">
-                    ${q.options.map((option, i) => `
-                        <li>
-                            <label>
-                                <input type="radio" name="question-${q.id}" value="${String.fromCharCode(97 + i)}">
-                                ${option}
-                            </label>
-                        </li>
-                    `).join('')}
-                </ol>
-            `;
-            leis8027e1171QuestionsContainer.appendChild(questionCard);
-        });
-        submitLeis8027e1171Button.classList.remove('hidden');
-        restartLeis8027e1171Button.classList.add('hidden');
-        resultsLeis8027e1171Container.classList.add('hidden');
-    }
-
-    function checkLeis8027e1171Answers() {
-        let score = 0;
-        answerKeyLeis8027e1171List.innerHTML = '';
-
-        selectedLeis8027e1171Questions.forEach((q, index) => {
-            const selectedOption = document.querySelector(`input[name="question-${q.id}"]:checked`);
-            const listItem = document.createElement('li');
-            listItem.classList.add('answer-key-item');
-            const questionOptionsContainer = document.querySelector(`.options-container[data-question-id="${q.id}"]`);
-            const labels = questionOptionsContainer.querySelectorAll('label');
-
-            let userAnswer = '';
-            if (selectedOption) {
-                userAnswer = selectedOption.value;
-            }
-
-            labels.forEach(label => {
-                const input = label.querySelector('input');
-                if (input.value === q.answer) {
-                    label.classList.add('correct');
-                }
-                if (selectedOption && input.value === selectedOption.value && selectedOption.value !== q.answer) {
-                    label.classList.add('incorrect');
-                }
-            });
-
-            if (userAnswer === q.answer) {
-                score++;
-                listItem.innerHTML = `<strong>Questão ${index + 1}: Correta!</strong> (Sua resposta: ${userAnswer.toUpperCase()}) - ${q.explanation}`;
-            } else {
-                const userAnswerDisplay = userAnswer ? userAnswer.toUpperCase() : 'Não respondida';
-                listItem.innerHTML = `<strong>Questão ${index + 1}: Incorreta!</strong> (Sua resposta: ${userAnswerDisplay}, Correta: ${q.answer.toUpperCase()}) - ${q.explanation}`;
-            }
-            answerKeyLeis8027e1171List.appendChild(listItem);
-
-            // Desabilitar radios após a verificação
-            document.querySelectorAll(`input[name="question-${q.id}"]`).forEach(radio => {
-                radio.disabled = true;
-            });
-        });
-
-        scoreLeis8027e1171Span.textContent = score;
-        totalQuestionsLeis8027e1171Span.textContent = selectedLeis8027e1171Questions.length;
-        resultsLeis8027e1171Container.classList.remove('hidden');
-        submitLeis8027e1171Button.classList.add('hidden');
-        restartLeis8027e1171Button.classList.remove('hidden');
-    }
-
+    // --- FIM DAS NOVAS FUNÇÕES EPT ---
 
     // --- Event Listeners ---
     iaQuestionsButton.addEventListener('click', () => {
         choiceContainer.classList.add('hidden');
         iaSimuladoContent.classList.remove('hidden');
+        provaSimuladoContent.classList.add('hidden'); // Garante que outros simulados estejam ocultos
+        extraSimuladoContent.classList.add('hidden'); // Garante que outros simulados estejam ocultos
+        eptSimuladoContent.classList.add('hidden'); // Garante que o simulado EPT esteja oculto
         renderIAQuestions();
     });
 
     provaQuestionsButton.addEventListener('click', () => {
         choiceContainer.classList.add('hidden');
         provaSimuladoContent.classList.remove('hidden');
+        iaSimuladoContent.classList.add('hidden'); // Garante que outros simulados estejam ocultos
+        extraSimuladoContent.classList.add('hidden'); // Garante que outros simulados estejam ocultos
+        eptSimuladoContent.classList.add('hidden'); // Garante que o simulado EPT esteja oculto
         renderProvaQuestions();
     });
 
-    // Event Listener para o novo botão "EPT no Brasil"
-    eptBrasilButton.addEventListener('click', () => {
+    extraQuestionsButton.addEventListener('click', () => {
         choiceContainer.classList.add('hidden');
-        eptBrasilSimuladoContent.classList.remove('hidden');
-        renderEptQuestions(); // Renderiza as questões de EPT
+        extraSimuladoContent.classList.remove('hidden');
+        iaSimuladoContent.classList.add('hidden'); // Garante que outros simulados estejam ocultos
+        provaSimuladoContent.classList.add('hidden'); // Garante que outros simulados estejam ocultos
+        eptSimuladoContent.classList.add('hidden'); // Garante que o simulado EPT esteja oculto
+        renderExtraQuestions();
     });
 
-    // NOVO: Event Listener para o botão "Leis 8027 e 1171"
-    leis8027e1171Button.addEventListener('click', () => {
+    eptQuestionsButton.addEventListener('click', () => { // NOVO EVENT LISTENER PARA EPT
         choiceContainer.classList.add('hidden');
-        leis8027e1171SimuladoContent.classList.remove('hidden');
-        renderLeis8027e1171Questions(); // Renderiza as questões das Leis 8027 e 1171
+        eptSimuladoContent.classList.remove('hidden');
+        iaSimuladoContent.classList.add('hidden'); // Garante que outros simulados estejam ocultos
+        provaSimuladoContent.classList.add('hidden'); // Garante que outros simulados estejam ocultos
+        extraSimuladoContent.classList.add('hidden'); // Garante que outros simulados estejam ocultos
+        renderEptQuestions();
     });
+
 
     submitButtonIA.addEventListener('click', checkIAAnswers);
     restartButtonIA.addEventListener('click', () => {
-        iaSimuladoContent.classList.add('hidden'); // Esconde o conteúdo de IA
-        choiceContainer.classList.remove('hidden'); // Volta para a tela de escolha
-        // O renderIAQuestions será chamado novamente se o usuário escolher IA
+        renderIAQuestions();
+        resultsContainerIA.classList.add('hidden');
+        submitButtonIA.classList.remove('hidden');
+        restartButtonIA.classList.add('hidden');
     });
 
     submitProvaButton.addEventListener('click', checkProvaAnswers);
     restartProvaButton.addEventListener('click', () => {
-        provaSimuladoContent.classList.add('hidden'); // Esconde o conteúdo de Prova
-        choiceContainer.classList.remove('hidden'); // Volta para a tela de escolha
-        // O renderProvaQuestions será chamado novamente se o usuário escolher Prova
+        renderProvaQuestions();
+        resultsProvaContainer.classList.add('hidden');
+        submitProvaButton.classList.remove('hidden');
+        restartProvaButton.classList.add('hidden');
     });
 
-    // Event Listeners para o Simulado EPT no Brasil
-    submitEptButton.addEventListener('click', checkEptAnswers);
-    restartEptButton.addEventListener('click', () => {
-        eptBrasilSimuladoContent.classList.add('hidden'); // Esconde o conteúdo de EPT
-        choiceContainer.classList.remove('hidden'); // Volta para a tela de escolha
-        // O renderEptQuestions será chamado novamente se o usuário escolher EPT
+    submitExtraButton.addEventListener('click', checkExtraAnswers);
+    restartExtraButton.addEventListener('click', () => {
+        renderExtraQuestions();
+        resultsExtraContainer.classList.add('hidden');
+        submitExtraButton.classList.remove('hidden');
+        restartExtraButton.classList.add('hidden');
     });
 
-    // NOVO: Event Listeners para o Simulado Leis 8027 e 1171
-    submitLeis8027e1171Button.addEventListener('click', checkLeis8027e1171Answers);
-    restartLeis8027e1171Button.addEventListener('click', () => {
-        leis8027e1171SimuladoContent.classList.add('hidden'); // Esconde o conteúdo das Leis 8027 e 1171
-        choiceContainer.classList.remove('hidden'); // Volta para a tela de escolha
-        // O renderLeis8027e1171Questions será chamado novamente se o usuário escolher Leis 8027 e 1171
+    submitEptButton.addEventListener('click', checkEptAnswers); // NOVO EVENT LISTENER PARA EPT
+    restartEptButton.addEventListener('click', () => { // NOVO EVENT LISTENER PARA EPT
+        renderEptQuestions();
+        resultsEptContainer.classList.add('hidden');
+        submitEptButton.classList.remove('hidden');
+        restartEptButton.classList.add('hidden');
     });
 
-
-    // Inicialização: Esconde todos os simulados e mostra as opções
+    // Inicialização: Esconde os simulados e mostra as opções
     iaSimuladoContent.classList.add('hidden');
     provaSimuladoContent.classList.add('hidden');
-    eptBrasilSimuladoContent.classList.add('hidden'); // Certifica que EPT está oculto no início
-    leis8027e1171SimuladoContent.classList.add('hidden'); // NOVO: Certifica que Leis 8027 e 1171 está oculto no início
-
-    choiceContainer.classList.remove('hidden'); // Garante que a escolha inicial é visível
+    extraSimuladoContent.classList.add('hidden');
+    eptSimuladoContent.classList.add('hidden'); // Oculta o novo simulado na inicialização
+    choiceContainer.classList.remove('hidden');
 });
