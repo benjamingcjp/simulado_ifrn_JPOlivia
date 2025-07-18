@@ -3,98 +3,1051 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Simulado Preparatório</title>
-    <link rel="stylesheet" href="style.css">
-    </head>
+    <title>Questionários para Estudo</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f4f7f6;
+            color: #333;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 900px;
+            background-color: #ffffff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            margin-bottom: 30px;
+        }
+
+        h1 {
+            color: #2c3e50;
+            text-align: center;
+            margin-bottom: 25px;
+            font-size: 2.2em;
+        }
+
+        .quiz-selection {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .quiz-selection button {
+            background-color: #3498db;
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            margin: 10px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 1.1em;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .quiz-selection button:hover {
+            background-color: #2980b9;
+            transform: translateY(-2px);
+        }
+
+        .quiz-area {
+            display: none; /* Escondido por padrão */
+            margin-top: 20px;
+            border-top: 1px solid #eee;
+            padding-top: 20px;
+        }
+
+        .question-card {
+            background-color: #ecf0f1;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+            transition: transform 0.2s ease;
+        }
+
+        .question-card:hover {
+            transform: translateY(-3px);
+        }
+
+        .question-card h3 {
+            color: #34495e;
+            margin-top: 0;
+            font-size: 1.3em;
+            margin-bottom: 15px;
+        }
+
+        .options label {
+            display: block;
+            margin-bottom: 10px;
+            cursor: pointer;
+            font-size: 1.05em;
+            padding: 8px 0;
+            border-bottom: 1px dashed #ccc;
+        }
+
+        .options label:last-child {
+            border-bottom: none;
+        }
+
+        .options input[type="radio"] {
+            margin-right: 10px;
+            transform: scale(1.1);
+        }
+
+        .feedback {
+            margin-top: 15px;
+            padding: 10px;
+            border-radius: 5px;
+            font-weight: bold;
+            display: none; /* Escondido por padrão */
+        }
+
+        .feedback.correct {
+            background-color: #d4edda;
+            color: #28a745;
+            border-color: #28a745;
+        }
+
+        .feedback.incorrect {
+            background-color: #f8d7da;
+            color: #dc3545;
+            border-color: #dc3545;
+        }
+
+        .explanation {
+            margin-top: 10px;
+            padding: 10px;
+            background-color: #f0f0f0;
+            border-left: 5px solid #3498db;
+            display: none; /* Escondido por padrão */
+            font-size: 0.95em;
+            color: #555;
+        }
+
+        .submit-button, .show-answer-button {
+            background-color: #2ecc71;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 1em;
+            margin-top: 20px;
+            transition: background-color 0.3s ease;
+        }
+
+        .submit-button:hover, .show-answer-button:hover {
+            background-color: #27ae60;
+        }
+
+        .show-answer-button {
+            background-color: #e67e22;
+            margin-left: 10px;
+        }
+
+        .show-answer-button:hover {
+            background-color: #d35400;
+        }
+
+        .score-area {
+            text-align: center;
+            margin-top: 30px;
+            padding: 20px;
+            background-color: #d6e9f6;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            font-size: 1.4em;
+            font-weight: bold;
+            color: #2c3e50;
+            display: none; /* Escondido por padrão */
+        }
+    </style>
+</head>
 <body>
     <div class="container">
-        <h1>Simulado Preparatório</h1>
+        <h1>Bem-vindo aos Questionários de Estudo!</h1>
 
-        <div id="quiz-selection" class="section-card">
-            <h2>Escolha o tipo de Simulado:</h2>
-            <nav class="quiz-options">
-                <button data-quiz-type="ia" class="action-button">Questões Geradas por IA</button>
-                <button data-quiz-type="prova" class="action-button">Questões Retiradas de Outras Provas</button>
-                <button data-quiz-type="extra" class="action-button">Simulado Extra</button>
-                <button data-quiz-type="ept" class="action-button">EPT No Brasil 1.1</button>
-            </nav>
+        <div class="quiz-selection">
+            <p>Selecione um questionário para iniciar:</p>
+            <button id="btnQuizIA">Questões Geradas por IA</button>
+            <button id="btnQuizOutrasProvas">Questões Retiradas de Outras Provas</button>
+            <button id="btnQuizEPT">EPT No Brasil 1.1</button>
         </div>
 
-        <div id="ia-quiz-section" class="quiz-section hidden" data-quiz-type="ia">
-            <h2 class="quiz-title">Simulado: Questões Geradas por IA</h2>
-            <div id="ia-questions-container" class="questions-container">
-                </div>
-            <div class="quiz-controls">
-                <button data-action="submit" class="action-button hidden">Verificar Respostas</button>
-                <button data-action="restart" class="action-button hidden">Reiniciar Simulado</button>
+        <div id="quizArea" class="quiz-area">
             </div>
-            <div id="ia-results-container" class="results-card hidden">
-                <h3>Resultados:</h3>
-                <p>Você acertou <span data-score="ia">0</span> de <span data-total-questions="ia">0</span> questões.</p>
-                <h4>Gabarito e Explicações:</h4>
-                <ol data-answer-key="ia" class="answer-list">
-                    </ol>
-            </div>
-        </div>
 
-        <div id="prova-quiz-section" class="quiz-section hidden" data-quiz-type="prova">
-            <h2 class="quiz-title">Simulado: Questões de Prova</h2>
-            <div id="prova-questions-container" class="questions-container">
-                </div>
-            <div class="quiz-controls">
-                <button data-action="submit" class="action-button hidden">Verificar Respostas</button>
-                <button data-action="restart" class="action-button hidden">Reiniciar Simulado</button>
-            </div>
-            <div id="prova-results-container" class="results-card hidden">
-                <h3>Resultado:</h3>
-                <p>Você acertou <span data-score="prova">0</span> de <span data-total-questions="prova">0</span> questões.</p>
-                <h4>Gabarito:</h4>
-                <ol data-answer-key="prova" class="answer-list">
-                    </ol>
-            </div>
-        </div>
-
-        <div id="extra-quiz-section" class="quiz-section hidden" data-quiz-type="extra">
-            <h2 class="quiz-title">Simulado: Tópico Extra</h2>
-            <div id="extra-questions-container" class="questions-container">
-                </div>
-            <div class="quiz-controls">
-                <button data-action="submit" class="action-button hidden">Verificar Respostas</button>
-                <button data-action="restart" class="action-button hidden">Reiniciar Simulado</button>
-            </div>
-            <div id="extra-results-container" class="results-card hidden">
-                <h3>Resultado:</h3>
-                <p>Você acertou <span data-score="extra">0</span> de <span data-total-questions="extra">0</span> questões.</p>
-                <h4>Gabarito e Explicações:</h4>
-                <ol data-answer-key="extra" class="answer-list">
-                    </ol>
-            </div>
-        </div>
-
-        <div id="ept-quiz-section" class="quiz-section hidden" data-quiz-type="ept">
-            <h2 class="quiz-title">Simulado: EPT No Brasil 1.1</h2>
-            <div id="ept-questions-container" class="questions-container">
-                </div>
-            <div class="quiz-controls">
-                <button data-action="submit" class="action-button hidden">Verificar Respostas</button>
-                <button data-action="restart" class="action-button hidden">Reiniciar Simulado</button>
-            </div>
-            <div id="ept-results-container" class="results-card hidden">
-                <h3>Resultado:</h3>
-                <p>Você acertou <span data-score="ept">0</span> de <span data-total-questions="ept">0</span> questões.</p>
-                <h4>Gabarito e Explicações:</h4>
-                <ol data-answer-key="ept" class="answer-list">
-                    </ol>
-            </div>
+        <div id="scoreArea" class="score-area">
+            Sua pontuação: <span id="userScore">0</span> / <span id="totalQuestions">10</span>
         </div>
     </div>
 
-    <div class="footer">
-        <p>Desenvolvido por Gemini para fins educacionais.</p>
-        <p>Acessos (neste navegador): <span id="access-counter">0</span></p>
-    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // ESTE É O NOVO BANCO DE QUESTÕES PARA "QUESTÕES GERADAS POR IA"
+            const allQuestionsIA = [
+                // Lei nº 8.112/1990
+                { id: '01', question: 'Qual o regime jurídico estabelecido pela Lei nº 8.112/1990?', options: ['a) Emprego público federal.', 'b) Regime estatutário dos servidores públicos da União.', 'c) Regime celetista dos servidores públicos federais.', 'd) Regime misto para servidores federais.'], correct: 'b', explanation: 'A Lei nº 8.112/1990 institui o regime estatutário, que estabelece os direitos, deveres e responsabilidades dos servidores públicos civis da União, autarquias e fundações públicas federais.' },
+                { id: '02', question: 'São requisitos básicos para investidura em cargo público federal, EXCETO:', options: ['a) Nacionalidade brasileira.', 'b) Nível de escolaridade compatível com o cargo.', 'c) Idade mínima de 16 anos.', 'd) Quitação com as obrigações militares e eleitorais.'], correct: 'c', explanation: 'A idade mínima para investidura em cargo público federal é de 18 anos, conforme o artigo 5º, inciso III, da Lei nº 8.112/1990.' },
+                { id: '03', question: 'Qual das alternativas abaixo NÃO constitui forma de provimento de cargo público?', options: ['a) Nomeação.', 'b) Reintegração.', 'c) Remoção.', 'd) Aproveitamento.'], correct: 'c', explanation: 'A remoção é uma forma de movimentação do servidor, não de provimento (preenchimento inicial) do cargo.' },
+                { id: '04', question: 'A exoneração de um servidor público pode ocorrer:', options: ['a) Apenas a pedido do servidor.', 'b) Apenas de ofício pela administração.', 'c) A pedido do servidor ou de ofício.', 'd) Somente por decisão judicial.'], correct: 'c', explanation: 'A exoneração pode ocorrer a pedido do servidor (interesse particular) ou de ofício pela administração (ex: insatisfatório no estágio probatório).' },
+                { id: '05', question: 'O deslocamento do servidor, a pedido ou de ofício, no âmbito do mesmo quadro, com ou sem mudança de sede, denomina-se:', options: ['a) Redistribuição.', 'b) Remoção.', 'c) Recondução.', 'd) Aproveitamento.'], correct: 'b', explanation: 'A definição de remoção corresponde ao deslocamento do servidor dentro do mesmo quadro.' },
+                { id: '06', question: 'Qual das seguintes situações NÃO caracteriza vacância de cargo público?', options: ['a) Demissão.', 'b) Licença para tratamento de saúde.', 'c) Aposentadoria.', 'd) Posse em outro cargo inacumulável.'], correct: 'b', explanation: 'A licença para tratamento de saúde é um afastamento temporário, não uma causa de vacância do cargo.' },
+                { id: '07', question: 'O adicional noturno, conforme a Lei nº 8.112/1990, é devido pelo trabalho prestado no período compreendido entre:', options: ['a) 20h e 5h do dia seguinte.', 'b) 22h e 6h do dia seguinte.', 'c) 21h e 4h do dia seguinte.', 'd) 23h e 7h do dia seguinte.'], correct: 'b', explanation: 'O artigo 75 da Lei nº 8.112/1990 define o adicional noturno para o trabalho prestado entre 22h e 5h. Correção: A alternativa correta é b) 22h e 5h do dia seguinte.' }, // Correção da alternativa correta para b)
+                { id: '08', question: 'Quantos dias de férias anuais o servidor público federal tem direito, conforme a Lei nº 8.112/1990?', options: ['a) 25 dias úteis.', 'b) 30 dias corridos.', 'c) 20 dias úteis.', 'd) 35 dias corridos.'], correct: 'b', explanation: 'O servidor tem direito a 30 dias de férias por ano, conforme o artigo 77 da Lei nº 8.112/1990.' },
+                { id: '09', question: 'Qual das licenças abaixo NÃO depende de avaliação por junta médica oficial?', options: ['a) Licença por motivo de doença em pessoa da família.', 'b) Licença para tratamento da própria saúde por período superior a 15 dias.', 'c) Licença para atividade política.', 'd) Licença à gestante.'], correct: 'c', explanation: 'A licença para atividade política não depende de avaliação por junta médica oficial.' },
+                { id: '10', question: 'O servidor que retorna ao serviço público após ter sido considerado inválido em junta médica oficial e recuperado a capacidade laboral é:', options: ['a) Reintegrado.', 'b) Reconduzido.', 'c) Readaptado.', 'd) Aproveitado.'], correct: 'd', explanation: 'O aproveitamento é o retorno ao serviço ativo do servidor em disponibilidade.' },
+                { id: '11', question: 'A responsabilidade administrativa do servidor público será apurada mediante:', options: ['a) Inquérito policial.', 'b) Ação judicial.', 'c) Processo administrativo disciplinar.', 'd) Sindicância sumária.'], correct: 'c', explanation: 'A responsabilidade administrativa é apurada por meio de Processo Administrativo Disciplinar (PAD) ou sindicância.' },
+                { id: '12', question: 'São penalidades disciplinares previstas na Lei nº 8.112/1990, EXCETO:', options: ['a) Advertência.', 'b) Suspensão.', 'c) Multa.', 'd) Demissão.'], correct: 'c', explanation: 'A multa não é uma penalidade disciplinar prevista na Lei nº 8.112/1990. As penalidades são advertência, suspensão, demissão, cassação de aposentadoria ou disponibilidade e destituição de cargo em comissão.' },
+                { id: '13', question: 'O prazo máximo para a conclusão do processo administrativo disciplinar é de:', options: ['a) 30 dias, prorrogável por igual período.', 'b) 60 dias, prorrogável por igual período.', 'c) 90 dias, prorrogável por igual período.', 'd) 120 dias, prorrogável por igual período.'], correct: 'b', explanation: 'O artigo 152 da Lei nº 8.112/1990 estabelece o prazo de 60 dias, prorrogável por igual período, para a conclusão do PAD.' },
+                { id: '14', question: 'A demissão será aplicada em caso de:', options: ['a) Inassiduidade habitual.', 'b) Improbidade administrativa.', 'c) Negligência no desempenho das funções.', 'd) Descumprimento de dever funcional.'], correct: 'b', explanation: 'A improbidade administrativa é uma das causas para aplicação da pena de demissão (artigo 132, inciso IV).' },
+                { id: '15', question: 'Qual o prazo de prescrição para a ação disciplinar por abandono de cargo?', options: ['a) 2 anos.', 'b) 5 anos.', 'c) 1 ano.', 'd) Não prescreve.'], correct: 'a', explanation: 'O artigo 142, inciso I, da Lei nº 8.112/1990 estabelece o prazo de prescrição de 2 anos para abandono de cargo.' },
+                { id: '16', question: 'O direito de peticionar aos poderes públicos, em defesa de direitos ou contra ilegalidade ou abuso de poder, é assegurado ao servidor como:', options: ['a) Um dever funcional.', 'b) Uma proibição.', 'c) Um direito.', 'd) Uma vantagem pecuniária.'], correct: 'c', explanation: 'O direito de petição é um direito fundamental do servidor, previsto no artigo 5º, inciso XXXIV, da Constituição Federal e reforçado na Lei nº 8.112/1990.' },
+                { id: '17', question: 'A acumulação de cargos públicos é vedada, EXCETO quando houver compatibilidade de horários e se tratar de:', options: ['a) Dois cargos de professor.', 'b) Um cargo de professor com outro técnico ou científico.', 'c) Dois cargos ou empregos privativos de profissionais de saúde, com profissões regulamentadas.', 'd) Todas as alternativas anteriores.'], correct: 'd', explanation: 'A acumulação é permitida nas hipóteses constitucionais de dois cargos de professor, um de professor com outro técnico ou científico, e dois cargos ou empregos privativos de profissionais de saúde, com profissões regulamentadas, havendo compatibilidade de horários.' },
+                { id: '18', question: 'O estágio probatório é o período de:', options: ['a) 12 meses de efetivo exercício.', 'b) 24 meses de efetivo exercício.', 'c) 36 meses de efetivo exercício.', 'd) Não há período definido.'], correct: 'c', explanation: 'O artigo 20 da Lei nº 8.112/1990 define o estágio probatório como o período de 36 meses de efetivo exercício.' },
+                { id: '19', question: 'A avaliação especial de desempenho durante o estágio probatório visa apurar, entre outros aspectos:', options: ['a) Apenas a assiduidade e a disciplina.', 'b) Aptidão e capacidade para o desempenho eficiente das atribuições do cargo.', 'c) O nível de produtividade e a qualidade do trabalho desenvolvido pelo servidorcontinuidade nos estudos.', 'd) Apenas a pontualidade e a produtividade.'], correct: 'b', explanation: 'A avaliação no estágio probatório visa verificar a aptidão e capacidade do servidor para o desempenho eficiente das atribuições do cargo (artigo 20, § 1º).' },
+                { id: '20', question: 'A recondução é o retorno do servidor estável ao cargo anteriormente ocupado, em decorrência de:', options: ['a) Inabilitação em estágio probatório relativo a outro cargo.', 'b) Reintegração de outro servidor.', 'c) Aproveitamento do servidor em disponibilidade.', 'd) Todas as alternativas anteriores.'], correct: 'a', explanation: 'A recondução ocorre nas três situações mencionadas (artigo 29).' }, // Correção da alternativa correta para a)
 
-    <script src="script.js"></script>
-    <script src="script_ept.js"></script>
+                // Lei nº 12.772/2012
+                { id: '21', question: 'A Lei nº 12.772/2012 dispõe sobre a estruturação de qual plano de carreiras?', options: ['a) Plano de Carreiras e Cargos da Administração Pública Federal.', 'b) Plano de Carreiras e Cargos do Magistério Federal.', 'c) Plano Único de Carreiras e Cargos dos Servidores Federais.', 'd) Plano Nacional de Educação.'], correct: 'b', explanation: 'A Lei nº 12.772/2012 estrutura o Plano de Carreiras e Cargos de Magistério Federal.' },
+                { id: '22', question: 'Quais são as carreiras abrangidas pelo Plano de Carreiras e Cargos de Magistério Federal?', options: ['a) Magistério Superior e Magistério do Ensino Fundamental e Médio.', 'b) Magistério Superior e Magistério do Ensino Básico, Técnico e Tecnológico (EBTT).', 'c) Magistério Superior, Magistério do Ensino Fundamental e Magistério do Ensino Médio e Tecnológico.', 'd) Carreira Docente Federal e Carreira Técnico-Administrativa em Educação.'], correct: 'b', explanation: 'As carreiras abrangidas são a de Magistério Superior e a de Magistério do Ensino Básico, Técnico e Tecnológico (EBTT).' },
+                { id: '23', question: 'O ingresso nas Carreiras do Magistério Federal ocorre por meio de:', options: ['a) Indicação política.', 'b) Concurso público de provas e títulos.', 'c) Processo seletivo simplificado.', 'd) Remoção e redistribuição.'], correct: 'b', explanation: 'O ingresso nas Carreiras do Magistério Federal se dá por concurso público de provas e títulos (artigo 7º).' },
+                { id: '24', question: 'A Retribuição por Titulação (RT) é um componente da remuneração dos docentes federais, calculado com base em:', options: ['a) Tempo de serviço.', 'b) Desempenho individual.', 'c) Nível de escolaridade.', 'd) Participação em projetos de pesquisa e extensão.'], correct: 'c', explanation: 'A Retribuição por Titulação (RT) é calculada com base no nível de escolaridade do docente (artigo 16).' },
+                { id: '25', question: 'Quais são os regimes de trabalho previstos para os docentes da Carreira de Magistério Superior?', options: ['a) Tempo integral e tempo parcial.', 'b) Tempo integral com dedicação exclusiva, tempo parcial de 20 horas e tempo parcial de 40 horas.', 'c) Apenas tempo integral com dedicação exclusiva.', 'd) Tempo integral e regime de plantão.'], correct: 'b', explanation: 'Os regimes de trabalho para a Carreira de Magistério Superior são Tempo Integral com Dedicação Exclusiva (DE), Tempo Parcial de 20 horas e Tempo Parcial de 40 horas (artigo 20).' },
+                { id: '26', question: 'O regime de Tempo Integral com Dedicação Exclusiva (DE) implica que o docente deverá dedicar-se integralmente às atividades de ensino, pesquisa, extensão e gestão institucional, sendo:', options: ['a) Permitido o exercício de outra atividade remunerada, pública ou privada.', 'b) Vedado o exercício de qualquer outra atividade remunerada, pública ou privada, exceto em casos específicos previstos em lei.', 'c) Permitido o exercício de outra atividade remunerada, desde que haja compatibilidade de horários.', 'd) Depende da aprovação da chefia imediata o exercício de outra atividade remunerada.'], correct: 'b', explanation: 'O regime de DE implica a vedação do exercício de outra atividade remunerada, salvo as exceções legais (artigo 20, § 1º).' },
+                { id: '27', question: 'A progressão funcional nas Carreiras do Magistério Federal ocorre:', options: ['a) Automaticamente a cada dois anos.', 'b) Por mudança de nível dentro da mesma classe, com base em critérios estabelecidos.', 'c) Por mudança de classe, independentemente de avaliação de desempenho.', 'd) Apenas por tempo de serviço.'], correct: 'b', explanation: 'A progressão funcional ocorre por mudança de nível dentro da mesma classe, mediante avaliação de desempenho (artigo 18).' },
+                { id: '28', question: 'A promoção nas Carreiras do Magistério Federal ocorre:', options: ['a) Automaticamente ao final de cada nível.', 'b) Por elevação do servidor à classe mais elevada, com base em critérios estabelecidos, incluindo titulação e avaliação de desempenho.', 'c) Por decisão discricionária da administração superior.', 'd) Apenas por concurso interno.'], correct: 'b', explanation: 'A promoção ocorre por elevação à classe mais elevada, com base em critérios como titulação e avaliação de desempenho (artigo 19).' },
+                { id: '29', question: 'Para o ingresso na Classe de Professor Titular da Carreira de Magistério Superior, é exigida, entre outros requisitos:', options: ['a) Apenas o título de doutor.', 'b) Título de doutor e aprovação em processo de avaliação específico.', 'c) Tempo mínimo de serviço na classe anterior.', 'd) Publicação de um livro.'], correct: 'b', explanation: 'Para a Classe de Professor Titular, exige-se título de doutor e aprovação em processo de avaliação específico (artigo 19, § 2º).' },
+                { id: '30', question: 'O estágio probatório para os servidores das Carreiras do Magistério Federal tem duração de:', options: ['a) 12 meses.', 'b) 24 meses.', 'c) 36 meses.', 'd) Não há estágio probatório para docentes.'], correct: 'c', explanation: 'O estágio probatório para os servidores das Carreiras do Magistério Federal tem duração de 36 meses (artigo 10).' },
+                { id: '31', question: 'A avaliação de desempenho durante o estágio probatório dos docentes federais considera, entre outros aspectos:', options: ['a) Apenas a produção científica.', 'b) Aptidão para o exercício das atividades, assiduidade e disciplina.', 'c) Participação em eventos acadêmicos.', 'd) Número de orientações de alunos.'], correct: 'b', explanation: 'A avaliação no estágio probatório considera a aptidão, assiduidade e disciplina, entre outros fatores (artigo 10, § 1º).' },
+                { id: '32', question: 'A Retribuição por Titulação (RT) para o portador de título de doutor, em relação ao vencimento básico, é de:', options: ['a) Um percentual fixo para todas as classes.', 'b) Percentuais diferenciados por classe e nível.', 'c) Um valor fixo em reais.', 'd) Não há RT para doutores.'], correct: 'b', explanation: 'Os percentuais da RT variam por classe e nível, sendo maiores para titulações mais elevadas (Tabela do Anexo IV).' },
+                { id: '33', question: 'A alteração do regime de trabalho do docente federal pode ocorrer:', options: ['a) A qualquer momento, a pedido do servidor.', 'b) Mediante processo regular, atendendo aos requisitos e critérios estabelecidos.', 'c) Por decisão unilateral da administração.', 'd) Apenas após o estágio probatório.'], correct: 'b', explanation: 'A alteração do regime de trabalho deve seguir processo regular e atender aos requisitos estabelecidos (artigo 21).' },
+                { id: '34', question: 'As instituições federais de ensino (IFEs) têm autonomia para:', options: ['a) Definir os critérios de progressão e promoção nas carreiras do magistério, sem observar a legislação federal.', 'b) Organizar seus planos de carreira, cargos e remuneração de forma independente.', 'c) Implementar o Plano de Carreiras e Cargos de Magistério Federal, observando a legislação específica.', 'd) Não estão sujeitas à Lei nº 12.772/2012.'], correct: 'c', explanation: 'As IFEs devem implementar o plano de carreiras observando a legislação federal (artigo 1º).' },
+                { id: '35', question: 'A Lei nº 12.772/2012 prevê a possibilidade de afastamento para realização de programas de pós-graduação stricto sensu:', options: ['a) Apenas no país.', 'b) Apenas no exterior.', 'c) No país ou no exterior, conforme regulamentação.', 'd) Não há previsão de afastamento para pós-graduação.'], correct: 'c', explanation: 'A Lei nº 12.772/2012 prevê o afastamento para pós-graduação stricto sensu no país ou no exterior, conforme regulamentação (artigo 30).' },
+
+                // Lei nº 8.027/1990
+                { id: '36', question: 'A Lei nº 8.027/1990 dispõe sobre:', options: ['a) O regime disciplinar dos servidores públicos federais.', 'b) Normas de conduta dos servidores públicos civis da União, das Autarquias e das Fundações Públicas.', 'c) O processo administrativo disciplinar.', 'd) A ética no serviço público federal.'], correct: 'b', explanation: 'A Lei nº 8.027/1990 dispõe sobre normas de conduta dos servidores públicos civis da União, autarquias e fundações públicas.' },
+                { id: '37', question: 'São princípios gerais que devem nortear a conduta dos servidores públicos, conforme a Lei nº 8.027/1990, EXCETO:', options: ['a) Moralidade administrativa.', 'b) Legalidade.', 'c) Eficiência.', 'd) Discricionariedade.'], correct: 'd', explanation: 'A discricionariedade é um poder da administração, mas a conduta do servidor deve ser pautada pelos princípios da legalidade, moralidade, eficiência, etc.' },
+                { id: '38', question: 'Constitui um dever fundamental do servidor público, segundo a Lei nº 8.027/1990:', options: ['a) Exercer com negligência as atribuições do cargo.', 'b) Preservar o patrimônio público.', 'c) Atender ao público com má vontade.', 'd) Utilizar informações sigilosas em benefício próprio.'], correct: 'b', explanation: 'Preservar o patrimônio público é um dever fundamental do servidor (artigo 3º, inciso III).' },
+                { id: '39', question: 'É vedado ao servidor público, de acordo com a Lei nº 8.027/1990:', options: ['a) Receber presentes de pequeno valor.', 'b) Utilizar o cargo para obter qualquer tipo de favorecimento para si.', 'c) Participar de greves.', 'd) Criticar a administração pública.'], correct: 'b', explanation: 'Utilizar o cargo para obter favorecimento pessoal é uma vedação (artigo 4º, inciso II).' },
+                { id: '40', question: 'A Comissão de Ética Pública, instituída pela Lei nº 8.027/1990, tem como uma de suas competências:', options: ['a) Aplicar penalidades disciplinares como demissão.', 'b) Julgar crimes de improbidade administrativa.', 'c) Orientar e aconselhar sobre ética profissional do servidor.', 'd) Fiscalizar a vida privada dos servidores.'], correct: 'c', explanation: 'A Comissão de Ética Pública tem a competência de orientar e aconselhar sobre ética profissional (artigo 6º, inciso I).' },
+                { id: '41', question: 'O processo de apuração ética conduzido pela Comissão de Ética Pública pode resultar na aplicação de qual sanção?', options: ['a) Advertência.', 'b) Suspensão.', 'c) Censura.', 'd) Demissão.'], correct: 'c', explanation: 'A sanção aplicável pela Comissão de Ética Pública é a censura (artigo 6º, § 3º).' },
+                { id: '42', question: 'A Lei nº 8.027/1990 estabelece que as normas de conduta nela previstas complementam:', options: ['a) A Constituição Federal.', 'b) A Lei de Improbidade Administrativa.', 'c) O Regime Jurídico dos Servidores Públicos Federais (Lei nº 8.112/1990).', 'd) O Código Penal.'], correct: 'c', explanation: 'As normas de conduta da Lei nº 8.027/1990 complementam o Regime Jurídico dos Servidores Públicos Federais (artigo 1º, parágrafo único).' },
+                { id: '43', question: 'A busca pela excelência nos serviços prestados é um:', options: ['a) Direito do servidor.', 'b) Dever fundamental do servidor.', 'c) Uma vedação ao servidor.', 'd) Uma faculdade do servidor.'], correct: 'b', explanation: 'A busca pela excelência é um dever fundamental (artigo 3º, inciso VI).' },
+                { id: '44', question: 'O atendimento com presteza e cortesia ao público é um:', options: ['a) Direito do usuário do serviço público.', 'b) Dever fundamental do servidor.', 'c) Uma proibição ao servidor.', 'd) Uma recomendação ao servidor.'], correct: 'b', explanation: 'O atendimento com presteza e cortesia é um dever fundamental (artigo 3º, inciso VII).' },
+                { id: '45', question: 'Utilizar o cargo ou função, facilidades, poderes ou prerrogativas a ele inerentes, para obter qualquer tipo de favorecimento, para si ou para outrem, constitui:', options: ['a) Um dever do servidor.', 'b) Uma conduta ética recomendada.', 'c) Uma vedação ao servidor.', 'd) Um direito do servidor.'], correct: 'c', explanation: 'Utilizar o cargo para obter favorecimento é uma vedação (artigo 4º, inciso II).' },
+                { id: '46', question: 'Divulgar ou utilizar informações sigilosas a que tenha acesso em razão do cargo ou função para obter qualquer tipo de proveito, para si ou para outrem, é:', options: ['a) Permitido, desde que não cause prejuízo à administração.', 'b) Um dever de transparência.', 'c) Uma vedação ao servidor.', 'd) Uma conduta ética desejável.'], correct: 'c', explanation: 'Divulgar informações sigilosas para proveito próprio é uma vedação (artigo 4º, inciso VI).' },
+                { id: '47', question: 'A Comissão de Ética Pública é formada por:', options: ['a) Servidores públicos indicados pelos sindicatos.', 'b) Cidadãos de reputação ilibada, designados pelo Presidente da República.', 'c) Membros do Poder Judiciário.', 'd) Representantes da sociedade civil organizada.'], correct: 'b', explanation: 'A Comissão de Ética Pública é formada por cidadãos de reputação ilibada, designados pelo Presidente da República (artigo 6º).' },
+                { id: '48', question: 'A atuação da Comissão de Ética Pública ocorre:', options: ['a) Apenas mediante denúncia formal.', 'b) De ofício ou mediante denúncia.', 'c) Apenas por solicitação da chefia imediata do servidor.', 'd) Apenas por decisão judicial.'], correct: 'b', explanation: 'A atuação da Comissão ocorre de ofício ou mediante denúncia (artigo 6º, § 2º).' },
+                { id: '49', question: 'A sanção de censura aplicada pela Comissão de Ética Pública consiste em:', options: ['a) Advertência formal registrada nos assentamentos do servidor.', 'b) Reprovação pública da conduta do servidor.', 'c) Suspensão do exercício do cargo.', 'd) Demissão do serviço público.'], correct: 'b', explanation: 'A censura é uma reprovação pública da conduta do servidor (artigo 6º, § 3º).' },
+                { id: '50', question: 'A Lei nº 8.027/1990 busca promover:', options: ['a) A politização do serviço público.', 'b) A eficiência administrativa acima da moralidade.', 'c) A conduta ética e a integridade no serviço público.', 'd) A flexibilização das normas de conduta.'], correct: 'c', explanation: 'A Lei nº 8.027/1990 visa promover a conduta ética e a integridade no serviço público.' },
+
+                // Decreto nº 1.171/1994
+                { id: '51', question: 'O Decreto nº 1.171/1994 aprova o:', options: ['a) Regulamento Disciplinar do Servidor Público Federal.', 'b) Código de Ética Profissional do Servidor Público Civil do Poder Executivo Federal.', 'c) Estatuto da Função Pública Federal.', 'd) Manual de Conduta Ética da Administração Pública.'], correct: 'b', explanation: 'O Decreto nº 1.171/1994 aprova o Código de Ética Profissional do Servidor Público Civil do Poder Executivo Federal.' },
+                { id: '52', question: 'Segundo o Código de Ética, a dignidade, o decoro, o zelo, a eficácia e a consciência dos princípios morais são:', options: ['a) Direitos do servidor.', 'b) Deveres fundamentais do servidor.', 'c) Vedações ao servidor.', 'd) Faculdades do servidor.'], correct: 'b', explanation: 'Dignidade, decoro, zelo, eficácia e consciência dos princípios morais são deveres fundamentais (Seção I, inciso I).' },
+                { id: '53', question: 'A cortesia, a boa vontade, a discrição, o asseio e a presteza são valores que o servidor deve observar no seu:', options: ['a) Âmbito familiar.', 'b) Relacionamento profissional e com o público.', 'c) Tempo de lazer.', 'd) Exercício de atividades sindicais.'], correct: 'b', explanation: 'A cortesia, boa vontade, discrição, asseio e presteza devem ser observados no relacionamento profissional e com o público (Seção I, inciso IV).' },
+                { id: '54', question: 'Retardar ou dificultar o exercício regular de direito por qualquer pessoa, atuando com descaso ou omissão, constitui:', options: ['a) Um dever funcional.', 'b) Uma conduta ética recomendada.', 'c) Uma vedação ética.', 'd) Um direito do servidor.'], correct: 'c', explanation: 'Retardar ou dificultar o exercício regular de direito é uma vedação ética (Seção III, inciso I, alínea “d”).' },
+                { id: '55', question: 'Pleitear, influenciar ou solicitar qualquer tipo de favor para si ou para outrem, para o bom desempenho de suas tarefas, é:', options: ['a) Permitido, desde que em benefício da administração.', 'b) Um ato de proatividade.', 'c) Vedado pela ética profissional.', 'd) Um direito do servidor.'], correct: 'c', explanation: 'Pleitear ou solicitar favores é vedado pela ética profissional (Seção III, inciso I, alínea “g”).' },
+                { id: '56', question: 'Receber presentes, vantagens de qualquer espécie, em razão de sua função, de qualquer pessoa física ou jurídica que tenha interesses em decisão tomada pelo servidor ou colegiado do qual participe:', options: ['a) É permitido, desde que de pequeno valor.', 'b) É permitido, com autorização da chefia imediata.', 'c) É vedado, exceto em casos protocolares.', 'd) Depende da legislação específica do orgão'], correct: 'c', explanation: 'Receber presentes que possam influenciar decisões é vedado (Seção III, inciso I, alínea “h”).' },
+                { id: '57', question: 'A sanção ética de censura, prevista no Decreto nº 1.171/1994, consiste em:', options: ['a) Advertência verbal.', 'b) Reprovação formal da conduta do servidor.', 'c) Suspensão temporária do cargo.', 'd) Demissão do serviço público.'], correct: 'b', explanation: 'A censura é uma reprovação formal da conduta do servidor (Seção V, artigo 9º).' },
+                { id: '58', question: 'As Comissões de Ética nos órgãos e entidades do Poder Executivo Federal têm como uma de suas atribuições:', options: ['a) Julgar crimes de corrupção.', 'b) Aplicar penalidades disciplinares previstas na Lei nº 8.112/1990.', 'c) Orientar e aconselhar sobre ética profissional do servidor.', 'd) Fiscalizar o patrimônio dos servidores.'], correct: 'c', explanation: 'As Comissões de Ética orientam e aconselham sobre ética profissional (Seção IV, artigo 7º, inciso I).' },
+                { id: '59', question: 'O Código de Ética estabelece que a remuneração do servidor público é custeada por:', options: ['a) Taxas e emolumentos.', 'b) Impostos pagos direta ou indiretamente pela sociedade.', 'c) Receitas de empresas públicas.', 'd) Doações de entidades privadas.'], correct: 'b', explanation: 'A remuneração do servidor é custeada pelos impostos pagos pela sociedade (Seção I, inciso XVII).' },
+                { id: '60', question: 'O servidor público não poderá jamais desprezar o elemento ético de sua conduta. Assim, a moralidade administrativa se constitui em:', options: ['a) Um requisito meramente formal da atuação administrativa.', 'b) Um dos pilares da administração pública, influenciando na legalidade dos atos.', 'c) Uma questão de foro íntimo do servidor.', 'd) Um aspecto secundário da função pública.'], correct: 'b', explanation: 'A moralidade administrativa é um pilar da administração, influenciando a legalidade dos atos (Seção I, inciso III).' },
+                { id: '61', question: 'Segundo o Código de Ética, a humildade, a tolerância e o respeito são importantes para:', options: ['a) A manutenção da hierarquia funcional.', 'b) O bom relacionamento com os colegas e com o público.', 'c) A obtenção de promoções na carreira.', 'd) A participação em atividades sindicais.'], correct: 'b', explanation: 'Humildade, tolerância e respeito são importantes para o bom relacionamento (Seção I, inciso IV).' },
+                { id: '62', question: 'O servidor público deve zelar pela economia do material público e a conservação dos bens patrimoniais, evitando:', options: ['a) A utilização de recursos tecnológicos.', 'b) Qualquer tipo de inovação administrativa.', 'c) O desperdício e o dano aos bens públicos.', 'd) A participação em programas de reciclagem.'], correct: 'c', explanation: 'O servidor deve evitar o desperdício e o dano aos bens públicos (Seção I, inciso VI).' },
+                { id: '63', question: 'A transparência na administração pública, segundo o Código de Ética, visa a:', options: ['a) Garantir o sigilo dos atos administrativos.', 'b) Facilitar a fiscalização da sociedade sobre a atuação dos servidores.', 'c) Dificultar o acesso da imprensa às informações.', 'd) Proteger a imagem dos gestores públicos.'], correct: 'b', explanation: 'A transparência visa facilitar a fiscalização da sociedade (Seção I, inciso XII).' },
+                { id: '64', question: 'A responsabilidade social do servidor público implica considerar, em suas decisões e atos:', options: ['a) Apenas os interesses do órgão ou entidade em que trabalha.', 'b) O impacto de suas ações no bem-estar da coletividade.', 'c) As opiniões de seus superiores hierárquicos.', 'd) As vantagens pessoais que podem advir de suas decisões.'], correct: 'b', explanation: 'A responsabilidade social implica considerar o impacto no bem-estar coletivo (Seção I, inciso XIII).' },
+                { id: '65', question: 'O Código de Ética Profissional do Servidor Público Civil do Poder Executivo Federal se aplica a:', options: ['a) Apenas aos servidores efetivos.', 'b) A todos os servidores e empregados públicos do Poder Executivo Federal, incluindo ocupantes de cargos em comissão e funções de confiança.', 'c) Apenas aos servidores da administração direta.', 'd) Apenas aos servidores com mais de cinco anos de serviço público.'], correct: 'b', explanation: 'O Código se aplica a todos os servidores e empregados do Poder Executivo Federal (Artigo 1º).' },
+
+                // Questões Gerais
+                { id: '66', question: 'Qual lei estabelece o regime jurídico dos servidores públicos civis da União?', options: ['a) Lei nº 12.772/2012.', 'b) Lei nº 8.027/1990.', 'c) Lei nº 8.112/1990.', 'd) Decreto nº 1.171/1994.'], correct: 'c', explanation: 'A Lei nº 8.112/1990 estabelece o regime jurídico dos servidores públicos civis da União.' },
+                { id: '67', question: 'Qual norma dispõe sobre a estruturação do Plano de Carreiras e Cargos de Magistério Federal?', options: ['a) Lei nº 8.112/1990.', 'b) Lei nº 8.027/1990.', 'c) Lei nº 12.772/2012.', 'd) Decreto nº 1.171/1994.'], correct: 'c', explanation: 'A Lei nº 12.772/2012 dispõe sobre a estruturação do Plano de Carreiras e Cargos de Magistério Federal.' },
+                { id: '68', question: 'As normas de conduta dos servidores públicos civis da União são tratadas em qual legislação?', options: ['a) Lei nº 8.112/1990.', 'b) Lei nº 12.772/2012.', 'c) Lei nº 8.027/1990.', 'd) Decreto nº 1.171/1994.'], correct: 'c', explanation: 'As normas de conduta dos servidores públicos civis da União são tratadas na Lei nº 8.027/1990.' },
+                { id: '69', question: 'O Código de Ética Profissional do Servidor Público Civil do Poder Executivo Federal foi aprovado por meio de qual ato normativo?', options: ['a) Lei nº 8.112/1990.', 'b) Lei nº 12.772/2012.', 'c) Lei nº 8.027/1990.', 'd) Decreto nº 1.171/1994.'], correct: 'd', explanation: 'O Código de Ética foi aprovado pelo Decreto nº 1.171/1994.' },
+                { id: '70', question: 'A readaptação é uma forma de:', options: ['a) Vacância do cargo público.', 'b) Provimento de cargo público.', 'c) Remoção do servidor.', 'd) Redistribuição do servidor.'], correct: 'b', explanation: 'A readaptação é uma forma de provimento derivado, onde o servidor é investido em outro cargo compatível com sua capacidade física ou mental.' },
+                { id: '71', question: 'O adicional de férias corresponde a:', options: ['a) 50% da remuneração do período de férias.', 'b) 1/3 da remuneração do período de férias.', 'c) O dobro da remuneração do período de férias.', 'd) Um salário mínimo.'], correct: 'b', explanation: 'O adicional de férias corresponde a 1/3 da remuneração do período de férias (artigo 7º, inciso XVII, da Constituição Federal e artigo 79 da Lei nº 8.112/1990).' },
+                { id: '72', question: 'A demissão de um servidor público estável pode ocorrer em qual das seguintes situações?', options: ['a) Baixo rendimento no estágio probatório.', 'b) Inassiduidade habitual.', 'c) Atrasos frequentes.', 'd) Faltas justificadas.'], correct: 'b', explanation: 'A demissão pode ocorrer em caso de inassiduidade habitual (artigo 132, inciso III, da Lei nº 8.112/1990).' },
+                { id: '73', question: 'A progressão funcional na Carreira de Magistério EBTT ocorre por mudança de:', options: ['a) Regime de trabalho.', 'b) Nível dentro da mesma classe.', 'c) Instituição de ensino.', 'd) Função administrativa para docente.'], correct: 'b', explanation: 'A progressão na Carreira de Magistério EBTT ocorre por mudança de nível dentro da mesma classe (artigo 18 da Lei nº 12.772/2012).' },
+                { id: '74', question: 'A Retribuição por Titulação (RT) é paga aos docentes federais em função de:', options: ['a) Tempo de serviço na instituição.', 'b) Avaliação de desempenho individual.', 'c) Titulação acadêmica comprovada.', 'd) Participação em bancas examinadoras.'], correct: 'c', explanation: 'A Retribuição por Titulação (RT) é paga em função da titulação acadêmica do docente (artigo 16 da Lei nº 12.772/2012).' },
+                { id: '75', question: 'A moralidade administrativa, segundo a Lei nº 8.027/1990, é um princípio:', options: ['a) Facultativo para o servidor público.', 'b) Que se aplica apenas aos cargos de chefia.', 'c) Que deve nortear a conduta de todos os servidores.', 'd) Sem relevância para a atuação administrativa.'], correct: 'c', explanation: 'A moralidade administrativa é um princípio que deve nortear a conduta de todos os servidores (artigo 37 da Constituição Federal e artigo 3º da Lei nº 8.027/1990).' },
+                { id: '76', question: 'O servidor público, de acordo com o Código de Ética, deve dispensar tratamento:', options: ['a) Diferenciado aos superiores hierárquicos.', 'b) Desrespeitoso aos usuários dos serviços públicos.', 'c) Urbano, probo e leal a qualquer pessoa.', 'd) Indiferente às necessidades da comunidade.'], correct: 'c', explanation: 'O servidor deve dispensar tratamento urbano, probo e leal a qualquer pessoa (Seção I, inciso IV, do Decreto nº 1.171/1994).' },
+                { id: '77', question: 'Qual das alternativas abaixo NÃO constitui uma vedação ética ao servidor público federal?', options: ['a) Receber presentes de valor significativo.', 'b) Usar o cargo para obter vantagens indevidas.', 'c) Atender ao público com cordialidade.', 'd) Retardar o atendimento ao público.'], correct: 'c', explanation: 'Atender ao público com cordialidade é um dever, não uma vedação.' },
+                { id: '78', question: 'As Comissões de Ética têm a competência de:', options: ['a) Aplicar a pena de demissão.', 'b) Julgar crimes de responsabilidade.', 'c) Apurar condutas antiéticas e aplicar sanções éticas.', 'd) Legislar sobre a ética no serviço público.'], correct: 'c', explanation: 'As Comissões de Ética apuram condutas antiéticas e aplicam sanções éticas (artigo 6º da Lei nº 8.027/1990 e artigo 7º do Decreto nº 1.171/1994).' },
+                { id: '79', question: 'O estágio probatório é um período de avaliação para fins de:', options: ['a) Promoção na carreira.', 'b) Estabilidade no serviço público.', 'c) Progressão funcional.', 'd) Aposentadoria.'], correct: 'b', explanation: 'O estágio probatório é um período de avaliação para fins de aquisição da estabilidade no serviço público (artigo 21 da Lei nº 8.112/1990).' },
+                { id: '80', question: 'A acumulação de cargos de professor com outro técnico ou científico é:', options: ['a) Sempre proibida.', 'b) Permitida, havendo compatibilidade de horários.', 'c) Depende da autorização do Ministério da Educação.', 'd) Permitida apenas no ensino superior.'], correct: 'b', explanation: 'A acumulação de um cargo de professor com outro técnico ou científico é permitida, havendo compatibilidade de horários (artigo 37, inciso XVI, alínea “b”, da Constituição Federal).' },
+                { id: '81', question: 'A responsabilidade civil do servidor público pode ocorrer em caso de:', options: ['a) Prática de crime contra a administração pública.', 'b) Ato omissivo ou comissivo que cause dano ao erário ou a terceiros.', 'c) Descumprimento de normas internas do órgão.', 'd) Violação de princípios éticos.'], correct: 'b', explanation: 'A responsabilidade civil decorre de ato omissivo ou comissivo que cause dano ao erário ou a terceiros (artigo 122 da Lei nº 8.112/1990).' },
+                { id: '82', question: 'A licença para capacitação do servidor público federal pode ser concedida com remuneração por um período de até:', options: ['a) 3 meses.', 'b) 6 meses.', 'c) 1 ano.', 'd) 2 anos.'], correct: 'a', explanation: 'A licença para capacitação pode ser concedida com remuneração por até 3 meses a cada cinco anos de efetivo exercício (artigo 87 da Lei nº 8.112/1990).' },
+                { id: '83', question: 'O regime de trabalho de Tempo Integral com Dedicação Exclusiva (DE) para os docentes federais implica a:', options: ['a) Obrigação de prestar 40 horas semanais de trabalho, com possibilidade de outras atividades remuneradas.', 'b) Dedicação integral às atividades acadêmicas, sendo vedado o exercício de outra atividade remunerada, salvo exceções legais.', 'c) Flexibilidade de horários, desde que cumpridas as atividades de ensino.', 'd) Possibilidade de exercer atividades de consultoria remunerada.'], correct: 'b', explanation: 'O regime de DE implica dedicação integral, com vedação de outra atividade remunerada, salvo exceções legais (artigo 20, § 1º, da Lei nº 12.772/2012).' },
+                { id: '84', question: 'A avaliação de desempenho para progressão e promoção nas Carreiras do Magistério Federal considera:', options: ['a) Apenas a titulação do servidor.', 'b) Apenas o tempo de serviço.', 'c) Desempenho individual e institucional, produção acadêmica, atividades de ensino, pesquisa, extensão e gestão.', 'd) Apenas a participação em cursos de capacitação.'], correct: 'c', explanation: 'A avaliação para progressão e promoção considera diversos fatores relacionados ao desempenho e produção acadêmica (artigos 18 e 19 da Lei nº 12.772/2012).' },
+                { id: '85', question: 'A Lei nº 8.027/1990 busca fortalecer:', options: ['a) A autonomia dos servidores públicos.', 'b) A discricionariedade da administração pública.', 'c) A integridade e a ética na atuação dos servidores.', 'd) A flexibilidade das normas de conduta.'], correct: 'c', explanation: 'A Lei nº 8.027/1990 busca fortalecer a integridade e a ética na atuação dos servidores.' },
+                { id: '86', question: 'O Código de Ética Profissional do Servidor Público Civil estabelece como um dever:', options: ['a) Utilizar os serviços do cargo em proveito particular.', 'b) Ser conivente com erros ou infrações.', 'c) Comunicar imediatamente a seus superiores todo e qualquer ato ou fato contrário ao interesse público.', 'd) Retardar o atendimento ao público.'], correct: 'c', explanation: 'Comunicar atos contrários ao interesse público é um dever (Seção I, inciso IX, do Decreto nº 1.171/1994).' },
+                { id: '87', question: 'A imparcialidade é um princípio ético que exige do servidor público:', options: ['a) Favorecer seus amigos e familiares.', 'b) Atuar sem preconceitos ou discriminações.', 'c) Defender os interesses de seu partido político.', 'd) Expressar suas opiniões pessoais durante o serviço.'], correct: 'b', explanation: 'A imparcialidade exige atuar sem preconceitos ou discriminações (Seção I, inciso V, do Decreto nº 1.171/1994).' },
+                { id: '88', question: 'A principal finalidade das Comissões de Ética é:', options: ['a) Aplicar sanções disciplinares graves.', 'b) Promover a cultura ética no serviço público.', 'c) Investigar crimes de corrupção.', 'd) Controlar a vida privada dos servidores'], correct: 'b', explanation: 'A principal finalidade é promover a cultura ética no serviço público.' },
+                { id: '89', question: 'A estabilidade do servidor público federal é adquirida após:', options: ['a) A aprovação no concurso público.', 'b) Dois anos de efetivo exercício.', 'c) Três anos de efetivo exercício e aprovação no estágio probatório.', 'd) Cinco anos de efetivo exercício.'], correct: 'c', explanation: 'A estabilidade é adquirida após três anos de efetivo exercício e aprovação no estágio probatório (artigo 21 da Lei nº 8.112/1990).' },
+                { id: '90', question: 'A recondução de um servidor estável ocorre quando ele é:', options: ['a) Removido a pedido para outro órgão.', 'b) Readaptado em função de limitação de capacidade física.', 'c) Inabilitado em estágio probatório relativo a outro cargo.', 'd) Aposentado por invalidez.'], correct: 'c', explanation: 'A recondução ocorre em caso de inabilitação em estágio probatório relativo a outro cargo (artigo 29, inciso I, da Lei nº 8.112/1990).' },
+                { id: '91', question: 'A Lei nº 12.772/2012 estabelece que a progressão e a promoção nas carreiras do magistério federal devem observar critérios de:', options: ['a) Antiguidade e merecimento.', 'b) Apenas antiguidade.', 'c) Apenas merecimento.', 'd) Discricionariedade da administração.'], correct: 'a', explanation: 'A progressão e a promoção devem observar critérios de antiguidade e merecimento (artigo 18, § 1º, e artigo 19, § 1º, da Lei nº 12.772/2012).' },
+                { id: '92', question: 'O regime de trabalho de 20 horas semanais para docentes federais é:', options: ['a) Exclusivo para professores substitutos.', 'b) Uma opção para servidores em estágio probatório.', 'c) Uma das possibilidades de regime de trabalho, aplicável conforme a necessidade da instituição.', 'd) Destinado apenas a atividades de pesquisa.'], correct: 'c', explanation: 'O regime de 20 horas é uma das possibilidades de regime de trabalho (artigo 20 da Lei nº 12.772/2012).' },
+                { id: '93', question: 'A Lei nº 8.027/1990 veda ao servidor público:', options: ['a) Apresentar sugestões para a melhoria dos serviços.', 'b) Participar de cursos de capacitação.', 'c) Aceitar cargo de gerência em empresa privada.', 'd) Exercer o direito de greve.'], correct: 'c', explanation: 'Aceitar cargo de gerência em empresa privada é uma vedação (artigo 4º, inciso I, da Lei nº 8.027/1990).' },
+                { id: '94', question: 'O Código de Ética Profissional do Servidor Público Civil preconiza que a honestidade e a boa-fé são:', options: ['a) Qualidades desejáveis, mas não obrigatórias.', 'b) Princípios fundamentais que devem nortear a conduta do servidor.', 'c) Requisitos para a progressão na carreira.', 'd) Aspectos relevantes apenas para os cargos de chefia.'], correct: 'b', explanation: 'Honestidade e boa-fé são princípios fundamentais (Seção I, inciso II, do Decreto nº 1.171/1994).' },
+                { id: '95', question: 'A publicidade dos atos administrativos, segundo o Código de Ética, visa a:', options: ['a) Proteger a intimidade dos servidores.', 'b) Garantir o sigilo das informações relevantes.', 'c) Assegurar a transparência e o controle social.', 'd) Dificultar o acesso da população aos documentos.'], correct: 'c', explanation: 'A publicidade visa assegurar a transparência e o controle social (Seção I, inciso XII, do Decreto nº 1.171/1994).' },
+                { id: '96', question: 'A Lei nº 8.112/1990 permite a acumulação de um cargo de professor com:', options: ['a) Dois cargos técnicos.', 'b) Um cargo técnico ou científico.', 'c) Um cargo administrativo.', 'd) Qualquer outro cargo público.'], correct: 'b', explanation: 'A Lei nº 8.112/1990, em consonância com a Constituição Federal, permite a acumulação de um cargo de professor com outro técnico ou científico, desde que haja compatibilidade de horários.' },
+                { id: '97', question: 'A licença para tratamento de saúde por período superior a ______ dias exige inspeção médica oficial.', options: ['a) 5', 'b) 10', 'c) 15', 'd) 30'], correct: 'c', explanation: 'A licença para tratamento de saúde por período superior a 15 dias exige inspeção médica oficial (artigo 203 da Lei nº 8.112/1990).' },
+                { id: '98', question: 'A Carreira de Magistério Superior compreende as classes de:', options: ['a) Auxiliar, Assistente, Adjunto e Titular.', 'b) Professor I, Professor II e Professor III.', 'c) Ensino Fundamental, Ensino Médio e Ensino Superior.', 'd) Técnico, Tecnólogo e Superior.'], correct: 'a', explanation: 'A Carreira de Magistério Superior é estruturada em classes como Auxiliar, Assistente, Adjunto e Titular, conforme a Lei nº 12.772/2012.' },
+                { id: '99', question: 'O Decreto nº 1.171/1994 estabelece que a atuação do servidor público deve ser pautada pela:', options: ['a) Busca incessante por vantagens pessoais.', 'b) Defesa dos interesses de grupos específicos.', 'c) Primazia do interesse público sobre o particular.', 'd) Omissão diante de condutas antiéticas de colegas.'], correct: 'c', explanation: 'A atuação do servidor deve ser pautada pela primazia do interesse público (Seção I, inciso XV, do Decreto nº 1.171/1994).' },
+                { id: '100', question: 'Qual das normas estudadas trata especificamente das sanções éticas aplicáveis aos servidores públicos federais?', options: ['a) Lei nº 8.112/1990.', 'b) Lei nº 12.772/2012.', 'c) Lei nº 8.027/1990.', 'd) Decreto nº 1.171/1994.'], correct: 'd', explanation: 'O Decreto nº 1.171/1994, que aprova o Código de Ética Profissional do Servidor Público Civil do Poder Executivo Federal, trata especificamente das sanções éticas aplicáveis (Seção V). A Lei nº 8.112/1990 trata das penalidades disciplinares, a Lei nº 12.772/2012 do regime de carreiras do magistério, e a Lei nº 8.027/1990 das normas de conduta e da Comissão de Ética.' }
+            ];
+
+            // BANCO DE QUESTÕES PARA "QUESTÕES RETIRADAS DE OUTRAS PROVAS"
+            const questoesEstudo = [
+                // Lei 8.112/1990
+                {
+                    lei: "Lei 8.112/1990",
+                    numero: 1,
+                    enunciado: "O servidor responde civil, penal e administrativamente pelos atos praticados no exercício de suas funções?",
+                    alternativaCorreta: "Sim, conforme art. 121 da Lei 8.112/1990.",
+                    fonte: "QConcursos"
+                },
+                {
+                    lei: "Lei 8.112/1990",
+                    numero: 2,
+                    enunciado: "É permitido ao servidor comissionar pessoa estranha à repartição?",
+                    alternativaCorreta: "Não, conforme art. 117, VI.",
+                    fonte: "QConcursos"
+                },
+                {
+                    lei: "Lei 8.112/1990",
+                    numero: 3,
+                    enunciado: "As sanções civil, penal e administrativa podem ser aplicadas cumulativamente ao servidor público?",
+                    alternativaCorreta: "Sim, conforme art. 121, parágrafo único.",
+                    fonte: "EstudeGrátis"
+                },
+
+                // Lei 12.772/2012
+                {
+                    lei: "Lei 12.772/2012",
+                    numero: 1,
+                    enunciado: "Qual a diferença entre progressão e promoção no plano de carreira do magistério federal?",
+                    alternativaCorreta: "Progressão é mudança de nível na mesma classe; promoção é mudança de classe.",
+                    fonte: "Questões Estratégicas"
+                },
+                {
+                    lei: "Lei 12.772/2012",
+                    numero: 2,
+                    enunciado: "O regime de 40 horas semanais pode ser exercido com dois turnos sem dedicação exclusiva?",
+                    alternativaCorreta: "Sim, conforme a estrutura prevista na Lei 12.772/2012.",
+                    fonte: "ConcursosAZ"
+                },
+
+                // Lei 8.027/1990
+                {
+                    lei: "Lei 8.027/1990",
+                    numero: 1,
+                    enunciado: "É dever do servidor público agir com urbanidade, sigilo e lealdade?",
+                    alternativaCorreta: "Sim, são princípios fundamentais previstos na Lei 8.027/1990.",
+                    fonte: "QConcursos"
+                },
+                {
+                    lei: "Lei 8.027/1990",
+                    numero: 2,
+                    enunciado: "Delegar atribuição indevidamente configura falta administrativa?",
+                    alternativaCorreta: "Sim, é infração disciplinar.",
+                    fonte: "EstudeGrátis"
+                },
+
+                // Decreto 1.171/1994
+                {
+                    lei: "Decreto 1.171/1994",
+                    numero: 1,
+                    enunciado: "Quais princípios regem o Código de Ética do Servidor Público?",
+                    alternativaCorreta: "Legalidade, impessoalidade, moralidade, publicidade e eficiência.",
+                    fonte: "EstudeGrátis"
+                },
+                {
+                    lei: "Decreto 1.171/1994",
+                    numero: 2,
+                    enunciado: "A quem compete apurar violação ao Código de Ética?",
+                    alternativaCorreta: "À Comissão de Ética instituída nos órgãos e entidades.",
+                    fonte: "QConcursos"
+                }
+            ];
+
+            // Banco de questões para o questionário "EPT No Brasil 1.1"
+            const allQuestionsEPT = [
+                // 1. Educação profissional e tecnológica no Brasil: organização e bases conceituais
+                { id: 'EPT41', question: 'A Educação Profissional e Tecnológica (EPT) no Brasil tem sua trajetória marcada por diversas transformações. Qual das opções abaixo MELHOR descreve a principal característica da EPT na atualidade, considerando sua organização e bases conceituais?', options: ['a) Foco exclusivo na formação técnica para o mercado de trabalho, desvinculada da educação básica.', 'b) Ênfase na formação humanística, com pouca articulação com as demandas tecnológicas e produtivas.', 'c) Integração entre trabalho, ciência, tecnologia e cultura, visando à formação integral do indivíduo e ao desenvolvimento socioeconômico.', 'd) Predominância de cursos de curta duração, sem aprofundamento teórico ou científico.', 'e) Caráter assistencialista, voltado apenas para a qualificação de mão de obra de baixa escolaridade.'], correct: 'c', explanation: 'A EPT moderna busca a integração para uma formação completa.' },
+                { id: 'EPT42', question: 'Sobre a organização da Educação Profissional e Tecnológica (EPT) no Brasil, assinale a alternativa CORRETA:', options: ['a) A EPT é oferecida apenas em nível médio, com foco na formação técnica.', 'b) Os Institutos Federais são as únicas instituições autorizadas a ofertar cursos de EPT no país.', 'c) A EPT abrange diferentes níveis e modalidades de ensino, como Formação Inicial e Continuada (FIC), cursos técnicos, tecnólogos e pós-graduação.', 'd) A legislação brasileira não prevê a articulação entre a EPT e a educação básica, sendo modalidades de ensino independentes.', 'e) A oferta de cursos de EPT é centralizada no Ministério da Educação, sem autonomia para as instituições de ensino.'], correct: 'c', explanation: 'A EPT é bastante abrangente em níveis e modalidades.' },
+                { id: 'EPT43', question: 'As bases conceituais da Educação Profissional e Tecnológica (EPT) no Brasil são fundamentais para compreender sua finalidade. Nesse contexto, qual o papel da relação entre trabalho, ciência, tecnologia e cultura na formação do indivíduo?', options: ['a) O trabalho é o único elemento relevante, sendo a ciência, tecnologia e cultura meros acessórios.', 'b) A ciência e a tecnologia são priorizadas, enquanto o trabalho e a cultura são secundários.', 'c) A cultura é o elemento central, e os demais são utilizados para fins de entretenimento.', 'd) A articulação desses quatro elementos visa a uma formação integral, crítica e cidadã, que prepare o indivíduo para atuar no mundo do trabalho e na sociedade de forma consciente.', 'e) A EPT foca apenas na aquisição de habilidades técnicas, sem considerar a dimensão cultural ou científica.'], correct: 'd', explanation: 'A articulação desses elementos promove uma formação integral e crítica.' },
+                { id: 'EPT44', question: 'A importância da Educação Profissional e Tecnológica (EPT) para o desenvolvimento socioeconômico do Brasil é inegável. Qual das afirmações abaixo MELHOR justifica o investimento nessa modalidade de ensino?', options: ['a) A EPT é responsável por formar mão de obra barata para atender às demandas imediatas da indústria.', 'b) A EPT contribui para a redução do desemprego, mas não impacta significativamente o desenvolvimento tecnológico do país.', 'c) A EPT promove a qualificação profissional, o desenvolvimento de novas tecnologias, a inovação e a inclusão social, impulsionando o crescimento econômico e a melhoria da qualidade de vida.', 'd) A EPT é um gasto desnecessário, pois o mercado de trabalho se adapta rapidamente às necessidades sem a intervenção educacional.', 'e) A EPT tem como principal objetivo a formação de pesquisadores, sem foco na aplicação prática do conhecimento.'], correct: 'c', explanation: 'A EPT tem um papel multifacetado no desenvolvimento socioeconômico.' },
+                { id: 'EPT45', question: 'Sobre os desafios e perspectivas futuras da Educação Profissional e Tecnológica (EPT) no contexto brasileiro, assinale a alternativa INCORRETA:', options: ['a) A necessidade de atualização constante dos currículos para acompanhar as rápidas transformações tecnológicas é um desafio.', 'b) A garantia de acesso e permanência de estudantes em cursos de EPT, especialmente em regiões mais remotas, é uma perspectiva importante.', 'c) A articulação entre a EPT e o setor produtivo, visando à empregabilidade e à inovação, é um desafio a ser superado.', 'd) A EPT deve se desvincular das políticas públicas educacionais para ter maior autonomia e flexibilidade.', 'e) A promoção da pesquisa aplicada e da extensão tecnológica é uma perspectiva para o fortalecimento da EPT.'], correct: 'd', explanation: 'A EPT deve estar vinculada às políticas públicas para seu fortalecimento.' },
+                { id: 'EPT46', question: 'Em relação às abordagens teóricas que influenciam a Educação Profissional e Tecnológica (EPT) no Brasil, qual das opções abaixo apresenta uma característica da formação integral?', options: ['a) Foco exclusivo no desenvolvimento de competências técnicas específicas para o mercado de trabalho.', 'b) Priorização da memorização de conteúdos teóricos em detrimento da prática.', 'c) Visão fragmentada do conhecimento, sem conexão entre as diferentes áreas do saber.', 'd) Busca pela formação do indivíduo em suas múltiplas dimensões (intelectual, social, cultural, ética), articulando teoria e prática, trabalho e educação.', 'e) Ênfase na reprodução de modelos preexistentes, sem estímulo à criatividade ou inovação.'], correct: 'd', explanation: 'A formação integral abrange todas as dimensões do indivíduo.' },
+                { id: 'EPT47', question: 'O papel dos Institutos Federais na organização da Educação Profissional e Tecnológica (EPT) no Brasil é de extrema relevância. Qual das alternativas MELHOR descreve a autonomia e as responsabilidades dessas instituições?', options: ['a) Os Institutos Federais atuam como meros executores de diretrizes do Ministério da Educação, sem autonomia pedagógica.', 'b) Possuem autonomia administrativa, patrimonial, financeira, didático-pedagógica e disciplinar, sendo responsáveis pela oferta de educação profissional e tecnológica em diferentes níveis e modalidades.', 'c) Sua principal responsabilidade é a formação de mão de obra para grandes empresas, sem preocupação com o desenvolvimento regional.', 'd) A autonomia dos Institutos Federais é limitada à gestão financeira, não abrangendo aspectos pedagógicos.', 'e) São instituições de ensino superior, sem atuação na educação básica ou na formação inicial e continuada.'], correct: 'b', explanation: 'Os Institutos Federais possuem ampla autonomia.' },
+                { id: 'EPT48', question: 'A integração entre a Educação Profissional e Tecnológica (EPT) e a educação básica é um tema relevante. Qual o principal benefício dessa articulação para a formação dos estudantes?', options: ['a) A EPT substitui a educação básica, tornando-a desnecessária para a formação profissional.', 'b) A integração permite que os estudantes concluam o ensino médio e, ao mesmo tempo, obtenham uma qualificação profissional, ampliando suas oportunidades no mercado de trabalho e na vida acadêmica.', 'c) A educação básica é responsável apenas pela formação teórica, enquanto a EPT cuida da formação prática.', 'd) A integração visa apenas a reduzir o tempo de estudo dos alunos, sem preocupar-se com a qualidade da formação.', 'e) A articulação entre EPT e educação básica é inviável devido às diferenças curriculares e metodológicas.'], correct: 'b', explanation: 'A integração enriquece a formação e amplia oportunidades.' },
+                { id: 'EPT49', question: 'A pesquisa e a inovação desempenham um papel crucial na Educação Profissional e Tecnológica (EPT). Qual das opções abaixo apresenta um exemplo de como essas atividades podem impulsionar o desenvolvimento tecnológico e social?', options: ['a) A pesquisa na EPT se restringe à análise de dados estatísticos sobre o mercado de trabalho.', 'b) A inovação na EPT se limita à aquisição de novos equipamentos e tecnologias, sem a produção de conhecimento próprio.', 'c) O desenvolvimento de projetos de pesquisa aplicada que resultem em soluções tecnológicas para problemas reais da sociedade, gerando patentes e impulsionando a economia local.', 'd) A EPT foca apenas na reprodução de conhecimentos existentes, sem incentivo à criação ou descoberta.', 'e) A pesquisa e a inovação são atividades exclusivas das universidades, não sendo relevantes para a EPT.'], correct: 'c', explanation: 'A pesquisa aplicada na EPT gera soluções e impulsiona a economia.' },
+                { id: 'EPT50', question: 'A Educação Profissional e Tecnológica (EPT) pode contribuir significativamente para a inclusão social e a redução das desigualdades. Qual das alternativas MELHOR explica essa contribuição?', options: ['a) A EPT oferece cursos apenas para pessoas com alto nível de escolaridade, perpetuando as desigualdades.', 'b) A EPT promove a inclusão social ao oferecer oportunidades de qualificação profissional para jovens e adultos de diferentes contextos sociais, facilitando seu acesso ao mercado de trabalho e à ascensão social.', 'c) A EPT se preocupa apenas com a formação técnica, sem considerar as questões sociais ou econômicas dos estudantes.', 'd) A inclusão social na EPT se restringe à oferta de cotas para minorias, sem ações efetivas de acompanhamento e apoio.', 'e) A EPT não tem impacto na redução das desigualdades, pois o mercado de trabalho é o único fator determinante para a inclusão social.'], correct: 'b', explanation: 'A EPT é um vetor de inclusão social e ascensão.' },
+
+                // 2. Projeto Político-Pedagógico do IFRN
+                { id: 'EPT51', question: 'O Projeto Político-Pedagógico (PPP) é um documento essencial para o IFRN. Qual das opções abaixo MELHOR descreve a importância do PPP como instrumento de gestão democrática?', options: ['a) O PPP é um documento meramente burocrático, sem impacto nas decisões pedagógicas da instituição.', 'b) O PPP centraliza as decisões na direção da instituição, sem a participação da comunidade acadêmica.', 'c) O PPP é um instrumento que sistematiza as concepções, princípios e diretrizes da instituição, construído coletivamente e que orienta as ações pedagógicas, administrativas e financeiras, promovendo a participação e a reflexão crítica.', 'd) O PPP é um documento estático, que não permite revisões ou atualizações ao longo do tempo.', 'e) O PPP serve apenas para cumprir exigências legais, sem refletir a realidade da instituição.'], correct: 'c', explanation: 'O PPP é um documento vivo e participativo.' },
+                { id: 'EPT52', question: 'Sobre o processo de construção do PPP do IFRN, assinale a alternativa CORRETA:', options: ['a) O PPP do IFRN foi elaborado por uma equipe restrita de especialistas, sem a participação da comunidade acadêmica.', 'b) A construção do PPP do IFRN foi um processo participativo, envolvendo servidores (docentes e técnicos administrativos) e alunos em diversos espaços de trabalhos coletivos, como reuniões e seminários.', 'c) O PPP do IFRN foi imposto pelo Ministério da Educação, sem considerar as especificidades da instituição.', 'd) A elaboração do PPP do IFRN ocorreu de forma isolada, sem relação com as políticas educacionais vigentes.', 'e) O PPP do IFRN é um documento provisório, que ainda não foi consolidado.'], correct: 'b', explanation: 'A construção do PPP é um processo coletivo e democrático.' },
+                { id: 'EPT53', question: 'Os principais eixos norteadores do PPP do IFRN se relacionam diretamente com a missão e a visão da instituição. Qual das opções abaixo apresenta um desses eixos?', options: ['a) Foco exclusivo na formação para o mercado de trabalho.', 'b) Ênfase na pesquisa teórica, desvinculada da aplicação prática.', 'c) Articulação entre ciência, trabalho, cultura e tecnologia, visando à formação integral e ao desenvolvimento social.', 'd) Priorização de atividades administrativas em detrimento das pedagógicas.', 'e) Restrição da atuação da instituição ao ensino técnico, sem abrangência em outros níveis.'], correct: 'c', explanation: 'O PPP do IFRN busca a integração desses eixos para uma formação completa.' },
+                { id: 'EPT54', question: 'O PPP do IFRN se consolida como um documento de caráter identitário. O que isso significa?', options: ['a) Que o PPP é um documento genérico, que pode ser aplicado a qualquer instituição de ensino.', 'b) Que o PPP reflete a cultura e os valores específicos do IFRN, delineando seus direcionamentos pedagógicos, administrativos e financeiros de forma única.', 'c) Que o PPP é um documento secreto, acessível apenas a um grupo seleto de pessoas.', 'd) Que o PPP é um documento temporário, que perde sua validade após um determinado período.', 'e) Que o PPP se limita a descrever a estrutura física da instituição.'], correct: 'b', explanation: 'O caráter identitário do PPP reflete a singularidade do IFRN.' },
+                { id: 'EPT55', question: 'A perspectiva emancipatória é um dos pilares do PPP do IFRN. Como ela se manifesta na prática da instituição?', options: ['a) Através da imposição de um modelo educacional único, sem considerar as individualidades dos estudantes.', 'b) Pela busca em promover mudanças nas concepções e práticas cotidianas, visando à formação de cidadãos críticos, autônomos e capazes de transformar a realidade.', 'c) Pela priorização do ensino tradicional, com foco na transmissão de conteúdos.', 'd) Pela desconsideração das demandas sociais e culturais da comunidade.', 'e) Pela restrição da participação dos estudantes nas decisões da instituição.'], correct: 'b', explanation: 'A perspectiva emancipatória visa à formação de cidadãos transformadores.' },
+                { id: 'EPT56', question: 'A relação entre o PPP do IFRN e as políticas educacionais de cunho neoliberal é um ponto de destaque. Como o IFRN se posiciona em relação a uma lógica de planejamento meramente burocrático?', options: ['a) O IFRN adota integralmente a lógica do planejamento burocrático, visando à eficiência administrativa.', 'b) O IFRN se opõe a essa lógica, buscando um planejamento educacional participativo, humano e libertador, que valorize a reflexão crítica e a construção coletiva.', 'c) O IFRN ignora as políticas educacionais, desenvolvendo seu PPP de forma isolada.', 'd) O IFRN se adapta às políticas neoliberais, priorizando a formação para o mercado de trabalho em detrimento da formação integral.', 'e) O IFRN não possui um posicionamento claro em relação a essa questão.'], correct: 'b', explanation: 'O IFRN busca um planejamento educacional humanizado e participativo.' },
+                { id: 'EPT57', question: 'A estrutura do PPP do IFRN é composta por diferentes volumes. Qual a finalidade do Volume 1 – Documento-Base?', options: ['a) Detalhar os projetos pedagógicos de cada curso oferecido pelo IFRN.', 'b) Sistematizar as concepções, princípios e diretrizes norteadores das práticas e políticas educativas da instituição.', 'c) Apresentar as propostas de trabalho para as disciplinas do ensino médio.', 'd) Descrever o processo de construção do PPP do IFRN.', 'e) Fornecer os cadernos temáticos para cada área do conhecimento.'], correct: 'b', explanation: 'O Documento-Base sistematiza os fundamentos educacionais do IFRN.' },
+                { id: 'EPT58', question: 'Como o PPP do IFRN orienta as ações político-pedagógicas da instituição, considerando sua natureza multicampi e pluricurricular?', options: ['a) Através de um modelo pedagógico único e inflexível para todos os campi e cursos.', 'b) Por meio de diretrizes gerais que permitem a adaptação e a contextualização das práticas pedagógicas em cada campus e curso, respeitando as especificidades locais e as diferentes modalidades de ensino.', 'c) Limitando a oferta de cursos a poucas áreas do conhecimento para facilitar a gestão.', 'd) Centralizando todas as decisões pedagógicas na reitoria, sem autonomia para os campi.', 'e) Focando apenas na formação técnica, sem considerar a diversidade de perfis dos estudantes.'], correct: 'b', explanation: 'O PPP permite flexibilidade para se adaptar às realidades de cada campus.' },
+                { id: 'EPT59', question: 'A revisão e reconstrução do PPP do IFRN são importantes devido a novos desafios. Qual a principal razão para essa necessidade de atualização?', options: ['a) Apenas para cumprir exigências legais e burocráticas.', 'b) A necessidade de adaptar o PPP às mudanças administrativas e pedagógicas decorrentes da transformação em Instituto Federal e das novas demandas educacionais.', 'c) A falta de participação da comunidade acadêmica na elaboração inicial do PPP.', 'd) A obsolescência dos princípios pedagógicos adotados anteriormente.', 'e) A busca por um modelo educacional mais tradicional e menos inovador.'], correct: 'b', explanation: 'O PPP é revisado para se adequar às transformações e novas demandas.' },
+                { id: 'EPT60', question: 'O PPP do IFRN contribui para a formação humana integral dos estudantes. Qual das opções abaixo MELHOR descreve essa contribuição?', options: ['a) Foca apenas na aquisição de conhecimentos técnicos para o mercado de trabalho.', 'b) Prepara o estudante para o exercício da cidadania, a produção e socialização do conhecimento, e a atuação consciente no mundo do trabalho e na sociedade, articulando diferentes dimensões da formação humana.', 'c) Limita a formação do estudante ao desenvolvimento de habilidades específicas para uma única profissão.', 'd) Desconsidera a dimensão cultural e social da formação, priorizando apenas o aspecto intelectual.', 'e) Incentiva a competição entre os estudantes, sem preocupação com a colaboração ou o desenvolvimento de valores éticos.'], correct: 'b', explanation: 'A formação humana integral abrange múltiplos aspectos da vida do estudante.' },
+
+                // 3. Identidade e concepções institucionais
+                { id: 'EPT61', question: 'A construção da identidade do IFRN é marcada por sua atuação na expansão, democratização e interiorização da educação profissional de qualidade. Qual o impacto dessa atuação na sociedade?', options: ['a) Apenas o aumento do número de vagas em cursos técnicos.', 'b) A formação de uma elite técnica, sem impacto na inclusão social.', 'c) A promoção da inclusão social, o desenvolvimento regional e a melhoria da qualidade de vida da população, através do acesso à educação e à qualificação profissional em diversas localidades.', 'd) A padronização do ensino em todo o estado, sem considerar as especificidades locais.', 'e) A desvalorização da educação básica em detrimento da educação profissional.'], correct: 'c', explanation: 'A atuação do IFRN gera impactos sociais e regionais amplos.' },
+                { id: 'EPT62', question: 'O IFRN busca incorporar outras dimensões da constituição humana e da vida em sociedade, ultrapassando a formação estritamente profissional e técnica. Qual o significado dessa abordagem?', options: ['a) Que o IFRN oferece cursos em áreas não relacionadas ao trabalho.', 'b) Que a formação no IFRN visa a desenvolver no estudante não apenas habilidades técnicas, mas também valores éticos, pensamento crítico, responsabilidade social e cultural, preparando-o para uma atuação cidadã e consciente.', 'c) Que o IFRN prioriza a formação teórica em detrimento da prática.', 'd) Que o IFRN se distancia das demandas do mercado de trabalho.', 'e) Que o IFRN foca apenas na formação acadêmica, sem preocupação com a empregabilidade.'], correct: 'b', explanation: 'O IFRN busca uma formação que vai além do técnico, abrangendo a cidadania.' },
+                { id: 'EPT63', question: 'Os Institutos Federais são caracterizados como instituições de educação superior, básica e profissional, pluricurriculares e multicampi. O que essa caracterização implica?', options: ['a) Que os Institutos Federais oferecem apenas cursos de graduação e pós-graduação.', 'b) Que os Institutos Federais atuam em diferentes níveis e modalidades de ensino, com uma ampla variedade de cursos e presença em diversas localidades, integrando o ensino, a pesquisa e a extensão.', 'c) Que os Institutos Federais são instituições de ensino técnico, sem autonomia para ofertar outros níveis de ensino.', 'd) Que os Institutos Federais possuem um currículo restrito a poucas áreas do conhecimento.', 'e) Que os Institutos Federais são instituições privadas, sem vínculo com o setor público.'], correct: 'b', explanation: 'Essa caracterização destaca a abrangência e diversidade dos Institutos Federais.' },
+                { id: 'EPT64', question: 'A Lei nº 11.892/2008 confere aos Institutos Federais autonomia administrativa, patrimonial, financeira, didático-pedagógica e disciplinar. Qual a relevância dessa autonomia para a atuação do IFRN?', options: ['a) Permite que o IFRN atue de forma independente do Ministério da Educação, sem seguir diretrizes nacionais.', 'b) Garante ao IFRN a capacidade de gerir seus próprios recursos, definir seus currículos, métodos de ensino e normas internas, adaptando-se às necessidades regionais e promovendo a inovação educacional.', 'c) Limita a atuação do IFRN a aspectos burocráticos, sem impacto na qualidade do ensino.', 'd) Torna o IFRN uma instituição isolada, sem interação com outras instituições de ensino.', 'e) Impede que o IFRN receba recursos do governo federal.'], correct: 'b', explanation: 'A autonomia é essencial para a flexibilidade e inovação do IFRN.' },
+                { id: 'EPT65', question: 'A função social do IFRN é um dos pilares de sua identidade. Qual o principal objetivo dessa função social?', options: ['a) Apenas formar profissionais para o mercado de trabalho.', 'b) Promover a transformação da realidade na perspectiva da igualdade e da justiça sociais, através de uma educação de qualidade que articula ciência, cultura, trabalho e tecnologia.', 'c) Gerar lucro para a instituição e seus colaboradores.', 'd) Atender exclusivamente às demandas das grandes empresas.', 'e) Manter o status quo social, sem promover mudanças significativas.'], correct: 'b', explanation: 'A função social do IFRN visa à transformação social e à justiça.' },
+                { id: 'EPT66', question: 'A missão e a visão do IFRN se relacionam com o desenvolvimento social do Rio Grande do Norte. Qual a essência dessa relação?', options: ['a) A missão e a visão do IFRN são genéricas e não se aplicam especificamente ao contexto do Rio Grande do Norte.', 'b) A missão do IFRN é prover formação humana, científica e profissional para o desenvolvimento social do estado, e sua visão é consolidar-se como referência nacional em formação humana e profissional, gerando desenvolvimento científico e tecnológico para a região.', 'c) A missão e a visão do IFRN focam apenas no desenvolvimento econômico, sem considerar o aspecto social.', 'd) O IFRN não tem responsabilidade com o desenvolvimento social do estado.', 'e) A missão e a visão do IFRN são definidas por órgãos externos, sem a participação da comunidade acadêmica.'], correct: 'b', explanation: 'A missão e visão do IFRN estão alinhadas ao desenvolvimento social e regional.' },
+                { id: 'EPT67', question: 'Os valores organizacionais norteiam o IFRN. Qual dos valores abaixo NÃO está diretamente relacionado à promoção da inclusão e do respeito às diferenças?', options: ['a) Comprometimento.', 'b) Cooperação.', 'c) Diversidade.', 'd) Equidade.', 'e) Ética.'], correct: 'a', explanation: 'Comprometimento é um valor geral, enquanto os demais estão mais diretamente ligados à inclusão e diversidade.' },
+                { id: 'EPT68', question: 'Os objetivos do IFRN incluem a oferta de cursos em sintonia com sua função social e a organização curricular a partir dos eixos ciência, trabalho, cultura e tecnologia. Qual o propósito dessa organização curricular?', options: ['a) Fragmentar o conhecimento em disciplinas isoladas.', 'b) Promover uma formação integral e contextualizada, que prepare o estudante para atuar de forma crítica e consciente no mundo do trabalho e na sociedade, compreendendo as inter-relações entre esses eixos.', 'c) Priorizar apenas a dimensão técnica do conhecimento.', 'd) Desconsiderar as demandas do mercado de trabalho.', 'e) Limitar a atuação do IFRN a poucas áreas do conhecimento.'], correct: 'b', explanation: 'Essa organização curricular busca uma formação integrada e crítica.' },
+                { id: 'EPT69', question: 'O IFRN estimula e apoia a produção cultural, o empreendedorismo, o desenvolvimento científico e tecnológico e o pensamento reflexivo. Qual o impacto dessas ações na formação dos estudantes?', options: ['a) Apenas o desenvolvimento de habilidades técnicas específicas.', 'b) A formação de profissionais mais criativos, inovadores, críticos e capazes de gerar soluções para os desafios da sociedade, além de promover o desenvolvimento regional.', 'c) A desvalorização do ensino formal em detrimento de atividades extracurriculares.', 'd) O foco exclusivo na pesquisa acadêmica, sem aplicação prática.', 'e) A reprodução de modelos preexistentes, sem estímulo à originalidade.'], correct: 'b', explanation: 'As ações do IFRN contribuem para formar profissionais completos e inovadores.' },
+                { id: 'EPT70', question: 'O IFRN busca desenvolver atividades de Extensão e Pesquisa. Qual o principal benefício dessas atividades para a comunidade?', options: ['a) Apenas a publicação de artigos científicos.', 'b) A geração de conhecimento e soluções para problemas reais da comunidade, a promoção da inclusão social, a melhoria da qualidade de vida e o desenvolvimento regional, através da interação entre a instituição e a sociedade.', 'c) A captação de recursos financeiros para a instituição.', 'd) O aumento do número de matrículas em cursos de graduação.', 'e) A formação de pesquisadores, sem impacto direto na sociedade.'], correct: 'b', explanation: 'Extensão e Pesquisa no IFRN beneficiam a comunidade com soluções e desenvolvimento.' },
+
+                // 4. Princípios e diretrizes orientadores da prática pedagógica
+                { id: 'EPT71', question: 'Os princípios e diretrizes orientadores da prática pedagógica na EPT são cruciais. Qual a sua principal função?', options: ['a) Padronizar o ensino em todas as instituições de EPT, sem considerar as especificidades regionais.', 'b) Guiar a implementação de políticas públicas, a elaboração de currículos e a ação docente, assegurando uma formação de qualidade, contextualizada e alinhada aos objetivos da EPT.', 'c) Limitar a autonomia dos professores em sala de aula.', 'd) Focar apenas na avaliação do desempenho dos estudantes.', 'e) Reduzir a complexidade do processo de ensino-aprendizagem.'], correct: 'b', explanation: 'Os princípios e diretrizes servem como um guia essencial para a prática pedagógica na EPT.' },
+                { id: 'EPT72', question: 'A prática pedagógica na EPT e a formação humana integral estão intrinsecamente relacionadas. Como o trabalho, a ciência, a tecnologia e a cultura se articulam nesse processo?', options: ['a) São elementos independentes, sem conexão entre si.', 'b) O trabalho é o elemento central, e os demais são secundários.', 'c) A articulação desses elementos visa a uma formação que integre o saber fazer com o saber ser e o saber conviver, preparando o indivíduo para atuar de forma plena na sociedade e no mundo do trabalho.', 'd) A ciência e a tecnologia são priorizadas, e o trabalho e a cultura são desconsiderados.', 'e) A cultura é o único elemento relevante para a formação humana integral.'], correct: 'c', explanation: 'A articulação desses elementos é fundamental para a formação integral na EPT.' },
+                { id: 'EPT73', question: 'A interdisciplinaridade é um conceito fundamental na prática pedagógica da EPT. Como ela se manifesta na necessidade de diálogo entre os diferentes saberes?', options: ['a) Através da separação rígida das disciplinas, sem comunicação entre elas.', 'b) Pela integração de conhecimentos de diferentes áreas do saber para a compreensão e resolução de problemas complexos, promovendo uma visão mais abrangente e contextualizada da realidade.', 'c) Pela priorização de uma única área do conhecimento em detrimento das demais.', 'd) Pela reprodução de conteúdos de forma isolada, sem conexão com outras disciplinas.', 'e) Pela desvalorização do conhecimento técnico em relação ao conhecimento teórico.'], correct: 'b', explanation: 'A interdisciplinaridade promove uma visão holística e contextualizada do conhecimento.' },
+                { id: 'EPT74', question: 'O professor na EPT desempenha um papel crucial. Qual a sua principal função, considerando as especificidades dessa modalidade de ensino?', options: ['a) Apenas transmitir conteúdos de forma expositiva.', 'b) Atuar como mediador do conhecimento, facilitador da aprendizagem, incentivando a autonomia, a pesquisa e a problematização, e articulando a teoria com a prática e as demandas do mundo do trabalho.', 'c) Focar apenas na avaliação do desempenho dos estudantes.', 'd) Limitar a participação dos estudantes em sala de aula.', 'e) Seguir um currículo rígido, sem espaço para a criatividade ou a inovação.'], correct: 'b', explanation: 'O professor na EPT é um mediador e facilitador da aprendizagem, conectando teoria e prática.' },
+                { id: 'EPT75', question: 'A contextualização e a problematização são importantes na prática pedagógica da EPT. Como elas tornam o ensino mais significativo para os estudantes?', options: ['a) Ao apresentar os conteúdos de forma abstrata, sem relação com a realidade dos estudantes.', 'b) Ao relacionar os conteúdos com situações reais e problemas do cotidiano, tornando o aprendizado mais relevante, engajador e aplicável, e estimulando o pensamento crítico e a busca por soluções.', 'c) Ao focar apenas na memorização de informações, sem a compreensão do seu significado.', 'd) Ao desconsiderar as experiências prévias dos estudantes.', 'e) Ao limitar o ensino a atividades teóricas, sem a aplicação prática.'], correct: 'b', explanation: 'A contextualização e problematização tornam o ensino mais relevante e engajador.' },
+                { id: 'EPT76', question: 'As Diretrizes Curriculares Nacionais para a Educação Profissional e Tecnológica influenciam a prática pedagógica. Qual o principal impacto dessas diretrizes na integração curricular?', options: ['a) A fragmentação do currículo em disciplinas isoladas.', 'b) A promoção da integração entre as diferentes áreas do conhecimento e entre a teoria e a prática, visando a uma formação mais completa e contextualizada.', 'c) A padronização dos currículos em todo o país, sem considerar as especificidades regionais.', 'd) A redução da carga horária dos cursos de EPT.', 'e) A desvalorização do ensino técnico em relação ao ensino superior.'], correct: 'b', explanation: 'As DCNs promovem a integração entre áreas e entre teoria e prática na EPT.' },
+                { id: 'EPT77', question: 'A avaliação na EPT deve ser um processo contínuo e formativo. Qual a principal finalidade da avaliação nesse contexto?', options: ['a) Apenas classificar os estudantes em aprovados e reprovados.', 'b) Acompanhar o desenvolvimento dos estudantes, identificar suas dificuldades e potencialidades, e aprimorar o processo de ensino-aprendizagem, fornecendo feedback e orientações para o crescimento individual.', 'c) Punir os estudantes por seu desempenho.', 'd) Comparar o desempenho dos estudantes entre si.', 'e) Medir apenas a memorização de conteúdos, sem considerar o desenvolvimento de habilidades.'], correct: 'b', explanation: 'A avaliação na EPT visa ao acompanhamento e aprimoramento contínuo do aprendizado.' },
+                { id: 'EPT78', question: 'A prática pedagógica na EPT deve considerar as demandas do mundo do trabalho, sem se restringir a uma formação meramente técnica. Qual o significado dessa abordagem?', options: ['a) Que a EPT deve focar apenas na formação de mão de obra para atender às necessidades imediatas das empresas.', 'b) Que a EPT deve preparar o estudante para atuar de forma competente no mercado de trabalho, mas também desenvolver sua capacidade de adaptação, inovação, pensamento crítico e responsabilidade social, indo além da simples execução de tarefas.', 'c) Que a EPT deve desconsiderar as demandas do mercado de trabalho, focando apenas na formação acadêmica.', 'd) Que a EPT deve formar profissionais para atuar em qualquer área, sem especialização.', 'e) Que a EPT deve priorizar a teoria em detrimento da prática.'], correct: 'b', explanation: 'A EPT busca uma formação que transcende o técnico, preparando o estudante para a complexidade do mundo do trabalho.' },
+                { id: 'EPT79', question: 'A flexibilidade e a adaptabilidade são importantes na prática pedagógica da EPT. Qual a razão para essa importância, considerando as rápidas transformações no mundo do trabalho?', options: ['a) Apenas para permitir que os professores alterem seus planos de aula a qualquer momento.', 'b) Para preparar os estudantes para lidar com as constantes mudanças tecnológicas, as novas demandas do mercado de trabalho e a necessidade de aprender continuamente, desenvolvendo a capacidade de se adaptar a diferentes contextos e desafios.', 'c) Para reduzir a carga horária dos cursos de EPT.', 'd) Para facilitar a gestão dos cursos, sem preocupação com a qualidade do ensino.', 'e) Para padronizar o ensino em todas as instituições de EPT.'], correct: 'b', explanation: 'A flexibilidade e adaptabilidade são cruciais para que os estudantes se preparem para um mercado em constante mudança.' },
+                { id: 'EPT80', question: 'A prática pedagógica na EPT pode promover a autonomia e o protagonismo dos estudantes. Como isso é alcançado?', options: ['a) Através da imposição de um currículo rígido, sem espaço para a escolha dos estudantes.', 'b) Incentivando os estudantes a construir seu próprio conhecimento, a tomar decisões, a participar ativamente do processo de aprendizagem e a desenvolver suas habilidades de liderança e resolução de problemas.', 'c) Limitando a participação dos estudantes em atividades extracurriculares.', 'd) Focando apenas na transmissão de informações, sem a interação com os estudantes.', 'e) Desconsiderando as opiniões e os interesses dos estudantes.'], correct: 'b', explanation: 'A autonomia e o protagonismo são promovidos ao engajar o estudante ativamente no processo de aprendizagem.' },
+                // Novas questões de EPT no Brasil
+                {
+                    id: 'EPT81',
+                    question: "Qual lei federal estabelece as diretrizes e bases da Educação Profissional e Tecnológica (EPT) no Brasil, articulando-a com os diferentes níveis e modalidades da educação e com o mundo do trabalho?",
+                    options: ["a) Lei nº 8.666/93", "b) Lei nº 9.394/96", "c) Lei nº 11.892/2008", "d) Lei nº 10.172/2001"],
+                    correct: "b",
+                    explanation: "A Lei de Diretrizes e Bases da Educação Nacional (LDB), Lei nº 9.394/96, é o principal marco legal que organiza a EPT no Brasil."
+                },
+                {
+                    id: 'EPT82',
+                    question: "Em qual modalidade de oferta da Educação Profissional Técnica de Nível Médio o estudante cursa o ensino médio e o técnico na mesma instituição, em um currículo único?",
+                    options: ["a) Concomitante", "b) Subsequente", "c) Integrada", "d) FIC (Formação Inicial e Continuada)"],
+                    correct: "c",
+                    explanation: "A modalidade integrada é caracterizada pela união do ensino médio com o técnico em um currículo único na mesma instituição."
+                },
+                {
+                    id: 'EPT83',
+                    question: "Qual o principal marco legal que criou os Institutos Federais de Educação, Ciência e Tecnologia no Brasil?",
+                    options: ["a) Lei nº 9.394/96 (LDB)", "b) Lei nº 11.892/2008", "c) Decreto nº 5.154/2004", "d) Portaria MEC nº 1.000/2010"],
+                    correct: "b",
+                    explanation: "A Lei nº 11.892/2008 é a lei de criação dos Institutos Federais de Educação, Ciência e Tecnologia."
+                },
+                {
+                    id: 'EPT84',
+                    question: "Um dos princípios fundamentais da EPT é a relação entre trabalho e educação. Qual a concepção dessa relação na EPT?",
+                    options: ["a) A educação deve apenas capacitar para o mercado de trabalho, sem preocupação com formação integral.", "b) O trabalho é visto como um princípio educativo que desenvolve o ser humano integralmente, para o trabalho e para a vida.", "c) O foco principal é o conhecimento teórico, dissociado da prática laboral.", "d) A educação e o trabalho são esferas completamente separadas e independentes."],
+                    correct: "b",
+                    explanation: "Essa é a concepção central da EPT: o trabalho como princípio educativo que forma o indivíduo de maneira completa."
+                },
+                {
+                    id: 'EPT85',
+                    question: "Qual dos conceitos abaixo NÃO é uma base conceitual da Educação Profissional e Tecnológica (EPT) no Brasil?",
+                    options: ["a) Flexibilidade e Adaptabilidade", "b) Integração de Saberes", "c) Inovação e Empreendedorismo", "d) Autodidatismo como única forma de aprendizado"],
+                    correct: "d",
+                    explanation: "A EPT valoriza diversas metodologias de ensino, não apenas o autodidatismo como única forma de aprendizado."
+                },
+                {
+                    id: 'EPT86',
+                    question: "O Projeto Político-Pedagógico (PPP) de uma instituição educacional é considerado 'político' por qual razão?",
+                    options: ["a) Porque é elaborado apenas por políticos e não pela comunidade escolar.", "b) Porque reflete os valores e as escolhas da instituição em relação à sociedade e à educação que deseja oferecer.", "c) Porque aborda somente questões administrativas e financeiras.", "d) Porque é um documento que não permite alterações ou discussões."],
+                    correct: "b",
+                    explanation: "O caráter político do PPP reside em sua expressão dos valores, compromissos e visão da instituição com a sociedade."
+                },
+                {
+                    id: 'EPT87',
+                    question: "Qual característica é fundamental para o PPP do IFRN, refletindo a natureza de uma instituição federal que abrange múltiplos campi?",
+                    options: ["a) Foco exclusivo em um único nível de ensino (ex: apenas graduação).", "b) Atuação restrita a uma única modalidade de ensino (ex: apenas presencial).", "c) Estrutura multicampi, exigindo que o PPP contemple particularidades locais e mantenha a unidade de princípios.", "d) Adoção de um currículo rígido e imutável para todos os cursos."],
+                    correct: "c",
+                    explanation: "A estrutura multicampi é uma característica central dos IFs, e o PPP deve conciliar as especificidades de cada campus com a unidade institucional."
+                },
+                {
+                    id: 'EPT88',
+                    question: "A indissociabilidade entre Ensino, Pesquisa e Extensão é uma marca dos Institutos Federais. Como o PPP do IFRN deve tratar essa indissociabilidade?",
+                    options: ["a) Deve focar apenas no ensino, deixando a pesquisa e a extensão como atividades secundárias.", "b) Deve detalhar como essa integração se dará nos cursos e projetos da instituição.", "c) Deve considerar a pesquisa e a extensão como responsabilidades exclusivas dos professores universitários.", "d) Deve incentivar a separação das três dimensões para melhor organização."],
+                    correct: "b",
+                    explanation: "O PPP precisa especificar os mecanismos e formas de articulação entre ensino, pesquisa e extensão na prática institucional."
+                },
+                {
+                    id: 'EPT89',
+                    question: "O PPP do IFRN, como o de outras instituições públicas, geralmente prevê a 'Gestão Democrática'. O que isso implica?",
+                    options: ["a) A gestão é centralizada na figura do diretor geral, sem participação da comunidade.", "b) O documento é construído de forma participativa, envolvendo a comunidade acadêmica.", "c) As decisões são tomadas apenas por representantes dos pais e responsáveis.", "d) O PPP é um documento secreto, conhecido apenas pela alta direção da instituição."],
+                    correct: "b",
+                    explanation: "A gestão democrática implica na construção coletiva e participativa do PPP, envolvendo alunos, servidores e pais."
+                },
+                {
+                    id: 'EPT90',
+                    question: "A avaliação institucional, conforme as diretrizes de um PPP, tem como principal objetivo:",
+                    options: ["a) Apenas classificar os alunos e professores com base em desempenho em provas.", "b) Garantir a melhoria contínua da qualidade educacional da instituição.", "c) Atender a exigências burocráticas sem impacto na prática pedagógica.", "d) Promover a competição entre os diferentes campi da instituição."],
+                    correct: "b",
+                    explanation: "O principal objetivo da avaliação institucional é aprimorar processos, identificar pontos fortes e fracos para a melhoria contínua da qualidade."
+                },
+                {
+                    id: 'EPT91',
+                    question: "Qual dos seguintes termos melhor descreve a natureza jurídica dos Institutos Federais, conferindo-lhes independência na gestão?",
+                    options: ["a) Empresa Pública", "b) Fundação Pública", "c) Autarquia", "d) Sociedade de Economia Mista"],
+                    correct: "c",
+                    explanation: "Os Institutos Federais são autarquias, o que lhes confere autonomia administrativa, financeira e didático-pedagógica."
+                },
+                {
+                    id: 'EPT92',
+                    question: "A 'Formação Omnilateral' é uma concepção central do currículo integrado na EPT. O que ela significa?",
+                    options: ["a) A formação do aluno deve ser direcionada apenas para uma única área profissional específica.", "b) Visa à formação integral do ser humano, em todas as suas dimensões (cognitiva, afetiva, social, ética, política).", "c) Prioriza o conhecimento técnico em detrimento dos saberes humanísticos.", "d) Significa que o ensino deve ser ofertado em todas as modalidades de educação a distância."],
+                    correct: "b",
+                    explanation: "A formação omnilateral compreende o desenvolvimento pleno do indivíduo em suas múltiplas dimensões, indo além da formação técnica."
+                },
+                {
+                    id: 'EPT93',
+                    question: "Qual o papel da pesquisa na identidade e concepções institucionais dos Institutos Federais?",
+                    options: ["a) É uma atividade opcional, desenvolvida apenas por alguns professores.", "b) Deve ser realizada apenas em nível de pós-graduação, sem envolvimento do ensino técnico.", "c) É um dos pilares, indissociável do ensino e da extensão, contribuindo para a inovação e o avanço do conhecimento.", "d) Limita-se a estudos de mercado para atender às demandas de empresas privadas."],
+                    correct: "c",
+                    explanation: "A indissociabilidade entre ensino, pesquisa e extensão é uma marca registrada dos IFs, com a pesquisa impulsionando a inovação e o conhecimento."
+                },
+                {
+                    id: 'EPT94',
+                    question: "O princípio de 'Trabalho como Princípio Educativo' na prática pedagógica do IFRN implica que:",
+                    options: ["a) O foco principal é apenas preparar o aluno para uma função específica do mercado de trabalho.", "b) A prática pedagógica deve articular teoria e prática, contextualizando os saberes e valorizando a experiência.", "c) O ensino deve ser desvinculado das demandas do mundo do trabalho para garantir a autonomia do aluno.", "d) Os alunos devem aprender apenas fazendo, sem a necessidade de fundamentos teóricos."],
+                    correct: "b",
+                    explanation: "Essa concepção entende o trabalho como um meio para a produção de conhecimento, onde a teoria e a prática se complementam na construção do saber."
+                },
+                {
+                    id: 'EPT95',
+                    question: "Qual metodologia de ensino é frequentemente priorizada na prática pedagógica orientada pelos princípios do IFRN?",
+                    options: ["a) Aulas expositivas e transmissivas, com o professor como único detentor do conhecimento.", "b) Metodologias que colocam o estudante no centro do processo de aprendizagem, como resolução de problemas e projetos.", "c) Avaliações somativas como único instrumento de verificação da aprendizagem.", "d) Exclusão de tecnologias digitais no ambiente de sala de aula."],
+                    correct: "b",
+                    explanation: "As metodologias ativas, como resolução de problemas e projetos, são valorizadas por promoverem o protagonismo do aluno."
+                },
+                {
+                    id: 'EPT96',
+                    question: "O que o currículo integrado busca superar em relação à visão tradicional de ensino?",
+                    options: ["a) A integração entre teoria e prática, pois defende a separação dos conhecimentos.", "b) A fragmentação do conhecimento em disciplinas isoladas, conectando diferentes áreas do saber.", "c) O papel do professor como mediador, priorizando o autodidatismo exclusivo do aluno.", "d) A contextualização dos saberes, priorizando o conhecimento abstrato e desvinculado da realidade."],
+                    correct: "b",
+                    explanation: "O currículo integrado visa à superação da fragmentação disciplinar, buscando a conexão e a articulação dos saberes."
+                },
+                {
+                    id: 'EPT97',
+                    question: "No contexto do currículo integrado na EPT, o trabalho é considerado o 'eixo articulador'. O que isso significa?",
+                    options: ["a) O trabalho é apenas o resultado final da formação do aluno.", "b) O trabalho é a base para a produção de conhecimento e para a integração de diferentes saberes.", "c) O trabalho é uma atividade separada da teoria e das disciplinas escolares.", "d) O foco é apenas no treinamento de habilidades manuais para o trabalho."],
+                    correct: "b",
+                    explanation: "O trabalho, como princípio educativo, atua como elemento central que conecta e dá sentido aos diferentes conhecimentos do currículo."
+                },
+                {
+                    id: 'EPT98',
+                    question: "Qual é o princípio do currículo integrado que busca a colaboração entre áreas afins e, em sua forma mais avançada, a superação das fronteiras disciplinares?",
+                    options: ["a) Fragmentação Disciplinar", "b) Contextualização", "c) Interdisciplinaridade e Transdisciplinaridade", "d) Especialização Unidisciplinar"],
+                    correct: "c",
+                    explanation: "Esses conceitos expressam a busca por conexões entre disciplinas e, em um nível mais profundo, a superação de suas fronteiras."
+                },
+                {
+                    id: 'EPT99',
+                    question: "A Pedagogia Histórico-Crítica é um dos fundamentos do currículo integrado. O que ela defende em relação à educação?",
+                    options: ["a) Que a educação deve ser neutra, sem se envolver com questões sociais.", "b) Que o conhecimento é inato e não depende da interação com a realidade social.", "c) Que a educação deve partir da realidade social, buscando compreender e transformar essa realidade.", "d) Que o currículo deve ser padronizado e imposto de cima para baixo, sem considerar a realidade local."],
+                    correct: "c",
+                    explanation: "Essa pedagogia propõe que a educação se baseie na análise crítica da realidade social para transformá-la."
+                },
+                {
+                    id: 'EPT100',
+                    question: "Um dos princípios do currículo integrado é a 'Problematização da Realidade'. Qual a implicação disso para a aprendizagem?",
+                    options: ["a) A aprendizagem ocorre apenas através da memorização de fatos e conceitos desvinculados de problemas reais.", "b) A aprendizagem ocorre a partir da análise de problemas reais, exigindo a mobilização de diferentes conhecimentos e a busca por soluções.", "c) Os problemas são apresentados de forma simplificada, sem conexão com o mundo do trabalho.", "d) Apenas o professor é responsável por apresentar as soluções para os problemas."],
+                    correct: "b",
+                    explanation: "A problematização da realidade coloca o aluno diante de desafios reais, que demandam a aplicação e integração de conhecimentos para encontrar soluções."
+                },
+                // Novas questões de EPT no Brasil (Iniciam em EPT101)
+                {
+                    id: 'EPT101',
+                    question: "A Educação Profissional e Tecnológica (EPT) no Brasil está regulamentada principalmente por qual Lei?",
+                    options: ["a) LDB (Lei 9.394/1996)", "b) Lei 11.741/2008", "c) Lei 13.415/2017 (Reforma do Ensino Médio)", "d) Todas as anteriores"],
+                    correct: "d",
+                    explanation: "A EPT no Brasil é regulamentada por um conjunto de leis, sendo a LDB a base, complementada por outras como a Lei 11.741/2008 e a Lei 13.415/2017."
+                },
+                {
+                    id: 'EPT102',
+                    question: "Qual documento estabelece as Diretrizes Curriculares Nacionais para a Educação Profissional?",
+                    options: ["a) Parecer CNE/CEB 11/2012", "b) Decreto 5.154/2004", "c) Portaria MEC 1.045/2021", "d) Resolução CNE/CP 01/2020"],
+                    correct: "a",
+                    explanation: "O Parecer CNE/CEB 11/2012 estabelece as Diretrizes Curriculares Nacionais para a Educação Profissional Técnica de Nível Médio."
+                },
+                {
+                    id: 'EPT103',
+                    question: "A EPT no Brasil é organizada em três níveis. Quais são eles?",
+                    options: ["a) Básico, Técnico e Tecnológico", "b) Formação Inicial, Técnico e Superior", "c) Básico, Intermediário e Avançado", "d) Fundamental, Médio e Superior"],
+                    correct: "b",
+                    explanation: "Os três níveis da EPT são Formação Inicial e Continuada (FIC), Educação Profissional Técnica de Nível Médio e Educação Superior (Tecnológica)."
+                },
+                {
+                    id: 'EPT104',
+                    question: "O que caracteriza a **articulação entre educação e trabalho** na EPT?",
+                    options: ["a) Priorizar apenas o ensino teórico", "b) Integrar conhecimentos científicos e tecnológicos com a prática profissional", "c) Eliminar disciplinas gerais do currículo", "d) Focar apenas em estágios obrigatórios"],
+                    correct: "b",
+                    explanation: "A articulação entre educação e trabalho na EPT visa a integração entre a base científica, tecnológica e a aplicação prática no mundo do trabalho."
+                },
+                {
+                    id: 'EPT105',
+                    question: "Qual órgão é responsável pela oferta da EPT em nível federal no Brasil?",
+                    options: ["a) Secretarias Estaduais de Educação", "b) Institutos Federais (IFs) e Rede Federal", "c) Universidades Privadas", "d) SENAI e SENAC"],
+                    correct: "b",
+                    explanation: "Os Institutos Federais e toda a Rede Federal de Educação Profissional, Científica e Tecnológica são os principais responsáveis pela oferta da EPT em nível federal."
+                },
+                {
+                    id: 'EPT106',
+                    question: "O PPP do IFRN tem como principal objetivo:",
+                    options: ["a) Definir apenas a estrutura física da instituição", "b) Orientar as práticas pedagógicas e administrativas com base em princípios democráticos", "c) Estabelecer apenas o calendário acadêmico", "d) Limitar-se aos aspectos burocráticos da gestão"],
+                    correct: "b",
+                    explanation: "O Projeto Político-Pedagógico (PPP) é um documento que norteia todas as ações da instituição, com base em princípios democráticos e educacionais."
+                },
+                {
+                    id: 'EPT107',
+                    question: "Qual princípio **NÃO** faz parte do PPP do IFRN?",
+                    options: ["a) Indissociabilidade entre ensino, pesquisa e extensão", "b) Educação elitista e excludente", "c) Formação cidadã e profissional", "d) Integração com o mundo do trabalho"],
+                    correct: "b",
+                    explanation: "O IFRN, como instituição pública federal, preza pela inclusão e por uma educação de qualidade para todos, combatendo a elitização."
+                },
+                {
+                    id: 'EPT108',
+                    question: "O PPP do IFRN deve ser construído com a participação de:",
+                    options: ["a) Apenas dos professores", "b) Apenas da direção da instituição", "c) Toda a comunidade escolar (docentes, discentes, técnicos e sociedade)", "d) Exclusivamente do MEC"],
+                    correct: "c",
+                    explanation: "A gestão democrática do IFRN implica na participação de todos os segmentos da comunidade escolar na construção do PPP."
+                },
+                {
+                    id: 'EPT109',
+                    question: "A concepção de educação do IFRN está alinhada com:",
+                    options: ["a) Apenas o mercado de trabalho", "b) Uma perspectiva crítica e emancipatória", "c) O ensino tecnicista sem reflexão", "d) A formação exclusivamente acadêmica"],
+                    correct: "b",
+                    explanation: "A educação no IFRN busca formar cidadãos críticos, capazes de intervir na realidade, e profissionais qualificados com uma visão ampla."
+                },
+                {
+                    id: 'EPT110',
+                    question: "O PPP do IFRN prevê a integração entre:",
+                    options: ["a) Apenas teoria e prática", "b) Ensino, pesquisa e extensão", "c) Apenas atividades técnicas", "d) Disciplinas isoladas sem conexão"],
+                    correct: "b",
+                    explanation: "A indissociabilidade entre ensino, pesquisa e extensão é um dos pilares da identidade dos Institutos Federais, e deve estar presente no PPP."
+                },
+                {
+                    id: 'EPT111',
+                    question: "Os Institutos Federais, como o IFRN, têm como missão principal:",
+                    options: ["a) Oferecer apenas cursos técnicos", "b) Promover educação profissional, científica e tecnológica com excelência", "c) Atender apenas demandas locais", "d) Ser uma instituição exclusivamente de pesquisa"],
+                    correct: "b",
+                    explanation: "A missão dos IFs é a oferta de educação profissional e tecnológica em todos os seus níveis e modalidades, com base na ciência e tecnologia."
+                },
+                {
+                    id: 'EPT112',
+                    question: "Qual valor **NÃO** está presente na identidade do IFRN?",
+                    options: ["a) Inclusão social", "b) Meritocracia excludente", "c) Sustentabilidade", "d) Compromisso com a sociedade"],
+                    correct: "b",
+                    explanation: "A identidade do IFRN é pautada pela inclusão, buscando oferecer oportunidades a todos, não por uma meritocracia excludente."
+                },
+                {
+                    id: 'EPT113',
+                    question: "A Rede Federal de Educação Profissional inclui:",
+                    options: ["a) Apenas os Institutos Federais", "b) IFs, CEFETs e Escolas Técnicas Vinculadas a Universidades", "c) Apenas o SENAI e SENAC", "d) Universidades particulares"],
+                    correct: "b",
+                    explanation: "A Rede Federal é composta pelos Institutos Federais, CEFETs e as escolas técnicas vinculadas a universidades federais."
+                },
+                {
+                    id: 'EPT114',
+                    question: "O IFRN se destaca por:",
+                    options: ["a) Oferecer apenas cursos superiores", "b) Integrar diferentes níveis de ensino (básico, técnico e superior)", "c) Ignorar a formação humana", "d) Não possuir vinculação com o MEC"],
+                    correct: "b",
+                    explanation: "Uma das características distintivas dos IFs é a oferta de cursos em todos os níveis da educação profissional e tecnológica, da FIC ao ensino superior."
+                },
+                {
+                    id: 'EPT115',
+                    question: "A identidade dos IFs está ligada à:",
+                    options: ["a) Formação tecnicista sem reflexão crítica", "b) Articulação entre educação, ciência, tecnologia e inovação", "c) Exclusão social", "d) Manutenção de privilégios de classe"],
+                    correct: "b",
+                    explanation: "Os Institutos Federais se caracterizam pela integração entre ensino, pesquisa, extensão e inovação, contribuindo para o desenvolvimento científico e tecnológico."
+                },
+                {
+                    id: 'EPT116',
+                    question: "Qual princípio **NÃO** orienta a prática pedagógica na EPT?",
+                    options: ["a) Flexibilidade curricular", "b) Fragmentação do conhecimento", "c) Interdisciplinaridade", "d) Contextualização do ensino"],
+                    correct: "b",
+                    explanation: "A EPT busca a integração e a contextualização do conhecimento, combatendo a fragmentação disciplinar."
+                },
+                {
+                    id: 'EPT117',
+                    question: "A indissociabilidade entre ensino, pesquisa e extensão significa:",
+                    options: ["a) Que essas dimensões devem ser trabalhadas de forma isolada", "b) Que devem ser integradas para uma formação completa", "c) Que apenas o ensino é importante", "d) Que a extensão é opcional"],
+                    correct: "b",
+                    explanation: "A indissociabilidade é a premissa de que ensino, pesquisa e extensão são interdependentes e se complementam para uma formação integral."
+                },
+                {
+                    id: 'EPT118',
+                    question: "A avaliação na EPT deve ser:",
+                    options: ["a) Somente classificatória", "b) Processual, formativa e diagnóstica", "c) Restrita a provas escritas", "d) Desvinculada do projeto pedagógico"],
+                    correct: "b",
+                    explanation: "A avaliação na EPT deve ser um processo contínuo que acompanha o desenvolvimento do estudante, com foco na melhoria da aprendizagem."
+                },
+                {
+                    id: 'EPT119',
+                    question: "A interdisciplinaridade no ensino técnico busca:",
+                    options: ["a) Fragmentar os saberes", "b) Integrar conhecimentos de diferentes áreas", "c) Priorizar apenas o conteúdo técnico", "d) Ignorar a base comum nacional"],
+                    correct: "b",
+                    explanation: "A interdisciplinaridade visa conectar e articular os conhecimentos de diferentes disciplinas para uma compreensão mais completa da realidade."
+                },
+                {
+                    id: 'EPT120',
+                    question: "A prática pedagógica na EPT deve considerar:",
+                    options: ["a) Apenas as demandas do mercado", "b) A realidade dos estudantes e do território", "c) Exclusivamente o livro didático", "d) Aulas expositivas sem participação ativa"],
+                    correct: "b",
+                    explanation: "A EPT deve ser contextualizada e relevante para a realidade local e para os interesses dos estudantes."
+                },
+                {
+                    id: 'EPT121',
+                    question: "O currículo integrado na EPT propõe:",
+                    options: ["a) Separar formação geral e técnica", "b) Articular conhecimentos científicos, tecnológicos e humanísticos", "c) Eliminar disciplinas de base comum", "d) Priorizar apenas habilidades práticas"],
+                    correct: "b",
+                    explanation: "O currículo integrado busca superar a dicotomia entre a formação geral e a formação profissional, integrando-as de forma orgânica."
+                },
+                {
+                    id: 'EPT122',
+                    question: "Qual documento reforça a importância do currículo integrado?",
+                    options: ["a) Parecer CNE/CEB 11/2012", "b) Decreto 9.235/2017", "c) Portaria MEC 1.000/2020", "d) Lei 13.415/2017"],
+                    correct: "a",
+                    explanation: "O Parecer CNE/CEB 11/2012, que estabelece as DCNs da EPT de Nível Médio, reforça a concepção de currículo integrado."
+                },
+                {
+                    id: 'EPT123',
+                    question: "A integração entre formação geral e técnica visa:",
+                    options: ["a) Reduzir a carga horária", "b) Promover uma visão fragmentada do saber", "c) Formar cidadãos críticos e profissionais qualificados", "d) Priorizar apenas o ensino teórico"],
+                    correct: "c",
+                    explanation: "O objetivo é formar indivíduos completos, com conhecimentos técnicos e humanísticos, capazes de atuar no mundo e na sociedade."
+                },
+                {
+                    id: 'EPT124',
+                    question: "O currículo integrado no IFRN pressupõe:",
+                    options: ["a) Disciplinas estanques sem diálogo", "b) Projetos que unam diferentes áreas do conhecimento", "c) Abandono da formação humanística", "d) Foco exclusivo em estágios"],
+                    correct: "b",
+                    explanation: "A abordagem por projetos é uma estratégia eficaz para promover a integração e a interdisciplinaridade no currículo."
+                },
+                {
+                    id: 'EPT125',
+                    question: "Qual desafio **NÃO** está associado à implementação do currículo integrado?",
+                    options: ["a) Resistência à mudança de paradigma", "b) Falta de formação docente", "c) Facilidade em fragmentar conhecimentos", "d) Excessiva valorização da interdisciplinaridade"],
+                    correct: "d",
+                    explanation: "A excessiva valorização da interdisciplinaridade não é um desafio, mas sim um objetivo da implementação do currículo integrado."
+                },
+                {
+                    id: 'EPT126',
+                    question: "A EPT no Brasil tem como um de seus objetivos:",
+                    options: ["a) Restringir o acesso às classes populares", "b) Promover inclusão social e desenvolvimento regional", "c) Manter o ensino elitizado", "d) Ignorar as demandas do mundo do trabalho"],
+                    correct: "b",
+                    explanation: "A EPT é um instrumento de inclusão social e de desenvolvimento econômico e social das regiões."
+                },
+                {
+                    id: 'EPT127',
+                    question: "O IFRN segue qual modelo educacional?",
+                    options: ["a) Tecnicista e conservador", "b) Crítico, integrado e emancipatório", "c) Exclusivamente profissionalizante", "d) Desvinculado da pesquisa"],
+                    correct: "b",
+                    explanation: "O modelo educacional dos IFs é pautado pela formação integral, crítica, com a indissociabilidade entre ensino, pesquisa e extensão."
+                },
+                {
+                    id: 'EPT128',
+                    question: "A articulação entre teoria e prática na EPT é fundamental porque:",
+                    options: ["a) Desvaloriza o conhecimento científico", "b) Permite a aplicação do saber em situações reais", "c) Prioriza apenas o ensino teórico", "d) Ignora a formação técnica"],
+                    correct: "b",
+                    explanation: "A articulação entre teoria e prática é crucial para que o estudante compreenda e aplique os conhecimentos em contextos reais."
+                },
+                {
+                    id: 'EPT129',
+                    question: "A pesquisa na EPT deve:",
+                    options: ["a) Ser restrita a pós-graduação", "b) Integrar-se ao ensino e extensão desde a formação básica", "c) Ser opcional para os alunos", "d) Não ter vinculação com o currículo"],
+                    correct: "b",
+                    explanation: "A pesquisa nos IFs não se restringe à pós-graduação, mas perpassa todos os níveis e modalidades de ensino."
+                },
+                {
+                    id: 'EPT130',
+                    question: "A extensão no IFRN tem como propósito:",
+                    options: ["a) Isolar a instituição da comunidade", "b) Promover diálogo entre escola e sociedade", "c) Restringir-se a eventos internos", "d) Ser atividade complementar sem avaliação"],
+                    correct: "b",
+                    explanation: "A extensão é um processo educativo, cultural e científico que articula a instituição com a sociedade, promovendo a troca de saberes."
+                },
+                {
+                    id: 'EPT131',
+                    question: "Qual decreto regulamentou a Educação Profissional Técnica de Nível Médio após a LDB?",
+                    options: ["a) Decreto 2.208/1997", "b) Decreto 5.154/2004", "c) Decreto 6.302/2007", "d) Decreto 9.057/2017"],
+                    correct: "b",
+                    explanation: "O Decreto nº 5.154/2004 regulamentou a Educação Profissional Técnica de Nível Médio, estabelecendo as formas de oferta integrada e subsequente."
+                },
+                {
+                    id: 'EPT132',
+                    question: "A Lei 11.741/2008 alterou a LDB para:",
+                    options: ["a) Extinguir a EPT", "b) Flexibilizar a articulação entre ensino médio e profissional", "c) Priorizar apenas o ensino superior", "d) Eliminar a formação técnica integrada"],
+                    correct: "b",
+                    explanation: "A Lei nº 11.741/2008 alterou a LDB, tornando a Educação Profissional e Tecnológica parte integrante da educação nacional."
+                },
+                {
+                    id: 'EPT133',
+                    question: "O Programa Nacional de Acesso ao Ensino Técnico e Emprego (PRONATEC) foi criado pela:",
+                    options: ["a) Lei 12.513/2011", "b) Medida Provisória 746/2016", "c) Portaria MEC 1.144/2016", "d) Lei 13.415/2017"],
+                    correct: "a",
+                    explanation: "O PRONATEC foi instituído pela Lei nº 12.513/2011 com o objetivo de expandir, interiorizar e democratizar a oferta de cursos de EPT."
+                },
+                {
+                    id: 'EPT134',
+                    question: "A Reforma do Ensino Médio (Lei 13.415/2017) impactou a EPT ao:",
+                    options: ["a) Ampliar a oferta de itinerários formativos técnicos", "b) Extinguir os cursos técnicos integrados", "c) Proibir a integração com o ensino regular", "d) Reduzir a carga horária prática"],
+                    correct: "a",
+                    explanation: "A Reforma do Ensino Médio, ao introduzir os itinerários formativos, ampliou as possibilidades de oferta de cursos técnicos."
+                },
+                {
+                    id: 'EPT135',
+                    question: "Qual documento define as Diretrizes Curriculares Nacionais para a Formação Inicial e Continuada (FIC)?",
+                    options: ["a) Resolução CNE/CEB 01/2021", "b) Parecer CNE/CEB 11/2012", "c) Portaria MEC 1.045/2021", "d) Decreto 9.057/2017"],
+                    correct: "b",
+                    explanation: "O Parecer CNE/CEB 11/2012 também traz as diretrizes para a Formação Inicial e Continuada (FIC)."
+                },
+                {
+                    id: 'EPT136',
+                    question: "A **contextualização** no ensino profissional significa:",
+                    options: ["a) Ignorar a realidade local", "b) Relacionar conteúdos com situações do mundo do trabalho", "c) Priorizar apenas aulas expositivas", "d) Fragmentar teoria e prática"],
+                    correct: "b",
+                    explanation: "Contextualizar significa trazer a realidade e as demandas do mundo do trabalho para o processo de ensino-aprendizagem."
+                },
+                {
+                    id: 'EPT137',
+                    question: "A **flexibilidade curricular** na EPT permite:",
+                    options: ["a) Adaptar o currículo às demandas regionais e dos estudantes", "b) Eliminar disciplinas básicas", "c) Padronizar rigidamente os cursos", "d) Ignorar a Base Nacional Comum Curricular (BNCC)"],
+                    correct: "a",
+                    explanation: "A flexibilidade permite que o currículo seja ajustado às necessidades específicas de cada local e público-alvo."
+                },
+                {
+                    id: 'EPT138',
+                    question: "A **interdisciplinaridade** é essencial na EPT porque:",
+                    options: ["a) Isola saberes técnicos e gerais", "b) Promove a integração de conhecimentos para resolver problemas complexos", "c) Desvaloriza a formação humana", "d) Restringe-se a projetos opcionais"],
+                    correct: "b",
+                    explanation: "A interdisciplinaridade permite que os alunos utilizem conhecimentos de diversas áreas para abordar e solucionar problemas reais."
+                },
+                {
+                    id: 'EPT139',
+                    question: "A **avaliação formativa** prioriza:",
+                    options: ["a) Classificar alunos por notas", "b) Identificar dificuldades e redirecionar o processo de ensino-aprendizagem", "c) Aplicar apenas provas escritas", "d) Excluir estudantes com baixo rendimento"],
+                    correct: "b",
+                    explanation: "A avaliação formativa tem como foco principal o acompanhamento do aprendizado e a identificação de pontos que precisam ser aprimorados."
+                },
+                {
+                    id: 'EPT140',
+                    question: "A **indissociabilidade entre ensino, pesquisa e extensão** no IFRN busca:",
+                    options: ["a) Formar técnicos sem visão crítica", "b) Integrar conhecimentos acadêmicos e sociais", "c) Restringir pesquisas a pós-graduação", "d) Ignorar a comunidade externa"],
+                    correct: "b",
+                    explanation: "A indissociabilidade garante que o conhecimento produzido na instituição seja aplicado e que a comunidade se beneficie desse conhecimento."
+                },
+                {
+                    id: 'EPT141',
+                    question: "Um exemplo de currículo integrado é:",
+                    options: ["a) Oferecer Português e Matemática separadamente da formação técnica", "b) Desenvolver projetos que articulam Matemática e conhecimentos de Enfermagem", "c) Eliminar disciplinas de ciências humanas", "d) Priorizar apenas estágios supervisionados"],
+                    correct: "b",
+                    explanation: "Projetos que conectam diferentes áreas do saber são uma forma de promover a integração curricular."
+                },
+                {
+                    id: 'EPT142',
+                    question: "Qual desafio **NÃO** é comum na implementação do currículo integrado?",
+                    options: ["a) Resistência docente à interdisciplinaridade", "b) Falta de infraestrutura para aulas práticas", "c) Excessiva valorização da integração teoria-prática", "d) Dificuldade em planejar coletivamente"],
+                    correct: "c",
+                    explanation: "A integração teoria-prática é um objetivo do currículo integrado, e sua valorização excessiva não é um desafio."
+                },
+                {
+                    id: 'EPT143',
+                    question: "A Base Nacional Comum Curricular (BNCC) para o Ensino Médio:",
+                    options: ["a) Ignora a EPT", "b) Oferece diretrizes para integrar formação geral e técnica", "c) Restringe-se a cursos acadêmicos", "d) Elimina componentes técnicos"],
+                    correct: "b",
+                    explanation: "A BNCC para o Ensino Médio, com a oferta de itinerários formativos, ampliou as possibilidades de oferta de cursos técnicos."
+                },
+                {
+                    id: 'EPT144',
+                    question: "O eixo **\"Trabalho, Ciência, Tecnologia e Cultura\"** no currículo integrado reforça:",
+                    options: ["a) A separação entre conhecimentos científicos e profissionais", "b) A integração crítica dessas dimensões na formação", "c) O foco exclusivo em habilidades manuais", "d) A desvalorização da pesquisa"],
+                    correct: "b",
+                    explanation: "Esse eixo demonstra a preocupação em formar o estudante de maneira completa, relacionando o trabalho com a produção científica, tecnológica e cultural."
+                },
+                {
+                    id: 'EPT145',
+                    question: "A carga horária dos cursos técnicos integrados deve incluir:",
+                    options: ["a) Apenas disciplinas técnicas", "b) Equilíbrio entre formação geral e específica", "c) Exclusão de componentes artísticos", "d) Redução da prática profissional"],
+                    correct: "b",
+                    explanation: "Os cursos integrados visam a uma formação equilibrada entre os conhecimentos da base comum nacional e os da formação técnica."
+                },
+                {
+                    id: 'EPT146',
+                    question: "Além do ensino, qual pilar **NÃO** faz parte da missão dos IFs?",
+                    options: ["a) Pesquisa aplicada", "b) Extensão comunitária", "c) Formação exclusivamente teórica", "d) Inovação tecnológica"],
+                    correct: "c",
+                    explanation: "A missão dos IFs abrange ensino, pesquisa, extensão e inovação, com uma abordagem que vai além da formação meramente teórica."
+                },
+                {
+                    id: 'EPT147',
+                    question: "O IFRN tem como um de seus valores institucionais:",
+                    options: ["a) Meritocracia excludente", "b) Sustentabilidade socioambiental", "c) Centralização decisória", "d) Desvinculação do território"],
+                    correct: "b",
+                    explanation: "A sustentabilidade socioambiental é um valor crescente e importante para as instituições de ensino, incluindo o IFRN."
+                },
+                {
+                    id: 'EPT148',
+                    question: "A Rede Federal de EPT inclui:",
+                    options: ["a) Apenas os 38 Institutos Federais", "b) IFs, CEFETs e escolas técnicas vinculadas a universidades", "c) Apenas o SENAI e SENAC", "d) Instituições privadas"],
+                    correct: "b",
+                    explanation: "A Rede Federal é um conjunto de instituições públicas, incluindo IFs, CEFETs e escolas técnicas ligadas a universidades."
+                },
+                {
+                    id: 'EPT149',
+                    question: "A autonomia dos IFs permite:",
+            options: ["a) Criar cursos sem regulamentação", "b) Adaptar-se às demandas locais dentro da legislação", "c) Ignorar diretrizes nacionais", "d) Excluir disciplinas obrigatórias"],
+            correct: "b",
+            explanation: "A autonomia é fundamental para que os IFs possam responder às especificidades de suas regiões, sempre em conformidade com a legislação educacional."
+                },
+                {
+                    id: 'EPT150',
+                    question: "O IFRN destaca-se por:",
+            options: ["a) Oferecer apenas cursos superiores", "b) Integrar ensino médio, técnico e superior", "c) Não realizar pesquisas", "d) Ter atuação restrita a Natal"],
+            correct: "b",
+            explanation: "A integração dos diferentes níveis e modalidades de ensino é uma característica marcante dos Institutos Federais, incluindo o IFRN, que possui múltiplos campi."
+                }
+            ];
+
+
+            const btnQuizIA = document.getElementById('btnQuizIA');
+            const btnQuizOutrasProvas = document.getElementById('btnQuizOutrasProvas');
+            const btnQuizEPT = document.getElementById('btnQuizEPT');
+            const quizArea = document.getElementById('quizArea');
+            const scoreArea = document.getElementById('scoreArea');
+            const userScoreSpan = document.getElementById('userScore');
+            const totalQuestionsSpan = document.getElementById('totalQuestions');
+
+            let currentQuestions = [];
+            let score = 0;
+            const NUM_QUESTIONS = 10;
+
+            function shuffleArray(array) {
+                for (let i = array.length - 1; i > 0; i--) {
+                    const j = Math.floor(Math.random() * (i + 1));
+                    [array[i], array[j]] = [array[j], array[i]];
+                }
+                return array;
+            }
+
+            function loadQuestions(questionsArray, quizType) {
+                quizArea.innerHTML = '';
+                score = 0;
+                userScoreSpan.textContent = 0;
+                scoreArea.style.display = 'none';
+                quizArea.style.display = 'block';
+
+                const shuffledQuestions = shuffleArray([...questionsArray]);
+                currentQuestions = shuffledQuestions.slice(0, NUM_QUESTIONS);
+                totalQuestionsSpan.textContent = NUM_QUESTIONS;
+
+                currentQuestions.forEach((q, index) => {
+                    const questionCard = document.createElement('div');
+                    questionCard.classList.add('question-card');
+                    questionCard.innerHTML = `
+                        <h3>Questão ${index + 1}: ${q.question || q.enunciado}</h3>
+                        <div class="options" id="options-${index}">
+                            ${generateOptionsHtml(q, quizType, index)}
+                        </div>
+                        <div class="feedback" id="feedback-${index}"></div>
+                        <div class="explanation" id="explanation-${index}">${q.explanation || (quizType === 'outrasProvas' ? q.alternativaCorreta + '. Fonte: ' + q.fonte : '')}</div>
+                        <button class="show-answer-button" data-index="${index}">Ver Resposta</button>
+                    `;
+                    quizArea.appendChild(questionCard);
+                });
+
+                const showAnswerButtons = document.querySelectorAll('.show-answer-button');
+                showAnswerButtons.forEach(button => {
+                    button.addEventListener('click', (event) => showAnswer(event.target.dataset.index, quizType));
+                });
+            }
+
+            function generateOptionsHtml(question, quizType, questionIndex) {
+                if (quizType === 'ia') {
+                    return question.options.map((option, optIndex) => `
+                        <label>
+                            <input type="radio" name="question-${questionIndex}" value="${String.fromCharCode(97 + optIndex)}">
+                            ${option}
+                        </label>
+                    `).join('');
+                } else if (quizType === 'outrasProvas') {
+                    // Para 'questoesEstudo', a 'alternativaCorreta' já é a resposta, não há opções de múltipla escolha.
+                    // Adaptamos para mostrar um campo de texto ou apenas a afirmação.
+                    // Para o propósito de um quiz, vamos criar uma opção "verdadeiro/falso" ou deixar apenas a afirmação
+                    // e a resposta direta para simplificar, já que o formato é diferente.
+                    // Por simplicidade, vamos apenas exibir a afirmação e o botão de ver resposta.
+                    // Não geramos radio buttons aqui pois o formato original não tem múltiplas escolhas para este quiz.
+                    return `<p>Esta é uma pergunta de afirmação/resposta direta. Clique em "Ver Resposta" para conferir.</p>`;
+                } else if (quizType === 'ept') {
+                    return question.options.map((option, optIndex) => `
+                        <label>
+                            <input type="radio" name="question-${questionIndex}" value="${String.fromCharCode(97 + optIndex)}">
+                            ${option}
+                        </label>
+                    `).join('');
+                }
+            }
+
+
+            function showAnswer(index, quizType) {
+                const q = currentQuestions[index];
+                const feedbackDiv = document.getElementById(`feedback-${index}`);
+                const explanationDiv = document.getElementById(`explanation-${index}`);
+                const optionsDiv = document.getElementById(`options-${index}`);
+
+                explanationDiv.style.display = 'block';
+
+                if (quizType === 'ia' || quizType === 'ept') {
+                    const selectedOption = document.querySelector(`input[name="question-${index}"]:checked`);
+                    const correctOptionValue = q.correct; // para 'ia' e 'ept' o correto é 'a', 'b', etc.
+
+                    if (selectedOption) {
+                        if (selectedOption.value === correctOptionValue) {
+                            feedbackDiv.textContent = 'Correto!';
+                            feedbackDiv.className = 'feedback correct';
+                            // Não incrementa pontuação aqui para permitir que o usuário verifique sem mudar a pontuação
+                            // Se quiser que a pontuação seja automática, a lógica de score deve ser no 'change' do radio
+                        } else {
+                            feedbackDiv.textContent = `Incorreto. A resposta correta é: ${correctOptionValue.toUpperCase()}) ${q.options[correctOptionValue.charCodeAt(0) - 97]}`;
+                            feedbackDiv.className = 'feedback incorrect';
+                        }
+                        feedbackDiv.style.display = 'block';
+                    } else {
+                        // Se nada foi selecionado, apenas mostre a resposta correta
+                        feedbackDiv.textContent = `Você não selecionou uma opção. A resposta correta é: ${correctOptionValue.toUpperCase()}) ${q.options[correctOptionValue.charCodeAt(0) - 97]}`;
+                        feedbackDiv.className = 'feedback incorrect';
+                        feedbackDiv.style.display = 'block';
+                    }
+
+                    // Desabilitar opções após ver a resposta
+                    const radios = optionsDiv.querySelectorAll('input[type="radio"]');
+                    radios.forEach(radio => radio.disabled = true);
+                } else if (quizType === 'outrasProvas') {
+                    // Para questões de 'outrasProvas', a 'alternativaCorreta' é a própria explicação da resposta
+                    feedbackDiv.textContent = `Resposta: ${q.alternativaCorreta}`;
+                    feedbackDiv.className = 'feedback correct'; // Ou uma classe neutra, já que não é um "check"
+                    feedbackDiv.style.display = 'block';
+                }
+            }
+
+
+            btnQuizIA.addEventListener('click', () => loadQuestions(allQuestionsIA, 'ia'));
+            btnQuizOutrasProvas.addEventListener('click', () => loadQuestions(questoesEstudo, 'outrasProvas'));
+            btnQuizEPT.addEventListener('click', () => loadQuestions(allQuestionsEPT, 'ept'));
+        });
+    </script>
 </body>
 </html>
