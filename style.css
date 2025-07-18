@@ -1,215 +1,298 @@
-/* --- Variáveis CSS --- */
+/* Importação de fontes do Google Fonts (opcional, mas recomendado para uma boa tipografia) */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Montserrat:wght@500&display=swap');
+
+/* --- Variáveis CSS (Boas para consistência e fácil alteração) --- */
 :root {
-    --primary-color: #007bff;
-    --primary-dark-color: #0056b3;
-    --background-light: #f4f4f4;
-    --background-white: #fff;
-    --text-color: #333;
-    --text-light-color: #777;
-    --border-light: #eee;
-    --success-color: #28a745;
-    --success-background: #e6ffe6;
-    --success-border: #b3ffb3;
-    --error-color: #dc3545;
-    --error-background: #f8d7da;
-    --error-border: #dc3545;
-    --info-background: #e9f7ff;
-    --info-border: #cceeff;
-    --card-border: #ddd;
-    --hover-background: #eef;
+    --primary-color: #4CAF50; /* Verde vibrante */
+    --primary-dark: #388E3C; /* Verde mais escuro para hover */
+    --secondary-color: #2196F3; /* Azul para botões alternativos */
+    --text-color: #333; /* Cor do texto principal */
+    --background-color: #f4f7f6; /* Fundo suave */
+    --card-background: #ffffff; /* Fundo de cards/seções */
+    --border-color: #ddd; /* Cor da borda */
+    --shadow-color: rgba(0, 0, 0, 0.1); /* Sombra suave */
+    --correct-answer: #d4edda; /* Fundo para resposta correta */
+    --incorrect-answer: #f8d7da; /* Fundo para resposta incorreta */
+    --font-main: 'Roboto', sans-serif;
+    --font-heading: 'Montserrat', sans-serif;
 }
 
-/* --- Estilos Gerais do Layout --- */
+/* --- Estilos Gerais --- */
 body {
-    font-family: Arial, sans-serif;
+    font-family: var(--font-main);
+    line-height: 1.6;
     margin: 0;
-    padding: 20px;
-    background-color: var(--background-light);
+    padding: 0;
+    background-color: var(--background-color);
     color: var(--text-color);
     display: flex;
     flex-direction: column;
-    min-height: 100vh;
-    align-items: center;
+    min-height: 100vh; /* Garante que o footer fique no final */
+    -webkit-font-smoothing: antialiased; /* Suaviza as fontes para WebKit */
+    -moz-osx-font-smoothing: grayscale; /* Suaviza as fontes para Firefox */
 }
 
 .container {
-    background-color: var(--background-white);
-    padding: 30px;
+    max-width: 900px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: var(--card-background);
     border-radius: 8px;
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
-    max-width: 800px;
-    width: 100%;
-    margin-bottom: 20px;
-    text-align: center;
+    box-shadow: 0 4px 15px var(--shadow-color);
+    flex-grow: 1; /* Permite que o container ocupe o espaço restante */
 }
 
-/* --- Títulos --- */
-h1, h2 {
-    color: var(--primary-dark-color);
+h1, h2, h3, h4 {
+    font-family: var(--font-heading);
+    color: var(--primary-dark);
+    text-align: center;
+    margin-bottom: 20px;
 }
 
 h1 {
-    margin-bottom: 25px;
+    font-size: 2.5em;
+    color: var(--primary-color);
+    text-shadow: 1px 1px 2px var(--shadow-color);
 }
 
 h2 {
-    margin-bottom: 20px;
-}
-
-.quiz-title { /* Título específico do quiz */
+    font-size: 1.8em;
+    border-bottom: 2px solid var(--border-color);
+    padding-bottom: 10px;
     margin-top: 30px;
-    margin-bottom: 20px;
-    color: var(--primary-color);
 }
 
-/* --- Cards de Seção e Questão --- */
-.section-card {
-    background-color: var(--info-background);
-    border: 1px solid var(--info-border);
+/* --- Seções e Cards --- */
+.section-card, .results-card {
+    background-color: var(--card-background);
+    border: 1px solid var(--border-color);
     border-radius: 8px;
-    padding: 20px;
-    margin-bottom: 20px;
+    padding: 25px;
+    margin-bottom: 25px;
+    box-shadow: 0 2px 8px var(--shadow-color);
 }
 
-.question-card {
-    background-color: #f9f9f9; /* Mantive valor específico por ser um tom de cinza, ou pode ser uma nova variável */
-    border: 1px solid var(--card-border);
-    border-radius: 8px;
-    padding: 20px;
-    margin-bottom: 15px;
-    text-align: left;
-}
-
-.question-text {
-    font-size: 1.1em;
-    margin-bottom: 15px;
-    font-weight: bold;
+.hidden {
+    display: none !important; /* !important garante que sobrescreva outras regras */
 }
 
 /* --- Botões de Ação --- */
 .action-button {
+    display: block; /* Para ocupar a largura total no mobile */
+    width: 100%;
+    padding: 12px 20px;
+    margin-bottom: 10px; /* Espaçamento entre botões */
+    border: none;
+    border-radius: 6px;
     background-color: var(--primary-color);
     color: white;
-    padding: 12px 25px;
-    border: none;
-    border-radius: 5px;
+    font-size: 1.1em;
+    font-weight: bold;
     cursor: pointer;
-    font-size: 16px;
-    margin: 10px 5px;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 2px 5px var(--shadow-color);
+    text-align: center;
 }
 
 .action-button:hover {
-    background-color: var(--primary-dark-color);
+    background-color: var(--primary-dark);
+    transform: translateY(-2px);
 }
 
-/* --- Opções de Resposta --- */
-.options-container label {
-    display: block;
-    margin-bottom: 10px;
-    font-size: 1em;
-    cursor: pointer;
-    padding: 8px;
-    border-radius: 4px;
-    transition: background-color 0.2s ease;
+.action-button:active {
+    background-color: var(--primary-dark);
+    transform: translateY(0);
 }
 
-.options-container label:hover {
-    background-color: var(--hover-background);
+/* Estilos específicos para botões de controle (submit/restart) se precisar */
+.quiz-controls .action-button {
+    background-color: var(--secondary-color); /* Outra cor para diferenciar */
+    margin-top: 15px;
 }
 
-.options-container input[type="radio"] {
-    margin-right: 10px;
+.quiz-controls .action-button[data-action="restart"] {
+    background-color: #f44336; /* Vermelho para reiniciar */
 }
 
-/* --- Resultados do Quiz --- */
-.results-card {
-    background-color: var(--success-background);
-    border: 1px solid var(--success-border);
+.quiz-controls .action-button[data-action="restart"]:hover {
+    background-color: #d32f2f;
+}
+
+/* --- Estilos das Perguntas --- */
+.questions-container .question-item {
+    background-color: #f9f9f9;
+    border: 1px solid var(--border-color);
     border-radius: 8px;
     padding: 20px;
-    margin-top: 20px;
-    text-align: left;
+    margin-bottom: 20px;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.05);
+}
+
+.questions-container .question-text {
+    font-size: 1.15em;
+    margin-bottom: 15px;
+    font-weight: 500;
+}
+
+.questions-container .options-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.questions-container .option-item {
+    margin-bottom: 10px;
+    display: flex; /* Para alinhar radio/checkbox com o texto */
+    align-items: center;
+}
+
+.questions-container .option-item label {
+    cursor: pointer;
+    padding: 10px;
+    border: 1px solid var(--border-color);
+    border-radius: 5px;
+    flex-grow: 1; /* Faz a label ocupar o espaço restante */
+    background-color: var(--card-background);
+    transition: background-color 0.2s ease, border-color 0.2s ease;
+    display: flex;
+    align-items: center;
+}
+
+.questions-container .option-item label:hover {
+    background-color: #eef;
+    border-color: var(--secondary-color);
+}
+
+.questions-container input[type="radio"],
+.questions-container input[type="checkbox"] {
+    margin-right: 10px;
+    transform: scale(1.2); /* Aumenta um pouco o tamanho do input */
+}
+
+/* Estilos para respostas selecionadas (adicionadas via JS) */
+.option-item.selected label {
+    background-color: #e0f2f7; /* Cor suave para opção selecionada */
+    border-color: var(--secondary-color);
+}
+
+/* Estilos para Feedback de Respostas (adicionadas via JS) */
+.option-item.correct label {
+    background-color: var(--correct-answer);
+    border-color: var(--primary-color);
+    font-weight: bold;
+}
+
+.option-item.incorrect label {
+    background-color: var(--incorrect-answer);
+    border-color: #dc3545; /* Vermelho para incorreta */
+    font-weight: bold;
+}
+
+.explanation {
+    margin-top: 10px;
+    padding: 10px;
+    background-color: #f0f0f0;
+    border-left: 5px solid var(--primary-color);
+    border-radius: 4px;
+    font-size: 0.95em;
+    color: #555;
+}
+
+/* --- Gabarito e Resultados --- */
+.results-card {
+    text-align: center;
+    margin-top: 30px;
+    padding: 30px;
 }
 
 .results-card h3 {
-    color: var(--success-color);
-    margin-bottom: 10px;
+    font-size: 1.5em;
+    color: var(--primary-dark);
 }
 
 .results-card p {
-    font-size: 1.1em;
-    margin-bottom: 15px;
+    font-size: 1.2em;
+    margin: 15px 0;
 }
 
-.results-card h4 {
+.results-card span {
+    font-weight: bold;
     color: var(--primary-color);
-    margin-top: 20px;
-    margin-bottom: 10px;
 }
 
 .answer-list {
-    list-style-type: decimal;
-    padding-left: 20px;
+    list-style: decimal; /* Números para cada item do gabarito */
+    text-align: left;
+    margin: 20px auto;
+    padding-left: 25px; /* Para o espaçamento da lista */
+    max-width: 80%; /* Para não ficar muito largo */
 }
 
 .answer-list li {
+    background-color: #f9f9f9;
+    border: 1px solid var(--border-color);
+    border-radius: 5px;
+    padding: 10px 15px;
     margin-bottom: 10px;
-    line-height: 1.5;
+    font-size: 0.95em;
 }
 
-/* --- Feedback Visual das Respostas --- */
-.options-container label.correct {
-    background-color: #d4edda; /* Verde claro específico */
-    border-color: var(--success-color);
-    font-weight: bold;
-}
-
-.options-container label.incorrect {
-    background-color: var(--error-background);
-    border-color: var(--error-color);
-    font-weight: bold;
-}
-
-/* --- Utilitários --- */
-.hidden {
-    display: none;
+.answer-list li strong {
+    color: var(--primary-color);
 }
 
 /* --- Rodapé --- */
 .footer {
-    margin-top: auto;
-    padding-top: 20px;
     text-align: center;
-    color: var(--text-light-color);
+    padding: 20px;
+    margin-top: 40px;
+    background-color: var(--primary-dark);
+    color: white;
     font-size: 0.9em;
-    border-top: 1px solid var(--border-light);
-    width: 100%;
+    box-shadow: 0 -2px 10px var(--shadow-color);
+}
+
+.footer #access-counter {
+    font-weight: bold;
 }
 
 /* --- Responsividade Básica --- */
 @media (max-width: 768px) {
-    body {
-        padding: 10px;
+    .container {
+        margin: 10px;
+        padding: 15px;
     }
 
-    .container {
-        padding: 20px;
+    h1 {
+        font-size: 2em;
+    }
+
+    h2 {
+        font-size: 1.5em;
     }
 
     .action-button {
-        padding: 10px 20px;
-        font-size: 15px;
-        margin: 8px 3px;
+        font-size: 1em;
+        padding: 10px 15px;
+    }
+
+    .answer-list {
+        max-width: 95%;
+        padding-left: 20px;
     }
 }
 
 @media (max-width: 480px) {
-    .options-container label {
-        font-size: 0.95em;
+    h1 {
+        font-size: 1.8em;
     }
-
-    .question-text {
+    h2 {
+        font-size: 1.3em;
+    }
+    .questions-container .question-text {
         font-size: 1em;
+    }
+    .questions-container .option-item label {
+        font-size: 0.9em;
     }
 }
