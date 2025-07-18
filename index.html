@@ -5,84 +5,96 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Simulado Preparatório</title>
     <link rel="stylesheet" href="style.css">
-</head>
+    </head>
 <body>
     <div class="container">
         <h1>Simulado Preparatório</h1>
 
-        <div id="choice-container" class="section-card">
+        <div id="quiz-selection" class="section-card">
             <h2>Escolha o tipo de Simulado:</h2>
-            <button id="ia-questions-button" class="action-button">Questões Geradas por IA</button>
-            <button id="prova-questions-button" class="action-button">Questões Retiradas de Outras Provas</button>
-            <button id="extra-questions-button" class="action-button">Simulado Extra</button>
-            <button id="ept-questions-button" class="action-button">EPT No Brasil 1.1</button> </div>
+            <nav class="quiz-options">
+                <button data-quiz-type="ia" class="action-button">Questões Geradas por IA</button>
+                <button data-quiz-type="prova" class="action-button">Questões Retiradas de Outras Provas</button>
+                <button data-quiz-type="extra" class="action-button">Simulado Extra</button>
+                <button data-quiz-type="ept" class="action-button">EPT No Brasil 1.1</button>
+            </nav>
+        </div>
 
-        <div id="ia-simulado-content" class="hidden">
+        <div id="ia-quiz-section" class="quiz-section hidden" data-quiz-type="ia">
             <h2 class="quiz-title">Simulado: Questões Geradas por IA</h2>
-            <div id="questions-container">
+            <div id="ia-questions-container" class="questions-container">
                 </div>
-            <button id="submit-button" class="action-button hidden">Verificar Respostas</button>
-            <button id="restart-button" class="action-button hidden">Reiniciar Simulado</button>
-            <div id="results-container" class="results-card hidden">
+            <div class="quiz-controls">
+                <button data-action="submit" class="action-button hidden">Verificar Respostas</button>
+                <button data-action="restart" class="action-button hidden">Reiniciar Simulado</button>
+            </div>
+            <div id="ia-results-container" class="results-card hidden">
                 <h3>Resultados:</h3>
-                <p>Você acertou <span id="score">0</span> de <span id="total-questions">10</span> questões.</p>
+                <p>Você acertou <span data-score="ia">0</span> de <span data-total-questions="ia">0</span> questões.</p>
                 <h4>Gabarito e Explicações:</h4>
-                <ol id="answer-key" class="answer-list">
+                <ol data-answer-key="ia" class="answer-list">
                     </ol>
             </div>
         </div>
 
-        <div id="prova-simulado-content" class="hidden">
+        <div id="prova-quiz-section" class="quiz-section hidden" data-quiz-type="prova">
             <h2 class="quiz-title">Simulado: Questões de Prova</h2>
-            <div id="prova-questions-container">
+            <div id="prova-questions-container" class="questions-container">
                 </div>
-            <button id="submit-prova-button" class="action-button hidden">Verificar Respostas</button>
-            <button id="restart-prova-button" class="action-button hidden">Reiniciar Simulado</button>
-            <div id="results-prova-container" class="results-card hidden">
+            <div class="quiz-controls">
+                <button data-action="submit" class="action-button hidden">Verificar Respostas</button>
+                <button data-action="restart" class="action-button hidden">Reiniciar Simulado</button>
+            </div>
+            <div id="prova-results-container" class="results-card hidden">
                 <h3>Resultado:</h3>
-                <p>Você acertou <span id="score-prova">0</span> de <span id="total-questions-prova">0</span> questões.</p>
+                <p>Você acertou <span data-score="prova">0</span> de <span data-total-questions="prova">0</span> questões.</p>
                 <h4>Gabarito:</h4>
-                <ol id="answer-key-prova" class="answer-list">
+                <ol data-answer-key="prova" class="answer-list">
                     </ol>
             </div>
         </div>
 
-        <div id="extra-simulado-content" class="hidden">
+        <div id="extra-quiz-section" class="quiz-section hidden" data-quiz-type="extra">
             <h2 class="quiz-title">Simulado: Tópico Extra</h2>
-            <div id="extra-questions-container">
+            <div id="extra-questions-container" class="questions-container">
                 </div>
-            <button id="submit-extra-button" class="action-button hidden">Verificar Respostas</button>
-            <button id="restart-extra-button" class="action-button hidden">Reiniciar Simulado</button>
-            <div id="results-extra-container" class="results-card hidden">
+            <div class="quiz-controls">
+                <button data-action="submit" class="action-button hidden">Verificar Respostas</button>
+                <button data-action="restart" class="action-button hidden">Reiniciar Simulado</button>
+            </div>
+            <div id="extra-results-container" class="results-card hidden">
                 <h3>Resultado:</h3>
-                <p>Você acertou <span id="score-extra">0</span> de <span id="total-questions-extra">0</span> questões.</p>
+                <p>Você acertou <span data-score="extra">0</span> de <span data-total-questions="extra">0</span> questões.</p>
                 <h4>Gabarito e Explicações:</h4>
-                <ol id="answer-key-extra" class="answer-list">
+                <ol data-answer-key="extra" class="answer-list">
                     </ol>
             </div>
         </div>
 
-        <div id="ept-simulado-content" class="hidden">
+        <div id="ept-quiz-section" class="quiz-section hidden" data-quiz-type="ept">
             <h2 class="quiz-title">Simulado: EPT No Brasil 1.1</h2>
-            <div id="ept-questions-container">
+            <div id="ept-questions-container" class="questions-container">
                 </div>
-            <button id="submit-ept-button" class="action-button hidden">Verificar Respostas</button>
-            <button id="restart-ept-button" class="action-button hidden">Reiniciar Simulado</button>
-            <div id="results-ept-container" class="results-card hidden">
+            <div class="quiz-controls">
+                <button data-action="submit" class="action-button hidden">Verificar Respostas</button>
+                <button data-action="restart" class="action-button hidden">Reiniciar Simulado</button>
+            </div>
+            <div id="ept-results-container" class="results-card hidden">
                 <h3>Resultado:</h3>
-                <p>Você acertou <span id="score-ept">0</span> de <span id="total-questions-ept">0</span> questões.</p>
+                <p>Você acertou <span data-score="ept">0</span> de <span data-total-questions="ept">0</span> questões.</p>
                 <h4>Gabarito e Explicações:</h4>
-                <ol id="answer-key-ept" class="answer-list">
+                <ol data-answer-key="ept" class="answer-list">
                     </ol>
             </div>
         </div>
-        </div>
+    </div>
 
     <div class="footer">
         <p>Desenvolvido por Gemini para fins educacionais.</p>
         <p>Acessos (neste navegador): <span id="access-counter">0</span></p>
     </div>
 
-    <script src="script_ept.js"></script> <script src="script.js"></script>
+    <script src="script.js"></script>
+    <script src="script_ept.js"></script>
 </body>
 </html>
