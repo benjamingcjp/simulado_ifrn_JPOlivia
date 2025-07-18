@@ -3,87 +3,86 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Simulador de Questões</title>
+    <title>Simulado Preparatório</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="container">
-        <h1>Simulador de Questões</h1>
+        <h1>Simulado Preparatório</h1>
 
-        <div class="section-card" id="choice-container">
-            <h2>Escolha o Tipo de Simulado:</h2>
-            <button class="action-button" id="ia-questions-button">Questões Geradas por IA</button>
-            <button class="action-button" id="prova-questions-button">Questões de Outras Provas</button>
-            <button class="action-button" id="ept-brasil-button">EPT no Brasil</button>
-            <button class="action-button" id="leis-8027-1171-button">Leis 8027 e 1171</button> </div>
+        <div id="choice-container" class="section-card">
+            <h2>Escolha o tipo de Simulado:</h2>
+            <button id="ia-questions-button" class="action-button">Questões Geradas por IA</button>
+            <button id="prova-questions-button" class="action-button">Questões Retiradas de Outras Provas</button>
+            <button id="extra-questions-button" class="action-button">Simulado Extra</button>
+            <button id="ept-questions-button" class="action-button">EPT No Brasil 1.1</button> </div>
 
         <div id="ia-simulado-content" class="hidden">
-            <h2 class="quiz-title">Questões Geradas por IA</h2>
+            <h2 class="quiz-title">Simulado: Questões Geradas por IA</h2>
             <div id="questions-container">
                 </div>
-            <button class="action-button" id="submit-button">Verificar Respostas</button>
-            <button class="action-button hidden" id="restart-button">Novo Simulado (IA)</button>
-
+            <button id="submit-button" class="action-button hidden">Verificar Respostas</button>
+            <button id="restart-button" class="action-button hidden">Reiniciar Simulado</button>
             <div id="results-container" class="results-card hidden">
-                <h3>Resultados do Simulado:</h3>
-                <p>Você acertou <span id="score">0</span> de <span id="total-questions">0</span> questões.</p>
+                <h3>Resultados:</h3>
+                <p>Você acertou <span id="score">0</span> de <span id="total-questions">10</span> questões.</p>
                 <h4>Gabarito e Explicações:</h4>
-                <ol class="answer-list" id="answer-key"></ol>
+                <ol id="answer-key" class="answer-list">
+                    </ol>
             </div>
         </div>
 
         <div id="prova-simulado-content" class="hidden">
-            <h2 class="quiz-title">Questões Retiradas de Outras Provas</h2>
+            <h2 class="quiz-title">Simulado: Questões de Prova</h2>
             <div id="prova-questions-container">
                 </div>
-            <button class="action-button" id="submit-prova-button">Verificar Respostas</button>
-            <button class="action-button hidden" id="restart-prova-button">Novo Simulado (Prova)</button>
-
+            <button id="submit-prova-button" class="action-button hidden">Verificar Respostas</button>
+            <button id="restart-prova-button" class="action-button hidden">Reiniciar Simulado</button>
             <div id="results-prova-container" class="results-card hidden">
-                <h3>Resultados do Simulado:</h3>
+                <h3>Resultado:</h3>
                 <p>Você acertou <span id="score-prova">0</span> de <span id="total-questions-prova">0</span> questões.</p>
                 <h4>Gabarito:</h4>
-                <ol class="answer-list" id="answer-key-prova"></ol>
+                <ol id="answer-key-prova" class="answer-list">
+                    </ol>
             </div>
         </div>
 
-        <div id="ept-brasil-simulado-content" class="hidden">
-            <h2 class="quiz-title">Questões sobre EPT no Brasil</h2>
+        <div id="extra-simulado-content" class="hidden">
+            <h2 class="quiz-title">Simulado: Tópico Extra</h2>
+            <div id="extra-questions-container">
+                </div>
+            <button id="submit-extra-button" class="action-button hidden">Verificar Respostas</button>
+            <button id="restart-extra-button" class="action-button hidden">Reiniciar Simulado</button>
+            <div id="results-extra-container" class="results-card hidden">
+                <h3>Resultado:</h3>
+                <p>Você acertou <span id="score-extra">0</span> de <span id="total-questions-extra">0</span> questões.</p>
+                <h4>Gabarito e Explicações:</h4>
+                <ol id="answer-key-extra" class="answer-list">
+                    </ol>
+            </div>
+        </div>
+
+        <div id="ept-simulado-content" class="hidden">
+            <h2 class="quiz-title">Simulado: EPT No Brasil 1.1</h2>
             <div id="ept-questions-container">
                 </div>
-            <button class="action-button" id="submit-ept-button">Verificar Respostas</button>
-            <button class="action-button hidden" id="restart-ept-button">Novo Simulado (EPT)</button>
-
+            <button id="submit-ept-button" class="action-button hidden">Verificar Respostas</button>
+            <button id="restart-ept-button" class="action-button hidden">Reiniciar Simulado</button>
             <div id="results-ept-container" class="results-card hidden">
-                <h3>Resultados do Simulado:</h3>
+                <h3>Resultado:</h3>
                 <p>Você acertou <span id="score-ept">0</span> de <span id="total-questions-ept">0</span> questões.</p>
                 <h4>Gabarito e Explicações:</h4>
-                <ol class="answer-list" id="answer-key-ept"></ol>
+                <ol id="answer-key-ept" class="answer-list">
+                    </ol>
             </div>
         </div>
-
-        <div id="leis-8027-1171-simulado-content" class="hidden">
-            <h2 class="quiz-title">Questões: Leis 8027 e 1171</h2>
-            <div id="leis-8027-1171-questions-container">
-                </div>
-            <button class="action-button" id="submit-leis-8027-1171-button">Verificar Respostas</button>
-            <button class="action-button hidden" id="restart-leis-8027-1171-button">Novo Simulado (Leis 8027 e 1171)</button>
-
-            <div id="results-leis-8027-1171-container" class="results-card hidden">
-                <h3>Resultados do Simulado:</h3>
-                <p>Você acertou <span id="score-leis-8027-1171">0</span> de <span id="total-questions-leis-8027-1171">0</span> questões.</p>
-                <h4>Gabarito e Explicações:</h4>
-                <ol class="answer-list" id="answer-key-leis-8027-1171"></ol>
-            </div>
         </div>
 
+    <div class="footer">
+        <p>Desenvolvido por Gemini para fins educacionais.</p>
+        <p>Acessos (neste navegador): <span id="access-counter">0</span></p>
     </div>
 
-    <footer class="footer">
-        <p>Acessos ao site: <span id="access-counter">0</span></p>
-        <p>&copy; 2025 Seu Nome/Instituição. Todos os direitos reservados.</p>
-    </footer>
-
-    <script src="script.js"></script>
+    <script src="script_ept.js"></script> <script src="script.js"></script>
 </body>
 </html>
