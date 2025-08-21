@@ -2360,7 +2360,7 @@
 
                 explanationDiv.style.display = 'block';
 
-                if (quizType === 'ia' || quizType === 'ept') {
+                if (quizType === 'ia' || quizType === 'ifsertao') {
                     const selectedOption = document.querySelector(`input[name="question-${index}"]:checked`);
                     const correctOptionValue = q.correct; // para 'ia' e 'ept' o correto é 'a', 'b', etc.
 
@@ -2397,7 +2397,7 @@
             btnQuizIA.addEventListener('click', () => loadQuestions(allQuestionsIA, 'ia'));
             btnQuizOutrasProvas.addEventListener('click', () => loadQuestions(questoesEstudo, 'outrasProvas'));
             btnQuizEPT.addEventListener('click', () => loadQuestions(allQuestionsEPT, 'ept'));
-            btnQuizIFPESertao.addEventListener('click', () => loadQuestions(IFPESertao, 'ept'));
+            btnQuizIFPESertao.addEventListener('click', () => loadQuestions(IFPESertao, 'ifsertao'));
         });
     </script>
 </body>
