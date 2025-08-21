@@ -180,6 +180,7 @@
             <button id="btnQuizIA">Questões Geradas por IA</button>
             <button id="btnQuizOutrasProvas">Questões Retiradas de Outras Provas</button>
             <button id="btnQuizEPT">EPT No Brasil 1.1</button>
+            <button id="btnQuizIFPESertao">IFPE Sertão - Leis</button>
         </div>
 
         <div id="quizArea" class="quiz-area">
@@ -922,15 +923,30 @@
                 }
             ];
 
+            // Banco de questões para o questionário "IFPE Sertão - Leis"
+            const IFPESertao = [
+                // 1. Educação profissional e tecnológica no Brasil: organização e bases conceituais
+                {
+                    id: 'EPT150',
+                    question: "O IFRN destaca-se por:",
+            options: ["a) Oferecer apenas cursos superiores", "b) Integrar ensino médio, técnico e superior", "c) Não realizar pesquisas", "d) Ter atuação restrita a Natal"],
+            correct: "b",
+            explanation: "A integração dos diferentes níveis e modalidades de ensino é uma característica marcante dos Institutos Federais, incluindo o IFRN, que possui múltiplos campi."
+                }
+            ];
+
 
             const btnQuizIA = document.getElementById('btnQuizIA');
             const btnQuizOutrasProvas = document.getElementById('btnQuizOutrasProvas');
             const btnQuizEPT = document.getElementById('btnQuizEPT');
+            const btnQuizIFPESertao = document.getElementById('btnQuizIFPESertao');
             const quizArea = document.getElementById('quizArea');
             const scoreArea = document.getElementById('scoreArea');
             const userScoreSpan = document.getElementById('userScore');
             const totalQuestionsSpan = document.getElementById('totalQuestions');
 
+
+            
             let currentQuestions = [];
             let score = 0;
             const NUM_QUESTIONS = 10;
@@ -1047,7 +1063,10 @@
             btnQuizIA.addEventListener('click', () => loadQuestions(allQuestionsIA, 'ia'));
             btnQuizOutrasProvas.addEventListener('click', () => loadQuestions(questoesEstudo, 'outrasProvas'));
             btnQuizEPT.addEventListener('click', () => loadQuestions(allQuestionsEPT, 'ept'));
+            btnQuizIFPESertao.addEventListener('click', () => loadQuestions(IFPESertao, 'ept'));
         });
     </script>
 </body>
 </html>
+
+
