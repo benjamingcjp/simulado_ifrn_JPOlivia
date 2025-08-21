@@ -265,7 +265,7 @@
                 { id: '61', question: 'Segundo o Código de Ética, a humildade, a tolerância e o respeito são importantes para:', options: ['a) A manutenção da hierarquia funcional.', 'b) O bom relacionamento com os colegas e com o público.', 'c) A obtenção de promoções na carreira.', 'd) A participação em atividades sindicais.'], correct: 'b', explanation: 'Humildade, tolerância e respeito são importantes para o bom relacionamento (Seção I, inciso IV).' },
                 { id: '62', question: 'O servidor público deve zelar pela economia do material público e a conservação dos bens patrimoniais, evitando:', options: ['a) A utilização de recursos tecnológicos.', 'b) Qualquer tipo de inovação administrativa.', 'c) O desperdício e o dano aos bens públicos.', 'd) A participação em programas de reciclagem.'], correct: 'c', explanation: 'O servidor deve evitar o desperdício e o dano...'},
             ];
-            
+
             // BANCO DE QUESTÕES PARA "QUESTÕES RETIRADAS DE OUTRAS PROVAS"
             const questoesEstudo = [
                 { lei: "Lei 8.112/1990", numero: 1, enunciado: "O servidor pode acumular até dois cargos de professor com jornada de trabalho de 40 horas semanais?", alternativaCorreta: "Sim, conforme art. 121 da Lei 8.112/1990.", fonte: "QConcursos" },
@@ -364,11 +364,11 @@
                 { id: 'EPT115', question: "A identidade dos IFs está ligada à:", options: ["a) Formação tecnicista sem reflexão crítica", "b) Articulação entre educação, ciência, tecnologia e inovação", "c) Exclusão social", "d) Manutenção de privilégios de classe"], correct: "b", explanation: "Os Institutos Federais se caracterizam pela integração entre ensino, pesquisa, extensão e inovação, contribuindo para o desenvolvimento científico e tecnológico." },
                 { id: 'EPT116', question: "Qual princípio NÃO orienta a prática pedagógica na EPT?", options: ["a) Flexibilidade curricular", "b) Fragmentação do conhecimento", "c) Interdisciplinaridade", "d) Contextualização"], correct: "b", explanation: "A prática pedagógica na EPT deve buscar a integração e a contextualização, e não a fragmentação do conhecimento." },
                 { id: 'EPT117', question: "O currículo integrado busca:", options: ["a) Apenas a formação técnica e tecnológica", "b) A separação do conhecimento em disciplinas isoladas", "c) A superação da dicotomia entre a formação geral e a formação profissional", "d) O ensino tradicional, com foco na memorização"], correct: "c", explanation: "O currículo integrado busca a superação da dicotomia, promovendo uma formação completa." },
-                { id: 'EPT118', question: "A indissociabilidade entre ensino, pesquisa e extensão nos Institutos Federais busca:", options: ["a) Apenas a produção de artigos científicos", "b) A formação de pesquisadores em tempo integral", "c) A solução de problemas sociais e o desenvolvimento regional", "d) Apenas a oferta de cursos de pós-graduação"], correct: "c", explanation: "A indissociabilidade entre ensino, pesquisa e extensão visa a contribuir para a sociedade, através do desenvolvimento regional e da solução de problemas." },
+                { id: 'EPT118', question: "A indissociabilidade entre ensino, pesquisa e extensão nos Institutos Federais busca:", options: ["a) Apenas a produção de artigos científicos", "b) A formação de pesquisadores em tempo integral", "c) A solução de problemas sociais e o desenvolvimento regional", "d) Apenas a oferta de cursos de pós-graduação"], correct: 'c', explanation: "A indissociabilidade entre ensino, pesquisa e extensão visa a contribuir para a sociedade, através do desenvolvimento regional e da solução de problemas." },
                 { id: 'EPT119', question: "O princípio da contextualização na EPT implica em:", options: ["a) Desconsiderar a realidade social dos estudantes", "b) Conectar o conhecimento teórico com a realidade social e o mundo do trabalho", "c) Apenas ensinar conteúdos que não tenham relação com a realidade", "d) Focar apenas na formação para o mercado de trabalho, sem contextualização social"], correct: "b", explanation: "A contextualização na EPT busca dar sentido ao conhecimento, conectando-o com a realidade do estudante e com o mundo do trabalho." },
                 { id: 'EPT120', question: "A Educação Profissional e Tecnológica (EPT) no Brasil pode ser ofertada de forma:", options: ["a) Apenas presencial", "b) Apenas a distância", "c) Presencial e a distância", "d) Nenhuma das alternativas"], correct: "c", explanation: "A EPT no Brasil pode ser ofertada tanto na modalidade presencial quanto a distância, de acordo com as diretrizes e regulamentações do MEC." },
             ];
-            
+
             // BANCO DE QUESTÕES PARA "IFPE SERTÃO - LEIS"
             const IFPESertao = [
                 // Questões sobre o Estatuto do IFSertãoPE
@@ -397,28 +397,37 @@
                     const questionCard = document.createElement('div');
                     questionCard.className = 'question-card';
                     const questionTitle = document.createElement('h3');
+
+                    // Ajuste para o novo formato de questões do IFPESertao e outrasProvas
+                    if (quizType === 'ifsertao') {
+                        questionTitle.textContent = `${index + 1}. ${q.text}`;
+                    } else if (quizType === 'outrasProvas') {
+                        questionTitle.textContent = `${index + 1}. ${q.enunciado}`;
+                    } else {
+                        questionTitle.textContent = `${index + 1}. ${q.question}`;
+                    }
                     
-                    // Ajuste para o novo formato de questões do IFPESertao
-                    questionTitle.textContent = `${index + 1}. ${quizType === 'ifsertao' ? q.text : q.question}`;
                     questionCard.appendChild(questionTitle);
 
                     const optionsDiv = document.createElement('div');
                     optionsDiv.className = 'options';
 
-                    (quizType === 'ifsertao' ? q.options : q.options).forEach((option, i) => {
-                        const label = document.createElement('label');
-                        const radio = document.createElement('input');
-                        radio.type = 'radio';
-                        radio.name = `question${index}`;
-                        radio.value = quizType === 'ia' ? option.charAt(0) : i; // Valor da opção é a letra para IA, e o índice para IFPESertao/EPT
+                    // Lógica para carregar opções apenas se existirem
+                    if (q.options) {
+                        q.options.forEach((option, i) => {
+                            const label = document.createElement('label');
+                            const radio = document.createElement('input');
+                            radio.type = 'radio';
+                            radio.name = `question${index}`;
+                            radio.value = quizType === 'ia' ? option.charAt(0) : i;
 
-                        label.appendChild(radio);
-                        label.appendChild(document.createTextNode(option));
-                        optionsDiv.appendChild(label);
-                    });
+                            label.appendChild(radio);
+                            label.appendChild(document.createTextNode(option));
+                            optionsDiv.appendChild(label);
+                        });
+                        questionCard.appendChild(optionsDiv);
+                    }
                     
-                    questionCard.appendChild(optionsDiv);
-
                     const feedbackDiv = document.createElement('div');
                     feedbackDiv.className = 'feedback';
                     questionCard.appendChild(feedbackDiv);
@@ -482,7 +491,7 @@
 
                 } else if (quizType === 'outrasProvas') {
                     feedbackDiv.textContent = `Resposta: ${q.alternativaCorreta}`;
-                    feedbackDiv.className = 'feedback correct'; 
+                    feedbackDiv.className = 'feedback correct';
                     feedbackDiv.style.display = 'block';
                 }
             }
