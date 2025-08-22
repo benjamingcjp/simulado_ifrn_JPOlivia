@@ -1,151 +1,151 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Questionários para Estudo</title>
-  <style>
-    body {
-      font-family: 'Arial', sans-serif;
-      margin: 0;
-      padding: 20px;
-      background-color: #f4f7f6;
-      color: #333;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
-    .container {
-      width: 100%;
-      max-width: 900px;
-      background-color: #fff;
-      padding: 30px;
-      border-radius: 10px;
-      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-      margin-bottom: 30px;
-    }
-    h1 {
-      color: #2c3e50;
-      text-align: center;
-      margin-bottom: 25px;
-      font-size: 2.2em;
-    }
-    .quiz-selection {
-      text-align: center;
-      margin-bottom: 30px;
-    }
-    .quiz-selection button {
-      background-color: #3498db;
-      color: white;
-      border: none;
-      padding: 12px 25px;
-      margin: 10px;
-      border-radius: 8px;
-      cursor: pointer;
-      font-size: 1.1em;
-      transition: background-color 0.3s ease, transform 0.2s ease;
-      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    }
-    .quiz-selection button:hover {
-      background-color: #2980b9;
-      transform: translateY(-2px);
-    }
-    .quiz-area {
-      display: none;
-      margin-top: 20px;
-      border-top: 1px solid #eee;
-      padding-top: 20px;
-    }
-    .question-card {
-      background-color: #ecf0f1;
-      border: 1px solid #ddd;
-      border-radius: 8px;
-      padding: 20px;
-      margin-bottom: 20px;
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
-      transition: transform 0.2s ease;
-    }
-    .question-card:hover { transform: translateY(-3px); }
-    .question-card h3 { color: #34495e; margin: 0 0 15px; }
-    .options label {
-      display: block;
-      margin-bottom: 10px;
-      cursor: pointer;
-      font-size: 1.05em;
-      padding: 8px 0;
-      border-bottom: 1px dashed #ccc;
-    }
-    .options label:last-child { border-bottom: none; }
-    .options input[type="radio"] { margin-right: 10px; transform: scale(1.1); }
-    .feedback {
-      margin-top: 15px;
-      padding: 10px;
-      border-radius: 5px;
-      font-weight: bold;
-      display: none;
-    }
-    .feedback.correct { background-color: #d4edda; color: #28a745; }
-    .feedback.incorrect { background-color: #f8d7da; color: #dc3545; }
-    .explanation {
-      margin-top: 10px;
-      padding: 10px;
-      background-color: #f0f0f0;
-      border-left: 5px solid #3498db;
-      display: none;
-      font-size: 0.95em;
-      color: #555;
-    }
-    .submit-button,
-    .show-answer-button {
-      background-color: #2ecc71;
-      color: white;
-      border: none;
-      padding: 10px 20px;
-      border-radius: 8px;
-      cursor: pointer;
-      font-size: 1em;
-      margin-top: 20px;
-      transition: background-color 0.3s ease;
-    }
-    .submit-button:hover { background-color: #27ae60; }
-    .show-answer-button {
-      background-color: #e67e22;
-      margin-left: 10px;
-    }
-    .show-answer-button:hover { background-color: #d35400; }
-    .score-area {
-      text-align: center;
-      margin-top: 30px;
-      padding: 20px;
-      background-color: #d6e9f6;
-      border-radius: 8px;
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-      font-size: 1.4em;
-      font-weight: bold;
-      color: #2c3e50;
-      display: none;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Questionários para Estudo</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f4f7f6;
+            color: #333;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .container {
+            width: 100%;
+            max-width: 900px;
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            margin-bottom: 30px;
+        }
+        h1 {
+            color: #2c3e50;
+            text-align: center;
+            margin-bottom: 25px;
+            font-size: 2.2em;
+        }
+        .quiz-selection {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .quiz-selection button {
+            background-color: #3498db;
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            margin: 10px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 1.1em;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        .quiz-selection button:hover {
+            background-color: #2980b9;
+            transform: translateY(-2px);
+        }
+        .quiz-area {
+            display: none;
+            margin-top: 20px;
+            border-top: 1px solid #eee;
+            padding-top: 20px;
+        }
+        .question-card {
+            background-color: #ecf0f1;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+            transition: transform 0.2s ease;
+        }
+        .question-card:hover { transform: translateY(-3px); }
+        .question-card h3 { color: #34495e; margin: 0 0 15px; }
+        .options label {
+            display: block;
+            margin-bottom: 10px;
+            cursor: pointer;
+            font-size: 1.05em;
+            padding: 8px 0;
+            border-bottom: 1px dashed #ccc;
+        }
+        .options label:last-child { border-bottom: none; }
+        .options input[type="radio"] { margin-right: 10px; transform: scale(1.1); }
+        .feedback {
+            margin-top: 15px;
+            padding: 10px;
+            border-radius: 5px;
+            font-weight: bold;
+            display: none;
+        }
+        .feedback.correct { background-color: #d4edda; color: #28a745; }
+        .feedback.incorrect { background-color: #f8d7da; color: #dc3545; }
+        .explanation {
+            margin-top: 10px;
+            padding: 10px;
+            background-color: #f0f0f0;
+            border-left: 5px solid #3498db;
+            display: none;
+            font-size: 0.95em;
+            color: #555;
+        }
+        .submit-button,
+        .show-answer-button {
+            background-color: #2ecc71;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 1em;
+            margin-top: 20px;
+            transition: background-color 0.3s ease;
+        }
+        .submit-button:hover { background-color: #27ae60; }
+        .show-answer-button {
+            background-color: #e67e22;
+            margin-left: 10px;
+        }
+        .show-answer-button:hover { background-color: #d35400; }
+        .score-area {
+            text-align: center;
+            margin-top: 30px;
+            padding: 20px;
+            background-color: #d6e9f6;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            font-size: 1.4em;
+            font-weight: bold;
+            color: #2c3e50;
+            display: none;
+        }
+    </style>
 </head>
 <body>
-  <div class="container">
-    <h1>Bem-vindo aos Questionários de Estudo!</h1>
-    <div class="quiz-selection">
-      <p>Selecione um questionário para iniciar:</p>
-      <button id="btnQuizIA">Questões Geradas por IA</button>
-      <button id="btnQuizOutrasProvas">Questões Retiradas de Outras Provas</button>
-      <button id="btnQuizEPT">EPT no Brasil</button>
-      <button id="btnQuizIFPE">IFPE Sertão - Leis</button>
+    <div class="container">
+        <h1>Bem-vindo aos Questionários de Estudo!</h1>
+        <div class="quiz-selection">
+            <p>Selecione um questionário para iniciar:</p>
+            <button id="btnQuizIA">Questões Geradas por IA</button>
+            <button id="btnQuizOutrasProvas">Questões Retiradas de Outras Provas</button>
+            <button id="btnQuizEPT">EPT no Brasil</button>
+            <button id="btnQuizIFPE">IFPE Sertão - Leis</button>
+        </div>
+        <div id="quizArea" class="quiz-area"></div>
+        <div id="scoreArea" class="score-area">
+            Sua pontuação: <span id="userScore">0</span> / <span id="totalQuestions">0</span>
+        </div>
     </div>
-    <div id="quizArea" class="quiz-area"></div>
-    <div id="scoreArea" class="score-area">
-      Sua pontuação: <span id="userScore">0</span> / <span id="totalQuestions">0</span>
-    </div>
-  </div>
 
-  <script>
-  document.addEventListener('DOMContentLoaded', () => {
-    // === Bancos de Questões ===
+    <script>
+    document.addEventListener('DOMContentLoaded', () => {
+        // === Bancos de Questões ===
     const allQuestionsIA = [
                 // Lei nº 8.112/1990
                 { id: '01', question: 'Qual o regime jurídico estabelecido pela Lei nº 8.112/1990?', options: ['a) Emprego público federal.', 'b) Regime estatutário dos servidores públicos da União.', 'c) Regime celetista dos servidores públicos federais.', 'd) Regime misto para servidores federais.'], correct: 'b', explanation: 'A Lei nº 8.112/1990 institui o regime estatutário, que estabelece os direitos, deveres e responsabilidades dos servidores públicos civis da União, autarquias e fundações públicas federais.' },
@@ -3270,76 +3270,97 @@
                 }
             ];
     const quizArea = document.getElementById('quizArea');
-    const scoreArea = document.getElementById('scoreArea');
-    const userScoreEl = document.getElementById('userScore');
-    const totalQuestionsEl = document.getElementById('totalQuestions');
-    let userScore = 0;
+        const scoreArea = document.getElementById('scoreArea');
+        const userScoreEl = document.getElementById('userScore');
+        const totalQuestionsEl = document.getElementById('totalQuestions');
+        let userScore = 0;
+        const NUM_QUESTIONS = 10;
 
-    function loadQuiz(questions) {
-      quizArea.innerHTML = "";
-      scoreArea.style.display = "none";
-      userScore = 0;
-      userScoreEl.textContent = "0";
-      totalQuestionsEl.textContent = questions.length;
+        function shuffleArray(array) {
+            for (let i = array.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [array[i], array[j]] = [array[j], array[i]];
+            }
+            return array;
+        }
 
-      questions.forEach((q, index) => {
-        const card = document.createElement('div');
-        card.className = "question-card";
-        let optionsHTML = q.options.map((opt, i) => {
-          const letter = String.fromCharCode(97 + i); // a, b, c...
-          return `<label><input type="radio" name="q${q.id}" value="${letter}">${opt}</label>`;
-        }).join("");
+        function loadQuiz(questions) {
+            quizArea.innerHTML = "";
+            scoreArea.style.display = "none";
+            userScore = 0;
+            userScoreEl.textContent = "0";
 
-        card.innerHTML = `
-          <h3>${index + 1}. ${q.question}</h3>
-          <div class="options">${optionsHTML}</div>
-          <button class="submit-button">Responder</button>
-          <button class="show-answer-button">Mostrar Resposta</button>
-          <div class="feedback"></div>
-          <div class="explanation">${q.explanation || ""}</div>
-        `;
+            // Embaralha e seleciona 10 questões
+            const shuffledQuestions = shuffleArray([...questions]);
+            const currentQuestions = shuffledQuestions.slice(0, NUM_QUESTIONS);
 
-        const submitBtn = card.querySelector('.submit-button');
-        const showAnswerBtn = card.querySelector('.show-answer-button');
-        const feedback = card.querySelector('.feedback');
-        const explanation = card.querySelector('.explanation');
+            totalQuestionsEl.textContent = currentQuestions.length;
 
-        submitBtn.addEventListener('click', () => {
-          const selected = card.querySelector('input[type="radio"]:checked');
-          if (!selected) { alert("Selecione uma opção!"); return; }
-          if (selected.value === q.correct) {
-            feedback.textContent = "Correto!";
-            feedback.className = "feedback correct";
-            userScore++;
-            userScoreEl.textContent = userScore;
-          } else {
-            feedback.textContent = "Incorreto!";
-            feedback.className = "feedback incorrect";
-          }
-          feedback.style.display = "block";
-          explanation.style.display = "block";
-        });
+            currentQuestions.forEach((q, index) => {
+                const card = document.createElement('div');
+                card.className = "question-card";
+                let optionsHTML = q.options.map((opt, i) => {
+                    const letter = String.fromCharCode(97 + i); // a, b, c...
+                    return `<label><input type="radio" name="q${index}" value="${letter}">${opt}</label>`;
+                }).join("");
 
-        showAnswerBtn.addEventListener('click', () => {
-          feedback.textContent = "Resposta correta: " + q.correct.toUpperCase();
-          feedback.className = "feedback correct";
-          feedback.style.display = "block";
-          explanation.style.display = "block";
-        });
+                card.innerHTML = `
+                    <h3>${index + 1}. ${q.question}</h3>
+                    <div class="options">${optionsHTML}</div>
+                    <button class="submit-button">Responder</button>
+                    <button class="show-answer-button">Mostrar Resposta</button>
+                    <div class="feedback"></div>
+                    <div class="explanation">${q.explanation || ""}</div>
+                `;
 
-        quizArea.appendChild(card);
-      });
+                const submitBtn = card.querySelector('.submit-button');
+                const showAnswerBtn = card.querySelector('.show-answer-button');
+                const feedback = card.querySelector('.feedback');
+                const explanation = card.querySelector('.explanation');
+                const options = card.querySelectorAll('input[type="radio"]');
 
-      quizArea.style.display = "block";
-      scoreArea.style.display = "block";
-    }
+                submitBtn.addEventListener('click', () => {
+                    const selected = card.querySelector('input[type="radio"]:checked');
+                    if (!selected) { alert("Selecione uma opção!"); return; }
+                    
+                    options.forEach(opt => opt.disabled = true);
+                    submitBtn.disabled = true;
 
-    // Eventos dos botões
-    document.getElementById('btnQuizIA').addEventListener('click', () => loadQuiz(allQuestionsIA));
-    document.getElementById('btnQuizIFPE').addEventListener('click', () => loadQuiz(allQuestionsIFPE));
-    document.getElementById('btnQuizOutrasProvas').addEventListener('click', () => loadQuiz(allQuestionsOutras));
-    document.getElementById('btnQuizEPT').addEventListener('click', () => loadQuiz(allQuestionsEPT));
-  });
-  </script>
+                    if (selected.value === q.correct) {
+                        feedback.textContent = "Correto!";
+                        feedback.className = "feedback correct";
+                        userScore++;
+                        userScoreEl.textContent = userScore;
+                    } else {
+                        feedback.textContent = `Incorreto! A resposta correta é: ${q.correct.toUpperCase()}`;
+                        feedback.className = "feedback incorrect";
+                    }
+                    feedback.style.display = "block";
+                    explanation.style.display = "block";
+                });
+
+                showAnswerBtn.addEventListener('click', () => {
+                    feedback.textContent = `A resposta correta é: ${q.correct.toUpperCase()}`;
+                    feedback.className = "feedback correct";
+                    feedback.style.display = "block";
+                    explanation.style.display = "block";
+                    options.forEach(opt => opt.disabled = true);
+                    submitBtn.disabled = true;
+                });
+
+                quizArea.appendChild(card);
+            });
+
+            quizArea.style.display = "block";
+            scoreArea.style.display = "block";
+        }
+
+        // Eventos dos botões
+        document.getElementById('btnQuizIA').addEventListener('click', () => loadQuiz(allQuestionsIA));
+        document.getElementById('btnQuizIFPE').addEventListener('click', () => loadQuiz(allQuestionsIFPE));
+        document.getElementById('btnQuizOutrasProvas').addEventListener('click', () => loadQuiz(allQuestionsOutras));
+        document.getElementById('btnQuizEPT').addEventListener('click', () => loadQuiz(allQuestionsEPT));
+    });
+    </script>
 </body>
 </html>
