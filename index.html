@@ -57,7 +57,8 @@
         }
 
         .quiz-area {
-            display: none; /* Escondido por padrão */
+            display: none;
+            /* Escondido por padrão */
             margin-top: 20px;
             border-top: 1px solid #eee;
             padding-top: 20px;
@@ -107,7 +108,8 @@
             padding: 10px;
             border-radius: 5px;
             font-weight: bold;
-            display: none; /* Escondido por padrão */
+            display: none;
+            /* Escondido por padrão */
         }
 
         .feedback.correct {
@@ -127,12 +129,14 @@
             padding: 10px;
             background-color: #f0f0f0;
             border-left: 5px solid #3498db;
-            display: none; /* Escondido por padrão */
+            display: none;
+            /* Escondido por padrão */
             font-size: 0.95em;
             color: #555;
         }
 
-        .submit-button, .show-answer-button {
+        .submit-button,
+        .show-answer-button {
             background-color: #2ecc71;
             color: white;
             border: none;
@@ -144,7 +148,8 @@
             transition: background-color 0.3s ease;
         }
 
-        .submit-button:hover, .show-answer-button:hover {
+        .submit-button:hover,
+        .show-answer-button:hover {
             background-color: #27ae60;
         }
 
@@ -167,10 +172,12 @@
             font-size: 1.4em;
             font-weight: bold;
             color: #2c3e50;
-            display: none; /* Escondido por padrão */
+            display: none;
+            /* Escondido por padrão */
         }
     </style>
 </head>
+
 <body>
     <div class="container">
         <h1>Bem-vindo aos Questionários de Estudo!</h1>
@@ -180,10 +187,11 @@
             <button id="btnQuizIA">Questões Geradas por IA</button>
             <button id="btnQuizOutrasProvas">Questões Retiradas de Outras Provas</button>
             <button id="btnQuizEPT">EPT No Brasil 1.1</button>
+            <button id="btnQuizIFPE">IFPE Sertão - Leis</button>
         </div>
 
         <div id="quizArea" class="quiz-area">
-            </div>
+        </div>
 
         <div id="scoreArea" class="score-area">
             Sua pontuação: <span id="userScore">0</span> / <span id="totalQuestions">10</span>
@@ -192,6 +200,7 @@
 
     <script>
         document.addEventListener('DOMContentLoaded', () => {
+
             // ESTE É O NOVO BANCO DE QUESTÕES PARA "QUESTÕES GERADAS POR IA"
             const allQuestionsIA = [
                 // Lei nº 8.112/1990
@@ -305,6 +314,2211 @@
                 { id: '100', question: 'Qual das normas estudadas trata especificamente das sanções éticas aplicáveis aos servidores públicos federais?', options: ['a) Lei nº 8.112/1990.', 'b) Lei nº 12.772/2012.', 'c) Lei nº 8.027/1990.', 'd) Decreto nº 1.171/1994.'], correct: 'd', explanation: 'O Decreto nº 1.171/1994, que aprova o Código de Ética Profissional do Servidor Público Civil do Poder Executivo Federal, trata especificamente das sanções éticas aplicáveis (Seção V). A Lei nº 8.112/1990 trata das penalidades disciplinares, a Lei nº 12.772/2012 do regime de carreiras do magistério, e a Lei nº 8.027/1990 das normas de conduta e da Comissão de Ética.' }
             ];
 
+            // ESTE É O NOVO BANCO DE QUESTÕES PARA "IFPE SERTÃO - LEIS"
+            // Por favor, insira as 200 questões aqui, seguindo o formato JSON.
+            const allQuestionsIFPE = [
+  {
+    id: 201,
+    question: "A Lei nº 13.146/2015, também conhecida como Estatuto da Pessoa com Deficiência, tem como objetivo assegurar e promover, em condições de igualdade, o exercício dos direitos e das liberdades fundamentais por pessoa com deficiência, visando à sua inclusão social e cidadania. De acordo com a LBI, quem é considerada pessoa com deficiência?",
+    options: [
+      "Aquela que tem impedimento de longo prazo de natureza física, mental, intelectual ou sensorial.",
+      "Aquela que tem impedimento de natureza física ou mental.",
+      "Aquela que tem impedimento de natureza intelectual ou sensorial.",
+      "Aquela que se enquadra na definição de deficiência estabelecida pela Organização Mundial da Saúde."
+    ],
+    answer: "a"
+  },
+  {
+    id: 202,
+    question: "A LBI, em seu artigo 4º, estabelece o princípio da igualdade. Nesse sentido, a discriminação contra a pessoa com deficiência é definida como:",
+    options: [
+      "Qualquer forma de diferenciação injustificada.",
+      "Qualquer tipo de distinção, exclusão ou restrição que tenha o propósito de anular ou prejudicar o reconhecimento, gozo ou exercício de direitos.",
+      "A ausência de acessibilidade.",
+      "A falta de atendimento prioritário em serviços públicos."
+    ],
+    answer: "b"
+  },
+  {
+    id: 203,
+    question: "No que diz respeito à saúde, a Lei nº 13.146/2015 garante à pessoa com deficiência o direito ao atendimento prioritário e integral, respeitando suas especificidades. Sobre o atendimento de saúde, é correto afirmar que:",
+    options: [
+      "A pessoa com deficiência tem direito a receber atendimento domiciliar apenas se a sua condição for grave.",
+      "A internação em hospital ou o atendimento em clínica especializada devem ser realizados preferencialmente, em detrimento do atendimento domiciliar.",
+      "Os serviços de saúde devem adotar mecanismos que garantam a acessibilidade de todas as pessoas com deficiência.",
+      "O acompanhante da pessoa com deficiência tem direito a receber informações detalhadas sobre o diagnóstico e o tratamento, mesmo sem autorização do paciente."
+    ],
+    answer: "c"
+  },
+  {
+    id: 204,
+    question: "A LBI dispõe sobre a acessibilidade em diversos âmbitos. O conceito de 'acessibilidade' inclui a possibilidade de acesso a espaços, transportes, informação e comunicação. Nesse contexto, a eliminação de barreiras arquitetônicas em edifícios de uso público é uma medida para garantir a:",
+    options: [
+      "Acessibilidade atitudinal.",
+      "Acessibilidade programática.",
+      "Acessibilidade comunicacional.",
+      "Acessibilidade física."
+    ],
+    answer: "d"
+  },
+  {
+    id: 205,
+    question: "A LBI assegura o direito à educação inclusiva. Para isso, a Lei prevê o atendimento educacional especializado, o qual deve:",
+    options: [
+      "Substituir a escolarização regular, quando a deficiência for considerada grave.",
+      "Ser oferecido exclusivamente em escolas especializadas.",
+      "Complementar a formação dos estudantes, não substituindo o ensino regular.",
+      "Focar apenas no desenvolvimento de habilidades motoras e cognitivas."
+    ],
+    answer: "c"
+  },
+  {
+    id: 206,
+    question: "A Lei Brasileira de Inclusão garante o direito ao trabalho da pessoa com deficiência. Sobre a contratação, é INCORRETO afirmar que:",
+    options: [
+      "A empresa é obrigada a contratar um percentual de pessoas com deficiência, de acordo com o número de empregados.",
+      "A pessoa com deficiência tem o direito de concorrer a vagas de emprego em igualdade de condições com as demais pessoas.",
+      "É proibida a exigência de aptidão plena para o trabalho, sem adaptações razoáveis.",
+      "A dispensa de empregado com deficiência ou reabilitado da Previdência Social, contratado por cota, poderá ser motivada exclusivamente pela perda da capacidade laborativa."
+    ],
+    answer: "d"
+  },
+  {
+    id: 207,
+    question: "A LBI estabelece diversas penalidades para quem comete crimes ou infrações contra a pessoa com deficiência. O crime de discriminação, que consiste em impedir ou dificultar o acesso de pessoa com deficiência a qualquer estabelecimento público ou privado de uso coletivo, por exemplo, pode resultar em:",
+    options: [
+      "Apenas pagamento de multa.",
+      "Reclusão e multa.",
+      "Apenas advertência.",
+      "Prestação de serviços à comunidade."
+    ],
+    answer: "b"
+  },
+  {
+    id: 208,
+    question: "O transporte público deve ser acessível a todas as pessoas, incluindo aquelas com deficiência. A LBI prevê que:",
+    options: [
+      "As empresas de transporte coletivo podem cobrar um valor adicional de pessoas com deficiência.",
+      "A gratuidade de passagens é obrigatória para todas as pessoas com deficiência em todos os tipos de transporte público.",
+      "Os veículos de transporte coletivo devem ser equipados com recursos de acessibilidade, como rampas e elevadores.",
+      "O transporte individual é a principal alternativa para pessoas com deficiência, não sendo priorizada a adaptação do transporte coletivo."
+    ],
+    answer: "c"
+  },
+  {
+    id: 209,
+    question: "No que se refere ao direito à moradia, a LBI prevê que:",
+    options: [
+      "Os programas habitacionais devem reservar 3% das unidades para pessoas com deficiência.",
+      "A pessoa com deficiência deve ser priorizada na aquisição de moradias.",
+      "Os programas habitacionais devem priorizar a adaptação das moradias para pessoas com deficiência.",
+      "É proibido alugar imóveis para pessoas com deficiência que não tenham condições financeiras comprovadas."
+    ],
+    answer: "c"
+  },
+  {
+    id: 210,
+    question: "A LBI estabelece que o poder público deve garantir a acessibilidade em sistemas de comunicação e informação. A comunicação em Língua Brasileira de Sinais (Libras) é um dos recursos previstos na Lei para:",
+    options: [
+      "Apenas para pessoas com deficiência auditiva.",
+      "Apenas para pessoas com deficiência intelectual.",
+      "Para pessoas com deficiência visual e auditiva.",
+      "Para pessoas com deficiência auditiva, permitindo o acesso à informação e à comunicação."
+    ],
+    answer: "d"
+  },
+  {
+    id: 211,
+    question: "A Lei nº 7.853/1989, que dispõe sobre a Política Nacional para Integração da Pessoa Portadora de Deficiência, estabelece que:",
+    options: [
+      "O poder público deve promover ações de inclusão social, sem a participação de entidades da sociedade civil.",
+      "A família é a principal responsável pela integração da pessoa com deficiência.",
+      "A inclusão da pessoa com deficiência é um dever do Estado e da sociedade.",
+      "O foco da política é o tratamento médico-hospitalar da pessoa com deficiência."
+    ],
+    answer: "c"
+  },
+  {
+    id: 212,
+    question: "A Lei nº 7.853/1989 prevê a criação de um sistema de informação sobre a pessoa com deficiência. Qual é o objetivo principal desse sistema?",
+    options: [
+      "Controlar a concessão de benefícios sociais.",
+      "Subsidiar a formulação de políticas públicas.",
+      "Fiscalizar a atuação de entidades privadas.",
+      "Apenas para fins estatísticos."
+    ],
+    answer: "b"
+  },
+  {
+    id: 213,
+    question: "A Política Nacional para Integração da Pessoa Portadora de Deficiência estabelece diretrizes para a educação. Nesse contexto, a Lei prevê a:",
+    options: [
+      "Criação de escolas exclusivas para pessoas com deficiência.",
+      "Integração da pessoa com deficiência no sistema regular de ensino.",
+      "Oferecimento de educação domiciliar como a única opção para pessoas com deficiência.",
+      "Criação de um currículo especial para pessoas com deficiência."
+    ],
+    answer: "b"
+  },
+  {
+    id: 214,
+    question: "A Lei nº 7.853/1989 determina a criação de programas de emprego e capacitação profissional para a pessoa com deficiência. A Lei também prevê:",
+    options: [
+      "A reserva de vagas em concursos públicos.",
+      "A dispensa de qualificação profissional para pessoas com deficiência.",
+      "A contratação exclusiva de pessoas com deficiência por empresas privadas.",
+      "A criação de um programa de trabalho voluntário para pessoas com deficiência."
+    ],
+    answer: "a"
+  },
+  {
+    id: 215,
+    question: "No que se refere à saúde, a Política Nacional para Integração da Pessoa Portadora de Deficiência prevê:",
+    options: [
+      "A priorização do atendimento em hospitais privados.",
+      "A criação de hospitais especializados em reabilitação.",
+      "A garantia de atendimento médico-hospitalar e de reabilitação.",
+      "Apenas o fornecimento de medicamentos e próteses."
+    ],
+    answer: "c"
+  },
+  {
+    id: 216,
+    question: "O Decreto nº 7.611/2011 dispõe sobre a educação especial e o atendimento educacional especializado (AEE). O AEE é um serviço da educação especial que tem como função:",
+    options: [
+      "Substituir a escolarização regular para estudantes com deficiência.",
+      "Fazer a mediação entre a escola e a família do estudante com deficiência.",
+      "Complementar ou suplementar a formação dos estudantes, visando a autonomia e a participação social.",
+      "Apenas fornecer recursos e materiais didáticos para o estudante com deficiência."
+    ],
+    answer: "c"
+  },
+  {
+    id: 217,
+    question: "O Decreto nº 7.611/2011 define os alunos público-alvo da educação especial. Quem são esses alunos?",
+    options: [
+      "Apenas estudantes com deficiência física.",
+      "Estudantes com deficiência, transtornos globais do desenvolvimento e altas habilidades/superdotação.",
+      "Apenas estudantes com deficiência e transtornos globais do desenvolvimento.",
+      "Estudantes com qualquer tipo de dificuldade de aprendizagem."
+    ],
+    answer: "b"
+  },
+  {
+    id: 218,
+    question: "O Atendimento Educacional Especializado (AEE) deve ser oferecido:",
+    options: [
+      "Exclusivamente em salas de recursos multifuncionais.",
+      "Em escolas especiais, em turno oposto ao do ensino regular.",
+      "Em salas de recursos multifuncionais da própria escola ou de outra escola, no turno oposto ao da escolarização.",
+      "Apenas em ambientes hospitalares."
+    ],
+    answer: "c"
+  },
+  {
+    id: 219,
+    question: "De acordo com o Decreto nº 7.611/2011, o professor do AEE tem como uma de suas atribuições:",
+    options: [
+      "Substituir o professor do ensino regular na sala de aula.",
+      "Realizar o diagnóstico da deficiência do estudante.",
+      "Elaborar e executar o plano de AEE do estudante.",
+      "Apenas aplicar testes e avaliações de aprendizagem."
+    ],
+    answer: "c"
+  },
+  {
+    id: 220,
+    question: "A educação especial na perspectiva da educação inclusiva tem como foco principal:",
+    options: [
+      "O ensino de Libras e Braille.",
+      "A adaptação do estudante à escola.",
+      "A eliminação das barreiras para a plena participação e aprendizagem dos estudantes.",
+      "O treinamento de habilidades específicas para cada tipo de deficiência."
+    ],
+    answer: "c"
+  },
+  {
+    id: 221,
+    question: "O Estatuto da Igualdade Racial tem como objetivo garantir à população negra a efetivação da igualdade de oportunidades. A Lei define 'população negra' como:",
+    options: [
+      "Apenas as pessoas de cor preta.",
+      "Pessoas que se autodeclaram pretas e pardas.",
+      "Pessoas que se autodeclaram de cor preta.",
+      "Pessoas de ascendência africana."
+    ],
+    answer: "b"
+  },
+  {
+    id: 222,
+    question: "O Estatuto da Igualdade Racial estabelece diretrizes para a política de promoção da igualdade racial. É INCORRETO afirmar que uma das diretrizes é:",
+    options: [
+      "A superação da desigualdade étnica.",
+      "A eliminação do racismo e da discriminação racial.",
+      "A proteção de manifestações culturais de matriz africana.",
+      "A promoção da ascensão social exclusiva de pessoas negras."
+    ],
+    answer: "d"
+  },
+  {
+    id: 223,
+    question: "O Estatuto da Igualdade Racial prevê ações afirmativas para a promoção da igualdade. Ações afirmativas são:",
+    options: [
+      "Medidas especiais e temporárias.",
+      "Medidas permanentes de cunho punitivo.",
+      "Medidas que visam apenas o combate à discriminação.",
+      "Medidas que visam a criação de cotas em universidades."
+    ],
+    answer: "a"
+  },
+  {
+    id: 224,
+    question: "O Estatuto da Igualdade Racial aborda o direito à saúde da população negra. A Lei prevê que:",
+    options: [
+      "O atendimento de saúde para a população negra deve focar apenas nas doenças genéticas.",
+      "A política de saúde deve considerar as especificidades da saúde da população negra.",
+      "A população negra deve ter acesso a tratamentos diferenciados e mais caros.",
+      "Os profissionais de saúde devem ser exclusivamente de cor preta ou parda."
+    ],
+    answer: "b"
+  },
+  {
+    id: 225,
+    question: "A Lei nº 12.288/2010 estabelece o direito à educação para a população negra. Nesse sentido, a Lei prevê:",
+    options: [
+      "A criação de escolas exclusivas para pessoas negras.",
+      "A inserção de conteúdos de história e cultura afro-brasileira nas escolas.",
+      "A dispensa de avaliações de desempenho para estudantes negros.",
+      "A criação de um currículo separado para estudantes negros."
+    ],
+    answer: "b"
+  },
+  {
+    id: 226,
+    question: "A Portaria MGI nº 6.719/2024 aprova o Plano Federal de Prevenção e Enfrentamento do Assédio e da Discriminação na Administração Pública Federal. Qual é o principal objetivo do plano?",
+    options: [
+      "Apenas punir servidores que praticam assédio ou discriminação.",
+      "Promover a cultura de respeito, ética e integridade.",
+      "Criar um canal de denúncia exclusivo para casos de assédio moral.",
+      "Implementar um programa de treinamento obrigatório para todos os servidores."
+    ],
+    answer: "b"
+  },
+  {
+    id: 227,
+    question: "O Plano Federal de Prevenção e Enfrentamento do Assédio e da Discriminação tem como diretriz a promoção de um ambiente de trabalho saudável. Para isso, o Plano prevê:",
+    options: [
+      "Apenas a aplicação de sanções disciplinares.",
+      "A realização de campanhas de conscientização e capacitação.",
+      "A criação de um código de conduta exclusivo para casos de assédio.",
+      "A fiscalização rigorosa de todos os servidores."
+    ],
+    answer: "b"
+  },
+  {
+    id: 228,
+    question: "A Portaria MGI nº 6.719/2024 estabelece a criação de Comitês de Prevenção e Enfrentamento do Assédio e da Discriminação. Esses comitês têm como uma de suas atribuições:",
+    options: [
+      "Aplicar sanções disciplinares em casos de assédio.",
+      "Apenas receber as denúncias de assédio.",
+      "Elaborar e acompanhar o plano de ação de prevenção e combate.",
+      "Apenas mediar conflitos entre servidores."
+    ],
+    answer: "c"
+  },
+  {
+    id: 229,
+    question: "O Plano Federal de Prevenção e Enfrentamento do Assédio e da Discriminação define o assédio moral como:",
+    options: [
+      "Qualquer conduta que cause constrangimento ou humilhação.",
+      "Apenas a pressão por resultados de forma excessiva.",
+      "Qualquer conduta abusiva, por meio de gestos, palavras, escritos ou comportamentos, que atente contra a dignidade ou integridade psíquica ou física de uma pessoa.",
+      "Apenas a cobrança de metas por parte da chefia."
+    ],
+    answer: "c"
+  },
+  {
+    id: 230,
+    question: "A Portaria MGI nº 6.719/2024 considera 'discriminação' qualquer distinção, exclusão, restrição ou preferência. Qual das seguintes situações NÃO se enquadra como discriminação no contexto do Plano?",
+    options: [
+      "Restringir o acesso a um cargo por motivo de gênero.",
+      "Oferecer benefícios específicos para um grupo de servidores com base em critérios de desempenho.",
+      "Impedir o acesso a um evento por motivo de raça.",
+      "Excluir um servidor de uma atividade por motivo de idade."
+    ],
+    answer: "b"
+  },
+  {
+    id: 231,
+    question: "De acordo com o Código Penal, o crime de peculato, previsto no art. 312, consiste em:",
+    options: [
+      "Apropriar-se de dinheiro, valor ou qualquer outro bem móvel, público ou particular, de que tem a posse em razão do cargo.",
+      "Desviar, em proveito próprio ou alheio, dinheiro, valor ou qualquer outro bem móvel, público ou particular, de que tem a posse em razão do cargo.",
+      "Solicitar ou receber, para si ou para outrem, vantagem indevida em razão do cargo.",
+      "Apropriar-se de dinheiro, valor ou qualquer outro bem móvel, de que não tem a posse, por meio de violência ou grave ameaça."
+    ],
+    answer: "a"
+  },
+  {
+    id: 232,
+    question: "O crime de peculato-furto, previsto no art. 312, §1º do Código Penal, ocorre quando o funcionário público, embora não tenha a posse do bem, o subtrai em razão da facilidade que o cargo lhe proporciona. Nesse caso, a pena é:",
+    options: [
+      "A mesma do peculato-apropriação.",
+      "Menor que a do peculato-apropriação.",
+      "Maior que a do peculato-apropriação.",
+      "Apropriar-se de dinheiro, valor ou qualquer outro bem móvel, público ou particular, de que tem a posse em razão do cargo."
+    ],
+    answer: "a"
+  },
+  {
+    id: 233,
+    question: "O crime de concussão, previsto no art. 316 do Código Penal, é caracterizado por:",
+    options: [
+      "Solicitar vantagem indevida.",
+      "Receber vantagem indevida.",
+      "Exigir, para si ou para outrem, direta ou indiretamente, ainda que fora da função ou antes de assumi-la, mas em razão dela, vantagem indevida.",
+      "Oferecer vantagem indevida a funcionário público."
+    ],
+    answer: "c"
+  },
+  {
+    id: 234,
+    question: "O crime de corrupção passiva, previsto no art. 317 do Código Penal, é a conduta do funcionário público que:",
+    options: [
+      "Oferece ou promete vantagem indevida.",
+      "Solicita ou recebe vantagem indevida, ou aceita promessa de tal vantagem, para si ou para outrem, em razão da função.",
+      "Paga ou promete vantagem indevida.",
+      "Apenas aceita a promessa de vantagem."
+    ],
+    answer: "b"
+  },
+  {
+    id: 235,
+    question: "A corrupção ativa, prevista no art. 333 do Código Penal, é o crime praticado por quem:",
+    options: [
+      "Solicita vantagem indevida.",
+      "Recebe vantagem indevida.",
+      "Oferece ou promete vantagem indevida a funcionário público, para determiná-lo a praticar, omitir ou retardar ato de ofício.",
+      "Aceita a promessa de vantagem indevida."
+    ],
+    answer: "c"
+  },
+  {
+    id: 236,
+    question: "O crime de prevaricação, previsto no art. 319 do Código Penal, é a conduta do funcionário público que:",
+    options: [
+      "Apropriar-se de bem público.",
+      "Deixar de praticar, indevidamente, ato de ofício, para satisfazer interesse ou sentimento pessoal.",
+      "Exigir, para si ou para outrem, vantagem indevida.",
+      "Solicitar vantagem indevida."
+    ],
+    answer: "b"
+  },
+  {
+    id: 237,
+    question: "O crime de condescendência criminosa, previsto no art. 320 do Código Penal, ocorre quando:",
+    options: [
+      "O funcionário público, por inércia, deixa de praticar ato de ofício.",
+      "O funcionário público, por negligência, deixa de responsabilizar seu subordinado.",
+      "O funcionário público deixa de praticar, indevidamente, ato de ofício.",
+      "O funcionário público, por inércia, deixa de dar andamento a processo."
+    ],
+    answer: "b"
+  },
+  {
+    id: 238,
+    question: "O crime de advocacia administrativa, previsto no art. 321 do Código Penal, é a conduta de:",
+    options: [
+      "Advogar em causa própria.",
+      "Patrocinar, direta ou indiretamente, interesse privado perante a administração pública.",
+      "Advogar em causa pública.",
+      "Atuar como advogado em processos judiciais."
+    ],
+    answer: "b"
+  },
+  {
+    id: 239,
+    question: "O crime de violência arbitrária, previsto no art. 322 do Código Penal, ocorre quando:",
+    options: [
+      "O funcionário público pratica violência física ou moral contra a pessoa.",
+      "O funcionário público usa violência para prender uma pessoa.",
+      "O funcionário público, de forma arbitrária, prende ou detém uma pessoa.",
+      "O funcionário público usa violência no exercício da função, com abuso de poder."
+    ],
+    answer: "d"
+  },
+  {
+    id: 240,
+    question: "O crime de abandono de função, previsto no art. 323 do Código Penal, ocorre quando:",
+    options: [
+      "O funcionário público falta ao serviço por mais de trinta dias consecutivos.",
+      "O funcionário público abandona o cargo, sem motivo justificado.",
+      "O funcionário público não comparece ao serviço por um dia.",
+      "O funcionário público, por inércia, deixa de praticar ato de ofício."
+    ],
+    answer: "b"
+  },
+  {
+    id: 241,
+    question: "O Estatuto do IFSertãoPE, aprovado pela Portaria IFPE nº 844, de 20 de outubro de 2011, é o documento que estabelece a organização, as competências e as finalidades do Instituto. Qual é a natureza jurídica do IFSertãoPE?",
+    options: [
+      "Autarquia federal de natureza jurídica privada.",
+      "Autarquia federal de natureza jurídica pública.",
+      "Empresa pública de natureza jurídica pública.",
+      "Fundação pública de natureza jurídica privada."
+    ],
+    answer: "b"
+  },
+  {
+    id: 242,
+    question: "O Estatuto do IFSertãoPE prevê a sua finalidade e suas competências. Uma das finalidades do Instituto é:",
+    options: [
+      "Apenas oferecer cursos de graduação e pós-graduação.",
+      "Atuar no ensino, pesquisa e extensão.",
+      "Apenas desenvolver projetos de pesquisa.",
+      "Apenas oferecer cursos técnicos."
+    ],
+    answer: "b"
+  },
+  {
+    id: 243,
+    question: "O IFSertãoPE é um órgão da Administração Pública Federal. De acordo com o Estatuto, a estrutura do Instituto é composta por:",
+    options: [
+      "Reitoria e Campus.",
+      "Reitoria e Conselhos.",
+      "Reitoria, Campi, Colégio de Dirigentes e Conselho Superior.",
+      "Reitoria, Campi e Conselho de Campus."
+    ],
+    answer: "c"
+  },
+  {
+    id: 244,
+    question: "O Conselho Superior é o órgão máximo do IFSertãoPE. Qual é a sua principal competência?",
+    options: [
+      "Apenas aprovar o calendário acadêmico.",
+      "Apenas fiscalizar a gestão do Reitor.",
+      "Apenas aprovar o plano de desenvolvimento institucional.",
+      "Aprovar o plano de desenvolvimento institucional, o orçamento e a política de gestão de pessoas."
+    ],
+    answer: "d"
+  },
+  {
+    id: 245,
+    question: "O Estatuto do IFSertãoPE estabelece a eleição para os cargos de Reitor e de Diretores-Gerais de Campus. O processo eleitoral é realizado por:",
+    options: [
+      "Apenas servidores docentes.",
+      "Apenas servidores técnicos administrativos.",
+      "Apenas estudantes.",
+      "O processo eleitoral é realizado por todos os segmentos da comunidade acadêmica, ou seja, estudantes, docentes e técnicos administrativos."
+    ],
+    answer: "d"
+  },
+  {
+    id: 246,
+    question: "O Conselho Superior é um órgão colegiado. A sua composição é paritária, ou seja, conta com a participação de todos os segmentos da comunidade acadêmica. Essa paridade é garantida por:",
+    options: [
+      "Apenas a presença de docentes e técnicos administrativos.",
+      "Apenas a presença de estudantes e docentes.",
+      "A representação de todos os segmentos, com o mesmo número de representantes para cada um.",
+      "A representação de todos os segmentos, com a distribuição de vagas de forma proporcional ao número de integrantes de cada um."
+    ],
+    answer: "c"
+  },
+  {
+    id: 247,
+    question: "O Estatuto do IFSertãoPE prevê a criação de Conselhos de Campus. A principal competência do Conselho de Campus é:",
+    options: [
+      "Apenas aprovar o projeto pedagógico do Campus.",
+      "Apenas fiscalizar a gestão do Diretor-Geral.",
+      "Aprovar o plano de desenvolvimento do Campus.",
+      "Apenas aprovar o calendário acadêmico do Campus."
+    ],
+    answer: "c"
+  },
+  {
+    id: 248,
+    question: "O Estatuto do IFSertãoPE prevê a criação de Câmaras de Ensino, Pesquisa e Extensão. Qual é a sua principal função?",
+    options: [
+      "Apenas aprovar o calendário acadêmico.",
+      "Apenas fiscalizar a gestão do Reitor.",
+      "Propor políticas e diretrizes para o ensino, pesquisa e extensão.",
+      "Apenas aprovar o orçamento do Instituto."
+    ],
+    answer: "c"
+  },
+  {
+    id: 249,
+    question: "O Estatuto do IFSertãoPE prevê a figura do Colégio de Dirigentes. Quem faz parte do Colégio de Dirigentes?",
+    options: [
+      "Apenas o Reitor e os Diretores de Campus.",
+      "O Reitor, os Pró-Reitores e os Diretores de Campus.",
+      "O Reitor, os Pró-Reitores e os Coordenadores de Curso.",
+      "Apenas o Reitor e os Pró-Reitores."
+    ],
+    answer: "b"
+  },
+  {
+    id: 250,
+    question: "O Estatuto do IFSertãoPE prevê o princípio da autonomia didático-pedagógica. Esse princípio significa que:",
+    options: [
+      "O IFSertãoPE pode criar cursos sem a aprovação do MEC.",
+      "O IFSertãoPE pode elaborar seus próprios currículos e projetos pedagógicos, respeitando as diretrizes nacionais.",
+      "O IFSertãoPE pode conceder diplomas sem a aprovação do MEC.",
+      "O IFSertãoPE pode atuar sem a fiscalização do MEC."
+    ],
+    answer: "b"
+  },
+  {
+    id: 251,
+    question: "De acordo com a LBI, o que se entende por desenho universal?",
+    options: [
+      "O projeto de espaços e produtos que visa a atender pessoas com deficiência.",
+      "A concepção de produtos, ambientes, programas e serviços a serem usados por todas as pessoas, sem necessidade de adaptação.",
+      "A adaptação de um ambiente para atender às necessidades de uma pessoa com deficiência.",
+      "A criação de um produto específico para uma pessoa com deficiência."
+    ],
+    answer: "b"
+  },
+  {
+    id: 252,
+    question: "O que a LBI define como 'barreiras'?",
+    options: [
+      "Qualquer entrave ou obstáculo que limite ou impeça o acesso, a liberdade de movimento e a circulação.",
+      "A falta de acessibilidade em um ambiente.",
+      "A ausência de rampas em um prédio.",
+      "As dificuldades que a pessoa com deficiência enfrenta em sua vida diária."
+    ],
+    answer: "a"
+  },
+  {
+    id: 253,
+    question: "Segundo a LBI, a tecnologia assistiva é um conjunto de produtos, equipamentos e recursos que visam a:",
+    options: [
+      "Apenas auxiliar na locomoção de pessoas com deficiência.",
+      "Apenas auxiliar na comunicação de pessoas com deficiência.",
+      "Promover a autonomia, independência, qualidade de vida e inclusão social da pessoa com deficiência.",
+      "Apenas auxiliar no trabalho de pessoas com deficiência."
+    ],
+    answer: "c"
+  },
+  {
+    id: 254,
+    question: "A Lei Brasileira de Inclusão estabelece que a pessoa com deficiência tem o direito de ser acompanhada por um cão-guia. O que a LBI prevê sobre o acesso a locais públicos ou privados com o cão-guia?",
+    options: [
+      "O acesso é proibido em locais de alimentação.",
+      "O acesso é livre em todos os locais.",
+      "O acesso é restrito a locais com sinalização específica.",
+      "O acesso é permitido, mas o cão-guia deve ser mantido em coleira."
+    ],
+    answer: "b"
+  },
+  {
+    id: 255,
+    question: "A LBI dispõe sobre a avaliação da deficiência. Como essa avaliação deve ser realizada?",
+    options: [
+      "Exclusivamente por um médico especialista.",
+      "Por meio de uma avaliação biopsicossocial, realizada por equipe multiprofissional e interdisciplinar.",
+      "Por meio de um laudo médico.",
+      "Por meio de um teste psicológico."
+    ],
+    answer: "b"
+  },
+  {
+    id: 256,
+    question: "A LBI, em seu artigo 18, prevê o direito à moradia digna para a pessoa com deficiência. Uma das medidas para garantir esse direito é:",
+    options: [
+      "Apenas a concessão de moradia gratuita.",
+      "A reserva de vagas em programas habitacionais.",
+      "A oferta de moradias adaptadas.",
+      "A concessão de empréstimos com juros subsidiados."
+    ],
+    answer: "c"
+  },
+  {
+    id: 257,
+    question: "De acordo com a LBI, o atendimento prioritário em órgãos públicos e privados de uso coletivo é garantido para a pessoa com deficiência, idosos, gestantes e pessoas com crianças de colo. O que a LBI prevê sobre a prioridade de atendimento?",
+    options: [
+      "Apenas a pessoa com deficiência tem prioridade.",
+      "A prioridade de atendimento é garantida em todos os serviços.",
+      "A prioridade é garantida em todos os serviços, mas é obrigatória em bancos e hospitais.",
+      "A prioridade de atendimento é garantida, desde que a pessoa com deficiência apresente um atestado médico."
+    ],
+    answer: "b"
+  },
+  {
+    id: 258,
+    question: "A LBI, em seu artigo 28, trata sobre o direito à educação. Qual o principal objetivo da educação inclusiva?",
+    options: [
+      "Apenas incluir a pessoa com deficiência na escola.",
+      "Oferecer um currículo especial para a pessoa com deficiência.",
+      "Assegurar um sistema educacional inclusivo em todos os níveis e modalidades, bem como a aprendizagem ao longo da vida.",
+      "Apenas fornecer recursos e materiais didáticos para a pessoa com deficiência."
+    ],
+    answer: "c"
+  },
+  {
+    id: 259,
+    question: "A LBI estabelece que o poder público deve garantir a acessibilidade em eventos culturais, esportivos e de lazer. A acessibilidade nesses eventos inclui:",
+    options: [
+      "Apenas a entrada gratuita para a pessoa com deficiência.",
+      "Apenas a presença de intérpretes de Libras.",
+      "A garantia de espaços acessíveis, banheiros adaptados e sinalização tátil e visual.",
+      "A presença de monitores para auxiliar a pessoa com deficiência."
+    ],
+    answer: "c"
+  },
+  {
+    id: 260,
+    question: "A LBI prevê a punição para quem cometer crimes contra a pessoa com deficiência. O crime de abandonar a pessoa com deficiência em hospitais, casas de saúde, clínicas ou em estabelecimentos congêneres, por exemplo, é punido com:",
+    options: [
+      "Apenas multa.",
+      "Reclusão.",
+      "Detenção e multa.",
+      "Apenas advertência."
+    ],
+    answer: "b"
+  },
+  {
+    id: 261,
+    question: "A Lei nº 7.853/1989 estabelece que a política de integração social da pessoa com deficiência deve ser realizada por meio de:",
+    options: [
+      "Ações isoladas do poder público.",
+      "Ações articuladas e coordenadas entre o poder público, a sociedade e a família.",
+      "Ações de entidades privadas.",
+      "Ações de entidades assistenciais."
+    ],
+    answer: "b"
+  },
+  {
+    id: 262,
+    question: "A Lei nº 7.853/1989, em seu artigo 2º, estabelece que o poder público deve promover a prevenção de deficiências. Uma das medidas para isso é:",
+    options: [
+      "Apenas a criação de hospitais especializados.",
+      "O desenvolvimento de programas de prevenção e detecção de deficiências em recém-nascidos.",
+      "O incentivo à criação de ONGs de apoio a pessoas com deficiência.",
+      "Apenas o fornecimento de medicamentos para pessoas com deficiência."
+    ],
+    answer: "b"
+  },
+  {
+    id: 263,
+    question: "A Lei nº 7.853/1989 prevê a criação de um sistema nacional de estatísticas sobre a pessoa com deficiência. Qual é o objetivo principal desse sistema?",
+    options: [
+      "Apenas para fins de pesquisa.",
+      "Identificar o número de pessoas com deficiência no país.",
+      "Obter dados para a formulação de políticas públicas.",
+      "Apenas para fiscalizar entidades privadas."
+    ],
+    answer: "c"
+  },
+  {
+    id: 264,
+    question: "A Lei nº 7.853/1989 estabelece o direito à educação para a pessoa com deficiência. O que a Lei prevê sobre o acesso à educação?",
+    options: [
+      "A matrícula da pessoa com deficiência é facultativa em escolas comuns.",
+      "O poder público deve garantir a matrícula de pessoas com deficiência em escolas comuns, em classes regulares.",
+      "O poder público deve criar escolas exclusivas para pessoas com deficiência.",
+      "A matrícula de pessoas com deficiência é proibida em escolas privadas."
+    ],
+    answer: "b"
+  },
+  {
+    id: 265,
+    question: "A Lei nº 7.853/1989 prevê a criação de programas de emprego para a pessoa com deficiência. O que a Lei prevê sobre a contratação de pessoas com deficiência?",
+    options: [
+      "A contratação de pessoas com deficiência é facultativa em empresas privadas.",
+      "A contratação de pessoas com deficiência é obrigatória apenas em empresas públicas.",
+      "A Lei não prevê a contratação obrigatória, mas estabelece o direito ao emprego.",
+      "A Lei prevê a reserva de vagas em empresas privadas e públicas."
+    ],
+    answer: "a"
+  },
+  {
+    id: 266,
+    question: "O Decreto nº 7.611/2011 define 'educação especial' como uma modalidade de ensino que: ",
+    options: [
+      "Substitui a educação regular.",
+      "É oferecida em escolas e classes especiais, em turno oposto ao do ensino regular.",
+      "Deve ser oferecida em escolas regulares, em classes especiais, ou em instituições especializadas.",
+      "Não substitui a educação regular e é oferecida em todos os níveis, etapas e modalidades de ensino."
+    ],
+    answer: "d"
+  },
+  {
+    id: 267,
+    question: "De acordo com o Decreto nº 7.611/2011, o Atendimento Educacional Especializado (AEE) tem como objetivo:",
+    options: [
+      "Suprir as deficiências do estudante.",
+      "Fornecer um currículo especial para o estudante com deficiência.",
+      "Identificar, elaborar e organizar recursos pedagógicos e de acessibilidade que eliminem as barreiras para a plena participação dos alunos.",
+      "Substituir o ensino regular para alunos com deficiência."
+    ],
+    answer: "c"
+  },
+  {
+    id: 268,
+    question: "O Decreto nº 7.611/2011 estabelece que o AEE deve ser oferecido de forma: ",
+    options: [
+      "Individualizada e em salas de recursos multifuncionais.",
+      "Individualizada ou em pequenos grupos, de forma suplementar ou complementar ao ensino regular.",
+      "Em classes especiais, de forma suplementar ao ensino regular.",
+      "Apenas em turno oposto ao do ensino regular."
+    ],
+    answer: "b"
+  },
+  {
+    id: 269,
+    question: "De acordo com o Decreto nº 7.611/2011, o plano de AEE do estudante deve ser elaborado por: ",
+    options: [
+      "Apenas pelo professor do AEE.",
+      "Pela família do estudante, em conjunto com o professor do AEE.",
+      "Pelo professor do AEE, em conjunto com o professor da sala de aula comum e a família do estudante.",
+      "Apenas pelo professor da sala de aula comum."
+    ],
+    answer: "c"
+  },
+  {
+    id: 270,
+    question: "O Decreto nº 7.611/2011 prevê que a educação especial, na perspectiva da educação inclusiva, deve ser garantida por meio de:",
+    options: [
+      "Apenas o atendimento educacional especializado.",
+      "Apenas a presença de profissionais especializados.",
+      "A articulação entre o AEE e o ensino regular.",
+      "A criação de escolas exclusivas para pessoas com deficiência."
+    ],
+    answer: "c"
+  },
+  {
+    id: 271,
+    question: "O Estatuto da Igualdade Racial prevê o direito à cultura e à preservação da identidade cultural da população negra. A Lei prevê que:",
+    options: [
+      "Apenas o Estado deve promover ações para a preservação cultural.",
+      "O Estado deve apoiar e incentivar a preservação das manifestações culturais de matriz africana.",
+      "A Lei não prevê a proteção de manifestações culturais.",
+      "Apenas entidades privadas podem promover ações de preservação cultural."
+    ],
+    answer: "b"
+  },
+  {
+    id: 272,
+    question: "A Lei nº 12.288/2010 aborda o direito à liberdade religiosa da população negra. A Lei prevê que:",
+    options: [
+      "A liberdade religiosa é um direito exclusivo de quem pratica religiões de matriz africana.",
+      "O Estado deve garantir a liberdade de crença e culto das religiões de matriz africana.",
+      "A Lei não prevê a proteção da liberdade religiosa.",
+      "Apenas o Estado pode criar templos religiosos."
+    ],
+    answer: "b"
+  },
+  {
+    id: 273,
+    question: "O Estatuto da Igualdade Racial prevê o direito à terra para as comunidades remanescentes de quilombos. A Lei estabelece que:",
+    options: [
+      "As terras ocupadas por comunidades remanescentes de quilombos são de propriedade privada.",
+      "As terras ocupadas por comunidades remanescentes de quilombos são de domínio público, e devem ser tituladas para essas comunidades.",
+      "As terras ocupadas por comunidades remanescentes de quilombos são de propriedade da União.",
+      "A Lei não prevê o direito à terra para essas comunidades."
+    ],
+    answer: "b"
+  },
+  {
+    id: 274,
+    question: "O Estatuto da Igualdade Racial aborda o direito à comunicação e à informação. A Lei prevê que:",
+    options: [
+      "Os meios de comunicação devem veicular apenas notícias positivas sobre a população negra.",
+      "O Estado deve garantir a participação da população negra nos meios de comunicação.",
+      "Os meios de comunicação podem veicular programas que promovem a discriminação racial.",
+      "A Lei não prevê a participação da população negra nos meios de comunicação."
+    ],
+    answer: "b"
+  },
+  {
+    id: 275,
+    question: "A Lei nº 12.288/2010 prevê a criação de um sistema de informações e de indicadores sobre a população negra. Qual é o objetivo principal desse sistema?",
+    options: [
+      "Apenas para fins estatísticos.",
+      "Subsidiar a formulação de políticas públicas.",
+      "Apenas para fiscalizar a atuação de entidades privadas.",
+      "Controlar a concessão de benefícios sociais."
+    ],
+    answer: "b"
+  },
+  {
+    id: 276,
+    question: "A Portaria MGI nº 6.719/2024 define 'assédio moral' como:",
+    options: [
+      "Apenas a pressão por resultados de forma excessiva.",
+      "Apenas condutas que causem constrangimento ou humilhação.",
+      "Toda e qualquer conduta abusiva, por meio de gestos, palavras, escritos ou comportamentos, que atente contra a dignidade ou integridade psíquica ou física de uma pessoa.",
+      "Apenas a cobrança de metas por parte da chefia."
+    ],
+    answer: "c"
+  },
+  {
+    id: 277,
+    question: "O Plano Federal de Prevenção e Enfrentamento do Assédio e da Discriminação prevê a realização de ações educativas e de conscientização. Essas ações visam a:",
+    options: [
+      "Apenas punir servidores que praticam assédio ou discriminação.",
+      "Apenas criar um canal de denúncia exclusivo para casos de assédio moral.",
+      "Promover um ambiente de trabalho saudável, livre de assédio e discriminação.",
+      "Apenas treinar servidores para lidar com denúncias."
+    ],
+    answer: "c"
+  },
+  {
+    id: 278,
+    question: "A Portaria MGI nº 6.719/2024 estabelece a criação de Comitês de Prevenção e Enfrentamento do Assédio e da Discriminação. Esses comitês têm como uma de suas atribuições:",
+    options: [
+      "Aplicar sanções disciplinares em casos de assédio.",
+      "Apenas receber as denúncias de assédio.",
+      "Elaborar e acompanhar o plano de ação de prevenção e combate.",
+      "Apenas mediar conflitos entre servidores."
+    ],
+    answer: "c"
+  },
+  {
+    id: 279,
+    question: "O Plano Federal de Prevenção e Enfrentamento do Assédio e da Discriminação tem como diretriz a promoção da igualdade de oportunidades. Para isso, o Plano prevê:",
+    options: [
+      "Apenas a aplicação de sanções disciplinares.",
+      "A realização de ações afirmativas para a promoção da igualdade.",
+      "Apenas a criação de um código de conduta exclusivo para casos de assédio.",
+      "A fiscalização rigorosa de todos os servidores."
+    ],
+    answer: "b"
+  },
+  {
+    id: 280,
+    question: "A Portaria MGI nº 6.719/2024 prevê a criação de um canal de denúncia para casos de assédio e discriminação. O que o Plano prevê sobre o canal de denúncia?",
+    options: [
+      "Apenas denúncias anônimas podem ser feitas.",
+      "O canal de denúncia é exclusivo para servidores.",
+      "O canal de denúncia deve garantir o anonimato e a proteção do denunciante.",
+      "Apenas denúncias com provas documentais podem ser feitas."
+    ],
+    answer: "c"
+  },
+  {
+    id: 281,
+    question: "De acordo com o Código Penal, o crime de peculato-furto, previsto no art. 312, §1º, consiste em:",
+    options: [
+      "Apropriar-se de dinheiro, valor ou qualquer outro bem móvel, de que tem a posse em razão do cargo.",
+      "Subtrair, em proveito próprio ou alheio, bem público ou particular, de que não tem a posse, mas que está sob sua custódia, em razão da facilidade que o cargo lhe proporciona.",
+      "Solicitar ou receber, para si ou para outrem, vantagem indevida em razão do cargo.",
+      "Desviar, em proveito próprio ou alheio, bem público ou particular, de que tem a posse em razão do cargo."
+    ],
+    answer: "b"
+  },
+  {
+    id: 282,
+    question: "O crime de concussão, previsto no art. 316 do Código Penal, é um crime de:",
+    options: [
+      "Corrupção.",
+      "Suborno.",
+      "Exigência.",
+      "Prevaricação."
+    ],
+    answer: "c"
+  },
+  {
+    id: 283,
+    question: "O crime de corrupção passiva, previsto no art. 317 do Código Penal, é a conduta do funcionário público que:",
+    options: [
+      "Oferece ou promete vantagem indevida.",
+      "Paga ou promete vantagem indevida.",
+      "Solicita ou recebe vantagem indevida, ou aceita promessa de tal vantagem, para si ou para outrem, em razão da função.",
+      "Apenas aceita a promessa de vantagem."
+    ],
+    answer: "c"
+  },
+  {
+    id: 284,
+    question: "A corrupção ativa, prevista no art. 333 do Código Penal, é o crime praticado por quem:",
+    options: [
+      "Solicita vantagem indevida.",
+      "Recebe vantagem indevida.",
+      "Oferece ou promete vantagem indevida a funcionário público, para determiná-lo a praticar, omitir ou retardar ato de ofício.",
+      "Apenas aceita a promessa de vantagem."
+    ],
+    answer: "c"
+  },
+  {
+    id: 285,
+    question: "O crime de prevaricação, previsto no art. 319 do Código Penal, é a conduta do funcionário público que:",
+    options: [
+      "Apropriar-se de bem público.",
+      "Retarda ou deixa de praticar, indevidamente, ato de ofício, ou o pratica contra disposição expressa de lei, para satisfazer interesse ou sentimento pessoal.",
+      "Exigir, para si ou para outrem, vantagem indevida.",
+      "Solicitar vantagem indevida."
+    ],
+    answer: "b"
+  },
+  {
+    id: 286,
+    question: "O crime de condescendência criminosa, previsto no art. 320 do Código Penal, ocorre quando:",
+    options: [
+      "O funcionário público, por inércia, deixa de praticar ato de ofício.",
+      "O funcionário público, por inércia, deixa de dar andamento a processo.",
+      "O funcionário público, por negligência, deixa de responsabilizar seu subordinado que praticou uma infração no exercício do cargo.",
+      "O funcionário público deixa de praticar, indevidamente, ato de ofício."
+    ],
+    answer: "c"
+  },
+  {
+    id: 287,
+    question: "O crime de advocacia administrativa, previsto no art. 321 do Código Penal, é a conduta de:",
+    options: [
+      "Advogar em causa própria.",
+      "Patrocinar, direta ou indiretamente, interesse privado perante a administração pública, valendo-se da qualidade de funcionário público.",
+      "Advogar em causa pública.",
+      "Atuar como advogado em processos judiciais."
+    ],
+    answer: "b"
+  },
+  {
+    id: 288,
+    question: "O crime de violência arbitrária, previsto no art. 322 do Código Penal, ocorre quando:",
+    options: [
+      "O funcionário público pratica violência física ou moral contra a pessoa.",
+      "O funcionário público usa violência para prender uma pessoa.",
+      "O funcionário público, de forma arbitrária, prende ou detém uma pessoa.",
+      "O funcionário público usa violência no exercício da função, ou a pretexto de exercê-la, sem que a lei o autorize."
+    ],
+    answer: "d"
+  },
+  {
+    id: 289,
+    question: "O crime de abandono de função, previsto no art. 323 do Código Penal, ocorre quando:",
+    options: [
+      "O funcionário público falta ao serviço por mais de trinta dias consecutivos.",
+      "O funcionário público abandona o cargo, sem motivo justificado.",
+      "O funcionário público não comparece ao serviço por um dia.",
+      "O funcionário público, por inércia, deixa de praticar ato de ofício."
+    ],
+    answer: "b"
+  },
+  {
+    id: 290,
+    question: "O crime de desobediência, previsto no art. 330 do Código Penal, é a conduta de:",
+    options: [
+      "Desobedecer a ordem ilegal de funcionário público.",
+      "Desobedecer a ordem legal de funcionário público.",
+      "Apenas desobedecer a ordens judiciais.",
+      "Apenas desobedecer a ordens administrativas."
+    ],
+    answer: "b"
+  },
+  {
+    id: 291,
+    question: "O Estatuto do IFSertãoPE estabelece a sua finalidade e suas competências. Uma das finalidades do Instituto é:",
+    options: [
+      "Apenas oferecer cursos de graduação e pós-graduação.",
+      "Atuar no ensino, pesquisa e extensão, com ênfase na formação de profissionais para o desenvolvimento da região.",
+      "Apenas desenvolver projetos de pesquisa.",
+      "Apenas oferecer cursos técnicos."
+    ],
+    answer: "b"
+  },
+  {
+    id: 292,
+    question: "De acordo com o Estatuto, o IFSertãoPE é uma autarquia federal, vinculada ao Ministério da Educação. Qual a principal característica de uma autarquia?",
+    options: [
+      "Natureza jurídica de direito privado.",
+      "Autonomia financeira, administrativa e didático-pedagógica.",
+      "Dependência total do poder público.",
+      "Autonomia apenas para gerir seus próprios recursos."
+    ],
+    answer: "b"
+  },
+  {
+    id: 293,
+    question: "A estrutura do IFSertãoPE, segundo o Estatuto, é composta por Reitoria, Campi, Colégio de Dirigentes e Conselho Superior. Qual a função do Colégio de Dirigentes?",
+    options: [
+      "Órgão máximo do Instituto, com funções deliberativas.",
+      "Órgão de apoio ao Reitor, com funções consultivas.",
+      "Órgão de fiscalização da gestão.",
+      "Órgão responsável por aprovar o orçamento."
+    ],
+    answer: "b"
+  },
+  {
+    id: 294,
+    question: "O Estatuto do IFSertãoPE prevê a eleição para os cargos de Reitor e de Diretores-Gerais de Campus. O processo eleitoral é realizado por:",
+    options: [
+      "Apenas servidores docentes.",
+      "Apenas servidores técnicos administrativos.",
+      "Apenas estudantes.",
+      "O processo eleitoral é realizado por todos os segmentos da comunidade acadêmica, ou seja, estudantes, docentes e técnicos administrativos."
+    ],
+    answer: "d"
+  },
+  {
+    id: 295,
+    question: "O Conselho Superior é o órgão máximo do IFSertãoPE. A sua composição é paritária. O que isso significa?",
+    options: [
+      "Apenas a presença de docentes e técnicos administrativos.",
+      "A representação de todos os segmentos, com o mesmo número de representantes para cada um.",
+      "Apenas a presença de estudantes e docentes.",
+      "A representação de todos os segmentos, com a distribuição de vagas de forma proporcional ao número de integrantes de cada um."
+    ],
+    answer: "b"
+  },
+  {
+    id: 296,
+    question: "O Estatuto do IFSertãoPE prevê a figura do Conselho de Campus. Qual a principal competência do Conselho de Campus?",
+    options: [
+      "Apenas aprovar o projeto pedagógico do Campus.",
+      "Apenas fiscalizar a gestão do Diretor-Geral.",
+      "Aprovar o plano de desenvolvimento do Campus.",
+      "Apenas aprovar o calendário acadêmico do Campus."
+    ],
+    answer: "c"
+  },
+  {
+    id: 297,
+    question: "O Estatuto do IFSertãoPE prevê a criação de Câmaras de Ensino, Pesquisa e Extensão. Qual é a sua principal função?",
+    options: [
+      "Apenas aprovar o calendário acadêmico.",
+      "Apenas fiscalizar a gestão do Reitor.",
+      "Propor políticas e diretrizes para o ensino, pesquisa e extensão.",
+      "Apenas aprovar o orçamento do Instituto."
+    ],
+    answer: "c"
+  },
+  {
+    id: 298,
+    question: "O Estatuto do IFSertãoPE prevê a figura do Colégio de Dirigentes. Quem faz parte do Colégio de Dirigentes?",
+    options: [
+      "Apenas o Reitor e os Diretores de Campus.",
+      "O Reitor, os Pró-Reitores e os Diretores de Campus.",
+      "O Reitor, os Pró-Reitores e os Coordenadores de Curso.",
+      "Apenas o Reitor e os Pró-Reitores."
+    ],
+    answer: "b"
+  },
+  {
+    id: 299,
+    question: "O Estatuto do IFSertãoPE prevê o princípio da autonomia didático-pedagógica. Esse princípio significa que:",
+    options: [
+      "O IFSertãoPE pode criar cursos sem a aprovação do MEC.",
+      "O IFSertãoPE pode elaborar seus próprios currículos e projetos pedagógicos, respeitando as diretrizes nacionais.",
+      "O IFSertãoPE pode conceder diplomas sem a aprovação do MEC.",
+      "O IFSertãoPE pode atuar sem a fiscalização do MEC."
+    ],
+    answer: "b"
+  },
+  {
+    id: 300,
+    question: "De acordo com o Estatuto, o IFSertãoPE tem como missão institucional:",
+    options: [
+      "Apenas oferecer educação profissional e tecnológica.",
+      "Promover a inclusão social e o desenvolvimento regional.",
+      "Oferecer educação profissional e tecnológica de excelência, com foco no desenvolvimento regional sustentável.",
+      "Apenas desenvolver projetos de pesquisa."
+    ],
+    answer: "c"
+  },
+  {
+    id: 301,
+    question: "Lei nº 13.146/2015 (Lei Brasileira de Inclusão da Pessoa com Deficiência - LBI). O que a LBI define como "acessibilidade"?",
+    options: [
+      "Qualquer tipo de adaptação de um ambiente.",
+      "Possibilidade e condição de alcance, percepção e entendimento para a utilização, com segurança e autonomia, de espaços, mobiliários, equipamentos urbanos, edificações, transportes, informação e comunicação, inclusive seus sistemas e tecnologias, bem como outros serviços e instalações.",
+      "Apenas a eliminação de barreiras arquitetônicas.",
+      "Apenas a disponibilidade de intérpretes de Libras."
+    ],
+    answer: "b"
+  },
+  {
+    id: 302,
+    question: "A LBI prevê a avaliação da deficiência, que deve ser feita de forma biopsicossocial. Qual a finalidade dessa avaliação?",
+    options: [
+      "Apenas para fins de concessão de benefícios.",
+      "Apenas para fins de diagnóstico médico.",
+      "Identificar as barreiras que a pessoa com deficiência enfrenta, para a formulação de políticas públicas.",
+      "Apenas para fins de pesquisa."
+    ],
+    answer: "c"
+  },
+  {
+    id: 303,
+    question: "O que a LBI prevê sobre o direito à cultura, esporte, turismo e lazer da pessoa com deficiência?",
+    options: [
+      "Apenas a garantia de acesso gratuito a eventos culturais.",
+      "A garantia de espaços acessíveis, com recursos de acessibilidade, como rampas e banheiros adaptados.",
+      "Apenas a presença de monitores para auxiliar a pessoa com deficiência.",
+      "A Lei não prevê o direito à cultura e ao lazer."
+    ],
+    answer: "b"
+  },
+  {
+    id: 304,
+    question: "A LBI estabelece que a pessoa com deficiência tem o direito de ser acompanhada por um cão-guia. O que a Lei prevê sobre o acesso a locais públicos ou privados com o cão-guia?",
+    options: [
+      "O acesso é proibido em locais de alimentação.",
+      "O acesso é livre em todos os locais.",
+      "O acesso é restrito a locais com sinalização específica.",
+      "O acesso é permitido, mas o cão-guia deve ser mantido em coleira."
+    ],
+    answer: "b"
+  },
+  {
+    id: 305,
+    question: "A LBI prevê o direito à moradia digna para a pessoa com deficiência. Uma das medidas para garantir esse direito é:",
+    options: [
+      "Apenas a concessão de moradia gratuita.",
+      "A reserva de vagas em programas habitacionais.",
+      "A oferta de moradias adaptadas.",
+      "A concessão de empréstimos com juros subsidiados."
+    ],
+    answer: "c"
+  },
+  {
+    id: 306,
+    question: "A Lei nº 7.853/1989 (Política Nacional para Integração da Pessoa Portadora de Deficiência) tem como objetivo:",
+    options: [
+      "Apenas a assistência social para pessoas com deficiência.",
+      "Apenas a reabilitação de pessoas com deficiência.",
+      "Garantir o pleno exercício dos direitos individuais e sociais da pessoa com deficiência.",
+      "Apenas a fiscalização de entidades privadas."
+    ],
+    answer: "c"
+  },
+  {
+    id: 307,
+    question: "A Lei nº 7.853/1989 estabelece a participação da sociedade na formulação de políticas públicas para a pessoa com deficiência. Essa participação se dá por meio de:",
+    options: [
+      "Apenas a participação em conselhos.",
+      "Apenas a participação em audiências públicas.",
+      "A participação em conselhos, comitês, fóruns e outras instâncias de participação social.",
+      "Apenas a participação em entidades privadas."
+    ],
+    answer: "c"
+  },
+  {
+    id: 308,
+    question: "A Lei nº 7.853/1989 prevê a criação de um sistema de informações sobre a pessoa com deficiência. Qual é o objetivo principal desse sistema?",
+    options: [
+      "Apenas para fins de pesquisa.",
+      "Apenas para fiscalizar a atuação de entidades privadas.",
+      "Identificar o número de pessoas com deficiência no país.",
+      "Obter dados para a formulação de políticas públicas."
+    ],
+    answer: "d"
+  },
+  {
+    id: 309,
+    question: "A Política Nacional para Integração da Pessoa Portadora de Deficiência estabelece diretrizes para a educação. A Lei prevê que a educação da pessoa com deficiência deve ser realizada em:",
+    options: [
+      "Apenas em escolas especiais.",
+      "Em classes regulares de escolas comuns, com apoio de profissionais especializados.",
+      "Em classes especiais de escolas regulares.",
+      "Em instituições especializadas."
+    ],
+    answer: "b"
+  },
+  {
+    id: 310,
+    question: "A Lei nº 7.853/1989 prevê a criação de programas de emprego para a pessoa com deficiência. O que a Lei prevê sobre a reserva de vagas?",
+    options: [
+      "A reserva de vagas em concursos públicos é facultativa.",
+      "A reserva de vagas em concursos públicos é obrigatória.",
+      "A reserva de vagas é apenas em empresas privadas.",
+      "A reserva de vagas é apenas em empresas públicas."
+    ],
+    answer: "b"
+  },
+  {
+    id: 311,
+    question: "O Decreto nº 7.611/2011 dispõe sobre a educação especial e o atendimento educacional especializado (AEE). O que o Decreto prevê sobre a relação entre o AEE e o ensino regular?",
+    options: [
+      "O AEE substitui o ensino regular para estudantes com deficiência.",
+      "O AEE é complementar ou suplementar ao ensino regular.",
+      "O AEE é oferecido em turno oposto ao do ensino regular, mas sem relação com a sala de aula comum.",
+      "O AEE é oferecido apenas em escolas especiais."
+    ],
+    answer: "b"
+  },
+  {
+    id: 312,
+    question: "O Decreto nº 7.611/2011 define os alunos público-alvo da educação especial. Quem são esses alunos?",
+    options: [
+      "Apenas estudantes com deficiência física.",
+      "Estudantes com deficiência, transtornos globais do desenvolvimento e altas habilidades/superdotação.",
+      "Apenas estudantes com deficiência e transtornos globais do desenvolvimento.",
+      "Estudantes com qualquer tipo de dificuldade de aprendizagem."
+    ],
+    answer: "b"
+  },
+  {
+    id: 313,
+    question: "O Atendimento Educacional Especializado (AEE) deve ser oferecido em:",
+    options: [
+      "Exclusivamente em salas de recursos multifuncionais.",
+      "Em salas de recursos multifuncionais da própria escola ou de outra escola, em turno oposto ao da escolarização.",
+      "Apenas em escolas especiais.",
+      "Apenas em ambientes hospitalares."
+    ],
+    answer: "b"
+  },
+  {
+    id: 314,
+    question: "De acordo com o Decreto nº 7.611/2011, o professor do AEE tem como uma de suas atribuições:",
+    options: [
+      "Substituir o professor do ensino regular na sala de aula.",
+      "Realizar o diagnóstico da deficiência do estudante.",
+      "Elaborar e executar o plano de AEE do estudante.",
+      "Apenas aplicar testes e avaliações de aprendizagem."
+    ],
+    answer: "c"
+  },
+  {
+    id: 315,
+    question: "A educação especial na perspectiva da educação inclusiva tem como foco principal:",
+    options: [
+      "O ensino de Libras e Braille.",
+      "A adaptação do estudante à escola.",
+      "A eliminação das barreiras para a plena participação e aprendizagem dos estudantes.",
+      "O treinamento de habilidades específicas para cada tipo de deficiência."
+    ],
+    answer: "c"
+  },
+  {
+    id: 316,
+    question: "O Estatuto da Igualdade Racial prevê o direito à terra para as comunidades remanescentes de quilombos. A Lei estabelece que:",
+    options: [
+      "As terras ocupadas por comunidades remanescentes de quilombos são de propriedade privada.",
+      "As terras ocupadas por comunidades remanescentes de quilombos são de domínio público, e devem ser tituladas para essas comunidades.",
+      "As terras ocupadas por comunidades remanescentes de quilombos são de propriedade da União.",
+      "A Lei não prevê o direito à terra para essas comunidades."
+    ],
+    answer: "b"
+  },
+  {
+    id: 317,
+    question: "O Estatuto da Igualdade Racial aborda o direito à saúde da população negra. A Lei prevê que:",
+    options: [
+      "O atendimento de saúde para a população negra deve focar apenas nas doenças genéticas.",
+      "A política de saúde deve considerar as especificidades da saúde da população negra.",
+      "A população negra deve ter acesso a tratamentos diferenciados e mais caros.",
+      "Os profissionais de saúde devem ser exclusivamente de cor preta ou parda."
+    ],
+    answer: "b"
+  },
+  {
+    id: 318,
+    question: "A Lei nº 12.288/2010 prevê a criação de um sistema de informações e de indicadores sobre a população negra. Qual é o objetivo principal desse sistema?",
+    options: [
+      "Apenas para fins estatísticos.",
+      "Subsidiar a formulação de políticas públicas.",
+      "Apenas para fiscalizar a atuação de entidades privadas.",
+      "Controlar a concessão de benefícios sociais."
+    ],
+    answer: "b"
+  },
+  {
+    id: 319,
+    question: "O Estatuto da Igualdade Racial estabelece diretrizes para a política de promoção da igualdade racial. É INCORRETO afirmar que uma das diretrizes é:",
+    options: [
+      "A superação da desigualdade étnica.",
+      "A eliminação do racismo e da discriminação racial.",
+      "A proteção de manifestações culturais de matriz africana.",
+      "A promoção da ascensão social exclusiva de pessoas negras."
+    ],
+    answer: "d"
+  },
+  {
+    id: 320,
+    question: "A Lei nº 12.288/2010 estabelece o direito à educação para a população negra. Nesse sentido, a Lei prevê:",
+    options: [
+      "A criação de escolas exclusivas para pessoas negras.",
+      "A inserção de conteúdos de história e cultura afro-brasileira nas escolas.",
+      "A dispensa de avaliações de desempenho para estudantes negros.",
+      "A criação de um currículo separado para estudantes negros."
+    ],
+    answer: "b"
+  },
+  {
+    id: 321,
+    question: "A Portaria MGI nº 6.719/2024 define 'assédio moral' como:",
+    options: [
+      "Apenas a pressão por resultados de forma excessiva.",
+      "Apenas condutas que causem constrangimento ou humilhação.",
+      "Toda e qualquer conduta abusiva, por meio de gestos, palavras, escritos ou comportamentos, que atente contra a dignidade ou integridade psíquica ou física de uma pessoa.",
+      "Apenas a cobrança de metas por parte da chefia."
+    ],
+    answer: "c"
+  },
+  {
+    id: 322,
+    question: "O Plano Federal de Prevenção e Enfrentamento do Assédio e da Discriminação prevê a realização de ações educativas e de conscientização. Essas ações visam a:",
+    options: [
+      "Apenas punir servidores que praticam assédio ou discriminação.",
+      "Apenas criar um canal de denúncia exclusivo para casos de assédio moral.",
+      "Promover um ambiente de trabalho saudável, livre de assédio e discriminação.",
+      "Apenas treinar servidores para lidar com denúncias."
+    ],
+    answer: "c"
+  },
+  {
+    id: 323,
+    question: "A Portaria MGI nº 6.719/2024 estabelece a criação de Comitês de Prevenção e Enfrentamento do Assédio e da Discriminação. Esses comitês têm como uma de suas atribuições:",
+    options: [
+      "Aplicar sanções disciplinares em casos de assédio.",
+      "Apenas receber as denúncias de assédio.",
+      "Elaborar e acompanhar o plano de ação de prevenção e combate.",
+      "Apenas mediar conflitos entre servidores."
+    ],
+    answer: "c"
+  },
+  {
+    id: 324,
+    question: "O Plano Federal de Prevenção e Enfrentamento do Assédio e da Discriminação tem como diretriz a promoção da igualdade de oportunidades. Para isso, o Plano prevê:",
+    options: [
+      "Apenas a aplicação de sanções disciplinares.",
+      "A realização de ações afirmativas para a promoção da igualdade.",
+      "Apenas a criação de um código de conduta exclusivo para casos de assédio.",
+      "A fiscalização rigorosa de todos os servidores."
+    ],
+    answer: "b"
+  },
+  {
+    id: 325,
+    question: "A Portaria MGI nº 6.719/2024 prevê a criação de um canal de denúncia para casos de assédio e discriminação. O que o Plano prevê sobre o canal de denúncia?",
+    options: [
+      "Apenas denúncias anônimas podem ser feitas.",
+      "O canal de denúncia é exclusivo para servidores.",
+      "O canal de denúncia deve garantir o anonimato e a proteção do denunciante.",
+      "Apenas denúncias com provas documentais podem ser feitas."
+    ],
+    answer: "c"
+  },
+  {
+    id: 326,
+    question: "De acordo com o Código Penal, o crime de peculato-furto, previsto no art. 312, §1º, consiste em:",
+    options: [
+      "Apropriar-se de dinheiro, valor ou qualquer outro bem móvel, de que tem a posse em razão do cargo.",
+      "Subtrair, em proveito próprio ou alheio, bem público ou particular, de que não tem a posse, mas que está sob sua custódia, em razão da facilidade que o cargo lhe proporciona.",
+      "Solicitar ou receber, para si ou para outrem, vantagem indevida em razão do cargo.",
+      "Desviar, em proveito próprio ou alheio, bem público ou particular, de que tem a posse em razão do cargo."
+    ],
+    answer: "b"
+  },
+  {
+    id: 327,
+    question: "O crime de concussão, previsto no art. 316 do Código Penal, é um crime de:",
+    options: [
+      "Corrupção.",
+      "Suborno.",
+      "Exigência.",
+      "Prevaricação."
+    ],
+    answer: "c"
+  },
+  {
+    id: 328,
+    question: "O crime de corrupção passiva, previsto no art. 317 do Código Penal, é a conduta do funcionário público que:",
+    options: [
+      "Oferece ou promete vantagem indevida.",
+      "Paga ou promete vantagem indevida.",
+      "Solicita ou recebe vantagem indevida, ou aceita promessa de tal vantagem, para si ou para outrem, em razão da função.",
+      "Apenas aceita a promessa de vantagem."
+    ],
+    answer: "c"
+  },
+  {
+    id: 329,
+    question: "A corrupção ativa, prevista no art. 333 do Código Penal, é o crime praticado por quem:",
+    options: [
+      "Solicita vantagem indevida.",
+      "Recebe vantagem indevida.",
+      "Oferece ou promete vantagem indevida a funcionário público, para determiná-lo a praticar, omitir ou retardar ato de ofício.",
+      "Apenas aceita a promessa de vantagem indevida."
+    ],
+    answer: "c"
+  },
+  {
+    id: 330,
+    question: "O crime de prevaricação, previsto no art. 319 do Código Penal, é a conduta do funcionário público que:",
+    options: [
+      "Apropriar-se de bem público.",
+      "Retarda ou deixa de praticar, indevidamente, ato de ofício, ou o pratica contra disposição expressa de lei, para satisfazer interesse ou sentimento pessoal.",
+      "Exigir, para si ou para outrem, vantagem indevida.",
+      "Solicitar vantagem indevida."
+    ],
+    answer: "b"
+  },
+  {
+    id: 331,
+    question: "O Estatuto do IFSertãoPE estabelece a sua finalidade e suas competências. Uma das finalidades do Instituto é:",
+    options: [
+      "Apenas oferecer cursos de graduação e pós-graduação.",
+      "Atuar no ensino, pesquisa e extensão, com ênfase na formação de profissionais para o desenvolvimento da região.",
+      "Apenas desenvolver projetos de pesquisa.",
+      "Apenas oferecer cursos técnicos."
+    ],
+    answer: "b"
+  },
+  {
+    id: 332,
+    question: "De acordo com o Estatuto, o IFSertãoPE é uma autarquia federal, vinculada ao Ministério da Educação. Qual a principal característica de uma autarquia?",
+    options: [
+      "Natureza jurídica de direito privado.",
+      "Autonomia financeira, administrativa e didático-pedagógica.",
+      "Dependência total do poder público.",
+      "Autonomia apenas para gerir seus próprios recursos."
+    ],
+    answer: "b"
+  },
+  {
+    id: 333,
+    question: "A estrutura do IFSertãoPE, segundo o Estatuto, é composta por Reitoria, Campi, Colégio de Dirigentes e Conselho Superior. Qual a função do Colégio de Dirigentes?",
+    options: [
+      "Órgão máximo do Instituto, com funções deliberativas.",
+      "Órgão de apoio ao Reitor, com funções consultivas.",
+      "Órgão de fiscalização da gestão.",
+      "Órgão responsável por aprovar o orçamento."
+    ],
+    answer: "b"
+  },
+  {
+    id: 334,
+    question: "O Estatuto do IFSertãoPE prevê a eleição para os cargos de Reitor e de Diretores-Gerais de Campus. O processo eleitoral é realizado por:",
+    options: [
+      "Apenas servidores docentes.",
+      "Apenas servidores técnicos administrativos.",
+      "Apenas estudantes.",
+      "O processo eleitoral é realizado por todos os segmentos da comunidade acadêmica, ou seja, estudantes, docentes e técnicos administrativos."
+    ],
+    answer: "d"
+  },
+  {
+    id: 335,
+    question: "O Conselho Superior é o órgão máximo do IFSertãoPE. A sua composição é paritária. O que isso significa?",
+    options: [
+      "Apenas a presença de docentes e técnicos administrativos.",
+      "A representação de todos os segmentos, com o mesmo número de representantes para cada um.",
+      "Apenas a presença de estudantes e docentes.",
+      "A representação de todos os segmentos, com a distribuição de vagas de forma proporcional ao número de integrantes de cada um."
+    ],
+    answer: "b"
+  },
+  {
+    id: 336,
+    question: "O Estatuto do IFSertãoPE prevê a figura do Conselho de Campus. Qual a principal competência do Conselho de Campus?",
+    options: [
+      "Apenas aprovar o projeto pedagógico do Campus.",
+      "Apenas fiscalizar a gestão do Diretor-Geral.",
+      "Aprovar o plano de desenvolvimento do Campus.",
+      "Apenas aprovar o calendário acadêmico do Campus."
+    ],
+    answer: "c"
+  },
+  {
+    id: 337,
+    question: "O Estatuto do IFSertãoPE prevê a criação de Câmaras de Ensino, Pesquisa e Extensão. Qual é a sua principal função?",
+    options: [
+      "Apenas aprovar o calendário acadêmico.",
+      "Apenas fiscalizar a gestão do Reitor.",
+      "Propor políticas e diretrizes para o ensino, pesquisa e extensão.",
+      "Apenas aprovar o orçamento do Instituto."
+    ],
+    answer: "c"
+  },
+  {
+    id: 338,
+    question: "O Estatuto do IFSertãoPE prevê a figura do Colégio de Dirigentes. Quem faz parte do Colégio de Dirigentes?",
+    options: [
+      "Apenas o Reitor e os Diretores de Campus.",
+      "O Reitor, os Pró-Reitores e os Diretores de Campus.",
+      "O Reitor, os Pró-Reitores e os Coordenadores de Curso.",
+      "Apenas o Reitor e os Pró-Reitores."
+    ],
+    answer: "b"
+  },
+  {
+    id: 339,
+    question: "O Estatuto do IFSertãoPE prevê o princípio da autonomia didático-pedagógica. Esse princípio significa que:",
+    options: [
+      "O IFSertãoPE pode criar cursos sem a aprovação do MEC.",
+      "O IFSertãoPE pode elaborar seus próprios currículos e projetos pedagógicos, respeitando as diretrizes nacionais.",
+      "O IFSertãoPE pode conceder diplomas sem a aprovação do MEC.",
+      "O IFSertãoPE pode atuar sem a fiscalização do MEC."
+    ],
+    answer: "b"
+  },
+  {
+    id: 340,
+    question: "De acordo com o Estatuto, o IFSertãoPE tem como missão institucional:",
+    options: [
+      "Apenas oferecer educação profissional e tecnológica.",
+      "Promover a inclusão social e o desenvolvimento regional.",
+      "Oferecer educação profissional e tecnológica de excelência, com foco no desenvolvimento regional sustentável.",
+      "Apenas desenvolver projetos de pesquisa."
+    ],
+    answer: "c"
+  },
+  {
+    id: 341,
+    question: "Qual das seguintes ações NÃO é considerada uma medida de acessibilidade atitudinal, de acordo com a LBI?",
+    options: [
+      "A conscientização da sociedade sobre a importância do respeito à diversidade e às diferenças.",
+      "A promoção de campanhas educativas para combater o preconceito contra a pessoa com deficiência.",
+      "A eliminação de barreiras arquitetônicas em edifícios de uso público.",
+      "A adoção de uma linguagem inclusiva e respeitosa no ambiente de trabalho."
+    ],
+    answer: "c"
+  },
+  {
+    id: 342,
+    question: "A LBI prevê o direito à participação na vida pública e política. Uma das medidas para garantir esse direito é:",
+    options: [
+      "Apenas a garantia do voto em urnas eletrônicas acessíveis.",
+      "A garantia de acesso a cargos públicos, por meio de concursos públicos com reserva de vagas.",
+      "Apenas a participação em conselhos.",
+      "A Lei não prevê o direito à participação na vida pública e política."
+    ],
+    answer: "b"
+  },
+  {
+    id: 343,
+    question: "A Lei Brasileira de Inclusão estabelece que a pessoa com deficiência tem direito a atendimento prioritário. Em quais locais o atendimento prioritário é garantido?",
+    options: [
+      "Apenas em hospitais e bancos.",
+      "Apenas em órgãos públicos.",
+      "Em órgãos públicos e privados de uso coletivo.",
+      "Apenas em serviços de saúde."
+    ],
+    answer: "c"
+  },
+  {
+    id: 344,
+    question: "A LBI prevê a punição para quem cometer crimes contra a pessoa com deficiência. O crime de abandonar a pessoa com deficiência em hospitais, casas de saúde, clínicas ou em estabelecimentos congêneres é punido com:",
+    options: [
+      "Apenas multa.",
+      "Reclusão.",
+      "Detenção e multa.",
+      "Apenas advertência."
+    ],
+    answer: "b"
+  },
+  {
+    id: 345,
+    question: "A LBI estabelece o direito à educação para a pessoa com deficiência. O que a Lei prevê sobre o atendimento educacional especializado (AEE)?",
+    options: [
+      "O AEE substitui a escolarização regular.",
+      "O AEE é oferecido em turno oposto ao do ensino regular.",
+      "O AEE é complementar ou suplementar à escolarização regular.",
+      "O AEE é oferecido apenas em escolas especiais."
+    ],
+    answer: "c"
+  },
+  {
+    id: 346,
+    question: "A Lei nº 7.853/1989 estabelece diretrizes para a política nacional para a integração da pessoa com deficiência. Uma das diretrizes é:",
+    options: [
+      "Apenas a assistência social para pessoas com deficiência.",
+      "Apenas a reabilitação de pessoas com deficiência.",
+      "A articulação entre o poder público, a sociedade e a família.",
+      "Apenas a fiscalização de entidades privadas."
+    ],
+    answer: "c"
+  },
+  {
+    id: 347,
+    question: "A Lei nº 7.853/1989 prevê a criação de um sistema de informações sobre a pessoa com deficiência. Qual é o objetivo principal desse sistema?",
+    options: [
+      "Apenas para fins de pesquisa.",
+      "Apenas para fiscalizar a atuação de entidades privadas.",
+      "Identificar o número de pessoas com deficiência no país.",
+      "Obter dados para a formulação de políticas públicas."
+    ],
+    answer: "d"
+  },
+  {
+    id: 348,
+    question: "A Política Nacional para Integração da Pessoa Portadora de Deficiência estabelece diretrizes para a educação. A Lei prevê que a educação da pessoa com deficiência deve ser realizada em:",
+    options: [
+      "Apenas em escolas especiais.",
+      "Em classes regulares de escolas comuns, com apoio de profissionais especializados.",
+      "Em classes especiais de escolas regulares.",
+      "Em instituições especializadas."
+    ],
+    answer: "b"
+  },
+  {
+    id: 349,
+    question: "A Lei nº 7.853/1989 prevê a criação de programas de emprego para a pessoa com deficiência. O que a Lei prevê sobre a reserva de vagas?",
+    options: [
+      "A reserva de vagas em concursos públicos é facultativa.",
+      "A reserva de vagas em concursos públicos é obrigatória.",
+      "A reserva de vagas é apenas em empresas privadas.",
+      "A reserva de vagas é apenas em empresas públicas."
+    ],
+    answer: "b"
+  },
+  {
+    id: 350,
+    question: "No que se refere à saúde, a Política Nacional para Integração da Pessoa Portadora de Deficiência prevê:",
+    options: [
+      "A priorização do atendimento em hospitais privados.",
+      "A criação de hospitais especializados em reabilitação.",
+      "A garantia de atendimento médico-hospitalar e de reabilitação.",
+      "Apenas o fornecimento de medicamentos e próteses."
+    ],
+    answer: "c"
+  },
+  {
+    id: 351,
+    question: "O Decreto nº 7.611/2011 define os alunos público-alvo da educação especial. Quem são esses alunos?",
+    options: [
+      "Apenas estudantes com deficiência física.",
+      "Estudantes com deficiência, transtornos globais do desenvolvimento e altas habilidades/superdotação.",
+      "Apenas estudantes com deficiência e transtornos globais do desenvolvimento.",
+      "Estudantes com qualquer tipo de dificuldade de aprendizagem."
+    ],
+    answer: "b"
+  },
+  {
+    id: 352,
+    question: "O Atendimento Educacional Especializado (AEE) deve ser oferecido em:",
+    options: [
+      "Exclusivamente em salas de recursos multifuncionais.",
+      "Em salas de recursos multifuncionais da própria escola ou de outra escola, em turno oposto ao da escolarização.",
+      "Apenas em escolas especiais.",
+      "Apenas em ambientes hospitalares."
+    ],
+    answer: "b"
+  },
+  {
+    id: 353,
+    question: "De acordo com o Decreto nº 7.611/2011, o professor do AEE tem como uma de suas atribuições:",
+    options: [
+      "Substituir o professor do ensino regular na sala de aula.",
+      "Realizar o diagnóstico da deficiência do estudante.",
+      "Elaborar e executar o plano de AEE do estudante.",
+      "Apenas aplicar testes e avaliações de aprendizagem."
+    ],
+    answer: "c"
+  },
+  {
+    id: 354,
+    question: "A educação especial na perspectiva da educação inclusiva tem como foco principal:",
+    options: [
+      "O ensino de Libras e Braille.",
+      "A adaptação do estudante à escola.",
+      "A eliminação das barreiras para a plena participação e aprendizagem dos estudantes.",
+      "O treinamento de habilidades específicas para cada tipo de deficiência."
+    ],
+    answer: "c"
+  },
+  {
+    id: 355,
+    question: "O Decreto nº 7.611/2011 prevê que a educação especial, na perspectiva da educação inclusiva, deve ser garantida por meio de:",
+    options: [
+      "Apenas o atendimento educacional especializado.",
+      "Apenas a presença de profissionais especializados.",
+      "A articulação entre o AEE e o ensino regular.",
+      "A criação de escolas exclusivas para pessoas com deficiência."
+    ],
+    answer: "c"
+  },
+  {
+    id: 356,
+    question: "O Estatuto da Igualdade Racial prevê o direito à cultura e à preservação da identidade cultural da população negra. A Lei prevê que:",
+    options: [
+      "Apenas o Estado deve promover ações para a preservação cultural.",
+      "O Estado deve apoiar e incentivar a preservação das manifestações culturais de matriz africana.",
+      "A Lei não prevê a proteção de manifestações culturais.",
+      "Apenas entidades privadas podem promover ações de preservação cultural."
+    ],
+    answer: "b"
+  },
+  {
+    id: 357,
+    question: "O Estatuto da Igualdade Racial aborda o direito à liberdade religiosa da população negra. A Lei prevê que:",
+    options: [
+      "A liberdade religiosa é um direito exclusivo de quem pratica religiões de matriz africana.",
+      "O Estado deve garantir a liberdade de crença e culto das religiões de matriz africana.",
+      "A Lei não prevê a proteção da liberdade religiosa.",
+      "Apenas o Estado pode criar templos religiosos."
+    ],
+    answer: "b"
+  },
+  {
+    id: 358,
+    question: "O Estatuto da Igualdade Racial prevê o direito à terra para as comunidades remanescentes de quilombos. A Lei estabelece que:",
+    options: [
+      "As terras ocupadas por comunidades remanescentes de quilombos são de propriedade privada.",
+      "As terras ocupadas por comunidades remanescentes de quilombos são de domínio público, e devem ser tituladas para essas comunidades.",
+      "As terras ocupadas por comunidades remanescentes de quilombos são de propriedade da União.",
+      "A Lei não prevê o direito à terra para essas comunidades."
+    ],
+    answer: "b"
+  },
+  {
+    id: 359,
+    question: "O Estatuto da Igualdade Racial aborda o direito à comunicação e à informação. A Lei prevê que:",
+    options: [
+      "Os meios de comunicação devem veicular apenas notícias positivas sobre a população negra.",
+      "O Estado deve garantir a participação da população negra nos meios de comunicação.",
+      "Os meios de comunicação podem veicular programas que promovem a discriminação racial.",
+      "A Lei não prevê a participação da população negra nos meios de comunicação."
+    ],
+    answer: "b"
+  },
+  {
+    id: 360,
+    question: "A Lei nº 12.288/2010 prevê a criação de um sistema de informações e de indicadores sobre a população negra. Qual é o objetivo principal desse sistema?",
+    options: [
+      "Apenas para fins estatísticos.",
+      "Subsidiar a formulação de políticas públicas.",
+      "Apenas para fiscalizar a atuação de entidades privadas.",
+      "Controlar a concessão de benefícios sociais."
+    ],
+    answer: "b"
+  },
+  {
+    id: 361,
+    question: "A Portaria MGI nº 6.719/2024 define 'discriminação' como:",
+    options: [
+      "Apenas a pressão por resultados de forma excessiva.",
+      "Apenas condutas que causem constrangimento ou humilhação.",
+      "Toda e qualquer distinção, exclusão, restrição ou preferência, baseada em raça, cor, etnia, religião ou nacionalidade, que tenha o propósito de anular ou prejudicar o reconhecimento, gozo ou exercício de direitos.",
+      "Apenas a cobrança de metas por parte da chefia."
+    ],
+    answer: "c"
+  },
+  {
+    id: 362,
+    question: "O Plano Federal de Prevenção e Enfrentamento do Assédio e da Discriminação tem como diretriz a promoção de um ambiente de trabalho saudável. Para isso, o Plano prevê:",
+    options: [
+      "Apenas a aplicação de sanções disciplinares.",
+      "A realização de campanhas de conscientização e capacitação.",
+      "A criação de um código de conduta exclusivo para casos de assédio.",
+      "A fiscalização rigorosa de todos os servidores."
+    ],
+    answer: "b"
+  },
+  {
+    id: 363,
+    question: "A Portaria MGI nº 6.719/2024 estabelece a criação de Comitês de Prevenção e Enfrentamento do Assédio e da Discriminação. Esses comitês têm como uma de suas atribuições:",
+    options: [
+      "Aplicar sanções disciplinares em casos de assédio.",
+      "Apenas receber as denúncias de assédio.",
+      "Elaborar e acompanhar o plano de ação de prevenção e combate.",
+      "Apenas mediar conflitos entre servidores."
+    ],
+    answer: "c"
+  },
+  {
+    id: 364,
+    question: "O Plano Federal de Prevenção e Enfrentamento do Assédio e da Discriminação tem como diretriz a promoção da igualdade de oportunidades. Para isso, o Plano prevê:",
+    options: [
+      "Apenas a aplicação de sanções disciplinares.",
+      "A realização de ações afirmativas para a promoção da igualdade.",
+      "Apenas a criação de um código de conduta exclusivo para casos de assédio.",
+      "A fiscalização rigorosa de todos os servidores."
+    ],
+    answer: "b"
+  },
+  {
+    id: 365,
+    question: "A Portaria MGI nº 6.719/2024 prevê a criação de um canal de denúncia para casos de assédio e discriminação. O que o Plano prevê sobre o canal de denúncia?",
+    options: [
+      "Apenas denúncias anônimas podem ser feitas.",
+      "O canal de denúncia é exclusivo para servidores.",
+      "O canal de denúncia deve garantir o anonimato e a proteção do denunciante.",
+      "Apenas denúncias com provas documentais podem ser feitas."
+    ],
+    answer: "c"
+  },
+  {
+    id: 366,
+    question: "De acordo com o Código Penal, o crime de peculato-furto, previsto no art. 312, §1º, consiste em:",
+    options: [
+      "Apropriar-se de dinheiro, valor ou qualquer outro bem móvel, de que tem a posse em razão do cargo.",
+      "Subtrair, em proveito próprio ou alheio, bem público ou particular, de que não tem a posse, mas que está sob sua custódia, em razão da facilidade que o cargo lhe proporciona.",
+      "Solicitar ou receber, para si ou para outrem, vantagem indevida em razão do cargo.",
+      "Desviar, em proveito próprio ou alheio, bem público ou particular, de que tem a posse em razão do cargo."
+    ],
+    answer: "b"
+  },
+  {
+    id: 367,
+    question: "O crime de concussão, previsto no art. 316 do Código Penal, é um crime de:",
+    options: [
+      "Corrupção.",
+      "Suborno.",
+      "Exigência.",
+      "Prevaricação."
+    ],
+    answer: "c"
+  },
+  {
+    id: 368,
+    question: "O crime de corrupção passiva, previsto no art. 317 do Código Penal, é a conduta do funcionário público que:",
+    options: [
+      "Oferece ou promete vantagem indevida.",
+      "Paga ou promete vantagem indevida.",
+      "Solicita ou recebe vantagem indevida, ou aceita promessa de tal vantagem, para si ou para outrem, em razão da função.",
+      "Apenas aceita a promessa de vantagem."
+    ],
+    answer: "c"
+  },
+  {
+    id: 369,
+    question: "A corrupção ativa, prevista no art. 333 do Código Penal, é o crime praticado por quem:",
+    options: [
+      "Solicita vantagem indevida.",
+      "Recebe vantagem indevida.",
+      "Oferece ou promete vantagem indevida a funcionário público, para determiná-lo a praticar, omitir ou retardar ato de ofício.",
+      "Apenas aceita a promessa de vantagem indevida."
+    ],
+    answer: "c"
+  },
+  {
+    id: 370,
+    question: "O crime de prevaricação, previsto no art. 319 do Código Penal, é a conduta do funcionário público que:",
+    options: [
+      "Apropriar-se de bem público.",
+      "Retarda ou deixa de praticar, indevidamente, ato de ofício, ou o pratica contra disposição expressa de lei, para satisfazer interesse ou sentimento pessoal.",
+      "Exigir, para si ou para outrem, vantagem indevida.",
+      "Solicitar vantagem indevida."
+    ],
+    answer: "b"
+  },
+  {
+    id: 371,
+    question: "O Estatuto do IFSertãoPE estabelece a sua finalidade e suas competências. Uma das finalidades do Instituto é:",
+    options: [
+      "Apenas oferecer cursos de graduação e pós-graduação.",
+      "Atuar no ensino, pesquisa e extensão, com ênfase na formação de profissionais para o desenvolvimento da região.",
+      "Apenas desenvolver projetos de pesquisa.",
+      "Apenas oferecer cursos técnicos."
+    ],
+    answer: "b"
+  },
+  {
+    id: 372,
+    question: "De acordo com o Estatuto, o IFSertãoPE é uma autarquia federal, vinculada ao Ministério da Educação. Qual a principal característica de uma autarquia?",
+    options: [
+      "Natureza jurídica de direito privado.",
+      "Autonomia financeira, administrativa e didático-pedagógica.",
+      "Dependência total do poder público.",
+      "Autonomia apenas para gerir seus próprios recursos."
+    ],
+    answer: "b"
+  },
+  {
+    id: 373,
+    question: "A estrutura do IFSertãoPE, segundo o Estatuto, é composta por Reitoria, Campi, Colégio de Dirigentes e Conselho Superior. Qual a função do Colégio de Dirigentes?",
+    options: [
+      "Órgão máximo do Instituto, com funções deliberativas.",
+      "Órgão de apoio ao Reitor, com funções consultivas.",
+      "Órgão de fiscalização da gestão.",
+      "Órgão responsável por aprovar o orçamento."
+    ],
+    answer: "b"
+  },
+  {
+    id: 374,
+    question: "O Estatuto do IFSertãoPE prevê a eleição para os cargos de Reitor e de Diretores-Gerais de Campus. O processo eleitoral é realizado por:",
+    options: [
+      "Apenas servidores docentes.",
+      "Apenas servidores técnicos administrativos.",
+      "Apenas estudantes.",
+      "O processo eleitoral é realizado por todos os segmentos da comunidade acadêmica, ou seja, estudantes, docentes e técnicos administrativos."
+    ],
+    answer: "d"
+  },
+  {
+    id: 375,
+    question: "O Conselho Superior é o órgão máximo do IFSertãoPE. A sua composição é paritária. O que isso significa?",
+    options: [
+      "Apenas a presença de docentes e técnicos administrativos.",
+      "A representação de todos os segmentos, com o mesmo número de representantes para cada um.",
+      "Apenas a presença de estudantes e docentes.",
+      "A representação de todos os segmentos, com a distribuição de vagas de forma proporcional ao número de integrantes de cada um."
+    ],
+    answer: "b"
+  },
+  {
+    id: 376,
+    question: "O Estatuto do IFSertãoPE prevê a figura do Conselho de Campus. Qual a principal competência do Conselho de Campus?",
+    options: [
+      "Apenas aprovar o projeto pedagógico do Campus.",
+      "Apenas fiscalizar a gestão do Diretor-Geral.",
+      "Aprovar o plano de desenvolvimento do Campus.",
+      "Apenas aprovar o calendário acadêmico do Campus."
+    ],
+    answer: "c"
+  },
+  {
+    id: 377,
+    question: "O Estatuto do IFSertãoPE prevê a criação de Câmaras de Ensino, Pesquisa e Extensão. Qual é a sua principal função?",
+    options: [
+      "Apenas aprovar o calendário acadêmico.",
+      "Apenas fiscalizar a gestão do Reitor.",
+      "Propor políticas e diretrizes para o ensino, pesquisa e extensão.",
+      "Apenas aprovar o orçamento do Instituto."
+    ],
+    answer: "c"
+  },
+  {
+    id: 378,
+    question: "O Estatuto do IFSertãoPE prevê a figura do Colégio de Dirigentes. Quem faz parte do Colégio de Dirigentes?",
+    options: [
+      "Apenas o Reitor e os Diretores de Campus.",
+      "O Reitor, os Pró-Reitores e os Diretores de Campus.",
+      "O Reitor, os Pró-Reitores e os Coordenadores de Curso.",
+      "Apenas o Reitor e os Pró-Reitores."
+    ],
+    answer: "b"
+  },
+  {
+    id: 379,
+    question: "O Estatuto do IFSertãoPE prevê o princípio da autonomia didático-pedagógica. Esse princípio significa que:",
+    options: [
+      "O IFSertãoPE pode criar cursos sem a aprovação do MEC.",
+      "O IFSertãoPE pode elaborar seus próprios currículos e projetos pedagógicos, respeitando as diretrizes nacionais.",
+      "O IFSertãoPE pode conceder diplomas sem a aprovação do MEC.",
+      "O IFSertãoPE pode atuar sem a fiscalização do MEC."
+    ],
+    answer: "b"
+  },
+  {
+    id: 380,
+    question: "De acordo com o Estatuto, o IFSertãoPE tem como missão institucional:",
+    options: [
+      "Apenas oferecer educação profissional e tecnológica.",
+      "Promover a inclusão social e o desenvolvimento regional.",
+      "Oferecer educação profissional e tecnológica de excelência, com foco no desenvolvimento regional sustentável.",
+      "Apenas desenvolver projetos de pesquisa."
+    ],
+    answer: "c"
+  },
+  {
+    id: 381,
+    question: "O Código de Ética Profissional do Servidor Público Federal, aprovado pelo Decreto nº 1.171/1994, estabelece princípios e regras de conduta para os servidores. Qual o princípio fundamental do Código de Ética?",
+    options: [
+      "Apenas a eficiência.",
+      "A moralidade.",
+      "Apenas a legalidade.",
+      "A impessoalidade."
+    ],
+    answer: "b"
+  },
+  {
+    id: 382,
+    question: "O Código de Ética Profissional do Servidor Público Federal prevê o dever de cortesia do servidor. O que significa esse dever?",
+    options: [
+      "Apenas ser educado e gentil com os colegas.",
+      "Apenas ser educado e gentil com o público.",
+      "Tratar a todos com cortesia, respeito e urbanidade, independentemente de hierarquia ou cargo.",
+      "Apenas tratar com cortesia a chefia."
+    ],
+    answer: "c"
+  },
+  {
+    id: 383,
+    question: "De acordo com o Código de Ética Profissional do Servidor Público Federal, é vedado ao servidor:",
+    options: [
+      "Receber vantagens indevidas.",
+      "Apenas receber presentes.",
+      "Apenas receber homenagens.",
+      "Receber vantagens, presentes, homenagens ou qualquer tipo de benefício em razão do cargo."
+    ],
+    answer: "d"
+  },
+  {
+    id: 384,
+    question: "O Código de Ética Profissional do Servidor Público Federal prevê o dever de probidade do servidor. O que significa esse dever?",
+    options: [
+      "Apenas ser honesto.",
+      "Apenas ser justo.",
+      "Atuar com honestidade, lealdade e boa-fé, em prol do interesse público.",
+      "Apenas ser transparente."
+    ],
+    answer: "c"
+  },
+  {
+    id: 385,
+    question: "O Código de Ética Profissional do Servidor Público Federal prevê que o servidor deve manter a integridade moral e profissional. O que isso significa?",
+    options: [
+      "Apenas ser ético.",
+      "Apenas ser honesto.",
+      "Atuar de forma íntegra, com probidade, transparência e responsabilidade, em prol do interesse público.",
+      "Apenas ser leal."
+    ],
+    answer: "c"
+  },
+  {
+    id: 386,
+    question: "O Código de Ética Profissional do Servidor Público Federal prevê o dever de transparência do servidor. O que significa esse dever?",
+    options: [
+      "Apenas ser transparente com a chefia.",
+      "Apenas ser transparente com os colegas.",
+      "Informar de forma clara e objetiva sobre os atos de sua competência, em respeito ao direito à informação.",
+      "Apenas ser transparente com o público."
+    ],
+    answer: "c"
+  },
+  {
+    id: 387,
+    question: "De acordo com o Código de Ética Profissional do Servidor Público Federal, a função pública é considerada:",
+    options: [
+      "Um emprego.",
+      "Uma profissão.",
+      "Um serviço.",
+      "Uma das mais nobres atividades que se pode exercer na vida."
+    ],
+    answer: "d"
+  },
+  {
+    id: 388,
+    question: "O Código de Ética Profissional do Servidor Público Federal prevê a necessidade de sigilo profissional. Em quais situações o servidor pode quebrar o sigilo?",
+    options: [
+      "Em nenhuma situação.",
+      "Apenas se for autorizado pela chefia.",
+      "Apenas se for autorizado pelo superior hierárquico.",
+      "Apenas se for em razão de ordem judicial ou de autoridade legalmente constituída."
+    ],
+    answer: "d"
+  },
+  {
+    id: 389,
+    question: "De acordo com o Código de Ética Profissional do Servidor Público Federal, o servidor deve ter como finalidade:",
+    options: [
+      "Apenas a satisfação do interesse público.",
+      "Apenas a satisfação do interesse particular.",
+      "A satisfação do interesse público, sem prejuízo da defesa do interesse privado.",
+      "A satisfação do interesse público, sem prejuízo da defesa do interesse privado, desde que não haja conflito de interesses."
+    ],
+    answer: "a"
+  },
+  {
+    id: 390,
+    question: "O Código de Ética Profissional do Servidor Público Federal prevê o dever de lealdade do servidor. O que significa esse dever?",
+    options: [
+      "Apenas ser leal à chefia.",
+      "Apenas ser leal aos colegas.",
+      "Apenas ser leal à instituição.",
+      "Ser leal à instituição, ao serviço público, aos colegas e à sociedade."
+    ],
+    answer: "d"
+  },
+  {
+    id: 391,
+    question: "O Estatuto do Servidor Público Federal (Lei nº 8.112/1990) estabelece os direitos e deveres dos servidores públicos. Qual o conceito de servidor público?",
+    options: [
+      "Apenas quem ocupa cargo em comissão.",
+      "Apenas quem ocupa cargo de provimento efetivo.",
+      "A pessoa legalmente investida em cargo público.",
+      "A pessoa que presta serviços para a administração pública."
+    ],
+    answer: "c"
+  },
+  {
+    id: 392,
+    question: "A Lei nº 8.112/1990 prevê os requisitos para a investidura em cargo público. Qual o requisito fundamental?",
+    options: [
+      "Apenas a aprovação em concurso público.",
+      "Apenas a nacionalidade brasileira.",
+      "Apenas o nível de escolaridade exigido para o exercício do cargo.",
+      "A aprovação em concurso público, a nacionalidade brasileira, o gozo dos direitos políticos, a quitação com as obrigações militares e eleitorais, e o nível de escolaridade exigido para o exercício do cargo."
+    ],
+    answer: "d"
+  },
+  {
+    id: 393,
+    question: "O Estatuto do Servidor Público Federal prevê as formas de provimento de cargo público. Qual das seguintes formas NÃO é uma forma de provimento?",
+    options: [
+      "Nomeação.",
+      "Promoção.",
+      "Reintegração.",
+      "Aposentadoria."
+    ],
+    answer: "d"
+  },
+  {
+    id: 394,
+    question: "A Lei nº 8.112/1990 prevê as licenças do servidor. Qual das seguintes licenças NÃO é prevista na Lei?",
+    options: [
+      "Licença para tratamento de saúde.",
+      "Licença por motivo de doença em pessoa da família.",
+      "Licença para tratar de interesses particulares.",
+      "Licença para participar de curso de formação de pós-graduação."
+    ],
+    answer: "d"
+  },
+  {
+    id: 395,
+    question: "O Estatuto do Servidor Público Federal prevê os deveres do servidor. Qual o principal dever do servidor?",
+    options: [
+      "Apenas a lealdade à instituição.",
+      "Apenas a obediência à chefia.",
+      "O cumprimento das ordens e instruções superiores.",
+      "A probidade e a lealdade à instituição."
+    ],
+    answer: "d"
+  },
+  {
+    id: 396,
+    question: "A Lei nº 8.112/1990 prevê as proibições do servidor. Qual das seguintes proibições NÃO é prevista na Lei?",
+    options: [
+      "Valer-se do cargo para obter proveito pessoal.",
+      "Promover manifestações de apreço ou desapreço no recinto da repartição.",
+      "Valer-se do cargo para obter informações sigilosas.",
+      "Apenas a participação em greve."
+    ],
+    answer: "d"
+  },
+  {
+    id: 397,
+    question: "O Estatuto do Servidor Público Federal prevê as penalidades disciplinares. Qual das seguintes penalidades NÃO é prevista na Lei?",
+    options: [
+      "Advertência.",
+      "Suspensão.",
+      "Multa.",
+      "Demissão."
+    ],
+    answer: "c"
+  },
+  {
+    id: 398,
+    question: "A Lei nº 8.112/1990 prevê a responsabilidade do servidor. O servidor pode ser responsabilizado por:",
+    options: [
+      "Apenas por atos dolosos.",
+      "Apenas por atos culposos.",
+      "Atos dolosos ou culposos, no exercício da função.",
+      "Apenas por atos que causem prejuízo à administração pública."
+    ],
+    answer: "c"
+  },
+  {
+    id: 399,
+    question: "O Estatuto do Servidor Público Federal prevê a reversão. O que é reversão?",
+    options: [
+      "O retorno à atividade de servidor aposentado por invalidez, quando a junta médica oficial declarar insubsistentes os motivos da aposentadoria.",
+      "O retorno à atividade de servidor que foi demitido.",
+      "O retorno à atividade de servidor que foi exonerado.",
+      "O retorno à atividade de servidor que foi suspenso."
+    ],
+    answer: "a"
+  },
+  {
+    id: 400,
+    question: "A Lei nº 8.112/1990 prevê a recondução. O que é recondução?",
+    options: [
+      "O retorno do servidor estável ao cargo anteriormente ocupado.",
+      "O retorno do servidor que foi demitido.",
+      "O retorno do servidor que foi exonerado.",
+      "O retorno do servidor que foi suspenso."
+    ],
+    answer: "a"
+  }
+];
+            
             // BANCO DE QUESTÕES PARA "QUESTÕES RETIRADAS DE OUTRAS PROVAS"
             const questoesEstudo = [
                 // Lei 8.112/1990
@@ -379,7 +2593,8 @@
                 }
             ];
 
-            // Banco de questões para o questionário "EPT No Brasil 1.1"
+            // BANCO DE QUESTÕES PARA "EPT NO BRASIL 1.1"
+		// Banco de questões para o questionário "EPT No Brasil 1.1"
             const allQuestionsEPT = [
                 // 1. Educação profissional e tecnológica no Brasil: organização e bases conceituais
                 { id: 'EPT41', question: 'A Educação Profissional e Tecnológica (EPT) no Brasil tem sua trajetória marcada por diversas transformações. Qual das opções abaixo MELHOR descreve a principal característica da EPT na atualidade, considerando sua organização e bases conceituais?', options: ['a) Foco exclusivo na formação técnica para o mercado de trabalho, desvinculada da educação básica.', 'b) Ênfase na formação humanística, com pouca articulação com as demandas tecnológicas e produtivas.', 'c) Integração entre trabalho, ciência, tecnologia e cultura, visando à formação integral do indivíduo e ao desenvolvimento socioeconômico.', 'd) Predominância de cursos de curta duração, sem aprofundamento teórico ou científico.', 'e) Caráter assistencialista, voltado apenas para a qualificação de mão de obra de baixa escolaridade.'], correct: 'c', explanation: 'A EPT moderna busca a integração para uma formação completa.' },
@@ -920,1369 +3135,10 @@
             correct: "b",
             explanation: "A integração dos diferentes níveis e modalidades de ensino é uma característica marcante dos Institutos Federais, incluindo o IFRN, que possui múltiplos campi."
                 }
-            ];
-
-            // Banco de questões para o questionário "IFPE Sertão - Leis"
-            const IFPESertao = [
-        // Questões da Lei nº 13.146/2015 (LBI)
-        {
-            topic: 'Lei nº 13.146/2015 (Lei Brasileira de Inclusão da Pessoa com Deficiência - LBI)',
-            questions: [
-                {
-                    text: 'A Lei nº 13.146/2015, também conhecida como Estatuto da Pessoa com Deficiência, tem como objetivo assegurar e promover, em condições de igualdade, o exercício dos direitos e das liberdades fundamentais por pessoa com deficiência, visando à sua inclusão social e cidadania. De acordo com a LBI, quem é considerada pessoa com deficiência?',
-                    options: [
-                        'Aquela que tem impedimento de longo prazo de natureza física, mental, intelectual ou sensorial.',
-                        'Aquela que tem impedimento de natureza física ou mental.',
-                        'Aquela que tem impedimento de natureza intelectual ou sensorial.',
-                        'Aquela que se enquadra na definição de deficiência estabelecida pela Organização Mundial da Saúde.'
-                    ],
-                    answer: 0
-                },
-                {
-                    text: 'A LBI, em seu artigo 4º, estabelece o princípio da igualdade. Nesse sentido, a discriminação contra a pessoa com deficiência é definida como:',
-                    options: [
-                        'Qualquer forma de diferenciação injustificada.',
-                        'Qualquer tipo de distinção, exclusão ou restrição que tenha o propósito de anular ou prejudicar o reconhecimento, gozo ou exercício de direitos.',
-                        'A ausência de acessibilidade.',
-                        'A falta de atendimento prioritário em serviços públicos.'
-                    ],
-                    answer: 1
-                },
-                {
-                    text: 'No que diz respeito à saúde, a Lei nº 13.146/2015 garante à pessoa com deficiência o direito ao atendimento prioritário e integral, respeitando suas especificidades. Sobre o atendimento de saúde, é correto afirmar que:',
-                    options: [
-                        'A pessoa com deficiência tem direito a receber atendimento domiciliar apenas se a sua condição for grave.',
-                        'A internação em hospital ou o atendimento em clínica especializada devem ser realizados preferencialmente, em detrimento do atendimento domiciliar.',
-                        'Os serviços de saúde devem adotar mecanismos que garantam a acessibilidade de todas as pessoas com deficiência.',
-                        'O acompanhante da pessoa com deficiência tem direito a receber informações detalhadas sobre o diagnóstico e o tratamento, mesmo sem autorização do paciente.'
-                    ],
-                    answer: 2
-                },
-                {
-                    text: 'A LBI dispõe sobre a acessibilidade em diversos âmbitos. O conceito de "acessibilidade" inclui a possibilidade de acesso a espaços, transportes, informação e comunicação. Nesse contexto, a eliminação de barreiras arquitetônicas em edifícios de uso público é uma medida para garantir a:',
-                    options: [
-                        'Acessibilidade atitudinal.',
-                        'Acessibilidade programática.',
-                        'Acessibilidade comunicacional.',
-                        'Acessibilidade física.'
-                    ],
-                    answer: 3
-                },
-                {
-                    text: 'A LBI assegura o direito à educação inclusiva. Para isso, a Lei prevê o atendimento educacional especializado, o qual deve:',
-                    options: [
-                        'Substituir a escolarização regular, quando a deficiência for considerada grave.',
-                        'Ser oferecido exclusivamente em escolas especializadas.',
-                        'Complementar a formação dos estudantes, não substituindo o ensino regular.',
-                        'Focar apenas no desenvolvimento de habilidades motoras e cognitivas.'
-                    ],
-                    answer: 2
-                },
-                {
-                    text: 'A Lei Brasileira de Inclusão garante o direito ao trabalho da pessoa com deficiência. Sobre a contratação, é INCORRETO afirmar que:',
-                    options: [
-                        'A empresa é obrigada a contratar um percentual de pessoas com deficiência, de acordo com o número de empregados.',
-                        'A pessoa com deficiência tem o direito de concorrer a vagas de emprego em igualdade de condições com as demais pessoas.',
-                        'É proibida a exigência de aptidão plena para o trabalho, sem adaptações razoáveis.',
-                        'A dispensa de empregado com deficiência ou reabilitado da Previdência Social, contratado por cota, poderá ser motivada exclusivamente pela perda da capacidade laborativa.'
-                    ],
-                    answer: 3
-                },
-                {
-                    text: 'A LBI estabelece diversas penalidades para quem comete crimes ou infrações contra a pessoa com deficiência. O crime de discriminação, que consiste em impedir ou dificultar o acesso de pessoa com deficiência a qualquer estabelecimento público ou privado de uso coletivo, por exemplo, pode resultar em:',
-                    options: [
-                        'Apenas pagamento de multa.',
-                        'Reclusão e multa.',
-                        'Apenas advertência.',
-                        'Prestação de serviços à comunidade.'
-                    ],
-                    answer: 1
-                },
-                {
-                    text: 'O transporte público deve ser acessível a todas as pessoas, incluindo aquelas com deficiência. A LBI prevê que:',
-                    options: [
-                        'As empresas de transporte coletivo podem cobrar um valor adicional de pessoas com deficiência.',
-                        'A gratuidade de passagens é obrigatória para todas as pessoas com deficiência em todos os tipos de transporte público.',
-                        'Os veículos de transporte coletivo devem ser equipados com recursos de acessibilidade, como rampas e elevadores.',
-                        'O transporte individual é a principal alternativa para pessoas com deficiência, não sendo priorizada a adaptação do transporte coletivo.'
-                    ],
-                    answer: 2
-                },
-                {
-                    text: 'No que se refere ao direito à moradia, a LBI prevê que:',
-                    options: [
-                        'Os programas habitacionais devem reservar 3% das unidades para pessoas com deficiência.',
-                        'A pessoa com deficiência deve ser priorizada na aquisição de moradias.',
-                        'Os programas habitacionais devem priorizar a adaptação das moradias para pessoas com deficiência.',
-                        'É proibido alugar imóveis para pessoas com deficiência que não tenham condições financeiras comprovadas.'
-                    ],
-                    answer: 2
-                },
-                {
-                    text: 'A LBI estabelece que o poder público deve garantir a acessibilidade em sistemas de comunicação e informação. A comunicação em Língua Brasileira de Sinais (Libras) é um dos recursos previstos na Lei para:',
-                    options: [
-                        'Apenas para pessoas com deficiência auditiva.',
-                        'Apenas para pessoas com deficiência intelectual.',
-                        'Para pessoas com deficiência visual e auditiva.',
-                        'Para pessoas com deficiência auditiva, permitindo o acesso à informação e à comunicação.'
-                    ],
-                    answer: 3
-                },
-                {
-                    text: 'De acordo com a LBI, o que se entende por desenho universal?',
-                    options: [
-                        'O projeto de espaços e produtos que visa a atender pessoas com deficiência.',
-                        'A concepção de produtos, ambientes, programas e serviços a serem usados por todas as pessoas, sem necessidade de adaptação.',
-                        'A adaptação de um ambiente para atender às necessidades de uma pessoa com deficiência.',
-                        'A criação de um produto específico para uma pessoa com deficiência.'
-                    ],
-                    answer: 1
-                },
-                {
-                    text: 'O que a LBI define como "barreiras"?',
-                    options: [
-                        'Qualquer entrave ou obstáculo que limite ou impeça o acesso, a liberdade de movimento e a circulação.',
-                        'A falta de acessibilidade em um ambiente.',
-                        'A ausência de rampas em um prédio.',
-                        'As dificuldades que a pessoa com deficiência enfrenta em sua vida diária.'
-                    ],
-                    answer: 0
-                },
-                {
-                    text: 'Segundo a LBI, a tecnologia assistiva é um conjunto de produtos, equipamentos e recursos que visam a:',
-                    options: [
-                        'Apenas auxiliar na locomoção de pessoas com deficiência.',
-                        'Apenas auxiliar na comunicação de pessoas com deficiência.',
-                        'Promover a autonomia, independência, qualidade de vida e inclusão social da pessoa com deficiência.',
-                        'Apenas auxiliar no trabalho de pessoas com deficiência.'
-                    ],
-                    answer: 2
-                },
-                {
-                    text: 'A Lei Brasileira de Inclusão garante o direito de ser acompanhada por um cão-guia. O que a LBI prevê sobre o acesso a locais públicos ou privados com o cão-guia?',
-                    options: [
-                        'O acesso é proibido em locais de alimentação.',
-                        'O acesso é livre em todos os locais.',
-                        'O acesso é restrito a locais com sinalização específica.',
-                        'O acesso é permitido, mas o cão-guia deve ser mantido em coleira.'
-                    ],
-                    answer: 1
-                },
-                {
-                    text: 'A LBI dispõe sobre a avaliação da deficiência. Como essa avaliação deve ser realizada?',
-                    options: [
-                        'Exclusivamente por um médico especialista.',
-                        'Por meio de uma avaliação biopsicossocial, realizada por equipe multiprofissional e interdisciplinar.',
-                        'Por meio de um laudo médico.',
-                        'Por meio de um teste psicológico.'
-                    ],
-                    answer: 1
-                },
-                {
-                    text: 'A LBI, em seu artigo 18, prevê o direito à moradia digna para a pessoa com deficiência. Uma das medidas para garantir esse direito é:',
-                    options: [
-                        'Apenas a concessão de moradia gratuita.',
-                        'A reserva de vagas em programas habitacionais.',
-                        'A adaptação das moradias para pessoas com deficiência.',
-                        'A concessão de empréstimos com juros subsidiados.'
-                    ],
-                    answer: 2
-                },
-                {
-                    text: 'De acordo com a LBI, o atendimento prioritário em órgãos públicos e privados de uso coletivo é garantido para a pessoa com deficiência, idosos, gestantes e pessoas com crianças de colo. O que a LBI prevê sobre a prioridade de atendimento?',
-                    options: [
-                        'Apenas a pessoa com deficiência tem prioridade.',
-                        'A prioridade de atendimento é garantida em todos os serviços.',
-                        'A prioridade é garantida em todos os serviços, mas é obrigatória em bancos e hospitais.',
-                        'A prioridade de atendimento é garantida, desde que a pessoa com deficiência apresente um atestado médico.'
-                    ],
-                    answer: 1
-                },
-                {
-                    text: 'A LBI, em seu artigo 28, trata sobre o direito à educação. Qual o principal objetivo da educação inclusiva?',
-                    options: [
-                        'Apenas incluir a pessoa com deficiência na escola.',
-                        'Oferecer um currículo especial para a pessoa com deficiência.',
-                        'Assegurar um sistema educacional inclusivo em todos os níveis e modalidades, bem como a aprendizagem ao longo da vida.',
-                        'Apenas fornecer recursos e materiais didáticos para a pessoa com deficiência.'
-                    ],
-                    answer: 2
-                },
-                {
-                    text: 'A LBI estabelece que o poder público deve garantir a acessibilidade em eventos culturais, esportivos e de lazer. A acessibilidade nesses eventos inclui:',
-                    options: [
-                        'Apenas a entrada gratuita para a pessoa com deficiência.',
-                        'Apenas a presença de intérpretes de Libras.',
-                        'A garantia de espaços acessíveis, banheiros adaptados e sinalização tátil e visual.',
-                        'A presença de monitores para auxiliar a pessoa com deficiência.'
-                    ],
-                    answer: 2
-                },
-                {
-                    text: 'A LBI prevê a punição para quem cometer crimes contra a pessoa com deficiência. O crime de abandonar a pessoa com deficiência em hospitais, casas de saúde, clínicas ou em estabelecimentos congêneres, por exemplo, é punido com:',
-                    options: [
-                        'Apenas multa.',
-                        'Reclusão.',
-                        'Detenção e multa.',
-                        'Apenas advertência.'
-                    ],
-                    answer: 1
-                },
-                {
-                    text: 'A LBI, em seu artigo 5º, estabelece o princípio da dignidade da pessoa com deficiência. O que esse princípio prevê?',
-                    options: [
-                        'Apenas a proteção contra a discriminação.',
-                        'Apenas a proteção contra a violência.',
-                        'O respeito à sua autonomia, à sua autodeterminação e à sua liberdade de escolha.',
-                        'Apenas o direito de ser acompanhado por um cão-guia.'
-                    ],
-                    answer: 2
-                },
-                {
-                    text: 'A LBI, em seu artigo 7º, prevê que a pessoa com deficiência tem o direito de ser atendida com dignidade e respeito. O que esse direito prevê?',
-                    options: [
-                        'Apenas a prioridade de atendimento.',
-                        'O atendimento em condições de igualdade com as demais pessoas.',
-                        'O atendimento em um ambiente separado.',
-                        'O atendimento apenas por profissionais especializados.'
-                    ],
-                    answer: 1
-                },
-                {
-                    text: 'A LBI, em seu artigo 10, prevê a proteção contra a exploração, a violência e a negligência. O que a Lei prevê sobre a exploração?',
-                    options: [
-                        'Apenas a exploração sexual.',
-                        'A exploração da imagem, da identidade ou da vida privada da pessoa com deficiência.',
-                        'Apenas a exploração do trabalho.',
-                        'Apenas a exploração financeira.'
-                    ],
-                    answer: 1
-                },
-                {
-                    text: 'A LBI, em seu artigo 13, prevê o direito à saúde. O que a Lei prevê sobre o atendimento de saúde?',
-                    options: [
-                        'Apenas o atendimento em hospitais públicos.',
-                        'O atendimento em hospitais, clínicas, consultórios e laboratórios, de forma prioritária e integral.',
-                        'Apenas o atendimento em clínicas privadas.',
-                        'O atendimento apenas por profissionais especializados.'
-                    ],
-                    answer: 1
-                },
-                {
-                    text: 'A LBI, em seu artigo 18, prevê o direito à moradia. O que a Lei prevê sobre os programas habitacionais?',
-                    options: [
-                        'Apenas a reserva de vagas para pessoas com deficiência.',
-                        'A adaptação das moradias para pessoas com deficiência.',
-                        'A concessão de moradia gratuita.',
-                        'A concessão de empréstimos com juros subsidiados.'
-                    ],
-                    answer: 1
-                }
             ]
-        },
-        // Questões da Lei nº 7.853/1989
-        {
-            topic: 'Lei nº 7.853/1989 (Política Nacional para Integração da Pessoa Portadora de Deficiência)',
-            questions: [
-                {
-                    text: 'A Lei nº 7.853/1989, que dispõe sobre a Política Nacional para Integração da Pessoa Portadora de Deficiência, estabelece que:',
-                    options: [
-                        'O poder público deve promover ações de inclusão social, sem a participação de entidades da sociedade civil.',
-                        'A família é a principal responsável pela integração da pessoa com deficiência.',
-                        'A inclusão da pessoa com deficiência é um dever do Estado e da sociedade.',
-                        'O foco da política é o tratamento médico-hospitalar da pessoa com deficiência.'
-                    ],
-                    answer: 2
-                },
-                {
-                    text: 'A Lei nº 7.853/1989 prevê a criação de um sistema de informação sobre a pessoa com deficiência. Qual é o objetivo principal desse sistema?',
-                    options: [
-                        'Controlar a concessão de benefícios sociais.',
-                        'Subsidiar a formulação de políticas públicas.',
-                        'Fiscalizar a atuação de entidades privadas.',
-                        'Apenas para fins estatísticos.'
-                    ],
-                    answer: 1
-                },
-                {
-                    text: 'A Política Nacional para Integração da Pessoa Portadora de Deficiência estabelece diretrizes para a educação. Nesse contexto, a Lei prevê a:',
-                    options: [
-                        'Criação de escolas exclusivas para pessoas com deficiência.',
-                        'Integração da pessoa com deficiência no sistema regular de ensino.',
-                        'Oferecimento de educação domiciliar como a única opção para pessoas com deficiência.',
-                        'Criação de um currículo especial para pessoas com deficiência.'
-                    ],
-                    answer: 1
-                },
-                {
-                    text: 'A Lei nº 7.853/1989 determina a criação de programas de emprego e capacitação profissional para a pessoa com deficiência. A Lei também prevê:',
-                    options: [
-                        'A reserva de vagas em concursos públicos.',
-                        'A dispensa de qualificação profissional para pessoas com deficiência.',
-                        'A contratação exclusiva de pessoas com deficiência por empresas privadas.',
-                        'A criação de um programa de trabalho voluntário para pessoas com deficiência.'
-                    ],
-                    answer: 0
-                },
-                {
-                    text: 'No que se refere à saúde, a Política Nacional para Integração da Pessoa Portadora de Deficiência prevê:',
-                    options: [
-                        'A priorização do atendimento em hospitais privados.',
-                        'A criação de hospitais especializados em reabilitação.',
-                        'A garantia de atendimento médico-hospitalar e de reabilitação.',
-                        'Apenas o fornecimento de medicamentos e próteses.'
-                    ],
-                    answer: 2
-                },
-                {
-                    text: 'A Lei nº 7.853/1989, em seu artigo 2º, estabelece que a política de integração social da pessoa com deficiência deve ser realizada por meio de:',
-                    options: [
-                        'Ações isoladas do poder público.',
-                        'Ações articuladas e coordenadas entre o poder público, a sociedade e a família.',
-                        'Ações de entidades privadas.',
-                        'Ações de entidades assistenciais.'
-                    ],
-                    answer: 1
-                },
-                {
-                    text: 'A Lei nº 7.853/1989 prevê a criação de um Conselho Nacional dos Direitos da Pessoa Portadora de Deficiência (CONADE). Qual é a principal função do CONADE?',
-                    options: [
-                        'Apenas fiscalizar a atuação de entidades privadas.',
-                        'Apenas fiscalizar a atuação de entidades assistenciais.',
-                        'Acompanhar e fiscalizar a execução da política nacional de integração.',
-                        'Apenas conceder benefícios sociais.'
-                    ],
-                    answer: 2
-                },
-                {
-                    text: 'A Lei nº 7.853/1989 prevê a inclusão da pessoa com deficiência no mercado de trabalho. Para isso, a Lei estabelece a:',
-                    options: [
-                        'Apenas a concessão de empréstimos para a pessoa com deficiência.',
-                        'Apenas a reserva de vagas em empresas privadas.',
-                        'Apenas a criação de programas de capacitação.',
-                        'A reserva de vagas em empresas públicas e privadas, bem como a criação de programas de capacitação e reabilitação profissional.'
-                    ],
-                    answer: 3
-                },
-                {
-                    text: 'A Política Nacional para Integração da Pessoa Portadora de Deficiência prevê a concessão de benefícios sociais. Qual é o principal benefício previsto na Lei?',
-                    options: [
-                        'Apenas a gratuidade de passagens em transportes coletivos.',
-                        'Apenas a concessão de isenção de impostos.',
-                        'O benefício de prestação continuada (BPC).',
-                        'Apenas a concessão de moradia gratuita.'
-                    ],
-                    answer: 2
-                },
-                {
-                    text: 'A Lei nº 7.853/1989 estabelece que o poder público deve garantir o acesso à cultura e ao lazer para a pessoa com deficiência. Para isso, a Lei prevê:',
-                    options: [
-                        'Apenas a entrada gratuita em eventos.',
-                        'Apenas a criação de eventos exclusivos para pessoas com deficiência.',
-                        'A adaptação de espaços e a oferta de recursos de acessibilidade.',
-                        'Apenas a criação de programas de recreação.'
-                    ],
-                    answer: 2
-                },
-                {
-                    text: 'A Lei nº 7.853/1989, que dispõe sobre a Política Nacional para Integração da Pessoa Portadora de Deficiência, estabelece que:',
-                    options: [
-                        'O poder público deve promover ações de inclusão social, sem a participação de entidades da sociedade civil.',
-                        'A família é a principal responsável pela integração da pessoa com deficiência.',
-                        'A inclusão da pessoa com deficiência é um dever do Estado e da sociedade.',
-                        'O foco da política é o tratamento médico-hospitalar da pessoa com deficiência.'
-                    ],
-                    answer: 2
-                },
-                {
-                    text: 'A Lei nº 7.853/1989 prevê a criação de um sistema de informação sobre a pessoa com deficiência. Qual é o objetivo principal desse sistema?',
-                    options: [
-                        'Controlar a concessão de benefícios sociais.',
-                        'Subsidiar a formulação de políticas públicas.',
-                        'Fiscalizar a atuação de entidades privadas.',
-                        'Apenas para fins estatísticos.'
-                    ],
-                    answer: 1
-                },
-                {
-                    text: 'A Política Nacional para Integração da Pessoa Portadora de Deficiência estabelece diretrizes para a educação. Nesse contexto, a Lei prevê a:',
-                    options: [
-                        'Criação de escolas exclusivas para pessoas com deficiência.',
-                        'Integração da pessoa com deficiência no sistema regular de ensino.',
-                        'Oferecimento de educação domiciliar como a única opção para pessoas com deficiência.',
-                        'Criação de um currículo especial para pessoas com deficiência.'
-                    ],
-                    answer: 1
-                },
-                {
-                    text: 'A Lei nº 7.853/1989 determina a criação de programas de emprego e capacitação profissional para a pessoa com deficiência. A Lei também prevê:',
-                    options: [
-                        'A reserva de vagas em concursos públicos.',
-                        'A dispensa de qualificação profissional para pessoas com deficiência.',
-                        'A contratação exclusiva de pessoas com deficiência por empresas privadas.',
-                        'A criação de um programa de trabalho voluntário para pessoas com deficiência.'
-                    ],
-                    answer: 0
-                },
-                {
-                    text: 'No que se refere à saúde, a Política Nacional para Integração da Pessoa Portadora de Deficiência prevê:',
-                    options: [
-                        'A priorização do atendimento em hospitais privados.',
-                        'A criação de hospitais especializados em reabilitação.',
-                        'A garantia de atendimento médico-hospitalar e de reabilitação.',
-                        'Apenas o fornecimento de medicamentos e próteses.'
-                    ],
-                    answer: 2
-                }
-            ]
-        },
-        // Questões do Decreto nº 7.611/2011
-        {
-            topic: 'Decreto nº 7.611/2011 (Educação Especial e Atendimento Educacional Especializado)',
-            questions: [
-                {
-                    text: 'O Decreto nº 7.611/2011 dispõe sobre a educação especial e o atendimento educacional especializado (AEE). O AEE é um serviço da educação especial que tem como função:',
-                    options: [
-                        'Substituir a escolarização regular para estudantes com deficiência.',
-                        'Fazer a mediação entre a escola e a família do estudante com deficiência.',
-                        'Complementar ou suplementar a formação dos estudantes, visando a autonomia e a participação social.',
-                        'Apenas fornecer recursos e materiais didáticos para o estudante com deficiência.'
-                    ],
-                    answer: 2
-                },
-                {
-                    text: 'O Decreto nº 7.611/2011 define os alunos público-alvo da educação especial. Quem são esses alunos?',
-                    options: [
-                        'Apenas estudantes com deficiência física.',
-                        'Estudantes com deficiência, transtornos globais do desenvolvimento e altas habilidades/superdotação.',
-                        'Apenas estudantes com deficiência e transtornos globais do desenvolvimento.',
-                        'Estudantes com qualquer tipo de dificuldade de aprendizagem.'
-                    ],
-                    answer: 1
-                },
-                {
-                    text: 'O Atendimento Educacional Especializado (AEE) deve ser oferecido:',
-                    options: [
-                        'Exclusivamente em salas de recursos multifuncionais.',
-                        'Em escolas especiais, em turno oposto ao do ensino regular.',
-                        'Em salas de recursos multifuncionais da própria escola ou de outra escola, no turno oposto ao da escolarização.',
-                        'Apenas em ambientes hospitalares.'
-                    ],
-                    answer: 2
-                },
-                {
-                    text: 'De acordo com o Decreto nº 7.611/2011, o professor do AEE tem como uma de suas atribuições:',
-                    options: [
-                        'Substituir o professor do ensino regular na sala de aula.',
-                        'Realizar o diagnóstico da deficiência do estudante.',
-                        'Elaborar e executar o plano de AEE do estudante.',
-                        'Apenas aplicar testes e avaliações de aprendizagem.'
-                    ],
-                    answer: 2
-                },
-                {
-                    text: 'A educação especial na perspectiva da educação inclusiva tem como foco principal:',
-                    options: [
-                        'O ensino de Libras e Braille.',
-                        'A adaptação do estudante à escola.',
-                        'A eliminação das barreiras para a plena participação e aprendizagem dos estudantes.',
-                        'O treinamento de habilidades específicas para cada tipo de deficiência.'
-                    ],
-                    answer: 2
-                },
-                {
-                    text: 'O Decreto nº 7.611/2011 estabelece que o Atendimento Educacional Especializado (AEE) deve ser oferecido de forma:',
-                    options: [
-                        'Apenas individual.',
-                        'Em grupo ou individualmente, de acordo com as necessidades do estudante.',
-                        'Apenas em grupo.',
-                        'Apenas em sala de aula regular.'
-                    ],
-                    answer: 1
-                },
-                {
-                    text: 'O Decreto nº 7.611/2011 prevê que os professores do AEE devem ter formação em:',
-                    options: [
-                        'Apenas pedagogia.',
-                        'Apenas em educação especial.',
-                        'Em educação especial, com formação específica na área de atuação.',
-                        'Apenas em Libras.'
-                    ],
-                    answer: 2
-                },
-                {
-                    text: 'O que o Decreto nº 7.611/2011 define como "recursos de acessibilidade"?',
-                    options: [
-                        'Apenas os materiais didáticos adaptados.',
-                        'Apenas os equipamentos de tecnologia assistiva.',
-                        'Instrumentos, equipamentos, recursos e estratégias que promovem a autonomia e a participação dos estudantes.',
-                        'Apenas as rampas e elevadores.'
-                    ],
-                    answer: 2
-                },
-                {
-                    text: 'O Decreto nº 7.611/2011 estabelece que a matrícula de estudantes com deficiência em escolas regulares é:',
-                    options: [
-                        'Proibida, exceto em escolas adaptadas.',
-                        'Opcional, de acordo com a vontade da família.',
-                        'Obrigatória, para garantir o direito à educação.',
-                        'Proibida, exceto em escolas especiais.'
-                    ],
-                    answer: 2
-                },
-                {
-                    text: 'A LBI, em seu artigo 28, prevê a oferta de serviços de apoio para o estudante com deficiência. O Decreto nº 7.611/2011 especifica esses serviços, que incluem:',
-                    options: [
-                        'Apenas a contratação de intérpretes de Libras.',
-                        'Apenas a contratação de guias-intérpretes.',
-                        'A oferta de recursos de acessibilidade e o apoio de profissionais de apoio, como o guia-intérprete e o intérprete de Libras.',
-                        'Apenas a contratação de profissionais de apoio.'
-                    ],
-                    answer: 2
-                },
-                {
-                    text: 'O Decreto nº 7.611/2011 dispõe sobre a educação especial e o atendimento educacional especializado (AEE). O AEE é um serviço da educação especial que tem como função:',
-                    options: [
-                        'Substituir a escolarização regular para estudantes com deficiência.',
-                        'Fazer a mediação entre a escola e a família do estudante com deficiência.',
-                        'Complementar ou suplementar a formação dos estudantes, visando a autonomia e a participação social.',
-                        'Apenas fornecer recursos e materiais didáticos para o estudante com deficiência.'
-                    ],
-                    answer: 2
-                },
-                {
-                    text: 'O Decreto nº 7.611/2011 define os alunos público-alvo da educação especial. Quem são esses alunos?',
-                    options: [
-                        'Apenas estudantes com deficiência física.',
-                        'Estudantes com deficiência, transtornos globais do desenvolvimento e altas habilidades/superdotação.',
-                        'Apenas estudantes com deficiência e transtornos globais do desenvolvimento.',
-                        'Estudantes com qualquer tipo de dificuldade de aprendizagem.'
-                    ],
-                    answer: 1
-                },
-                {
-                    text: 'O Atendimento Educacional Especializado (AEE) deve ser oferecido:',
-                    options: [
-                        'Exclusivamente em salas de recursos multifuncionais.',
-                        'Em escolas especiais, em turno oposto ao do ensino regular.',
-                        'Em salas de recursos multifuncionais da própria escola ou de outra escola, no turno oposto ao da escolarização.',
-                        'Apenas em ambientes hospitalares.'
-                    ],
-                    answer: 2
-                },
-                {
-                    text: 'De acordo com o Decreto nº 7.611/2011, o professor do AEE tem como uma de suas atribuições:',
-                    options: [
-                        'Substituir o professor do ensino regular na sala de aula.',
-                        'Realizar o diagnóstico da deficiência do estudante.',
-                        'Elaborar e executar o plano de AEE do estudante.',
-                        'Apenas aplicar testes e avaliações de aprendizagem.'
-                    ],
-                    answer: 2
-                },
-                {
-                    text: 'A educação especial na perspectiva da educação inclusiva tem como foco principal:',
-                    options: [
-                        'O ensino de Libras e Braille.',
-                        'A adaptação do estudante à escola.',
-                        'A eliminação das barreiras para a plena participação e aprendizagem dos estudantes.',
-                        'O treinamento de habilidades específicas para cada tipo de deficiência.'
-                    ],
-                    answer: 2
-                }
-            ]
-        },
-        // Questões da Lei nº 12.288/2010 (Estatuto de Igualdade Racial)
-        {
-            topic: 'Lei nº 12.288/2010 (Estatuto de Igualdade Racial)',
-            questions: [
-                {
-                    text: 'O Estatuto da Igualdade Racial tem como objetivo garantir à população negra a efetivação da igualdade de oportunidades. A Lei define "população negra" como:',
-                    options: [
-                        'Apenas as pessoas de cor preta.',
-                        'Pessoas que se autodeclaram pretas e pardas.',
-                        'Pessoas que se autodeclaram de cor preta.',
-                        'Pessoas de ascendência africana.'
-                    ],
-                    answer: 1
-                },
-                {
-                    text: 'O Estatuto da Igualdade Racial estabelece diretrizes para a política de promoção da igualdade racial. É INCORRETO afirmar que uma das diretrizes é:',
-                    options: [
-                        'A superação da desigualdade étnica.',
-                        'A eliminação do racismo e da discriminação racial.',
-                        'A proteção de manifestações culturais de matriz africana.',
-                        'A promoção da ascensão social exclusiva de pessoas negras.'
-                    ],
-                    answer: 3
-                },
-                {
-                    text: 'O Estatuto da Igualdade Racial prevê ações afirmativas para a promoção da igualdade. Ações afirmativas são:',
-                    options: [
-                        'Medidas especiais e temporárias.',
-                        'Medidas permanentes de cunho punitivo.',
-                        'Medidas que visam apenas o combate à discriminação.',
-                        'Medidas que visam a criação de cotas em universidades.'
-                    ],
-                    answer: 0
-                },
-                {
-                    text: 'O Estatuto da Igualdade Racial aborda o direito à saúde da população negra. A Lei prevê que:',
-                    options: [
-                        'O atendimento de saúde para a população negra deve focar apenas nas doenças genéticas.',
-                        'A política de saúde deve considerar as especificidades da saúde da população negra.',
-                        'A população negra deve ter acesso a tratamentos diferenciados e mais caros.',
-                        'Os profissionais de saúde devem ser exclusivamente de cor preta ou parda.'
-                    ],
-                    answer: 1
-                },
-                {
-                    text: 'A Lei nº 12.288/2010 estabelece o direito à educação para a população negra. Nesse sentido, a Lei prevê:',
-                    options: [
-                        'A criação de escolas exclusivas para pessoas negras.',
-                        'A inserção de conteúdos de história e cultura afro-brasileira nas escolas.',
-                        'A dispensa de avaliações de desempenho para estudantes negros.',
-                        'A criação de um currículo separado para estudantes negros.'
-                    ],
-                    answer: 1
-                },
-                {
-                    text: 'O Estatuto da Igualdade Racial tem como fundamento:',
-                    options: [
-                        'Apenas a discriminação positiva.',
-                        'Apenas a equidade racial.',
-                        'A superação do racismo.',
-                        'A equidade e o combate ao racismo e a outras formas de discriminação.'
-                    ],
-                    answer: 3
-                },
-                {
-                    text: 'O Estatuto da Igualdade Racial prevê que o Estado deve adotar políticas de combate à discriminação. O que a Lei define como "discriminação racial"?',
-                    options: [
-                        'Qualquer distinção, exclusão, restrição ou preferência baseada em raça, cor, etnia, religião, ascendência ou origem nacional ou étnica que tenha o propósito ou o efeito de anular ou prejudicar o reconhecimento, gozo ou exercício, em pé de igualdade, de direitos humanos e liberdades fundamentais nos campos político, econômico, social, cultural ou em qualquer outro campo da vida pública ou privada.',
-                        'Apenas o racismo.',
-                        'Apenas a falta de oportunidade para pessoas negras.',
-                        'Apenas a exclusão social de pessoas negras.'
-                    ],
-                    answer: 0
-                },
-                {
-                    text: 'O Estatuto da Igualdade Racial estabelece o direito à liberdade de consciência e de crença. A Lei garante a:',
-                    options: [
-                        'Apenas a liberdade de culto.',
-                        'Apenas a liberdade de crença.',
-                        'A liberdade de consciência e de crença, assim como o livre exercício dos cultos religiosos de matriz africana.',
-                        'Apenas a liberdade de religião.'
-                    ],
-                    answer: 2
-                },
-                {
-                    text: 'O Estatuto da Igualdade Racial prevê o direito à cultura. A Lei estabelece que o Estado deve:',
-                    options: [
-                        'Apenas promover a cultura de matriz europeia.',
-                        'Apenas promover a cultura brasileira.',
-                        'Apoiar e valorizar as manifestações culturais da população negra.',
-                        'Apenas apoiar a cultura de matriz africana.'
-                    ],
-                    answer: 2
-                },
-                {
-                    text: 'O Estatuto da Igualdade Racial prevê o direito ao trabalho. A Lei estabelece que o Estado deve:',
-                    options: [
-                        'Apenas criar programas de emprego para pessoas negras.',
-                        'Apenas reservar vagas em concursos públicos.',
-                        'Adotar ações afirmativas para garantir a igualdade de oportunidades no mercado de trabalho.',
-                        'Apenas criar programas de qualificação profissional para pessoas negras.'
-                    ],
-                    answer: 2
-                },
-                {
-                    text: 'O Estatuto da Igualdade Racial tem como objetivo garantir à população negra a efetivação da igualdade de oportunidades. A Lei define "população negra" como:',
-                    options: [
-                        'Apenas as pessoas de cor preta.',
-                        'Pessoas que se autodeclaram pretas e pardas.',
-                        'Pessoas que se autodeclaram de cor preta.',
-                        'Pessoas de ascendência africana.'
-                    ],
-                    answer: 1
-                },
-                {
-                    text: 'O Estatuto da Igualdade Racial estabelece diretrizes para a política de promoção da igualdade racial. É INCORRETO afirmar que uma das diretrizes é:',
-                    options: [
-                        'A superação da desigualdade étnica.',
-                        'A eliminação do racismo e da discriminação racial.',
-                        'A proteção de manifestações culturais de matriz africana.',
-                        'A promoção da ascensão social exclusiva de pessoas negras.'
-                    ],
-                    answer: 3
-                },
-                {
-                    text: 'O Estatuto da Igualdade Racial prevê ações afirmativas para a promoção da igualdade. Ações afirmativas são:',
-                    options: [
-                        'Medidas especiais e temporárias.',
-                        'Medidas permanentes de cunho punitivo.',
-                        'Medidas que visam apenas o combate à discriminação.',
-                        'Medidas que visam a criação de cotas em universidades.'
-                    ],
-                    answer: 0
-                },
-                {
-                    text: 'O Estatuto da Igualdade Racial aborda o direito à saúde da população negra. A Lei prevê que:',
-                    options: [
-                        'O atendimento de saúde para a população negra deve focar apenas nas doenças genéticas.',
-                        'A política de saúde deve considerar as especificidades da saúde da população negra.',
-                        'A população negra deve ter acesso a tratamentos diferenciados e mais caros.',
-                        'Os profissionais de saúde devem ser exclusivamente de cor preta ou parda.'
-                    ],
-                    answer: 1
-                },
-                {
-                    text: 'A Lei nº 12.288/2010 estabelece o direito à educação para a população negra. Nesse sentido, a Lei prevê:',
-                    options: [
-                        'A criação de escolas exclusivas para pessoas negras.',
-                        'A inserção de conteúdos de história e cultura afro-brasileira nas escolas.',
-                        'A dispensa de avaliações de desempenho para estudantes negros.',
-                        'A criação de um currículo separado para estudantes negros.'
-                    ],
-                    answer: 1
-                }
-            ]
-        },
-        // Questões da Portaria MGI nº 6.719/2024
-        {
-            topic: 'Portaria MGI nº 6.719/2024 (Plano Federal de Prevenção e Enfrentamento do Assédio e da Discriminação na Administração Pública Federal)',
-            questions: [
-                {
-                    text: 'A Portaria MGI nº 6.719/2024 aprova o Plano Federal de Prevenção e Enfrentamento do Assédio e da Discriminação na Administração Pública Federal. Qual é o principal objetivo do plano?',
-                    options: [
-                        'Apenas punir servidores que praticam assédio ou discriminação.',
-                        'Promover a cultura de respeito, ética e integridade.',
-                        'Criar um canal de denúncia exclusivo para casos de assédio moral.',
-                        'Implementar um programa de treinamento obrigatório para todos os servidores.'
-                    ],
-                    answer: 1
-                },
-                {
-                    text: 'O Plano Federal de Prevenção e Enfrentamento do Assédio e da Discriminação tem como diretriz a promoção de um ambiente de trabalho saudável. Para isso, o Plano prevê:',
-                    options: [
-                        'Apenas a aplicação de sanções disciplinares.',
-                        'A realização de campanhas de conscientização e capacitação.',
-                        'A criação de um código de conduta exclusivo para casos de assédio.',
-                        'A fiscalização rigorosa de todos os servidores.'
-                    ],
-                    answer: 1
-                },
-                {
-                    text: 'A Portaria MGI nº 6.719/2024 estabelece a criação de Comitês de Prevenção e Enfrentamento do Assédio e da Discriminação. Esses comitês têm como uma de suas atribuições:',
-                    options: [
-                        'Aplicar sanções disciplinares em casos de assédio.',
-                        'Apenas receber as denúncias de assédio.',
-                        'Elaborar e acompanhar o plano de ação de prevenção e combate.',
-                        'Apenas mediar conflitos entre servidores.'
-                    ],
-                    answer: 2
-                },
-                {
-                    text: 'O Plano Federal de Prevenção e Enfrentamento do Assédio e da Discriminação define o assédio moral como:',
-                    options: [
-                        'Qualquer conduta que cause constrangimento ou humilhação.',
-                        'Apenas a pressão por resultados de forma excessiva.',
-                        'Qualquer conduta abusiva, por meio de gestos, palavras, escritos ou comportamentos, que atente contra a dignidade ou integridade psíquica ou física de uma pessoa.',
-                        'Apenas a cobrança de metas por parte da chefia.'
-                    ],
-                    answer: 2
-                },
-                {
-                    text: 'A Portaria MGI nº 6.719/2024 considera "discriminação" qualquer distinção, exclusão, restrição ou preferência. Qual das seguintes situações NÃO se enquadra como discriminação no contexto do Plano?',
-                    options: [
-                        'Restringir o acesso a um cargo por motivo de gênero.',
-                        'Oferecer benefícios específicos para um grupo de servidores com base em critérios de desempenho.',
-                        'Impedir o acesso a um evento por motivo de raça.',
-                        'Excluir um servidor de uma atividade por motivo de idade.'
-                    ],
-                    answer: 1
-                },
-                {
-                    text: 'A Portaria MGI nº 6.719/2024 aprova o Plano Federal de Prevenção e Enfrentamento do Assédio e da Discriminação na Administração Pública Federal. O plano tem como fundamento:',
-                    options: [
-                        'Apenas o combate ao assédio moral.',
-                        'Apenas a igualdade de tratamento.',
-                        'A dignidade da pessoa humana, o respeito e a valorização do servidor.',
-                        'Apenas o combate à discriminação.'
-                    ],
-                    answer: 2
-                },
-                {
-                    text: 'O Plano Federal de Prevenção e Enfrentamento do Assédio e da Discriminação tem como diretriz a responsabilidade dos gestores. O que isso significa?',
-                    options: [
-                        'Que o gestor é o único responsável pelo assédio.',
-                        'Que o gestor deve apenas punir os servidores que praticam assédio.',
-                        'Que o gestor deve atuar de forma proativa na prevenção e no combate ao assédio e à discriminação.',
-                        'Que o gestor deve apenas fiscalizar a atuação dos servidores.'
-                    ],
-                    answer: 2
-                },
-                {
-                    text: 'O Plano Federal de Prevenção e Enfrentamento do Assédio e da Discriminação prevê a criação de um canal de denúncia. O que o plano prevê sobre esse canal?',
-                    options: [
-                        'Apenas a denúncia anônima.',
-                        'A denúncia deve ser feita apenas por escrito.',
-                        'A denúncia pode ser feita por qualquer pessoa que tenha conhecimento de um caso de assédio ou discriminação.',
-                        'Apenas a denúncia por meio de um formulário online.'
-                    ],
-                    answer: 2
-                },
-                {
-                    text: 'O Plano Federal de Prevenção e Enfrentamento do Assédio e da Discriminação prevê a realização de capacitação e treinamento. O que o plano prevê sobre a capacitação?',
-                    options: [
-                        'Apenas para os gestores.',
-                        'Apenas para os servidores que atuam em comitês.',
-                        'Para todos os servidores, de forma obrigatória.',
-                        'Apenas para os servidores que atuam em áreas de risco.'
-                    ],
-                    answer: 2
-                },
-                {
-                    text: 'O Plano Federal de Prevenção e Enfrentamento do Assédio e da Discriminação prevê a realização de campanhas de conscientização. O que o plano prevê sobre as campanhas?',
-                    options: [
-                        'Apenas a divulgação de informações sobre o assédio moral.',
-                        'Apenas a divulgação de informações sobre a discriminação.',
-                        'A divulgação de informações sobre o assédio moral e a discriminação, bem como sobre os canais de denúncia.',
-                        'Apenas a divulgação de informações sobre a Portaria MGI nº 6.719/2024.'
-                    ],
-                    answer: 2
-                },
-                {
-                    text: 'A Portaria MGI nº 6.719/2024 aprova o Plano Federal de Prevenção e Enfrentamento do Assédio e da Discriminação na Administração Pública Federal. Qual é o principal objetivo do plano?',
-                    options: [
-                        'Apenas punir servidores que praticam assédio ou discriminação.',
-                        'Promover a cultura de respeito, ética e integridade.',
-                        'Criar um canal de denúncia exclusivo para casos de assédio moral.',
-                        'Implementar um programa de treinamento obrigatório para todos os servidores.'
-                    ],
-                    answer: 1
-                },
-                {
-                    text: 'O Plano Federal de Prevenção e Enfrentamento do Assédio e da Discriminação tem como diretriz a promoção de um ambiente de trabalho saudável. Para isso, o Plano prevê:',
-                    options: [
-                        'Apenas a aplicação de sanções disciplinares.',
-                        'A realização de campanhas de conscientização e capacitação.',
-                        'A criação de um código de conduta exclusivo para casos de assédio.',
-                        'A fiscalização rigorosa de todos os servidores.'
-                    ],
-                    answer: 1
-                },
-                {
-                    text: 'A Portaria MGI nº 6.719/2024 estabelece a criação de Comitês de Prevenção e Enfrentamento do Assédio e da Discriminação. Esses comitês têm como uma de suas atribuições:',
-                    options: [
-                        'Aplicar sanções disciplinares em casos de assédio.',
-                        'Apenas receber as denúncias de assédio.',
-                        'Elaborar e acompanhar o plano de ação de prevenção e combate.',
-                        'Apenas mediar conflitos entre servidores.'
-                    ],
-                    answer: 2
-                },
-                {
-                    text: 'O Plano Federal de Prevenção e Enfrentamento do Assédio e da Discriminação define o assédio moral como:',
-                    options: [
-                        'Qualquer conduta que cause constrangimento ou humilhação.',
-                        'Apenas a pressão por resultados de forma excessiva.',
-                        'Qualquer conduta abusiva, por meio de gestos, palavras, escritos ou comportamentos, que atente contra a dignidade ou integridade psíquica ou física de uma pessoa.',
-                        'Apenas a cobrança de metas por parte da chefia.'
-                    ],
-                    answer: 2
-                },
-                {
-                    text: 'A Portaria MGI nº 6.719/2024 considera "discriminação" qualquer distinção, exclusão, restrição ou preferência. Qual das seguintes situações NÃO se enquadra como discriminação no contexto do Plano?',
-                    options: [
-                        'Restringir o acesso a um cargo por motivo de gênero.',
-                        'Oferecer benefícios específicos para um grupo de servidores com base em critérios de desempenho.',
-                        'Impedir o acesso a um evento por motivo de raça.',
-                        'Excluir um servidor de uma atividade por motivo de idade.'
-                    ],
-                    answer: 1
-                }
-            ]
-        },
-        // Questões sobre os Crimes contra a Administração Pública
-        {
-            topic: 'Dos Crimes contra a Administração Pública (art. 312 ao 327 do Código Penal)',
-            questions: [
-                {
-                    text: 'De acordo com o Código Penal, o crime de peculato, previsto no art. 312, consiste em:',
-                    options: [
-                        'Apropriar-se de dinheiro, valor ou qualquer outro bem móvel, público ou particular, de que tem a posse em razão do cargo.',
-                        'Desviar, em proveito próprio ou alheio, dinheiro, valor ou qualquer outro bem móvel, público ou particular, de que tem a posse em razão do cargo.',
-                        'Solicitar ou receber, para si ou para outrem, vantagem indevida em razão do cargo.',
-                        'Apropriar-se de dinheiro, valor ou qualquer outro bem móvel, de que não tem a posse, por meio de violência ou grave ameaça.'
-                    ],
-                    answer: 0
-                },
-                {
-                    text: 'O crime de peculato-furto, previsto no art. 312, §1º do Código Penal, ocorre quando o funcionário público, embora não tenha a posse do bem, o subtrai em razão da facilidade que o cargo lhe proporciona. Nesse caso, a pena é:',
-                    options: [
-                        'A mesma do peculato-apropriação.',
-                        'Menor que a do peculato-apropriação.',
-                        'Maior que a do peculato-apropriação.',
-                        'Apropriar-se de dinheiro, valor ou qualquer outro bem móvel, público ou particular, de que tem a posse em razão do cargo.'
-                    ],
-                    answer: 0
-                },
-                {
-                    text: 'O crime de concussão, previsto no art. 316 do Código Penal, é caracterizado por:',
-                    options: [
-                        'Solicitar vantagem indevida.',
-                        'Receber vantagem indevida.',
-                        'Exigir, para si ou para outrem, direta ou indiretamente, ainda que fora da função ou antes de assumi-la, mas em razão dela, vantagem indevida.',
-                        'Oferecer vantagem indevida a funcionário público.'
-                    ],
-                    answer: 2
-                },
-                {
-                    text: 'O crime de corrupção passiva, previsto no art. 317 do Código Penal, é a conduta do funcionário público que:',
-                    options: [
-                        'Oferece ou promete vantagem indevida.',
-                        'Solicita ou recebe vantagem indevida, ou aceita promessa de tal vantagem, para si ou para outrem, em razão da função.',
-                        'Paga ou promete vantagem indevida.',
-                        'Apenas aceita a promessa de vantagem.'
-                    ],
-                    answer: 1
-                },
-                {
-                    text: 'A corrupção ativa, prevista no art. 333 do Código Penal, é o crime praticado por quem:',
-                    options: [
-                        'Solicita vantagem indevida.',
-                        'Recebe vantagem indevida.',
-                        'Oferece ou promete vantagem indevida a funcionário público, para determiná-lo a praticar, omitir ou retardar ato de ofício.',
-                        'Aceita a promessa de vantagem indevida.'
-                    ],
-                    answer: 2
-                },
-                {
-                    text: 'O crime de prevaricação, previsto no art. 319 do Código Penal, é a conduta do funcionário público que:',
-                    options: [
-                        'Apropriar-se de bem público.',
-                        'Deixar de praticar, indevidamente, ato de ofício, para satisfazer interesse ou sentimento pessoal.',
-                        'Exigir, para si ou para outrem, vantagem indevida.',
-                        'Solicitar vantagem indevida.'
-                    ],
-                    answer: 1
-                },
-                {
-                    text: 'O crime de condescendência criminosa, previsto no art. 320 do Código Penal, ocorre quando:',
-                    options: [
-                        'O funcionário público, por inércia, deixa de praticar ato de ofício.',
-                        'O funcionário público, por negligência, deixa de responsabilizar seu subordinado.',
-                        'O funcionário público deixa de praticar, indevidamente, ato de ofício.',
-                        'O funcionário público, por inércia, deixa de dar andamento a processo.'
-                    ],
-                    answer: 1
-                },
-                {
-                    text: 'O crime de advocacia administrativa, previsto no art. 321 do Código Penal, é a conduta de:',
-                    options: [
-                        'Advogar em causa própria.',
-                        'Patrocinar, direta ou indiretamente, interesse privado perante a administração pública.',
-                        'Advogar em causa pública.',
-                        'Atuar como advogado em processos judiciais.'
-                    ],
-                    answer: 1
-                },
-                {
-                    text: 'O crime de violência arbitrária, previsto no art. 322 do Código Penal, ocorre quando:',
-                    options: [
-                        'O funcionário público pratica violência física ou moral contra a pessoa.',
-                        'O funcionário público usa violência para prender uma pessoa.',
-                        'O funcionário público, de forma arbitrária, prende ou detém uma pessoa.',
-                        'O funcionário público usa violência no exercício da função, com abuso de poder.'
-                    ],
-                    answer: 3
-                },
-                {
-                    text: 'O crime de abandono de função, previsto no art. 323 do Código Penal, ocorre quando:',
-                    options: [
-                        'O funcionário público falta ao serviço por mais de trinta dias consecutivos.',
-                        'O funcionário público abandona o cargo, sem motivo justificado.',
-                        'O funcionário público não comparece ao serviço por um dia.',
-                        'O funcionário público, por inércia, deixa de praticar ato de ofício.'
-                    ],
-                    answer: 1
-                },
-                {
-                    text: 'O crime de peculato, em suas diversas modalidades, é um crime contra a Administração Pública. Qual é o bem jurídico tutelado pelo crime de peculato?',
-                    options: [
-                        'O patrimônio público.',
-                        'A honra da Administração Pública.',
-                        'A probidade administrativa.',
-                        'A segurança da Administração Pública.'
-                    ],
-                    answer: 2
-                },
-                {
-                    text: 'O crime de peculato-desvio, previsto no art. 312, §1º do Código Penal, é a conduta do funcionário público que:',
-                    options: [
-                        'Apropriar-se de dinheiro, valor ou qualquer outro bem móvel, público ou particular, de que tem a posse em razão do cargo.',
-                        'Subtrair, em proveito próprio ou alheio, dinheiro, valor ou qualquer outro bem móvel, público ou particular, de que tem a posse em razão do cargo.',
-                        'Desviar, em proveito próprio ou alheio, dinheiro, valor ou qualquer outro bem móvel, público ou particular, de que tem a posse em razão do cargo.',
-                        'Apenas usar o bem público para fins particulares.'
-                    ],
-                    answer: 2
-                },
-                {
-                    text: 'O crime de peculato-apropriação é a conduta do funcionário público que:',
-                    options: [
-                        'Apropriar-se de dinheiro, valor ou qualquer outro bem móvel, público ou particular, de que tem a posse em razão do cargo.',
-                        'Desviar, em proveito próprio ou alheio, dinheiro, valor ou qualquer outro bem móvel, público ou particular, de que tem a posse em razão do cargo.',
-                        'Subtrair, em proveito próprio ou alheio, dinheiro, valor ou qualquer outro bem móvel, de que não tem a posse.',
-                        'Apenas usar o bem público para fins particulares.'
-                    ],
-                    answer: 0
-                },
-                {
-                    text: 'O crime de concussão é a conduta do funcionário público que exige, para si ou para outrem, vantagem indevida. Qual é o bem jurídico tutelado pelo crime de concussão?',
-                    options: [
-                        'O patrimônio público.',
-                        'A honra da Administração Pública.',
-                        'A probidade administrativa.',
-                        'A segurança da Administração Pública.'
-                    ],
-                    answer: 2
-                },
-                {
-                    text: 'A corrupção passiva, prevista no art. 317 do Código Penal, é a conduta do funcionário público que solicita ou recebe vantagem indevida. O que caracteriza o crime?',
-                    options: [
-                        'Apenas a solicitação de vantagem.',
-                        'Apenas o recebimento de vantagem.',
-                        'A solicitação, o recebimento ou a aceitação de promessa de vantagem.',
-                        'Apenas a promessa de vantagem.'
-                    ],
-                    answer: 2
-                },
-                {
-                    text: 'A corrupção ativa, prevista no art. 333 do Código Penal, é a conduta de quem oferece ou promete vantagem indevida a funcionário público. O que caracteriza o crime?',
-                    options: [
-                        'Apenas o oferecimento de vantagem.',
-                        'Apenas a promessa de vantagem.',
-                        'O oferecimento ou a promessa de vantagem.',
-                        'Apenas o pagamento da vantagem.'
-                    ],
-                    answer: 2
-                },
-                {
-                    text: 'O crime de prevaricação, previsto no art. 319 do Código Penal, é a conduta do funcionário público que deixa de praticar, indevidamente, ato de ofício. O que caracteriza o crime?',
-                    options: [
-                        'Apenas a omissão.',
-                        'A omissão, a prática ou o retardamento de ato de ofício.',
-                        'Apenas o retardamento de ato de ofício.',
-                        'A omissão ou a prática de ato de ofício.'
-                    ],
-                    answer: 1
-                },
-                {
-                    text: 'O crime de condescendência criminosa, previsto no art. 320 do Código Penal, ocorre quando o funcionário público, por inércia, deixa de responsabilizar seu subordinado. O que caracteriza o crime?',
-                    options: [
-                        'Apenas a omissão.',
-                        'A omissão por negligência.',
-                        'A omissão por dolo.',
-                        'A omissão por imperícia.'
-                    ],
-                    answer: 1
-                },
-                {
-                    text: 'O crime de advocacia administrativa, previsto no art. 321 do Código Penal, é a conduta de patrocinar, direta ou indiretamente, interesse privado perante a administração pública. O que caracteriza o crime?',
-                    options: [
-                        'Apenas a advocacia.',
-                        'A advocacia, a assessoria ou a consultoria.',
-                        'Apenas a consultoria.',
-                        'A advocacia ou a assessoria.'
-                    ],
-                    answer: 1
-                },
-                {
-                    text: 'O crime de abandono de função, previsto no art. 323 do Código Penal, é a conduta do funcionário público que abandona o cargo, sem motivo justificado. O que caracteriza o crime?',
-                    options: [
-                        'Apenas a ausência por um dia.',
-                        'A ausência por um período de tempo, sem motivo justificado.',
-                        'A ausência por mais de trinta dias consecutivos.',
-                        'A ausência por um período de tempo, com motivo justificado.'
-                    ],
-                    answer: 2
-                },
-                {
-                    text: 'O crime de peculato-apropriação é a conduta do funcionário público que:',
-                    options: [
-                        'Apropriar-se de dinheiro, valor ou qualquer outro bem móvel, público ou particular, de que tem a posse em razão do cargo.',
-                        'Desviar, em proveito próprio ou alheio, dinheiro, valor ou qualquer outro bem móvel, público ou particular, de que tem a posse em razão do cargo.',
-                        'Subtrair, em proveito próprio ou alheio, dinheiro, valor ou qualquer outro bem móvel, de que não tem a posse.',
-                        'Apenas usar o bem público para fins particulares.'
-                    ],
-                    answer: 0
-                },
-                {
-                    text: 'O crime de concussão, previsto no art. 316 do Código Penal, é a conduta do funcionário público que:',
-                    options: [
-                        'Solicita vantagem indevida.',
-                        'Recebe vantagem indevida.',
-                        'Exige, para si ou para outrem, direta ou indiretamente, ainda que fora da função ou antes de assumi-la, mas em razão dela, vantagem indevida.',
-                        'Oferece vantagem indevida a funcionário público.'
-                    ],
-                    answer: 2
-                },
-                {
-                    text: 'O crime de corrupção passiva, previsto no art. 317 do Código Penal, é a conduta do funcionário público que:',
-                    options: [
-                        'Oferece ou promete vantagem indevida.',
-                        'Solicita ou recebe vantagem indevida, ou aceita promessa de tal vantagem, para si ou para outrem, em razão da função.',
-                        'Paga ou promete vantagem indevida.',
-                        'Apenas aceita a promessa de vantagem.'
-                    ],
-                    answer: 1
-                },
-                {
-                    text: 'A corrupção ativa, prevista no art. 333 do Código Penal, é o crime praticado por quem:',
-                    options: [
-                        'Solicita vantagem indevida.',
-                        'Recebe vantagem indevida.',
-                        'Oferece ou promete vantagem indevida a funcionário público, para determiná-lo a praticar, omitir ou retardar ato de ofício.',
-                        'Aceita a promessa de vantagem indevida.'
-                    ],
-                    answer: 2
-                },
-                {
-                    text: 'O crime de prevaricação, previsto no art. 319 do Código Penal, é a conduta do funcionário público que:',
-                    options: [
-                        'Apropriar-se de bem público.',
-                        'Deixar de praticar, indevidamente, ato de ofício, para satisfazer interesse ou sentimento pessoal.',
-                        'Exigir, para si ou para outrem, vantagem indevida.',
-                        'Solicitar vantagem indevida.'
-                    ],
-                    answer: 1
-                }
-            ]
-        },
-        // Questões sobre o Estatuto do IFSertãoPE
-        {
-            topic: 'Estatuto do IFSertãoPE',
-            questions: [
-                {
-                    text: 'O Estatuto do IFSertãoPE, aprovado pela Portaria IFPE nº 844, de 20 de outubro de 2011, é o documento que estabelece a organização, as competências e as finalidades do Instituto. Qual é a natureza jurídica do IFSertãoPE?',
-                    options: [
-                        'Autarquia federal de natureza jurídica privada.',
-                        'Autarquia federal de natureza jurídica pública.',
-                        'Empresa pública de natureza jurídica pública.',
-                        'Fundação pública de natureza jurídica privada.'
-                    ],
-                    answer: 1
-                },
-                {
-                    text: 'O Estatuto do IFSertãoPE prevê a sua finalidade e suas competências. Uma das finalidades do Instituto é:',
-                    options: [
-                        'Apenas oferecer cursos de graduação e pós-graduação.',
-                        'Atuar no ensino, pesquisa e extensão.',
-                        'Apenas desenvolver projetos de pesquisa.',
-                        'Apenas oferecer cursos técnicos.'
-                    ],
-                    answer: 1
-                },
-                {
-                    text: 'O IFSertãoPE é um órgão da Administração Pública Federal. De acordo com o Estatuto, a estrutura do Instituto é composta por:',
-                    options: [
-                        'Reitoria e Campus.',
-                        'Reitoria e Conselhos.',
-                        'Reitoria, Campi, Colégio de Dirigentes e Conselho Superior.',
-                        'Reitoria, Campi e Conselho de Campus.'
-                    ],
-                    answer: 2
-                },
-                {
-                    text: 'O Conselho Superior é o órgão máximo do IFSertãoPE. Qual é a sua principal competência?',
-                    options: [
-                        'Apenas aprovar o calendário acadêmico.',
-                        'Apenas fiscalizar a gestão do Reitor.',
-                        'Apenas aprovar o plano de desenvolvimento institucional.',
-                        'Aprovar o plano de desenvolvimento institucional, o orçamento e a política de gestão de pessoas.'
-                    ],
-                    answer: 3
-                },
-                {
-                    text: 'O Estatuto do IFSertãoPE estabelece a eleição para os cargos de Reitor e de Diretores-Gerais de Campus. O processo eleitoral é realizado por:',
-                    options: [
-                        'Apenas servidores docentes.',
-                        'Apenas servidores técnicos administrativos.',
-                        'Apenas estudantes.',
-                        'O processo eleitoral é realizado por todos os segmentos da comunidade acadêmica, ou seja, estudantes, docentes e técnicos administrativos.'
-                    ],
-                    answer: 3
-                },
-                {
-                    text: 'O Conselho Superior é um órgão colegiado. A sua composição é paritária, ou seja, conta com a participação de todos os segmentos da comunidade acadêmica. Essa paridade é garantida por:',
-                    options: [
-                        'Apenas a presença de docentes e técnicos administrativos.',
-                        'Apenas a presença de estudantes e docentes.',
-                        'A representação de todos os segmentos, com o mesmo número de representantes para cada um.',
-                        'A representação de todos os segmentos, com a distribuição de vagas de forma proporcional ao número de integrantes de cada um.'
-                    ],
-                    answer: 2
-                },
-                {
-                    text: 'O Estatuto do IFSertãoPE prevê a criação de Conselhos de Campus. A principal competência do Conselho de Campus é:',
-                    options: [
-                        'Apenas aprovar o projeto pedagógico do Campus.',
-                        'Apenas fiscalizar a gestão do Diretor-Geral.',
-                        'Aprovar o plano de desenvolvimento do Campus.',
-                        'Apenas aprovar o calendário acadêmico do Campus.'
-                    ],
-                    answer: 2
-                },
-                {
-                    text: 'O Estatuto do IFSertãoPE prevê a criação de Câmaras de Ensino, Pesquisa e Extensão. Qual é a sua principal função?',
-                    options: [
-                        'Apenas aprovar o calendário acadêmico.',
-                        'Apenas fiscalizar a gestão do Reitor.',
-                        'Propor políticas e diretrizes para o ensino, pesquisa e extensão.',
-                        'Apenas aprovar o orçamento do Instituto.'
-                    ],
-                    answer: 2
-                },
-                {
-                    text: 'O Estatuto do IFSertãoPE prevê a figura do Colégio de Dirigentes. Quem faz parte do Colégio de Dirigentes?',
-                    options: [
-                        'Apenas o Reitor e os Diretores de Campus.',
-                        'O Reitor, os Pró-Reitores e os Diretores de Campus.',
-                        'O Reitor, os Pró-Reitores e os Coordenadores de Curso.',
-                        'Apenas o Reitor e os Pró-Reitores.'
-                    ],
-                    answer: 1
-                },
-                {
-                    text: 'O Estatuto do IFSertãoPE prevê o princípio da autonomia didático-pedagógica. Esse princípio significa que:',
-                    options: [
-                        'O IFSertãoPE pode criar cursos sem a aprovação do MEC.',
-                        'O IFSertãoPE pode elaborar seus próprios currículos e projetos pedagógicos, respeitando as diretrizes nacionais.',
-                        'O IFSertãoPE pode conceder diplomas sem a aprovação do MEC.',
-                        'O IFSertãoPE pode atuar sem a fiscalização do MEC.'
-                    ],
-                    answer: 1
-                },
-                {
-                    text: 'O Estatuto do IFSertãoPE prevê a sua missão. Qual é a missão do Instituto?',
-                    options: [
-                        'Apenas oferecer cursos técnicos.',
-                        'Promover a educação profissional e tecnológica, a pesquisa, a inovação e a extensão.',
-                        'Apenas oferecer cursos de graduação e pós-graduação.',
-                        'Apenas atuar no ensino e na pesquisa.'
-                    ],
-                    answer: 1
-                },
-                {
-                    text: 'O Estatuto do IFSertãoPE prevê os seus princípios e diretrizes. Um dos princípios é:',
-                    options: [
-                        'Apenas a gestão centralizada.',
-                        'A gestão democrática.',
-                        'Apenas a gestão colegiada.',
-                        'Apenas a gestão participativa.'
-                    ],
-                    answer: 1
-                },
-                {
-                    text: 'O Estatuto do IFSertãoPE prevê a sua estrutura organizacional. A estrutura é composta por:',
-                    options: [
-                        'Apenas a Reitoria.',
-                        'Apenas a Reitoria e os Campi.',
-                        'A Reitoria, os Campi e o Conselho Superior.',
-                        'A Reitoria, os Campi, os Pró-Reitores e os Diretores de Campus.'
-                    ],
-                    answer: 2
-                },
-                {
-                    text: 'O Conselho Superior é o órgão máximo do IFSertãoPE. O que o Estatuto prevê sobre a sua composição?',
-                    options: [
-                        'Apenas a participação de docentes.',
-                        'Apenas a participação de estudantes.',
-                        'A participação de todos os segmentos da comunidade acadêmica, de forma paritária.',
-                        'Apenas a participação de técnicos administrativos.'
-                    ],
-                    answer: 2
-                },
-                {
-                    text: 'O Estatuto do IFSertãoPE prevê a figura do Reitor. O que o Estatuto prevê sobre o cargo de Reitor?',
-                    options: [
-                        'O Reitor é eleito pela comunidade acadêmica.',
-                        'O Reitor é nomeado pelo MEC.',
-                        'O Reitor é nomeado pelo Presidente da República.',
-                        'O Reitor é nomeado pelo Governador.'
-                    ],
-                    answer: 0
-                },
-                {
-                    text: 'O Estatuto do IFSertãoPE prevê a figura do Diretor-Geral de Campus. O que o Estatuto prevê sobre o cargo de Diretor-Geral?',
-                    options: [
-                        'O Diretor-Geral é eleito pela comunidade acadêmica do Campus.',
-                        'O Diretor-Geral é nomeado pelo Reitor.',
-                        'O Diretor-Geral é nomeado pelo MEC.',
-                        'O Diretor-Geral é nomeado pelo Presidente da República.'
-                    ],
-                    answer: 0
-                },
-                {
-                    text: 'O Estatuto do IFSertãoPE prevê a figura do Colégio de Dirigentes. O que o Estatuto prevê sobre o Colégio de Dirigentes?',
-                    options: [
-                        'Apenas o Reitor e os Pró-Reitores.',
-                        'O Reitor, os Pró-Reitores e os Diretores de Campus.',
-                        'O Reitor, os Pró-Reitores e os Coordenadores de Curso.',
-                        'Apenas os Diretores de Campus.'
-                    ],
-                    answer: 1
-                },
-                {
-                    text: 'O Estatuto do IFSertãoPE prevê a figura dos Conselhos de Campus. O que o Estatuto prevê sobre os Conselhos de Campus?',
-                    options: [
-                        'Apenas a aprovação do calendário acadêmico do Campus.',
-                        'Apenas a aprovação do orçamento do Campus.',
-                        'A aprovação do plano de desenvolvimento do Campus, a fiscalização da gestão e a aprovação do calendário acadêmico.',
-                        'Apenas a aprovação do projeto pedagógico do Campus.'
-                    ],
-                    answer: 2
-                },
-                {
-                    text: 'O Estatuto do IFSertãoPE prevê a figura das Câmaras de Ensino, Pesquisa e Extensão. O que o Estatuto prevê sobre as Câmaras?',
-                    options: [
-                        'Apenas a aprovação do calendário acadêmico.',
-                        'Apenas a aprovação do orçamento.',
-                        'A proposição de políticas e diretrizes para o ensino, pesquisa e extensão.',
-                        'Apenas a aprovação do plano de desenvolvimento.'
-                    ],
-                    answer: 2
-                },
-                {
-                    text: 'O Estatuto do IFSertãoPE prevê o princípio da autonomia administrativa. O que o Estatuto prevê sobre a autonomia administrativa?',
-                    options: [
-                        'O IFSertãoPE pode gerir seus recursos sem a fiscalização do MEC.',
-                        'O IFSertãoPE pode gerir seus recursos financeiros, orçamentários e patrimoniais.',
-                        'O IFSertãoPE pode criar cursos sem a aprovação do MEC.',
-                        'O IFSertãoPE pode contratar servidores sem a aprovação do MEC.'
-                    ],
-                    answer: 1
-                }
-            ]
-        }
-    ];
 
 
-            const btnQuizIA = document.getElementById('btnQuizIA');
-            const btnQuizOutrasProvas = document.getElementById('btnQuizOutrasProvas');
-            const btnQuizEPT = document.getElementById('btnQuizEPT');
-            const quizArea = document.getElementById('quizArea');
-            const scoreArea = document.getElementById('scoreArea');
-            const userScoreSpan = document.getElementById('userScore');
-            const totalQuestionsSpan = document.getElementById('totalQuestions');
-
-
-            
-            let currentQuestions = [];
-            let score = 0;
-            const NUM_QUESTIONS = 10;
-
+            // O restante do script original permanece o mesmo, mas com a adição do novo botão e sua função.
             function shuffleArray(array) {
                 for (let i = array.length - 1; i > 0; i--) {
                     const j = Math.floor(Math.random() * (i + 1));
@@ -2292,110 +3148,109 @@
             }
 
             function loadQuestions(questionsArray, quizType) {
+                const quizArea = document.getElementById('quizArea');
+                const scoreArea = document.getElementById('scoreArea');
                 quizArea.innerHTML = '';
-                score = 0;
-                userScoreSpan.textContent = 0;
-                scoreArea.style.display = 'none';
                 quizArea.style.display = 'block';
+                scoreArea.style.display = 'none';
 
-                const shuffledQuestions = shuffleArray([...questionsArray]);
-                currentQuestions = shuffledQuestions.slice(0, NUM_QUESTIONS);
-                totalQuestionsSpan.textContent = NUM_QUESTIONS;
+                let selectedQuestions;
 
-                currentQuestions.forEach((q, index) => {
-                    const questionCard = document.createElement('div');
-                    questionCard.classList.add('question-card');
-                    questionCard.innerHTML = `
-                        <h3>Questão ${index + 1}: ${q.question || q.enunciado}</h3>
-                        <div class="options" id="options-${index}">
-                            ${generateOptionsHtml(q, quizType, index)}
-                        </div>
-                        <div class="feedback" id="feedback-${index}"></div>
-                        <div class="explanation" id="explanation-${index}">${q.explanation || (quizType === 'outrasProvas' ? q.alternativaCorreta + '. Fonte: ' + q.fonte : '')}</div>
-                        <button class="show-answer-button" data-index="${index}">Ver Resposta</button>
-                    `;
-                    quizArea.appendChild(questionCard);
-                });
-
-                const showAnswerButtons = document.querySelectorAll('.show-answer-button');
-                showAnswerButtons.forEach(button => {
-                    button.addEventListener('click', (event) => showAnswer(event.target.dataset.index, quizType));
-                });
-            }
-
-            function generateOptionsHtml(question, quizType, questionIndex) {
-                if (quizType === 'ia') {
-                    return question.options.map((option, optIndex) => `
-                        <label>
-                            <input type="radio" name="question-${questionIndex}" value="${String.fromCharCode(97 + optIndex)}">
-                            ${option}
-                        </label>
-                    `).join('');
-                } else if (quizType === 'outrasProvas') {
-                    // Para 'questoesEstudo', a 'alternativaCorreta' já é a resposta, não há opções de múltipla escolha.
-                    // Adaptamos para mostrar um campo de texto ou apenas a afirmação.
-                    // Para o propósito de um quiz, vamos criar uma opção "verdadeiro/falso" ou deixar apenas a afirmação
-                    // e a resposta direta para simplificar, já que o formato é diferente.
-                    // Por simplicidade, vamos apenas exibir a afirmação e o botão de ver resposta.
-                    // Não geramos radio buttons aqui pois o formato original não tem múltiplas escolhas para este quiz.
-                    return `<p>Esta é uma pergunta de afirmação/resposta direta. Clique em "Ver Resposta" para conferir.</p>`;
-                } else if (quizType === 'ept') {
-                    return question.options.map((option, optIndex) => `
-                        <label>
-                            <input type="radio" name="question-${questionIndex}" value="${String.fromCharCode(97 + optIndex)}">
-                            ${option}
-                        </label>
-                    `).join('');
+                if (quizType === 'ia' || quizType === 'ifpe') {
+                    // Para os quizzes 'ia' e 'ifpe', embaralhe e selecione 10
+                    selectedQuestions = shuffleArray(questionsArray).slice(0, 10);
+                } else if (quizType === 'outrasProvas' || quizType === 'ept') {
+                    // Para os quizzes 'outrasProvas' e 'ept', que são um pouco diferentes no formato e já estão agrupados por tópicos,
+                    // precisamos de uma lógica ligeiramente diferente para pegar questões aleatórias.
+                    // Vamos criar um array plano de todas as questões
+                    const flatQuestions = questionsArray.flatMap(topic => topic.questions);
+                    selectedQuestions = shuffleArray(flatQuestions).slice(0, 10);
                 }
-            }
 
+                // Renderiza as questões selecionadas
+                selectedQuestions.forEach((q, index) => {
+                    const questionCard = document.createElement('div');
+                    questionCard.className = 'question-card';
 
-            function showAnswer(index, quizType) {
-                const q = currentQuestions[index];
-                const feedbackDiv = document.getElementById(`feedback-${index}`);
-                const explanationDiv = document.getElementById(`explanation-${index}`);
-                const optionsDiv = document.getElementById(`options-${index}`);
+                    const questionTitle = document.createElement('h3');
+                    questionTitle.textContent = `${index + 1}. ${q.question || q.text}`;
+                    questionCard.appendChild(questionTitle);
 
-                explanationDiv.style.display = 'block';
+                    const optionsDiv = document.createElement('div');
+                    optionsDiv.className = 'options';
 
-                if (quizType === 'ia' || quizType === 'ept') {
-                    const selectedOption = document.querySelector(`input[name="question-${index}"]:checked`);
-                    const correctOptionValue = q.correct; // para 'ia' e 'ept' o correto é 'a', 'b', etc.
+                    const optionsToDisplay = q.options;
 
-                    if (selectedOption) {
-                        if (selectedOption.value === correctOptionValue) {
-                            feedbackDiv.textContent = 'Correto!';
-                            feedbackDiv.className = 'feedback correct';
-                            // Não incrementa pontuação aqui para permitir que o usuário verifique sem mudar a pontuação
-                            // Se quiser que a pontuação seja automática, a lógica de score deve ser no 'change' do radio
-                        } else {
-                            feedbackDiv.textContent = `Incorreto. A resposta correta é: ${correctOptionValue.toUpperCase()}) ${q.options[correctOptionValue.charCodeAt(0) - 97]}`;
-                            feedbackDiv.className = 'feedback incorrect';
-                        }
-                        feedbackDiv.style.display = 'block';
-                    } else {
-                        // Se nada foi selecionado, apenas mostre a resposta correta
-                        feedbackDiv.textContent = `Você não selecionou uma opção. A resposta correta é: ${correctOptionValue.toUpperCase()}) ${q.options[correctOptionValue.charCodeAt(0) - 97]}`;
-                        feedbackDiv.className = 'feedback incorrect';
-                        feedbackDiv.style.display = 'block';
+                    if (optionsToDisplay) {
+                        optionsToDisplay.forEach((option, i) => {
+                            const optionLabel = document.createElement('label');
+                            const radioInput = document.createElement('input');
+                            radioInput.type = 'radio';
+                            radioInput.name = `question${index}`;
+                            radioInput.value = String.fromCharCode(97 + i);
+                            optionLabel.appendChild(radioInput);
+                            optionLabel.appendChild(document.createTextNode(option));
+                            optionsDiv.appendChild(optionLabel);
+                        });
                     }
 
-                    // Desabilitar opções após ver a resposta
-                    const radios = optionsDiv.querySelectorAll('input[type="radio"]');
-                    radios.forEach(radio => radio.disabled = true);
-                } else if (quizType === 'outrasProvas') {
-                    // Para questões de 'outrasProvas', a 'alternativaCorreta' é a própria explicação da resposta
-                    feedbackDiv.textContent = `Resposta: ${q.alternativaCorreta}`;
-                    feedbackDiv.className = 'feedback correct'; // Ou uma classe neutra, já que não é um "check"
-                    feedbackDiv.style.display = 'block';
-                }
+                    questionCard.appendChild(optionsDiv);
+
+                    const feedbackDiv = document.createElement('div');
+                    feedbackDiv.className = 'feedback';
+                    questionCard.appendChild(feedbackDiv);
+
+                    const explanationDiv = document.createElement('div');
+                    explanationDiv.className = 'explanation';
+                    explanationDiv.textContent = q.explanation || `Resposta correta: ${q.options ? q.options[q.correct.charCodeAt(0) - 97] : q.alternativaCorreta}`;
+                    questionCard.appendChild(explanationDiv);
+
+                    const buttonContainer = document.createElement('div');
+                    const submitButton = document.createElement('button');
+                    submitButton.textContent = 'Verificar Resposta';
+                    submitButton.className = 'submit-button';
+                    submitButton.onclick = () => checkAnswer(questionCard, q, quizType);
+                    buttonContainer.appendChild(submitButton);
+                    questionCard.appendChild(buttonContainer);
+
+                    quizArea.appendChild(questionCard);
+                });
             }
 
+            function checkAnswer(questionCard, q, quizType) {
+                const optionsDiv = questionCard.querySelector('.options');
+                const feedbackDiv = questionCard.querySelector('.feedback');
+                const explanationDiv = questionCard.querySelector('.explanation');
+
+                const correctOptionValue = q.correct;
+                const selectedOption = optionsDiv.querySelector('input[type="radio"]:checked');
+
+                if (selectedOption) {
+                    if (selectedOption.value === correctOptionValue) {
+                        feedbackDiv.textContent = 'Parabéns, resposta correta!';
+                        feedbackDiv.className = 'feedback correct';
+                    } else {
+                        feedbackDiv.textContent = `Resposta incorreta. A correta é: ${q.options[correctOptionValue.charCodeAt(0) - 97]}`;
+                        feedbackDiv.className = 'feedback incorrect';
+                    }
+                } else {
+                    feedbackDiv.textContent = `Você não selecionou uma opção. A resposta correta é: ${q.options[correctOptionValue.charCodeAt(0) - 97]}`;
+                    feedbackDiv.className = 'feedback incorrect';
+                }
+
+                feedbackDiv.style.display = 'block';
+                explanationDiv.style.display = 'block';
+
+                const radios = optionsDiv.querySelectorAll('input[type="radio"]');
+                radios.forEach(radio => radio.disabled = true);
+            }
 
             btnQuizIA.addEventListener('click', () => loadQuestions(allQuestionsIA, 'ia'));
             btnQuizOutrasProvas.addEventListener('click', () => loadQuestions(questoesEstudo, 'outrasProvas'));
             btnQuizEPT.addEventListener('click', () => loadQuestions(allQuestionsEPT, 'ept'));
+            btnQuizIFPE.addEventListener('click', () => loadQuestions(allQuestionsIFPE, 'ifpe'));
         });
     </script>
 </body>
+
 </html>
