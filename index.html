@@ -538,150 +538,173 @@
                 ]}
             ];
 
+// Variável de controle para o tipo de quiz atualmente ativo
+            let currentQuizType = null;
+            let currentQuestions = [];
+            let currentQuestionIndex = 0;
+            let score = 0;
 
-            function loadQuestions(questionsArray, quizType) {
-                currentQuestions = questionsArray;
-                currentQuizType = quizType;
+            const quizArea = document.getElementById('quizArea');
+            const scoreArea = document.getElementById('scoreArea');
+            const userScore = document.getElementById('userScore');
+            const totalQuestionsSpan = document.getElementById('totalQuestions');
+
+            function loadQuestions(questions, type) {
+                currentQuestions = questions;
+                currentQuizType = type;
                 currentQuestionIndex = 0;
-                displayQuestion();
+                score = 0;
+                totalQuestionsSpan.textContent = questions.length;
+
+                quizArea.style.display = 'block';
+                scoreArea.style.display = 'none';
+
+                renderQuestion();
             }
 
-            function displayQuestion() {
-                if (currentQuestions.length === 0) {
-                    quizContainer.innerHTML = '<p>Nenhuma questão encontrada para este questionário.</p>';
-                    quizTitle.textContent = '';
+            function renderQuestion() {
+                if (currentQuestionIndex < currentQuestions.length) {
+                    const q = currentQuestions[currentQuestionIndex];
+                    let questionHtml = '';
+                    if (currentQuizType === 'ia' || currentQuizType === 'ept') {
+                        questionHtml = `
+                            <div class="question-card">
+                                <h3>${q.question}</h3>
+                                <div class="options">
+                                    ${q.options.map((option, index) => `
+                                        <label>
+                                            <input type="radio" name="question${currentQuestionIndex}" value="${String.fromCharCode(97 + index)}">
+                                            ${option}
+                                        </label>
+                                    `).join('')}
+                                </div>
+                                <div class="feedback"></div>
+                                <div class="explanation"></div>
+                            </div>
+                            <button class="submit-button">Responder</button>
+                            <button class="show-answer-button">Ver Resposta</button>
+                        `;
+                    } else if (currentQuizType === 'outrasProvas' || currentQuizType === 'ifsertao') {
+                        const questionData = q.text ? q : { text: q.enunciado, options: q.options };
+                        questionHtml = `
+                            <div class="question-card">
+                                <h3>${questionData.text}</h3>
+                                <div class="options">
+                                    ${questionData.options.map((option, index) => `
+                                        <label>
+                                            <input type="radio" name="question${currentQuestionIndex}" value="${index}">
+                                            ${option}
+                                        </label>
+                                    `).join('')}
+                                </div>
+                                <div class="feedback"></div>
+                                <div class="explanation"></div>
+                            </div>
+                            <button class="submit-button">Responder</button>
+                            <button class="show-answer-button">Ver Resposta</button>
+                        `;
+                    }
+                    quizArea.innerHTML = questionHtml;
+                    addEventListenersToQuestionButtons();
+                } else {
+                    showScore();
+                }
+            }
+            
+            function addEventListenersToQuestionButtons() {
+                const submitButton = document.querySelector('.submit-button');
+                const showAnswerButton = document.querySelector('.show-answer-button');
+
+                if (submitButton) {
+                    submitButton.addEventListener('click', () => checkAnswer());
+                }
+
+                if (showAnswerButton) {
+                    showAnswerButton.addEventListener('click', () => showCorrectAnswer());
+                }
+            }
+
+            function checkAnswer() {
+                const q = currentQuestions[currentQuestionIndex];
+                const selectedOption = document.querySelector(`input[name="question${currentQuestionIndex}"]:checked`);
+                const feedbackDiv = document.querySelector('.feedback');
+                const explanationDiv = document.querySelector('.explanation');
+
+                if (!selectedOption) {
+                    feedbackDiv.textContent = 'Por favor, selecione uma opção.';
+                    feedbackDiv.className = 'feedback incorrect';
+                    feedbackDiv.style.display = 'block';
                     return;
                 }
 
-                quizContainer.innerHTML = '';
-                const q = currentQuestions[currentQuestionIndex];
-                let questionText = '';
-                let optionsList = '';
-
-                // Verifica o tipo de questionário para renderizar corretamente
+                let correctValue;
+                let correctOptionValue;
+                
                 if (currentQuizType === 'ia' || currentQuizType === 'ept') {
-                    questionText = q.question;
-                    q.options.forEach((option, index) => {
-                        const optionLetter = String.fromCharCode(97 + index);
-                        optionsList += `<label>
-                                            <input type="radio" name="answer" value="${optionLetter}">
-                                            ${option}
-                                        </label>`;
-                    });
-                } else if (currentQuizType === 'ifsertao') {
-                    questionText = `${q.topic} - ${q.text}`;
-                    q.questions.forEach(questionBlock => {
-                        questionText = questionBlock.text;
-                        optionsList = '';
-                        questionBlock.options.forEach((option, index) => {
-                            const optionLetter = String.fromCharCode(97 + index);
-                            optionsList += `<label>
-                                                <input type="radio" name="answer" value="${index}">
-                                                ${option}
-                                            </label>`;
-                        });
-                    });
+                    correctValue = q.correct;
+                    correctOptionValue = q.options[q.correct.charCodeAt(0) - 97];
                 } else if (currentQuizType === 'outrasProvas') {
-                    questionText = q.text;
-                    optionsList = q.alternativaCorreta ? `<p>${q.alternativaCorreta}</p>` : '';
+                     // Para questões de 'outrasProvas', o 'alternativaCorreta' é a própria explicação da resposta
+                    correctValue = q.alternativaCorreta;
+                } else if (currentQuizType === 'ifsertao') {
+                    correctValue = q.answer.toString();
+                    correctOptionValue = q.options[q.answer];
                 }
 
-                const questionDiv = document.createElement('div');
-                questionDiv.className = 'question-container';
-                questionDiv.innerHTML = `
-                    <div class="question-text">${questionText}</div>
-                    <div class="options-container">${optionsList}</div>
-                    <div class="feedback" id="feedback"></div>
-                    <div class="explanation" id="explanation"></div>
-                    <div class="navigation-buttons">
-                        <button id="btnCheckAnswer">Ver Resposta</button>
-                        <button id="btnNextQuestion">Próxima</button>
-                    </div>
-                `;
-                
-                quizContainer.appendChild(questionDiv);
-                
-                quizTitle.textContent = `Questionário: ${getQuizTitle()}`;
-                
-                document.getElementById('btnCheckAnswer').addEventListener('click', () => {
-                    checkAnswer(q);
-                });
 
-                document.getElementById('btnNextQuestion').addEventListener('click', () => {
-                    currentQuestionIndex++;
-                    if (currentQuestionIndex < currentQuestions.length) {
-                        displayQuestion();
-                    } else {
-                        quizContainer.innerHTML = '<p>Você completou o questionário!</p>';
-                        quizTitle.textContent = '';
-                    }
-                });
-            }
-
-            function getQuizTitle() {
-                switch (currentQuizType) {
-                    case 'ia':
-                        return 'Questões Geradas por IA';
-                    case 'outrasProvas':
-                        return 'Questões Retiradas de Outras Provas';
-                    case 'ept':
-                        return 'EPT No Brasil';
-                    case 'ifsertao':
-                        return 'IFPE Sertão - Leis';
-                    default:
-                        return '';
-                }
-            }
-
-            function checkAnswer(q) {
-                const selectedOption = document.querySelector('input[name="answer"]:checked');
-                const feedbackDiv = document.getElementById('feedback');
-                const explanationDiv = document.getElementById('explanation');
-                const btnCheck = document.getElementById('btnCheckAnswer');
-
-                if (currentQuizType === 'ia' || currentQuizType === 'ept') {
-                    if (selectedOption) {
-                        const isCorrect = selectedOption.value === q.correct;
-                        if (isCorrect) {
-                            feedbackDiv.textContent = 'Resposta correta!';
-                            feedbackDiv.className = 'feedback correct';
-                        } else {
-                            const correctOptionValue = q.correct.toUpperCase();
-                            const correctOptionText = q.options.find(opt => opt.startsWith(correctOptionValue.toLowerCase()));
-                            feedbackDiv.textContent = `Resposta incorreta. A correta é: ${correctOptionValue}) ${correctOptionText.substring(3)}`;
-                            feedbackDiv.className = 'feedback incorrect';
-                        }
-                        explanationDiv.textContent = q.explanation;
-                        explanationDiv.style.display = 'block';
-                        btnCheck.style.display = 'none'; // Esconder o botão após a verificação
-                    } else {
-                        feedbackDiv.textContent = 'Por favor, selecione uma opção.';
-                        feedbackDiv.className = 'feedback incorrect';
-                    }
-                    feedbackDiv.style.display = 'block';
-                } else if (currentQuizType === 'ifsertao') {
-                    if (selectedOption) {
-                        const isCorrect = parseInt(selectedOption.value) === q.answer;
-                        if (isCorrect) {
-                            feedbackDiv.textContent = 'Resposta correta!';
-                            feedbackDiv.className = 'feedback correct';
-                        } else {
-                            const correctOptionText = q.options[q.answer];
-                            feedbackDiv.textContent = `Resposta incorreta. A correta é: ${correctOptionText}`;
-                            feedbackDiv.className = 'feedback incorrect';
-                        }
-                        feedbackDiv.style.display = 'block';
-                        btnCheck.style.display = 'none';
-                    } else {
-                        feedbackDiv.textContent = 'Por favor, selecione uma opção.';
-                        feedbackDiv.className = 'feedback incorrect';
-                    }
-                } else if (currentQuizType === 'outrasProvas') {
-                    feedbackDiv.textContent = `Resposta: ${q.alternativaCorreta}`;
+                if (selectedOption.value === correctValue) {
+                    score++;
+                    feedbackDiv.textContent = 'Correto!';
                     feedbackDiv.className = 'feedback correct';
-                    feedbackDiv.style.display = 'block';
-                    btnCheck.style.display = 'none';
+                } else {
+                    feedbackDiv.textContent = `Incorreto. A resposta correta é: ${correctOptionValue}`;
+                    feedbackDiv.className = 'feedback incorrect';
                 }
+
+                feedbackDiv.style.display = 'block';
+                explanationDiv.textContent = q.explanation || `Resposta: ${q.alternativaCorreta}`;
+                explanationDiv.style.display = 'block';
+
+                const radios = document.querySelectorAll(`input[name="question${currentQuestionIndex}"]`);
+                radios.forEach(radio => radio.disabled = true);
+
+                setTimeout(() => {
+                    currentQuestionIndex++;
+                    renderQuestion();
+                }, 3000);
+            }
+            
+            function showCorrectAnswer() {
+                const q = currentQuestions[currentQuestionIndex];
+                const feedbackDiv = document.querySelector('.feedback');
+                const explanationDiv = document.querySelector('.explanation');
+                const optionsDiv = document.querySelector('.options');
+
+                if (currentQuizType === 'ia' || currentQuizType === 'ept') {
+                    const correctOptionValue = q.options[q.correct.charCodeAt(0) - 97];
+                    feedbackDiv.textContent = `A resposta correta é: ${q.correct.toUpperCase()}) ${correctOptionValue}`;
+                    feedbackDiv.className = 'feedback incorrect'; // Não é correto nem incorreto, apenas mostra a resposta
+                    feedbackDiv.style.display = 'block';
+                } else if (currentQuizType === 'ifsertao') {
+                    const correctOptionValue = q.options[q.answer];
+                    feedbackDiv.textContent = `A resposta correta é: ${correctOptionValue}`;
+                    feedbackDiv.className = 'feedback incorrect';
+                    feedbackDiv.style.display = 'block';
+                } else if (currentQuizType === 'outrasProvas') {
+                    // Para questões de 'outrasProvas', a 'alternativaCorreta' é a própria explicação da resposta
+                    feedbackDiv.textContent = `Resposta: ${q.alternativaCorreta}`;
+                    feedbackDiv.className = 'feedback correct'; // Ou uma classe neutra, já que não é um "check"
+                    feedbackDiv.style.display = 'block';
+                }
+
+                const radios = optionsDiv.querySelectorAll('input[type="radio"]');
+                radios.forEach(radio => radio.disabled = true);
+            }
+
+            function showScore() {
+                quizArea.style.display = 'none';
+                scoreArea.style.display = 'block';
+                userScore.textContent = score;
             }
 
             btnQuizIA.addEventListener('click', () => loadQuestions(allQuestionsIA, 'ia'));
@@ -690,5 +713,3 @@
             btnQuizIFPESertao.addEventListener('click', () => loadQuestions(IFPESertao, 'ifsertao'));
         });
     </script>
-</body>
-</html>
