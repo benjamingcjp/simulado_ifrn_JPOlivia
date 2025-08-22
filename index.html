@@ -201,7 +201,7 @@
     <script>
         document.addEventListener('DOMContentLoaded', () => {
 
-            // ESTE É O NOVO BANCO DE QUESTÕES PARA "QUESTÕES GERADAS POR IA"
+            // ESTE É O BANCO DE QUESTÕES PARA "QUESTÕES GERADAS POR IA"
             const allQuestionsIA = [
                 // Lei nº 8.112/1990
                 { id: '01', question: 'Qual o regime jurídico estabelecido pela Lei nº 8.112/1990?', options: ['a) Emprego público federal.', 'b) Regime estatutário dos servidores públicos da União.', 'c) Regime celetista dos servidores públicos federais.', 'd) Regime misto para servidores federais.'], correct: 'b', explanation: 'A Lei nº 8.112/1990 institui o regime estatutário, que estabelece os direitos, deveres e responsabilidades dos servidores públicos civis da União, autarquias e fundações públicas federais.' },
@@ -314,8 +314,7 @@
                 { id: '100', question: 'Qual das normas estudadas trata especificamente das sanções éticas aplicáveis aos servidores públicos federais?', options: ['a) Lei nº 8.112/1990.', 'b) Lei nº 12.772/2012.', 'c) Lei nº 8.027/1990.', 'd) Decreto nº 1.171/1994.'], correct: 'd', explanation: 'O Decreto nº 1.171/1994, que aprova o Código de Ética Profissional do Servidor Público Civil do Poder Executivo Federal, trata especificamente das sanções éticas aplicáveis (Seção V). A Lei nº 8.112/1990 trata das penalidades disciplinares, a Lei nº 12.772/2012 do regime de carreiras do magistério, e a Lei nº 8.027/1990 das normas de conduta e da Comissão de Ética.' }
             ];
 
-            // ESTE É O NOVO BANCO DE QUESTÕES PARA "IFPE SERTÃO - LEIS"
-            // Por favor, insira as 200 questões aqui, seguindo o formato JSON.
+            // ESTE É O BANCO DE QUESTÕES PARA "IFPE SERTÃO - LEIS"
             const allQuestionsIFPE = [
   {
     id: 201,
@@ -2518,7 +2517,7 @@
     answer: "a"
   }
 ];
-            
+
             // BANCO DE QUESTÕES PARA "QUESTÕES RETIRADAS DE OUTRAS PROVAS"
             const questoesEstudo = [
                 // Lei 8.112/1990
@@ -2594,7 +2593,6 @@
             ];
 
             // BANCO DE QUESTÕES PARA "EPT NO BRASIL 1.1"
-		// Banco de questões para o questionário "EPT No Brasil 1.1"
             const allQuestionsEPT = [
                 // 1. Educação profissional e tecnológica no Brasil: organização e bases conceituais
                 { id: 'EPT41', question: 'A Educação Profissional e Tecnológica (EPT) no Brasil tem sua trajetória marcada por diversas transformações. Qual das opções abaixo MELHOR descreve a principal característica da EPT na atualidade, considerando sua organização e bases conceituais?', options: ['a) Foco exclusivo na formação técnica para o mercado de trabalho, desvinculada da educação básica.', 'b) Ênfase na formação humanística, com pouca articulação com as demandas tecnológicas e produtivas.', 'c) Integração entre trabalho, ciência, tecnologia e cultura, visando à formação integral do indivíduo e ao desenvolvimento socioeconômico.', 'd) Predominância de cursos de curta duração, sem aprofundamento teórico ou científico.', 'e) Caráter assistencialista, voltado apenas para a qualificação de mão de obra de baixa escolaridade.'], correct: 'c', explanation: 'A EPT moderna busca a integração para uma formação completa.' },
@@ -3137,8 +3135,20 @@
                 }
             ];
 
+            const btnQuizIA = document.getElementById('btnQuizIA');
+            const btnQuizOutrasProvas = document.getElementById('btnQuizOutrasProvas');
+            const btnQuizEPT = document.getElementById('btnQuizEPT');
+            const btnQuizIFPE = document.getElementById('btnQuizIFPE');
+            const quizArea = document.getElementById('quizArea');
+            const scoreArea = document.getElementById('scoreArea');
+            const userScoreSpan = document.getElementById('userScore');
+            const totalQuestionsSpan = document.getElementById('totalQuestions');
 
-            // O restante do script original permanece o mesmo, mas com a adição do novo botão e sua função.
+
+            let currentQuestions = [];
+            let score = 0;
+            const NUM_QUESTIONS = 10;
+
             function shuffleArray(array) {
                 for (let i = array.length - 1; i > 0; i--) {
                     const j = Math.floor(Math.random() * (i + 1));
@@ -3148,41 +3158,24 @@
             }
 
             function loadQuestions(questionsArray, quizType) {
-                const quizArea = document.getElementById('quizArea');
-                const scoreArea = document.getElementById('scoreArea');
                 quizArea.innerHTML = '';
                 quizArea.style.display = 'block';
                 scoreArea.style.display = 'none';
 
-                let selectedQuestions;
+                let selectedQuestions = shuffleArray(questionsArray).slice(0, NUM_QUESTIONS);
 
-                if (quizType === 'ia' || quizType === 'ifpe') {
-                    // Para os quizzes 'ia' e 'ifpe', embaralhe e selecione 10
-                    selectedQuestions = shuffleArray(questionsArray).slice(0, 10);
-                } else if (quizType === 'outrasProvas' || quizType === 'ept') {
-                    // Para os quizzes 'outrasProvas' e 'ept', que são um pouco diferentes no formato e já estão agrupados por tópicos,
-                    // precisamos de uma lógica ligeiramente diferente para pegar questões aleatórias.
-                    // Vamos criar um array plano de todas as questões
-                    const flatQuestions = questionsArray.flatMap(topic => topic.questions);
-                    selectedQuestions = shuffleArray(flatQuestions).slice(0, 10);
-                }
-
-                // Renderiza as questões selecionadas
                 selectedQuestions.forEach((q, index) => {
                     const questionCard = document.createElement('div');
                     questionCard.className = 'question-card';
 
                     const questionTitle = document.createElement('h3');
-                    questionTitle.textContent = `${index + 1}. ${q.question || q.text}`;
+                    questionTitle.textContent = `${index + 1}. ${q.question || q.enunciado}`;
                     questionCard.appendChild(questionTitle);
 
-                    const optionsDiv = document.createElement('div');
-                    optionsDiv.className = 'options';
-
-                    const optionsToDisplay = q.options;
-
-                    if (optionsToDisplay) {
-                        optionsToDisplay.forEach((option, i) => {
+                    if (quizType !== 'outrasProvas') {
+                        const optionsDiv = document.createElement('div');
+                        optionsDiv.className = 'options';
+                        q.options.forEach((option, i) => {
                             const optionLabel = document.createElement('label');
                             const radioInput = document.createElement('input');
                             radioInput.type = 'radio';
@@ -3192,9 +3185,8 @@
                             optionLabel.appendChild(document.createTextNode(option));
                             optionsDiv.appendChild(optionLabel);
                         });
+                        questionCard.appendChild(optionsDiv);
                     }
-
-                    questionCard.appendChild(optionsDiv);
 
                     const feedbackDiv = document.createElement('div');
                     feedbackDiv.className = 'feedback';
@@ -3202,47 +3194,52 @@
 
                     const explanationDiv = document.createElement('div');
                     explanationDiv.className = 'explanation';
-                    explanationDiv.textContent = q.explanation || `Resposta correta: ${q.options ? q.options[q.correct.charCodeAt(0) - 97] : q.alternativaCorreta}`;
+                    explanationDiv.textContent = q.explanation || `Resposta correta: ${q.alternativaCorreta}`;
                     questionCard.appendChild(explanationDiv);
 
-                    const buttonContainer = document.createElement('div');
                     const submitButton = document.createElement('button');
                     submitButton.textContent = 'Verificar Resposta';
                     submitButton.className = 'submit-button';
                     submitButton.onclick = () => checkAnswer(questionCard, q, quizType);
-                    buttonContainer.appendChild(submitButton);
-                    questionCard.appendChild(buttonContainer);
+                    questionCard.appendChild(submitButton);
 
                     quizArea.appendChild(questionCard);
                 });
             }
 
             function checkAnswer(questionCard, q, quizType) {
-                const optionsDiv = questionCard.querySelector('.options');
                 const feedbackDiv = questionCard.querySelector('.feedback');
                 const explanationDiv = questionCard.querySelector('.explanation');
+                const submitButton = questionCard.querySelector('.submit-button');
 
-                const correctOptionValue = q.correct;
-                const selectedOption = optionsDiv.querySelector('input[type="radio"]:checked');
-
-                if (selectedOption) {
-                    if (selectedOption.value === correctOptionValue) {
-                        feedbackDiv.textContent = 'Parabéns, resposta correta!';
-                        feedbackDiv.className = 'feedback correct';
-                    } else {
-                        feedbackDiv.textContent = `Resposta incorreta. A correta é: ${q.options[correctOptionValue.charCodeAt(0) - 97]}`;
-                        feedbackDiv.className = 'feedback incorrect';
-                    }
+                if (quizType === 'outrasProvas') {
+                    feedbackDiv.textContent = `Resposta: ${q.alternativaCorreta}`;
+                    feedbackDiv.className = 'feedback correct';
+                    feedbackDiv.style.display = 'block';
+                    submitButton.style.display = 'none';
                 } else {
-                    feedbackDiv.textContent = `Você não selecionou uma opção. A resposta correta é: ${q.options[correctOptionValue.charCodeAt(0) - 97]}`;
-                    feedbackDiv.className = 'feedback incorrect';
+                    const optionsDiv = questionCard.querySelector('.options');
+                    const selectedOption = optionsDiv.querySelector('input[type="radio"]:checked');
+                    
+                    if (selectedOption) {
+                        if (selectedOption.value === q.correct) {
+                            feedbackDiv.textContent = 'Parabéns, resposta correta!';
+                            feedbackDiv.className = 'feedback correct';
+                        } else {
+                            const correctOptionText = q.options.find(opt => opt.startsWith(q.correct.toUpperCase() + ')'));
+                            feedbackDiv.textContent = `Resposta incorreta. A correta é: ${correctOptionText || 'N/A'}`;
+                            feedbackDiv.className = 'feedback incorrect';
+                        }
+                        feedbackDiv.style.display = 'block';
+                        explanationDiv.style.display = 'block';
+                        const radios = optionsDiv.querySelectorAll('input[type="radio"]');
+                        radios.forEach(radio => radio.disabled = true);
+                    } else {
+                        feedbackDiv.textContent = `Você não selecionou uma opção. A resposta correta é: ${q.options.find(opt => opt.startsWith(q.correct.toUpperCase() + ')'))}`;
+                        feedbackDiv.className = 'feedback incorrect';
+                        feedbackDiv.style.display = 'block';
+                    }
                 }
-
-                feedbackDiv.style.display = 'block';
-                explanationDiv.style.display = 'block';
-
-                const radios = optionsDiv.querySelectorAll('input[type="radio"]');
-                radios.forEach(radio => radio.disabled = true);
             }
 
             btnQuizIA.addEventListener('click', () => loadQuestions(allQuestionsIA, 'ia'));
@@ -3252,5 +3249,4 @@
         });
     </script>
 </body>
-
 </html>
